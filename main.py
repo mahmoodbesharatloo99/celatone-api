@@ -2,14 +2,34 @@ from flask import Flask
 import requests
 import os
 
+app = Flask(__name__)
+
+# Constants
+
 REGISTRY_URL = "https://cosmos-registry.alleslabs.dev/"
 
-app = Flask(__name__)
+LCD_DICT = {
+    "osmosis": {
+        "osmosis-1": "https://lcd.osmosis.zone",
+        "osmo-test-4": "https://lcd-test.osmosis.zone",
+    },
+    "terra2": {
+        "phoenix-1": "https://phoenix-lcd.terra.dev",
+        "pisco-1": "https://pisco-lcd.terra.dev",
+    },
+}
+
+HIVE_DICT = {
+    "phoenix-1": "https://phoenix-hive.terra.dev",
+    "pisco-1": "https://pisco-hive.terra.dev",
+}
+
+# Root
 
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return {"gm": "gm"}
 
 
 # Codes
@@ -144,37 +164,71 @@ def get_balances(chain, network, account_address):
     output_balances = []
     match chain:
         case "osmosis":
-            match network:
-                case "osmosis-1":
-                    output_balances = get_native_balances(
-                        "https://lcd.osmosis.zone/cosmos/bank/v1beta1/balances",
-                        chain,
-                        network,
-                        account_address,
-                    )
-                case "osmo-test-4":
-                    pass
+            output_balances = get_native_balances(
+                f"{LCD_DICT[chain][network]}/cosmos/bank/v1beta1/balances",
+                chain,
+                network,
+                account_address,
+            )
         case "terra2":
-            match network:
-                case "phoenix-1":
-                    output_balances = get_native_balances(
-                        "https://phoenix-lcd.terra.dev/cosmos/bank/v1beta1/balances",
-                        chain,
-                        network,
-                        account_address,
-                    )
-                case "pisco-1":
-                    pass
+            output_balances = get_native_balances(
+                f"{LCD_DICT[chain][network]}/cosmos/bank/v1beta1/balances",
+                chain,
+                network,
+                account_address,
+            ) + get_hive_balance(chain, network, account_address)
     return output_balances
+
+
+def split(lst, n):
+    for i in range(0, len(lst), n):
+        yield lst[i : i + n]
+
+
+def get_hive_balance(chain, network, account_address):
+    supported_assets = get_asset_by_type(chain, network, "cw20")
+    contract_addresses = [asset["id"] for asset in supported_assets]
+    contract_address_chunks = split(contract_addresses, 50)
+    output_balance = []
+    for contract_address_chunk in contract_address_chunks:
+        query = generate_hive_query(account_address, contract_address_chunk)
+        hive_data = requests.post(
+            f"{HIVE_DICT[network]}/graphql", json={"query": query}
+        ).json()["data"]
+        for contract_address, data in hive_data.items():
+            if int(data["contractQuery"]["balance"]) > 0:
+                asset = get_asset(chain, network, contract_address)
+                output_balance.append(
+                    {
+                        "name": asset["name"],
+                        "symbol": asset["symbol"],
+                        "id": asset["id"],
+                        "amount": data["contractQuery"]["balance"],
+                        "precision": asset["precision"],
+                    }
+                )
+    return output_balance
+
+
+def generate_hive_query(account_address, contract_addresses):
+    query = "query test {"
+    for contract_address in contract_addresses:
+        query += f"""
+        {contract_address}: wasm{{
+            contractQuery(contractAddress: "{contract_address}", query: {{
+                balance: {{address : "{account_address}" }}
+            }})
+        }}
+        """
+    query += "}"
+    return query
 
 
 def get_native_balances(endpoint, chain, network, account_address):
     balances = requests.get(
         f"{endpoint}/{account_address}?pagination.limit=500"
     ).json()["balances"]
-    supported_assets = requests.get(
-        f"{REGISTRY_URL}/data/{chain}/{network}/assets.json"
-    ).json()
+    supported_assets = get_asset_by_type(chain, network, "native")
     output_balance = []
     for balance in balances:
         if balance["denom"] in [asset["id"] for asset in supported_assets]:
