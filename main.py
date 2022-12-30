@@ -1,5 +1,6 @@
 from flask import Flask
 import requests
+import os
 
 REGISTRY_URL = "https://cosmos-registry.alleslabs.dev/"
 
@@ -133,6 +134,63 @@ def get_entity(entity_slug):
     entities = requests.get(f"{REGISTRY_URL}/data/entities.json").json()
     entity = [entity for entity in entities if entity["slug"] == entity_slug][0]
     return entity
+
+
+# Balances
+
+
+@app.route("/<chain>/<network>/balances/<account_address>")
+def get_balances(chain, network, account_address):
+    output_balances = []
+    match chain:
+        case "osmosis":
+            match network:
+                case "osmosis-1":
+                    output_balances = get_native_balances(
+                        "https://lcd.osmosis.zone/cosmos/bank/v1beta1/balances",
+                        chain,
+                        network,
+                        account_address,
+                    )
+                case "osmo-test-4":
+                    pass
+        case "terra2":
+            match network:
+                case "phoenix-1":
+                    output_balances = get_native_balances(
+                        "https://phoenix-lcd.terra.dev/cosmos/bank/v1beta1/balances",
+                        chain,
+                        network,
+                        account_address,
+                    )
+                case "pisco-1":
+                    pass
+    return output_balances
+
+
+def get_native_balances(endpoint, chain, network, account_address):
+    balances = requests.get(
+        f"{endpoint}/{account_address}?pagination.limit=500"
+    ).json()["balances"]
+    supported_assets = requests.get(
+        f"{REGISTRY_URL}/data/{chain}/{network}/assets.json"
+    ).json()
+    output_balance = []
+    for balance in balances:
+        if balance["denom"] in [asset["id"] for asset in supported_assets]:
+            asset = [
+                asset for asset in supported_assets if asset["id"] == balance["denom"]
+            ][0]
+            output_balance.append(
+                {
+                    "name": asset["name"],
+                    "symbol": asset["symbol"],
+                    "id": asset["id"],
+                    "amount": balance["amount"],
+                    "precision": asset["precision"],
+                }
+            )
+    return output_balance
 
 
 if __name__ == "__main__":
