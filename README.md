@@ -54,6 +54,21 @@ This repository contains the implementation of an API wrapper around the Alles L
 
 ### Balances
 
+```ts
+type Balance = {
+    // The name of the asset
+    name: string
+    // The asset symbol
+    symbol: string
+    // The ID of the asset. Asset denom for native and contract address for cw20
+    id: string
+    // The balance amount held by the queried address
+    amount: string
+    // The decimal precision of the asset
+    precision: number
+}
+```
+
 | Endpoint         | Description                                                                                          | Path                                                       | Response  |
 | ---------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | --------- |
 | Balances list    | Returns the list of all non-zero balance records for an account for the given CHAIN and NETWORK pair | `/<CHAIN>/<NETWORK>/balances/<ACCOUNT_ADDRESS>`            | []Balance |
