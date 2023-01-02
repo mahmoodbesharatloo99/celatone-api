@@ -1,8 +1,10 @@
 import json
+import os
 
 
 def load_contracts(chain, network):
-    contracts = json.load(open(f"registry/data/{chain}/{network}/contracts.json"))
+    print("CURRENT WD: " + os.getcwd())
+    contracts = json.load(open(f"../registry/data/{chain}/{network}/contracts.json"))
     return contracts
 
 

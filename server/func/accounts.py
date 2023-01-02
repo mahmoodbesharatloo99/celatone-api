@@ -1,8 +1,10 @@
 import json
+import os
 
 
 def load_accounts(chain, network):
-    accounts = json.load(open(f"registry/data/{chain}/{network}/accounts.json"))
+    print(os.getcwd())
+    accounts = json.load(open(f"../registry/data/{chain}/{network}/accounts.json"))
     return accounts
 
 

@@ -1,11 +1,13 @@
 import json
+import os
 
 
 def load_project_data(chain, network):
-    accounts = json.load(open(f"registry/data/{chain}/{network}/accounts.json"))
-    assets = json.load(open(f"registry/data/{chain}/{network}/assets.json"))
-    codes = json.load(open(f"registry/data/{chain}/{network}/codes.json"))
-    contracts = json.load(open(f"registry/data/{chain}/{network}/contracts.json"))
+    print("CURRENT WD: " + os.getcwd())
+    accounts = json.load(open(f"../registry/data/{chain}/{network}/accounts.json"))
+    assets = json.load(open(f"../registry/data/{chain}/{network}/assets.json"))
+    codes = json.load(open(f"../registry/data/{chain}/{network}/codes.json"))
+    contracts = json.load(open(f"../registry/data/{chain}/{network}/contracts.json"))
     return accounts, assets, codes, contracts
 
 
@@ -37,7 +39,8 @@ def load_project(entity, accounts, assets, codes, contracts):
 
 
 def load_projects(chain, network):
-    entities = json.load(open(f"registry/data/entities.json"))
+    print("CURRENT WD: " + os.getcwd())
+    entities = json.load(open(f"../registry/data/entities.json"))
     accounts, assets, codes, contracts = load_project_data(chain, network)
     projects = []
     for entity in entities:
@@ -54,7 +57,7 @@ def get_projects(chain, network):
 
 def get_project(chain, network, slug):
     accounts, assets, codes, contracts = load_project_data(chain, network)
-    entities = json.load(open(f"registry/data/entities.json"))
+    entities = json.load(open(f"../registry/data/entities.json"))
     entity = [entity for entity in entities if entity["slug"] == slug][0]
     project = load_project(entity, accounts, assets, codes, contracts)
     if project is None:

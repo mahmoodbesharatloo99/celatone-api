@@ -72,17 +72,3 @@ def get_native_balances(endpoint, chain, network, account_address):
                 }
             )
     return output_balance
-
-
-def load_and_return_image(image_type, image_name):
-    if not os.path.exists("temp"):
-        os.mkdir("temp")
-    if not os.path.exists(f"temp/{image_name}.png"):
-        image_res = requests.get(
-            f"https://cosmos-registry.alleslabs.dev/assets/{image_type}/{image_name}.png",
-            stream=True,
-        )
-        if image_res.status_code == 200:
-            with open(f"temp/{image_name}.png", "wb") as f:
-                shutil.copyfileobj(image_res.raw, f)
-    return send_file(f"temp/{image_name}.png")
