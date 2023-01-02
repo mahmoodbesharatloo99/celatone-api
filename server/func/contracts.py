@@ -1,17 +1,18 @@
-import requests
+import json
 
 
-def get_contracts(registry_url, chain, network):
-    contracts = requests.get(
-        f"{registry_url}/data/{chain}/{network}/contracts.json"
-    ).json()
+def load_contracts(chain, network):
+    contracts = json.load(open(f"registry/data/{chain}/{network}/contracts.json"))
     return contracts
 
 
-def get_contract(registry_url, chain, network, contract_address):
-    contracts = requests.get(
-        f"{registry_url}/data/{chain}/{network}/contracts.json"
-    ).json()
+def get_contracts(chain, network):
+    contracts = load_contracts(chain, network)
+    return contracts
+
+
+def get_contract(chain, network, contract_address):
+    contracts = load_contracts(chain, network)
     contract = [
         contract for contract in contracts if contract["address"] == contract_address
     ][0]

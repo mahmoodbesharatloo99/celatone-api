@@ -1,5 +1,3 @@
-REGISTRY_URL = "https://cosmos-registry.alleslabs.dev/"
-
 LCD_DICT = {
     "osmosis": {
         "osmosis-1": "https://lcd.osmosis.zone",

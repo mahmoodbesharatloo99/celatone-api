@@ -1,17 +1,18 @@
-import requests
+import json
 
 
-def get_accounts(registry_url, chain, network):
-    accounts = requests.get(
-        f"{registry_url}/data/{chain}/{network}/accounts.json"
-    ).json()
+def load_accounts(chain, network):
+    accounts = json.load(open(f"registry/data/{chain}/{network}/accounts.json"))
     return accounts
 
 
-def get_account(registry_url, chain, network, account_address):
-    accounts = requests.get(
-        f"{registry_url}/data/{chain}/{network}/accounts.json"
-    ).json()
+def get_accounts(chain, network):
+    accounts = load_accounts(chain, network)
+    return accounts
+
+
+def get_account(chain, network, account_address):
+    accounts = load_accounts(chain, network)
     account = [
         account for account in accounts if account["address"] == account_address
     ][0]

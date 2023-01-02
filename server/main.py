@@ -1,7 +1,6 @@
-from flask import Flask
+from flask import Flask, send_file
 import os
 
-import func.constants as constants
 import func.codes as codes
 import func.contracts as contracts
 import func.accounts as accounts
@@ -26,12 +25,12 @@ def hello_world():
 
 @app.route("/<chain>/<network>/codes")
 def get_codes(chain, network):
-    codes.get_codes(constants.REGISTRY_URL, chain, network)
+    return codes.get_codes(chain, network)
 
 
 @app.route("/<chain>/<network>/code/<code_id>")
 def get_code(chain, network, code_id):
-    codes.get_code(constants.REGISTRY_URL, chain, network, code_id)
+    return codes.get_code(chain, network, code_id)
 
 
 # Contracts
@@ -39,12 +38,12 @@ def get_code(chain, network, code_id):
 
 @app.route("/<chain>/<network>/contracts")
 def get_contracts(chain, network):
-    contracts.get_contracts(constants.REGISTRY_URL, chain, network)
+    return contracts.get_contracts(chain, network)
 
 
 @app.route("/<chain>/<network>/contract/<contract_address>")
 def get_contract(chain, network, contract_address):
-    contracts.get_contract(constants.REGISTRY_URL, chain, network, contract_address)
+    return contracts.get_contract(chain, network, contract_address)
 
 
 # Accounts
@@ -52,12 +51,12 @@ def get_contract(chain, network, contract_address):
 
 @app.route("/<chain>/<network>/accounts")
 def get_accounts(chain, network):
-    accounts.get_accounts(constants.REGISTRY_URL, chain, network)
+    return accounts.get_accounts(chain, network)
 
 
 @app.route("/<chain>/<network>/account/<account_address>")
 def get_account(chain, network, account_address):
-    accounts.get_account(constants.REGISTRY_URL, chain, network, account_address)
+    return accounts.get_account(chain, network, account_address)
 
 
 # Assets
@@ -65,22 +64,22 @@ def get_account(chain, network, account_address):
 
 @app.route("/<chain>/<network>/assets")
 def get_assets(chain, network):
-    assets.get_assets(constants.REGISTRY_URL, chain, network)
+    return assets.get_assets(chain, network)
 
 
 @app.route("/<chain>/<network>/assets/type/<asset_type>")
 def get_asset_by_type(chain, network, asset_type):
-    assets.get_asset_by_type(constants.REGISTRY_URL, chain, network, asset_type)
+    return assets.get_asset_by_type(chain, network, asset_type)
 
 
 @app.route("/<chain>/<network>/assets/slug/<asset_slug>")
 def get_asset_by_slug(chain, network, asset_slug):
-    assets.get_asset_by_slug(constants.REGISTRY_URL, chain, network, asset_slug)
+    return assets.get_asset_by_slug(chain, network, asset_slug)
 
 
 @app.route("/<chain>/<network>/asset/<asset_id>")
 def get_asset(chain, network, asset_id):
-    assets.get_asset(constants.REGISTRY_URL, chain, network, asset_id)
+    return assets.get_asset(chain, network, asset_id)
 
 
 # Projects
@@ -88,12 +87,12 @@ def get_asset(chain, network, asset_id):
 
 @app.route("/<chain>/<network>/projects")
 def get_projects(chain, network):
-    projects.get_projects(constants.REGISTRY_URL, chain, network)
+    return projects.get_projects(chain, network)
 
 
 @app.route("/<chain>/<network>/project/<project_id>")
 def get_project(chain, network, project_id):
-    projects.get_projects(constants.REGISTRY_URL, chain, network, project_id)
+    return projects.get_project(chain, network, project_id)
 
 
 # Entities
@@ -101,12 +100,12 @@ def get_project(chain, network, project_id):
 
 @app.route("/entities")
 def get_entities():
-    entities.get_entities(constants.REGISTRY_URL)
+    return entities.get_entities()
 
 
 @app.route("/entity/<entity_slug>")
 def get_entity(entity_slug):
-    entities.get_entity(constants.REGISTRY_URL, entity_slug)
+    return entities.get_entity(entity_slug)
 
 
 # Balances
@@ -114,7 +113,7 @@ def get_entity(entity_slug):
 
 @app.route("/<chain>/<network>/balances/<account_address>")
 def get_balances(chain, network, account_address):
-    balances.get_balances(chain, network, account_address)
+    return balances.get_balances(chain, network, account_address)
 
 
 # Images
@@ -122,12 +121,12 @@ def get_balances(chain, network, account_address):
 
 @app.route("/images/assets/<asset_symbol>")
 def get_asset_image(asset_symbol):
-    return helper.load_and_return_image("tokens", asset_symbol)
+    return send_file(f"../registry/assets/assets/{asset_symbol}.png")
 
 
 @app.route("/images/entities/<entity_slug>")
 def get_entity_image(entity_slug):
-    return helper.load_and_return_image("entites", entity_slug)
+    return send_file(f"../registry/assets/entities/{entity_slug}.png")
 
 
 if __name__ == "__main__":
