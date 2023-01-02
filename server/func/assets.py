@@ -1,9 +1,7 @@
 import json
-import os
 
 
 def load_assets(chain, network):
-    print("CURRENT WD: " + os.getcwd())
     assets = json.load(open(f"../registry/data/{chain}/{network}/assets.json"))
     return assets
 

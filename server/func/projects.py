@@ -1,9 +1,7 @@
 import json
-import os
 
 
 def load_project_data(chain, network):
-    print("CURRENT WD: " + os.getcwd())
     accounts = json.load(open(f"../registry/data/{chain}/{network}/accounts.json"))
     assets = json.load(open(f"../registry/data/{chain}/{network}/assets.json"))
     codes = json.load(open(f"../registry/data/{chain}/{network}/codes.json"))
@@ -39,7 +37,6 @@ def load_project(entity, accounts, assets, codes, contracts):
 
 
 def load_projects(chain, network):
-    print("CURRENT WD: " + os.getcwd())
     entities = json.load(open(f"../registry/data/entities.json"))
     accounts, assets, codes, contracts = load_project_data(chain, network)
     projects = []

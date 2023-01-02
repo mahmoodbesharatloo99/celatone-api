@@ -1,9 +1,7 @@
 import json
-import os
 
 
 def load_codes(chain, network):
-    print("CURRENT WD: " + os.getcwd())
     codes = json.load(open(f"../registry/data/{chain}/{network}/codes.json"))
     return codes
 

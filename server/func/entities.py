@@ -1,9 +1,7 @@
 import json
-import os
 
 
 def load_entities():
-    print("CURRENT WD: " + os.getcwd())
     entities = json.load(open(f"../registry/data/entities.json"))
     return entities
 
