@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "ion-dao",
+    "name": "Staking Governance",
+    "address": "osmo1yg8930mj8pk288lmkjex0qz85mj8wgtns5uzwyn2hs25pwdnw42sf745wc",
+    "description": "ION DAO governance staking contract"
+  },
+  {
+    "slug": "ion-dao",
+    "name": "Governance",
+    "address": "osmo1k8re7jwz6rnnwrktnejdwkwnncte7ek7gt29gvnl3sdrg9mtnqkse6nmqm",
+    "description": "ION DAO governance contract"
+  },
+  {
+    "slug": "osmosis",
+    "name": "IBC Rate Limiting",
+    "address": "osmo17r7qdw2zk6jyw62cvwm6flmhtj9q7zd26r8zc6sqyf0pnaq46cfss8hgxg",
+    "description": "Osmosis IBC rate limiting contract responsible for adding a governance-configurable rate limit to IBC transfers. This acts as a safety control intended to protect assets on Osmosis in the event of a bug/hack"
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Name NFT",
+    "address": "osmo1mypljhatv0prfr9cjzzvamxdf2ctg34xkt50sudxads9zhqnyneqjuvy26",
+    "description": "Interchain Nameservice NFT contract responsible for minting the nft of the ICNS name being claimed"
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Resolver",
+    "address": "osmo1xk0s8xgktn9x5vwcgtjdxqzadg88fgn33p8u9cnpdxwemvxscvast52cdd",
+    "description": "Interchain Nameservice resolver contract that work to orchestrate the oracle verifiers watching the Twitter API for unique Twitter handles of the user"
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Registrar",
+    "address": "osmo1llh07xn7pcst3jqm0xpsucf90lzugfskkkhk8a3u2yznqmse4l5smydwpw",
+    "description": "Interchain Nameservice registar contract that keep track of the address for each ICNS name in a stateful manner, serving to resolve the ICNS Name to the correct address "
+  }
+]
