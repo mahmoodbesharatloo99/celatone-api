@@ -123,7 +123,7 @@ def get_entity(entity_slug):
 
 @app.route("/<chain>/<network>/balances/<account_address>", methods=["GET"])
 def get_balances(chain, network, account_address):
-    return balances.get_balances(chain, network, account_address)
+    return balances.get_balances(app, chain, network, account_address)
 
 
 # Images

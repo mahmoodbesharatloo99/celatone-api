@@ -51,7 +51,7 @@ def generate_hive_query(account_address, contract_addresses):
     return query
 
 
-def get_native_balances(endpoint, chain, network, account_address):
+def get_native_balances(app, endpoint, chain, network, account_address):
     output_balance = []
     balances = requests.get(
         f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
