@@ -53,9 +53,18 @@ def generate_hive_query(account_address, contract_addresses):
 
 def get_native_balances(app, endpoint, chain, network, account_address):
     output_balance = []
+    app.logger.info(
+        f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
+    )
+    print(
+        f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
+    )
     balances = requests.get(
         f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
-    ).json()["balances"]
+    )
+    print("BALANCES_RESPONSE: " + balances)
+    app.logger.info("BALANCES RESPONSE: " + balances)
+    balances = balances.json()["balances"]
     supported_assets = assets.get_asset_by_type(chain, network, "native")
     for balance in balances:
         if balance["denom"] in [asset["id"] for asset in supported_assets]:
