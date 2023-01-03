@@ -26,7 +26,7 @@ def hello_world():
 
 @app.route("/codes/<chain>/<network>", methods=["GET"])
 def get_codes(chain, network):
-    """Get details of all known codes.
+    """Get All Codes
 
     Returns a list of all the known codes based on the input chain and network
     """
@@ -35,7 +35,7 @@ def get_codes(chain, network):
 
 @app.route("/codes/<chain>/<network>/<code_id>", methods=["GET"])
 def get_code(chain, network, code_id):
-    """Get the details of a specific code ID.
+    """Get Code by ID
 
     Returns a specific code based on the input chain, network, and code_id
     """
@@ -47,7 +47,7 @@ def get_code(chain, network, code_id):
 
 @app.route("/contracts/<chain>/<network>", methods=["GET"])
 def get_contracts(chain, network):
-    """Get details of all known contracts.
+    """Get All Contracts
 
     Returns a list of all the known contracts based on the input chain and network"""
     return contracts.get_contracts(chain, network)
@@ -55,7 +55,7 @@ def get_contracts(chain, network):
 
 @app.route("/contracts/<chain>/<network>/<contract_address>", methods=["GET"])
 def get_contract(chain, network, contract_address):
-    """Get the details of a specific contract address.
+    """Get Get Contract by ID
 
     Returns a specific contract based on the input chain, network, and contract_address"""
     return contracts.get_contract(chain, network, contract_address)
@@ -66,11 +66,19 @@ def get_contract(chain, network, contract_address):
 
 @app.route("/accounts/<chain>/<network>", methods=["GET"])
 def get_accounts(chain, network):
+    """Get All Accounts
+
+    Returns a list of all the known accounts based on the input chain and network
+    """
     return accounts.get_accounts(chain, network)
 
 
 @app.route("/accounts/<chain>/<network>/<account_address>", methods=["GET"])
 def get_account(chain, network, account_address):
+    """Get Account by ID
+
+    Returns a specific account based on the input chain, network, and account_address
+    """
     return accounts.get_account(chain, network, account_address)
 
 
@@ -79,11 +87,19 @@ def get_account(chain, network, account_address):
 
 @app.route("/assets/<chain>/<network>", methods=["GET"])
 def get_assets(chain, network):
+    """Get All Assets
+
+    Returns a list of all the known assets based on the input chain and network
+    """
     return assets.get_assets(chain, network)
 
 
 @app.route("/assets/<chain>/<network>/type/<asset_type>", methods=["GET"])
 def get_asset_by_type(chain, network, asset_type):
+    """Get Assets by Type
+
+    Returns a list of all the known assets based on the input chain, network, and asset_type
+    """
     return assets.get_asset_by_type(chain, network, asset_type)
 
 
