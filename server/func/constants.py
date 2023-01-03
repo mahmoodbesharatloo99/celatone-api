@@ -13,3 +13,7 @@ HIVE_DICT = {
     "phoenix-1": "https://phoenix-hive.terra.dev",
     "pisco-1": "https://pisco-hive.terra.dev",
 }
+
+SCANWORKS_URL = (
+    "https://raw.githubusercontent.com/teamscanworks/cw-contracts-registry/main/"
+)
