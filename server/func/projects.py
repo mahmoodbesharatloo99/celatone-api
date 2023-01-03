@@ -1,11 +1,12 @@
 import json
+from helper import load_and_check_registry_data
 
 
 def load_project_data(chain, network):
-    accounts = json.load(open(f"../registry/data/{chain}/{network}/accounts.json"))
-    assets = json.load(open(f"../registry/data/{chain}/{network}/assets.json"))
-    codes = json.load(open(f"../registry/data/{chain}/{network}/codes.json"))
-    contracts = json.load(open(f"../registry/data/{chain}/{network}/contracts.json"))
+    accounts = load_and_check_registry_data(chain, network, "accounts")
+    assets = load_and_check_registry_data(chain, network, "assets")
+    codes = load_and_check_registry_data(chain, network, "codes")
+    contracts = load_and_check_registry_data(chain, network, "contracts")
     return accounts, assets, codes, contracts
 
 

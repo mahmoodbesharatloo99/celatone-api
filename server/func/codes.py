@@ -1,20 +1,24 @@
 import json
 import requests
+import os
 
 from func.constants import SCANWORKS_URL
 
 
 def load_codes(chain, network):
-    codes = json.load(open(f"../registry/data/{chain}/{network}/codes.json"))
-    verification_details = requests.get(
-        f"{SCANWORKS_URL}/{chain}/contracts.json"
-    ).json()["contracts"]
-    for code in codes:
-        if code["id"] in verification_details:
-            code["verified"] = True
-            code["verification_details"] = verification_details[code["id"]]
-        else:
-            code["verified"] = False
+    codes = []
+    path = f"../registry/data/{chain}/{network}/codes.json"
+    if os.path.exists(path):
+        codes = json.load(open(path))
+        verification_details = requests.get(
+            f"{SCANWORKS_URL}/{chain}/contracts.json"
+        ).json()["contracts"]
+        for code in codes:
+            if code["id"] in verification_details:
+                code["verified"] = True
+                code["verification_details"] = verification_details[code["id"]]
+            else:
+                code["verified"] = False
     return codes
 
 
