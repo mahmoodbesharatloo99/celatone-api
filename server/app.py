@@ -24,7 +24,7 @@ def hello_world():
 # Codes
 
 
-@app.route("/<chain>/<network>/codes", methods=["GET"])
+@app.route("/codes/<chain>/<network>", methods=["GET"])
 def get_codes(chain, network):
     """Get details of all known codes.
 
@@ -33,7 +33,7 @@ def get_codes(chain, network):
     return codes.get_codes(chain, network)
 
 
-@app.route("/<chain>/<network>/code/<code_id>", methods=["GET"])
+@app.route("/codes/<chain>/<network>/<code_id>", methods=["GET"])
 def get_code(chain, network, code_id):
     """Get the details of a specific code ID.
 
@@ -45,7 +45,7 @@ def get_code(chain, network, code_id):
 # Contracts
 
 
-@app.route("/<chain>/<network>/contracts", methods=["GET"])
+@app.route("/contracts/<chain>/<network>", methods=["GET"])
 def get_contracts(chain, network):
     """Get details of all known contracts.
 
@@ -53,7 +53,7 @@ def get_contracts(chain, network):
     return contracts.get_contracts(chain, network)
 
 
-@app.route("/<chain>/<network>/contract/<contract_address>", methods=["GET"])
+@app.route("/contracts/<chain>/<network>/<contract_address>", methods=["GET"])
 def get_contract(chain, network, contract_address):
     """Get the details of a specific contract address.
 
@@ -64,12 +64,12 @@ def get_contract(chain, network, contract_address):
 # Accounts
 
 
-@app.route("/<chain>/<network>/accounts", methods=["GET"])
+@app.route("/accounts/<chain>/<network>", methods=["GET"])
 def get_accounts(chain, network):
     return accounts.get_accounts(chain, network)
 
 
-@app.route("/<chain>/<network>/account/<account_address>", methods=["GET"])
+@app.route("/accounts/<chain>/<network>/<account_address>", methods=["GET"])
 def get_account(chain, network, account_address):
     return accounts.get_account(chain, network, account_address)
 
@@ -77,37 +77,37 @@ def get_account(chain, network, account_address):
 # Assets
 
 
-@app.route("/<chain>/<network>/assets", methods=["GET"])
+@app.route("/assets/<chain>/<network>", methods=["GET"])
 def get_assets(chain, network):
     return assets.get_assets(chain, network)
 
 
-@app.route("/<chain>/<network>/assets/type/<asset_type>", methods=["GET"])
+@app.route("/assets/<chain>/<network>/type/<asset_type>", methods=["GET"])
 def get_asset_by_type(chain, network, asset_type):
     return assets.get_asset_by_type(chain, network, asset_type)
 
 
-@app.route("/<chain>/<network>/assets/slug/<asset_slug>", methods=["GET"])
+@app.route("/assets/<chain>/<network>/slug/<asset_slug>", methods=["GET"])
 def get_asset_by_slug(chain, network, asset_slug):
     return assets.get_asset_by_slug(chain, network, asset_slug)
 
 
-@app.route("/<chain>/<network>/asset/<asset_id>", methods=["GET"])
+@app.route("/assets/<chain>/<network>/<asset_id>", methods=["GET"])
 def get_asset(chain, network, asset_id):
     return assets.get_asset(chain, network, asset_id)
 
 
-@app.route("/<chain>/<network>/asset/ibc/<hash>", methods=["GET"])
+@app.route("/assets/<chain>/<network>/ibc/<hash>", methods=["GET"])
 def get_asset_ibc(chain, network, hash):
     return assets.get_asset_ibc(chain, network, hash)
 
 
-@app.route("/<chain>/<network>/asset/factory/<creator>/<symbol>", methods=["GET"])
+@app.route("/assets/<chain>/<network>/factory/<creator>/<symbol>", methods=["GET"])
 def get_asset_factory(chain, network, creator, symbol):
     return assets.get_asset_factory(chain, network, creator, symbol)
 
 
-@app.route("/<chain>/<network>/asset/gamm/pool/<pool_id>", methods=["GET"])
+@app.route("/assets/<chain>/<network>/gamm/pool/<pool_id>", methods=["GET"])
 def get_asset_gamm(chain, network, pool_id):
     return assets.get_asset_gamm(chain, network, pool_id)
 
@@ -115,12 +115,12 @@ def get_asset_gamm(chain, network, pool_id):
 # Projects
 
 
-@app.route("/<chain>/<network>/projects", methods=["GET"])
+@app.route("/projects/<chain>/<network>", methods=["GET"])
 def get_projects(chain, network):
     return projects.get_projects(chain, network)
 
 
-@app.route("/<chain>/<network>/project/<project_id>", methods=["GET"])
+@app.route("/projects/<chain>/<network>/<project_id>", methods=["GET"])
 def get_project(chain, network, project_id):
     return projects.get_project(chain, network, project_id)
 
@@ -128,12 +128,12 @@ def get_project(chain, network, project_id):
 # Entities
 
 
-@app.route("/entities", methods=["GET"])
+@app.route("//entities", methods=["GET"])
 def get_entities():
     return entities.get_entities()
 
 
-@app.route("/entity/<entity_slug>", methods=["GET"])
+@app.route("//entities/<entity_slug>", methods=["GET"])
 def get_entity(entity_slug):
     return entities.get_entity(entity_slug)
 
@@ -141,7 +141,7 @@ def get_entity(entity_slug):
 # Balances
 
 
-@app.route("/<chain>/<network>/balances/<account_address>", methods=["GET"])
+@app.route("/balances/<chain>/<network>/<account_address>", methods=["GET"])
 def get_balances(chain, network, account_address):
     return balances.get_balances(app, chain, network, account_address)
 

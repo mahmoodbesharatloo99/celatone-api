@@ -21,7 +21,7 @@
         "summary": "Hello World"
       }
     },
-    "/entities": {
+    "//entities": {
       "get": {
         "parameters": [],
         "responses": {
@@ -37,42 +37,7 @@
         "summary": "Get Entities"
       }
     },
-    "/entity/{entity_slug}": {
-      "get": {
-        "parameters": [
-          {
-            "in": "path",
-            "name": "entity_slug",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful response"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPError"
-                }
-              }
-            },
-            "description": "Not found"
-          }
-        },
-        "summary": "Get Entity"
-      }
-    },
-    "/{chain}/{network}/codes": {
+    "/codes/{chain}/{network}": {
       "get": {
         "parameters": [
           {
@@ -116,7 +81,42 @@
         "description": "Returns a list of all the known codes based on the input chain and network"
       }
     },
-    "/{chain}/{network}/assets": {
+    "//entities/{entity_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "summary": "Get Entity"
+      }
+    },
+    "/assets/{chain}/{network}": {
       "get": {
         "parameters": [
           {
@@ -159,7 +159,7 @@
         "summary": "Get Assets"
       }
     },
-    "/{chain}/{network}/accounts": {
+    "/accounts/{chain}/{network}": {
       "get": {
         "parameters": [
           {
@@ -202,7 +202,7 @@
         "summary": "Get Accounts"
       }
     },
-    "/{chain}/{network}/projects": {
+    "/projects/{chain}/{network}": {
       "get": {
         "parameters": [
           {
@@ -245,7 +245,7 @@
         "summary": "Get Projects"
       }
     },
-    "/{chain}/{network}/contracts": {
+    "/contracts/{chain}/{network}": {
       "get": {
         "parameters": [
           {
@@ -324,7 +324,7 @@
         "summary": "Get Entity Image"
       }
     },
-    "/{chain}/{network}/code/{code_id}": {
+    "/codes/{chain}/{network}/{code_id}": {
       "get": {
         "parameters": [
           {
@@ -376,7 +376,7 @@
         "description": "Returns a specific code based on the input chain, network, and code_id"
       }
     },
-    "/{chain}/{network}/asset/{asset_id}": {
+    "/assets/{chain}/{network}/{asset_id}": {
       "get": {
         "parameters": [
           {
@@ -427,7 +427,7 @@
         "summary": "Get Asset"
       }
     },
-    "/{chain}/{network}/asset/ibc/{hash}": {
+    "/assets/{chain}/{network}/ibc/{hash}": {
       "get": {
         "parameters": [
           {
@@ -478,7 +478,7 @@
         "summary": "Get Asset Ibc"
       }
     },
-    "/{chain}/{network}/project/{project_id}": {
+    "/projects/{chain}/{network}/{project_id}": {
       "get": {
         "parameters": [
           {
@@ -529,7 +529,7 @@
         "summary": "Get Project"
       }
     },
-    "/{chain}/{network}/assets/type/{asset_type}": {
+    "/assets/{chain}/{network}/type/{asset_type}": {
       "get": {
         "parameters": [
           {
@@ -580,7 +580,7 @@
         "summary": "Get Asset By Type"
       }
     },
-    "/{chain}/{network}/assets/slug/{asset_slug}": {
+    "/assets/{chain}/{network}/slug/{asset_slug}": {
       "get": {
         "parameters": [
           {
@@ -631,7 +631,7 @@
         "summary": "Get Asset By Slug"
       }
     },
-    "/{chain}/{network}/account/{account_address}": {
+    "/accounts/{chain}/{network}/{account_address}": {
       "get": {
         "parameters": [
           {
@@ -682,7 +682,7 @@
         "summary": "Get Account"
       }
     },
-    "/{chain}/{network}/asset/gamm/pool/{pool_id}": {
+    "/assets/{chain}/{network}/gamm/pool/{pool_id}": {
       "get": {
         "parameters": [
           {
@@ -733,7 +733,7 @@
         "summary": "Get Asset Gamm"
       }
     },
-    "/{chain}/{network}/balances/{account_address}": {
+    "/balances/{chain}/{network}/{account_address}": {
       "get": {
         "parameters": [
           {
@@ -784,7 +784,7 @@
         "summary": "Get Balances"
       }
     },
-    "/{chain}/{network}/contract/{contract_address}": {
+    "/contracts/{chain}/{network}/{contract_address}": {
       "get": {
         "parameters": [
           {
@@ -836,7 +836,7 @@
         "description": "Returns a specific contract based on the input chain, network, and contract_address"
       }
     },
-    "/{chain}/{network}/asset/factory/{creator}/{symbol}": {
+    "/assets/{chain}/{network}/factory/{creator}/{symbol}": {
       "get": {
         "parameters": [
           {
