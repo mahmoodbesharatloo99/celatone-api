@@ -9,7 +9,9 @@ import func.projects as projects
 import func.entities as entities
 import func.balances as balances
 
-app = Flask(__name__)
+from apiflask import APIFlask
+
+app = APIFlask(__name__)
 
 # Root
 
@@ -24,11 +26,19 @@ def hello_world():
 
 @app.route("/<chain>/<network>/codes", methods=["GET"])
 def get_codes(chain, network):
+    """Get details of all known codes.
+
+    Returns a list of all the known codes based on the input chain and network
+    """
     return codes.get_codes(chain, network)
 
 
 @app.route("/<chain>/<network>/code/<code_id>", methods=["GET"])
 def get_code(chain, network, code_id):
+    """Get the details of a specific code ID.
+
+    Returns a specific code based on the input chain, network, and code_id
+    """
     return codes.get_code(chain, network, code_id)
 
 
@@ -37,11 +47,17 @@ def get_code(chain, network, code_id):
 
 @app.route("/<chain>/<network>/contracts", methods=["GET"])
 def get_contracts(chain, network):
+    """Get details of all known contracts.
+
+    Returns a list of all the known contracts based on the input chain and network"""
     return contracts.get_contracts(chain, network)
 
 
 @app.route("/<chain>/<network>/contract/<contract_address>", methods=["GET"])
 def get_contract(chain, network, contract_address):
+    """Get the details of a specific contract address.
+
+    Returns a specific contract based on the input chain, network, and contract_address"""
     return contracts.get_contract(chain, network, contract_address)
 
 
@@ -92,7 +108,7 @@ def get_asset_factory(chain, network, creator, symbol):
 
 
 @app.route("/<chain>/<network>/asset/gamm/pool/<pool_id>", methods=["GET"])
-def get_asset_factory(chain, network, pool_id):
+def get_asset_gamm(chain, network, pool_id):
     return assets.get_asset_gamm(chain, network, pool_id)
 
 
