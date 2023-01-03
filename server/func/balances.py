@@ -7,14 +7,14 @@ def get_balances(chain, network, account_address):
     match chain:
         case "osmosis":
             output_balances = helper.get_native_balances(
-                f"{constants.LCD_DICT[chain][network]}/cosmos/bank/v1beta1/balances",
+                f"{constants.LCD_DICT[chain][network]}",
                 chain,
                 network,
                 account_address,
             )
         case "terra2":
             output_balances = helper.get_native_balances(
-                f"{constants.LCD_DICT[chain][network]}/cosmos/bank/v1beta1/balances",
+                f"{constants.LCD_DICT[chain][network]}",
                 chain,
                 network,
                 account_address,

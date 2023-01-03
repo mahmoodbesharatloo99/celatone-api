@@ -27,3 +27,17 @@ def get_asset(chain, network, asset_id):
     assets = load_assets(chain, network)
     asset = [asset for asset in assets if asset["id"] == asset_id][0]
     return asset
+
+
+def get_asset_ibc(chain, network, hash):
+    assets = load_assets(chain, network)
+    asset = [asset for asset in assets if asset["id"] == f"ibc/{hash}"][0]
+    return asset
+
+
+def get_asset_factory(chain, network, creator, symbol):
+    assets = load_assets(chain, network)
+    asset = [asset for asset in assets if asset["id"] == f"factory/{creator}/{symbol}"][
+        0
+    ]
+    return asset

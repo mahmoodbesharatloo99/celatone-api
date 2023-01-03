@@ -54,7 +54,7 @@ def generate_hive_query(account_address, contract_addresses):
 def get_native_balances(endpoint, chain, network, account_address):
     output_balance = []
     balances = requests.get(
-        f"{endpoint}/{account_address}?pagination.limit=500"
+        f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
     ).json()["balances"]
     supported_assets = assets.get_asset_by_type(chain, network, "native")
     for balance in balances:
@@ -69,6 +69,16 @@ def get_native_balances(endpoint, chain, network, account_address):
                     "id": asset["id"],
                     "amount": balance["amount"],
                     "precision": asset["precision"],
+                }
+            )
+        else:
+            output_balance.append(
+                {
+                    "name": None,
+                    "symbol": None,
+                    "id": balance["denom"],
+                    "amount": balance["amount"],
+                    "precision": 0,
                 }
             )
     return output_balance

@@ -14,4 +14,5 @@ def get_entities():
 def get_entity(entity_slug):
     entities = load_entities()
     entity = [entity for entity in entities if entity["slug"] == entity_slug][0]
+    entity["logo_path"] = f"/images/entities/{entity_slug}"
     return entity

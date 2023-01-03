@@ -82,6 +82,16 @@ def get_asset(chain, network, asset_id):
     return assets.get_asset(chain, network, asset_id)
 
 
+@app.route("/<chain>/<network>/asset/ibc/<hash>", methods=["GET"])
+def get_asset_ibc(chain, network, hash):
+    return assets.get_asset_ibc(chain, network, hash)
+
+
+@app.route("/<chain>/<network>/asset/factory/<creator>/<symbol>", methods=["GET"])
+def get_asset_ibc(chain, network, creator, symbol):
+    return assets.get_asset_factory(chain, network, creator, symbol)
+
+
 # Projects
 
 
@@ -117,11 +127,6 @@ def get_balances(chain, network, account_address):
 
 
 # Images
-
-
-@app.route("/images/assets/<asset_symbol>", methods=["GET"])
-def get_asset_image(asset_symbol):
-    return send_file(f"../registry/assets/assets/{asset_symbol}.png")
 
 
 @app.route("/images/entities/<entity_slug>", methods=["GET"])
