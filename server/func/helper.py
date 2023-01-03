@@ -62,11 +62,11 @@ def get_native_balances(app, endpoint, chain, network, account_address):
     balances = requests.get(
         f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
     )
-    print("BALANCES_RESPONSE: " + balances)
-    app.logger.info("BALANCES RESPONSE: " + balances)
-    balances = balances.json()["balances"]
+    balances = balances.json()
+    print("BALANCES_RESPONSE: " + str(balances))
+    app.logger.info("BALANCES RESPONSE: " + str(balances))
     supported_assets = assets.get_asset_by_type(chain, network, "native")
-    for balance in balances:
+    for balance in balances["balances"]:
         if balance["denom"] in [asset["id"] for asset in supported_assets]:
             asset = [
                 asset for asset in supported_assets if asset["id"] == balance["denom"]
