@@ -1,6 +1,6 @@
 import json
 import os
-from func.helper import load_and_check_registry_data
+from func.registry import load_and_check_registry_data
 
 
 def get_assets(chain, network):

@@ -7,14 +7,6 @@ import func.constants as constants
 import func.assets as assets
 
 
-def load_and_check_registry_data(chain, network, content):
-    path = f"../registry/data/{chain}/{network}/{content}.json"
-    data = []
-    if os.path.exists(path):
-        data = json.load(open(path))
-    return data
-
-
 def split(ls, n):
     for i in range(0, len(ls), n):
         yield ls[i : i + n]

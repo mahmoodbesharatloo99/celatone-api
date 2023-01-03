@@ -8,7 +8,6 @@ import func.assets as assets
 import func.projects as projects
 import func.entities as entities
 import func.balances as balances
-import func.helper as helper
 
 app = Flask(__name__)
 

@@ -1,5 +1,5 @@
 import json
-from helper import load_and_check_registry_data
+from func.registry import load_and_check_registry_data
 
 
 def load_project_data(chain, network):
