@@ -88,7 +88,7 @@ def get_asset_ibc(chain, network, hash):
 
 
 @app.route("/<chain>/<network>/asset/factory/<creator>/<symbol>", methods=["GET"])
-def get_asset_ibc(chain, network, creator, symbol):
+def get_asset_factory(chain, network, creator, symbol):
     return assets.get_asset_factory(chain, network, creator, symbol)
 
 
