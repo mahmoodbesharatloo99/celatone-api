@@ -32,9 +32,18 @@ def get_asset_ibc(chain, network, hash):
     return asset
 
 
+# Osmosis Assets
+
+
 def get_asset_factory(chain, network, creator, symbol):
     assets = load_and_check_registry_data(chain, network, "assets")
     asset = [asset for asset in assets if asset["id"] == f"factory/{creator}/{symbol}"][
         0
     ]
+    return asset
+
+
+def get_asset_gamm(chain, network, pool_id):
+    assets = load_and_check_registry_data(chain, network, "assets")
+    asset = [asset for asset in assets if asset["id"] == f"gamm/pool/{pool_id}"][0]
     return asset

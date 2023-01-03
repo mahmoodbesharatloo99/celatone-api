@@ -91,6 +91,11 @@ def get_asset_factory(chain, network, creator, symbol):
     return assets.get_asset_factory(chain, network, creator, symbol)
 
 
+@app.route("/<chain>/<network>/asset/gamm/pool/<pool_id>", methods=["GET"])
+def get_asset_factory(chain, network, pool_id):
+    return assets.get_asset_gamm(chain, network, pool_id)
+
+
 # Projects
 
 
