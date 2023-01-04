@@ -1,0 +1,2758 @@
+{
+	"info": {
+		"_postman_id": "ed6ac7ff-e3a0-4311-91e1-ba6d3ff38d02",
+		"name": "Main",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "7938719-ed6ac7ff-e3a0-4311-91e1-ba6d3ff38d02"
+	},
+	"item": [
+		{
+			"name": "Default",
+			"item": [
+				{
+					"name": "Hello World",
+					"id": "5f9767f0-d961-4671-a11a-f7d3f2380018",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "85569866-287d-4ce0-a454-4efdd9ce2dd0",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				}
+			],
+			"id": "228dd1a4-d290-4abe-9d47-43ef2647cf01",
+			"description": "Default queries"
+		},
+		{
+			"name": "Registry Data",
+			"item": [
+				{
+					"name": "Get Entities",
+					"id": "f70d1e5d-f628-4d9d-bb29-eff436530a36",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/entities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "771415f6-3312-4819-9b6f-cd75b6b11fd7",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/entities",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				},
+				{
+					"name": "Get Entity",
+					"id": "4f7a775d-ec8f-4fb1-b13f-0d1f8088cee6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/entities/:entity_slug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"entities",
+								":entity_slug"
+							],
+							"variable": [
+								{
+									"key": "entity_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "9190639c-b347-4976-ab1e-d8dc78b4ce72",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/entities/:entity_slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										":entity_slug"
+									],
+									"variable": [
+										{
+											"key": "entity_slug",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "bfe0a00a-2ecf-4510-971b-3ce3f22ae83e",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/entities/:entity_slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"entities",
+										":entity_slug"
+									],
+									"variable": [
+										{
+											"key": "entity_slug",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Codes",
+					"id": "87650e64-3760-4b2c-93c8-6619c44256cf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/codes/:chain/:network",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"codes",
+								":chain",
+								":network"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a list of all the known codes based on the input chain and network"
+					},
+					"response": [
+						{
+							"id": "4cfcb79e-ead5-455a-8fad-d3be6417e1e8",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/codes/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"codes",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "dbba7515-70ea-40c2-b5e3-d3150c4eaf2b",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/codes/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"codes",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Assets",
+					"id": "a89256c9-e56e-4599-818b-0ee0e37a0d6d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:chain/:network",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":chain",
+								":network"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a list of all the known assets based on the input chain and network"
+					},
+					"response": [
+						{
+							"id": "80a98f73-f83b-4582-aea7-351c5ec2269d",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "94d41fec-e90d-4f25-8be3-b155a0c2be14",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Accounts",
+					"id": "00c91fd1-728e-461f-8cc9-ba9f1d477498",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/accounts/:chain/:network",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"accounts",
+								":chain",
+								":network"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a list of all the known accounts based on the input chain and network"
+					},
+					"response": [
+						{
+							"id": "1d7e9d88-7d13-47fe-8818-83ef069ac440",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "0340dcdc-d06a-4390-850d-687e2824211a",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Projects",
+					"id": "25e23681-db31-4aa5-b192-fe3ac226eb16",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:chain/:network",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":chain",
+								":network"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a677198b-94d8-46d0-afdb-ecbf788fe023",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "292db930-b7ef-4655-a0b8-c13bf405468e",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Contracts",
+					"id": "c192d4f1-36f5-4037-b4a2-e8916acc6403",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/contracts/:chain/:network",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contracts",
+								":chain",
+								":network"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a list of all the known contracts based on the input chain and network"
+					},
+					"response": [
+						{
+							"id": "2fef2cf8-cc99-469e-bd26-5aec5e2aeca9",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contracts/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contracts",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "60401f17-b585-4a30-a4c5-77d2e4cd1d9d",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contracts/:chain/:network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contracts",
+										":chain",
+										":network"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Code by ID",
+					"id": "b03661d9-6eb2-46dc-affa-f75e2940ab3f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/codes/:chain/:network/:code_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"codes",
+								":chain",
+								":network",
+								":code_id"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "code_id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a specific code based on the input chain, network, and code_id"
+					},
+					"response": [
+						{
+							"id": "d63297e8-052c-4d10-a09d-bf6f42dd5d27",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/codes/:chain/:network/:code_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"codes",
+										":chain",
+										":network",
+										":code_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "code_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "5f199cbe-3a7b-4d65-b618-04417fb7b18d",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/codes/:chain/:network/:code_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"codes",
+										":chain",
+										":network",
+										":code_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "code_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Asset",
+					"id": "7c65f6c3-2fab-454f-ad89-cfc45d3512af",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:chain/:network/:asset_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":chain",
+								":network",
+								":asset_id"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "asset_id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "674fb009-c93d-4f5f-a8d8-062217512f98",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/:asset_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										":asset_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "asset_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "0d4a5067-1c69-40d2-9671-0ae4cca4fe8a",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/:asset_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										":asset_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "asset_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Asset Ibc",
+					"id": "ebf549b6-3105-4e7d-9ed6-8c174e8a69bb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:chain/:network/ibc/:hash",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":chain",
+								":network",
+								"ibc",
+								":hash"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "hash",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1be1497a-d9bb-40dd-a2df-30276660195b",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/ibc/:hash",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"ibc",
+										":hash"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "hash",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "49128863-af29-4e18-a60b-ad388eb3387e",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/ibc/:hash",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"ibc",
+										":hash"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "hash",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Project",
+					"id": "29245521-aa99-42b2-98cf-0aacd1184f24",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/projects/:chain/:network/:project_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"projects",
+								":chain",
+								":network",
+								":project_id"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "project_id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e8ecdb71-52d2-407a-997a-c5c181ebad2f",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:chain/:network/:project_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":chain",
+										":network",
+										":project_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "project_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "57e9e57b-78aa-4d5c-b336-36549ffea376",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/projects/:chain/:network/:project_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"projects",
+										":chain",
+										":network",
+										":project_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "project_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Assets by Type",
+					"id": "6a51c6ab-9cbd-43e6-b1e3-6af0c2ee59ce",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:chain/:network/type/:asset_type",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":chain",
+								":network",
+								"type",
+								":asset_type"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "asset_type",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+					},
+					"response": [
+						{
+							"id": "275deffd-7ef6-4dbf-90b5-217c684f310b",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/type/:asset_type",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"type",
+										":asset_type"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "asset_type",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "05963ffa-a91c-4066-90f0-f6967c415057",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/type/:asset_type",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"type",
+										":asset_type"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "asset_type",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Asset By Slug",
+					"id": "89fc436f-c2a3-48fa-afe8-d7757613e9f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:chain/:network/slug/:asset_slug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":chain",
+								":network",
+								"slug",
+								":asset_slug"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "asset_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6c3a9046-31b0-40a8-807d-7d0f3e8cc319",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/slug/:asset_slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"slug",
+										":asset_slug"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "asset_slug",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "2f51d80c-693d-46bd-a5cd-01dc9a5dbaed",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/slug/:asset_slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"slug",
+										":asset_slug"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "asset_slug",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Account by ID",
+					"id": "66f3f7c6-04b5-4f98-9892-b891c2a2b5f9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/accounts/:chain/:network/:account_address",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"accounts",
+								":chain",
+								":network",
+								":account_address"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "account_address",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a specific account based on the input chain, network, and account_address"
+					},
+					"response": [
+						{
+							"id": "1a4d6fb4-9bd6-4423-a4ee-7c1a7797a769",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/:chain/:network/:account_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										":chain",
+										":network",
+										":account_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "account_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "8d024beb-7b55-428d-a9b9-39497189db12",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/accounts/:chain/:network/:account_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"accounts",
+										":chain",
+										":network",
+										":account_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "account_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Asset Gamm",
+					"id": "3b87c971-0e6b-4f2a-9b9b-e194f7b0fb31",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:chain/:network/gamm/pool/:pool_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":chain",
+								":network",
+								"gamm",
+								"pool",
+								":pool_id"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "pool_id",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f6419922-69d3-4341-81b7-2310a9b93bc3",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/gamm/pool/:pool_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"gamm",
+										"pool",
+										":pool_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "pool_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "0395ae11-df28-4de3-aa3d-d14450801ef8",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/gamm/pool/:pool_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"gamm",
+										"pool",
+										":pool_id"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "pool_id",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Balances",
+					"id": "f1df5688-96cd-4555-97dd-3c9ea68e96e6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/balances/:chain/:network/:account_address",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"balances",
+								":chain",
+								":network",
+								":account_address"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "account_address",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a4619d51-2fa6-495c-ba70-b26b51b7a62e",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/balances/:chain/:network/:account_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"balances",
+										":chain",
+										":network",
+										":account_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "account_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "5ef1ea25-dbd3-47fe-8ea4-3dfb68697fad",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/balances/:chain/:network/:account_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"balances",
+										":chain",
+										":network",
+										":account_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "account_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Get Contract by ID",
+					"id": "da27911c-12a3-4e66-9754-244e735284da",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/contracts/:chain/:network/:contract_address",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contracts",
+								":chain",
+								":network",
+								":contract_address"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "contract_address",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Returns a specific contract based on the input chain, network, and contract_address"
+					},
+					"response": [
+						{
+							"id": "a945c4c4-7a2f-4264-ba23-87c3f946d794",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contracts/:chain/:network/:contract_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contracts",
+										":chain",
+										":network",
+										":contract_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "contract_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "5dc49d77-ed18-4051-9881-1482488a7966",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/contracts/:chain/:network/:contract_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"contracts",
+										":chain",
+										":network",
+										":contract_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "contract_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Asset Factory",
+					"id": "45c7649a-56cb-4074-8f75-7b5dde87207e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/assets/:chain/:network/factory/:creator/:symbol",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"assets",
+								":chain",
+								":network",
+								"factory",
+								":creator",
+								":symbol"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "creator",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "symbol",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "ed8d1e8a-8af1-474a-97da-813d1f2e7168",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/factory/:creator/:symbol",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"factory",
+										":creator",
+										":symbol"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "creator",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "symbol",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "28d13594-79fa-4aaf-82a2-e6294060a788",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/assets/:chain/:network/factory/:creator/:symbol",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"assets",
+										":chain",
+										":network",
+										"factory",
+										":creator",
+										":symbol"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "creator",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "symbol",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "a39a5f1d-dbba-4b94-94b9-253c3aaf0a8a",
+			"description": "Queries that uses data from the registry data JSONs"
+		},
+		{
+			"name": "Registry Assets",
+			"item": [
+				{
+					"name": "Get Entity Image",
+					"id": "d9286ed9-404a-4aa0-b46c-8eefc002b957",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/images/entities/:entity_slug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"images",
+								"entities",
+								":entity_slug"
+							],
+							"variable": [
+								{
+									"key": "entity_slug",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e0dc6ca7-b51b-4565-88ec-386d5527a49d",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/images/entities/:entity_slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"images",
+										"entities",
+										":entity_slug"
+									],
+									"variable": [
+										{
+											"key": "entity_slug",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "56cec23b-0742-4637-8b92-d4192d8f3f5b",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/images/entities/:entity_slug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"images",
+										"entities",
+										":entity_slug"
+									],
+									"variable": [
+										{
+											"key": "entity_slug",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "b03fa450-57ad-492a-acf2-9066d2ab9075",
+			"description": "Queries that uses data from the registry data asset images"
+		},
+		{
+			"name": "External",
+			"item": [
+				{
+					"name": "Get Balances",
+					"id": "29224eb7-759b-441b-9f30-93f0ff8d917e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/balances/:chain/:network/:account_address",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"balances",
+								":chain",
+								":network",
+								":account_address"
+							],
+							"variable": [
+								{
+									"key": "chain",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "network",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "account_address",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "148f822b-7a9f-40c9-b6cb-7c4f19a662c9",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/balances/:chain/:network/:account_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"balances",
+										":chain",
+										":network",
+										":account_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "account_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "da6a0eac-fbde-4de3-a9ff-c59fea12d825",
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/balances/:chain/:network/:account_address",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"balances",
+										":chain",
+										":network",
+										":account_address"
+									],
+									"variable": [
+										{
+											"key": "chain",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "network",
+											"value": "<string>",
+											"description": "(Required) "
+										},
+										{
+											"key": "account_address",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": \"<object>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "0298a6e5-943d-4265-b270-3b512a44e486",
+			"description": "Queries that uses also uses data from external sources"
+		}
+	],
+	"variable": [
+		{
+			"id": "9561d2c0-fced-40fc-afb1-242f6d69cfb1",
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
