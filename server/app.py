@@ -198,7 +198,7 @@ def get_entity(entity_slug):
 @app.route("/balances/<chain>/<network>/<account_address>", methods=["GET"])
 @app.doc(tags=["Registry Data", "External"])
 def get_balances(chain, network, account_address):
-    return balances.get_balances(app, chain, network, account_address)
+    return balances.get_balances(chain, network, account_address)
 
 
 # Images

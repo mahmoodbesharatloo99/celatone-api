@@ -32,6 +32,7 @@ def get_hive_balance(chain, network, account_address):
                         "id": asset["id"],
                         "amount": data["contractQuery"]["balance"],
                         "precision": asset["precision"],
+                        "type": "cw20",
                     }
                 )
     return output_balance
@@ -51,7 +52,7 @@ def generate_hive_query(account_address, contract_addresses):
     return query
 
 
-def get_native_balances(app, endpoint, chain, network, account_address):
+def get_native_balances(endpoint, chain, network, account_address):
     output_balance = []
     balances = requests.get(
         f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
@@ -70,6 +71,7 @@ def get_native_balances(app, endpoint, chain, network, account_address):
                     "id": asset["id"],
                     "amount": balance["amount"],
                     "precision": asset["precision"],
+                    "type": "native",
                 }
             )
         else:
@@ -80,6 +82,7 @@ def get_native_balances(app, endpoint, chain, network, account_address):
                     "id": balance["denom"],
                     "amount": balance["amount"],
                     "precision": 0,
+                    "type": "native",
                 }
             )
     return output_balance
