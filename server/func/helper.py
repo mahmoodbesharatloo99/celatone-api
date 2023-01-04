@@ -1,7 +1,4 @@
 import requests
-import os
-import json
-from flask import send_file
 
 import func.constants as constants
 import func.assets as assets

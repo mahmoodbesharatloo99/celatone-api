@@ -10,8 +10,11 @@ import func.entities as entities
 import func.balances as balances
 
 from apiflask import APIFlask
+from flask_cors import CORS, cross_origin
 
 app = APIFlask(__name__, title="My API", version="1.0")
+CORS(app)
+
 app.config["SYNC_LOCAL_SPEC"] = True
 app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
 app.config["TAGS"] = [
