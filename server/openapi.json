@@ -1,9 +1,26 @@
 {
   "info": {
-    "title": "APIFlask",
-    "version": "0.1.0"
+    "title": "My API",
+    "version": "1.0"
   },
-  "tags": [],
+  "tags": [
+    {
+      "name": "Default",
+      "description": "Default queries"
+    },
+    {
+      "name": "Registry Data",
+      "description": "Queries that uses data from the registry data JSONs"
+    },
+    {
+      "name": "Registry Assets",
+      "description": "Queries that uses data from the registry data asset images"
+    },
+    {
+      "name": "External",
+      "description": "Queries that uses also uses data from external sources"
+    }
+  ],
   "paths": {
     "/": {
       "get": {
@@ -18,10 +35,13 @@
             "description": "Successful response"
           }
         },
+        "tags": [
+          "Default"
+        ],
         "summary": "Hello World"
       }
     },
-    "//entities": {
+    "/entities": {
       "get": {
         "parameters": [],
         "responses": {
@@ -34,7 +54,48 @@
             "description": "Successful response"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Entities"
+      }
+    },
+    "/entities/{entity_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Registry Data"
+        ],
+        "summary": "Get Entity"
       }
     },
     "/codes/{chain}/{network}": {
@@ -77,43 +138,11 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get All Codes",
         "description": "Returns a list of all the known codes based on the input chain and network"
-      }
-    },
-    "//entities/{entity_slug}": {
-      "get": {
-        "parameters": [
-          {
-            "in": "path",
-            "name": "entity_slug",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful response"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPError"
-                }
-              }
-            },
-            "description": "Not found"
-          }
-        },
-        "summary": "Get Entity"
       }
     },
     "/assets/{chain}/{network}": {
@@ -156,6 +185,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get All Assets",
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
@@ -200,6 +232,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get All Accounts",
         "description": "Returns a list of all the known accounts based on the input chain and network"
       }
@@ -244,6 +279,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Projects"
       }
     },
@@ -287,6 +325,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get All Contracts",
         "description": "Returns a list of all the known contracts based on the input chain and network"
       }
@@ -323,6 +364,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Assets"
+        ],
         "summary": "Get Entity Image"
       }
     },
@@ -374,6 +418,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Code by ID",
         "description": "Returns a specific code based on the input chain, network, and code_id"
       }
@@ -426,6 +473,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Asset"
       }
     },
@@ -477,6 +527,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Asset Ibc"
       }
     },
@@ -528,6 +581,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Project"
       }
     },
@@ -579,6 +635,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Assets by Type",
         "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
       }
@@ -631,6 +690,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Asset By Slug"
       }
     },
@@ -682,6 +744,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Account by ID",
         "description": "Returns a specific account based on the input chain, network, and account_address"
       }
@@ -734,6 +799,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Asset Gamm"
       }
     },
@@ -785,6 +853,10 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data",
+          "External"
+        ],
         "summary": "Get Balances"
       }
     },
@@ -836,6 +908,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Get Contract by ID",
         "description": "Returns a specific contract based on the input chain, network, and contract_address"
       }
@@ -896,6 +971,9 @@
             "description": "Not found"
           }
         },
+        "tags": [
+          "Registry Data"
+        ],
         "summary": "Get Asset Factory"
       }
     }
