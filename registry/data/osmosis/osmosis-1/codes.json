@@ -2,7 +2,7 @@
   {
     "slug": "apollodao",
     "name": "Multisig",
-    "id": "1",
+    "id": 1,
     "description": "ApolloDAO CW3 multisig code"
   },
   {
@@ -10,12 +10,11 @@
     "name": "Liquid Staking",
     "id": 5,
     "description": "ApolloDAO liquid staking code"
-
   },
   {
     "slug": "ion-dao",
     "name": "Governance Staking",
-    "id": "2",
+    "id": 2,
     "description": "ION DAO governance staking code"
   },
   {
@@ -27,8 +26,7 @@
   {
     "slug": "osmosis",
     "name": "IBC Rate Limiting",
-    "id": "6",
+    "id": 6,
     "description": "Contract code for rate limiting IBC transactions"
-
   }
 ]
