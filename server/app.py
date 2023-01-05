@@ -213,5 +213,11 @@ def get_entity_image(entity_slug):
     return send_file(f"../registry/assets/entities/{entity_slug}.png")
 
 
+@app.route("/images/assets/<asset_symbol>", methods=["GET"])
+@app.doc(tags=["Registry Assets"])
+def get_entity_image(asset_symbol):
+    return send_file(f"../registry/assets/assets/{asset_symbol}.png")
+
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

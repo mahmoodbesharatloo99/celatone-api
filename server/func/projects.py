@@ -27,9 +27,12 @@ def load_project(entity, accounts, assets, codes, contracts):
         "name": entity["name"],
         "website": entity["website"],
         "github": entity["github"],
-        "logo": entity["logo"],
+        "logo": f"https://celatone-api.alleslabs.dev/images/entities/{entity['slug']}",
         "socials": entity["socials"],
     }
+    entity_dict[
+        "description"
+    ] = "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
     entity_dict["accounts"] = relevant_accounts
     entity_dict["assets"] = relevant_assets
     entity_dict["codes"] = relevant_codes
