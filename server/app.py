@@ -215,7 +215,7 @@ def get_entity_image(entity_slug):
 
 @app.route("/images/assets/<asset_symbol>", methods=["GET"])
 @app.doc(tags=["Registry Assets"])
-def get_entity_image(asset_symbol):
+def get_asset_image(asset_symbol):
     return send_file(f"../registry/assets/assets/{asset_symbol}.png")
 
 
