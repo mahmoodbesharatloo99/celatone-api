@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Osmosis",
+    "symbol": "OSMO",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+    "description": "The native token of Osmosis",
+    "type": "native",
+    "id": "uosmo",
+    "precision": 6,
+    "slugs": ["osmosis"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  }
+]
