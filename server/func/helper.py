@@ -20,6 +20,8 @@ def get_hive_balance(chain, network, account_address):
             f"{constants.HIVE_DICT[network]}/graphql", json={"query": query}
         ).json()["data"]
         for contract_address, data in hive_data.items():
+            if data is None or data["contractQuery"] is None:
+                continue
             if int(data["contractQuery"]["balance"]) > 0:
                 asset = assets.get_asset(chain, network, contract_address)
                 output_balance.append(
@@ -55,31 +57,39 @@ def get_native_balances(endpoint, chain, network, account_address):
         f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
     )
     balances = balances.json()
+
+    # Get all supported assets for this chain and network
     supported_assets = assets.get_asset_by_type(chain, network, "native")
-    for balance in balances["balances"]:
-        if balance["denom"] in [asset["id"] for asset in supported_assets]:
-            asset = [
-                asset for asset in supported_assets if asset["id"] == balance["denom"]
-            ][0]
-            output_balance.append(
-                {
-                    "name": asset["name"],
-                    "symbol": asset["symbol"],
-                    "id": asset["id"],
-                    "amount": balance["amount"],
-                    "precision": asset["precision"],
-                    "type": "native",
-                }
-            )
-        else:
-            output_balance.append(
-                {
-                    "name": None,
-                    "symbol": None,
-                    "id": balance["denom"],
-                    "amount": balance["amount"],
-                    "precision": 0,
-                    "type": "native",
-                }
-            )
+
+    if "balances" in balances:
+        for balance in balances["balances"]:
+            # Check if the balance is a supported asset
+            if balance["denom"] in [asset["id"] for asset in supported_assets]:
+                asset = [
+                    asset
+                    for asset in supported_assets
+                    if asset["id"] == balance["denom"]
+                ][0]
+                output_balance.append(
+                    {
+                        "name": asset["name"],
+                        "symbol": asset["symbol"],
+                        "id": asset["id"],
+                        "amount": balance["amount"],
+                        "precision": asset["precision"],
+                        "type": "native",
+                    }
+                )
+            # If it's not a supported asset, just return the balance with no extra info
+            else:
+                output_balance.append(
+                    {
+                        "name": None,
+                        "symbol": None,
+                        "id": balance["denom"],
+                        "amount": balance["amount"],
+                        "precision": 0,
+                        "type": "native",
+                    }
+                )
     return output_balance

@@ -3,20 +3,19 @@ import func.helper as helper
 
 
 def get_balances(chain, network, account_address):
-    output_balances = []
-    match chain:
-        case "osmosis":
-            output_balances = helper.get_native_balances(
-                f"{constants.LCD_DICT[chain][network]}",
-                chain,
-                network,
-                account_address,
-            )
-        case "terra2":
-            output_balances = helper.get_native_balances(
-                f"{constants.LCD_DICT[chain][network]}",
-                chain,
-                network,
-                account_address,
-            ) + helper.get_hive_balance(chain, network, account_address)
-    return output_balances
+    if chain == "osmosis":
+        return helper.get_native_balances(
+            f"{constants.LCD_DICT[chain][network]}",
+            chain,
+            network,
+            account_address,
+        )
+    elif chain == "terra2":
+        return helper.get_native_balances(
+            f"{constants.LCD_DICT[chain][network]}",
+            chain,
+            network,
+            account_address,
+        ) + helper.get_hive_balance(chain, network, account_address)
+    else:
+        return []
