@@ -3,7 +3,7 @@
     "slug": "astroport",
     "name": "Astroport",
     "website": "https://astroport.fi",
-    "github": "astroport-fi",
+    "github": "https://github.com/astroport-fi",
     "logo": "astroport.png",
     "socials": [
       {
@@ -47,7 +47,7 @@
     "slug": "orne",
     "name": "Orne",
     "website": "https://orne.io",
-    "github": "orne-io",
+    "github": "https://github.com/orne-io",
     "logo": "orne.png",
     "socials": [
       {
@@ -69,7 +69,7 @@
     "slug": "prism",
     "name": "Prism Protocol",
     "website": "https://prismprotocol.app",
-    "github": "prism-finance",
+    "github": "https://github.com/prism-finance",
     "logo": "prism.png",
     "socials": [
       {
@@ -91,7 +91,7 @@
     "slug": "spectrum",
     "name": "Spectrum Protocol",
     "website": "https://spec.finance",
-    "github": "spectrumprotocol",
+    "github": "https://github.com/spectrumprotocol",
     "logo": "spectrum.png",
     "socials": [
       {
@@ -113,7 +113,7 @@
     "slug": "stader",
     "name": "Stader Labs",
     "website": "https://staderlabs.com",
-    "github": "stader-labs",
+    "github": "https://github.com/stader-labs",
     "logo": "stader.png",
     "socials": [
       {
@@ -135,7 +135,7 @@
     "slug": "steak",
     "name": "Steak",
     "website": "https://liquidstaking.app/",
-    "github": "PFC-developer",
+    "github": "https://github.com/PFC-developer",
     "logo": "steak.png",
     "socials": [
       {
@@ -179,7 +179,7 @@
     "slug": "terraswap",
     "name": "Terraswap",
     "website": "https://terraswap.io",
-    "github": "terraswap",
+    "github": "https://github.com/terraswap",
     "logo": "terraswap.png",
     "socials": [
       {
@@ -201,7 +201,7 @@
     "slug": "valkyrie",
     "name": "Valkyrie Protocol",
     "website": "https://valkyrieprotocol.com",
-    "github": "valkyrieprotocol",
+    "github": "https://github.com/valkyrieprotocol",
     "logo": "valkyrie.png",
     "socials": [
       {
@@ -223,7 +223,7 @@
     "slug": "wormhole",
     "name": "Wormhole",
     "website": "https://wormhole.com",
-    "github": "wormhole-foundation",
+    "github": "https://github.com/wormhole-foundation",
     "logo": "wormhole.png",
     "social": [
       {
@@ -289,7 +289,7 @@
     "slug": "setten",
     "name": "Setten",
     "website": "https://setten.io",
-    "github": "setten-io",
+    "github": "https://github.com/setten-io",
     "logo": "setten.png",
     "socials": [
       {
@@ -377,7 +377,7 @@
     "slug": "binance",
     "name": "Binance",
     "website": "https://binance.com",
-    "github": "binance",
+    "github": "https://github.com/binance",
     "logo": "binance.png",
     "socials": [
       {
@@ -421,7 +421,7 @@
     "slug": "hermes",
     "name": "Hermes Protocol",
     "website": "https://hermesprotocol.io",
-    "github": "hermesprotocol-io",
+    "github": "https://github.com/hermesprotocol-io",
     "logo": "hermes.png",
     "socials": [
       {
@@ -531,7 +531,7 @@
     "slug": "terra",
     "name": "TFL",
     "website": "https://terra.money",
-    "github": "terra-money",
+    "github": "https://github.com/terra-money",
     "logo": "terra.png",
     "socials": [
       {
@@ -597,7 +597,7 @@
     "slug": "coinhall",
     "name": "Coinhall",
     "website": "https://coinhall.org",
-    "github": "coinhall",
+    "github": "https://github.com/coinhall",
     "logo": "coinhall.png",
     "socials": [
       {
@@ -1037,7 +1037,7 @@
     "slug": "white-whale",
     "name": "White Whale",
     "website": "https://whitewhale.money/",
-    "github": "White-Whale-Defi-Platform",
+    "github": "https://github.com/White-Whale-Defi-Platform",
     "logo": "white-whale.png",
     "socials": [
       {
@@ -1147,7 +1147,7 @@
     "slug": "terran-one",
     "name": "Terran One",
     "website": "https://terran.one",
-    "github": "terran-one",
+    "github": "https://github.com/terran-one",
     "logo": "terran-one.png",
     "socials": [
       {
@@ -1235,7 +1235,7 @@
     "slug": "eris",
     "name": "Eris Protocol",
     "website": "https://erisprotocol.com",
-    "github": "erisprotocol",
+    "github": "https://github.com/erisprotocol",
     "logo": "eris.png",
     "socials": [
       {
@@ -1609,7 +1609,7 @@
     "slug": "scv",
     "name": "SCV Security",
     "website": "https://www.scv.services",
-    "github": "scv-security",
+    "github": "https://github.com/scv-security",
     "logo": "scv.png",
     "socials": [
       {
@@ -1631,7 +1631,7 @@
     "slug": "obi",
     "name": "Obi",
     "website": "https://obi.money",
-    "github": "obi-wallet",
+    "github": "https://github.com/obi-wallet",
     "logo": "obi.png",
     "socials": [
       {
@@ -1675,7 +1675,7 @@
     "slug": "osmosis",
     "name": "Osmosis Labs",
     "website": "https://osmosis.zone",
-    "github": "osmosis-labs",
+    "github": "https://github.com/osmosis-labs",
     "logo": "osmosis.png",
     "socials": [
       {
@@ -1697,7 +1697,7 @@
     "slug": "local",
     "name": "Local",
     "website": "https://localmoney.io",
-    "github": "local-money",
+    "github": "https://github.com/local-money",
     "logo": "local.png",
     "socials": [
       {
@@ -1719,7 +1719,7 @@
     "slug": "polygon",
     "name": "Polygon",
     "website": "https://polygon.technology",
-    "github": "maticnetwork",
+    "github": "https://github.com/maticnetwork",
     "logo": "polygon.png",
     "socials": [
       {
@@ -1741,7 +1741,7 @@
     "slug": "frax",
     "name": "Frax",
     "website": "https://frax.finance",
-    "github": "fraxfinance",
+    "github": "https://github.com/fraxfinance",
     "logo": "frax.png",
     "socials": [
       {
@@ -1785,7 +1785,7 @@
     "slug": "cosmos-hub",
     "name": "Cosmos Hub",
     "website": "https://cosmos.network",
-    "github": "cosmos",
+    "github": "https://github.com/cosmos",
     "logo": "cosmos-hub.png",
     "socials": [
       {
@@ -1807,7 +1807,7 @@
     "slug": "uniswap",
     "name": "Uniswap",
     "website": "https://uniswap.org",
-    "github": "uniswap",
+    "github": "https://github.com/uniswap",
     "logo": "uniswap.png",
     "socials": [
       {
@@ -1829,7 +1829,7 @@
     "slug": "juno",
     "name": "Juno",
     "website": "https://www.junonetwork.io/",
-    "github": "cosmoscontracts",
+    "github": "https://github.com/cosmoscontracts",
     "logo": "juno.png",
     "socials": [
       {
@@ -1851,7 +1851,7 @@
     "slug": "ethereum",
     "name": "Ethereum",
     "website": "https://ethereum.org/en/",
-    "github": "ethereum",
+    "github": "https://github.com/ethereum",
     "logo": "ethereum.png",
     "socials": [
       {
@@ -1873,7 +1873,7 @@
     "slug": "secret",
     "name": "Secret",
     "website": "https://scrt.network",
-    "github": "secretfoundation",
+    "github": "https://github.com/secretfoundation",
     "logo": "secret.png",
     "socials": [
       {
@@ -1895,7 +1895,7 @@
     "slug": "crescent",
     "name": "Crescent",
     "website": "https://crescent.network",
-    "github": "crescent-network",
+    "github": "https://github.com/crescent-network",
     "logo": "crescent.png",
     "socials": [
       {
@@ -1939,7 +1939,7 @@
     "slug": "chainlink",
     "name": "Chainlink",
     "website": "https://chainlink",
-    "github": "smartcontractkit",
+    "github": "https://github.com/smartcontractkit",
     "logo": "chainlink.png",
     "socials": [
       {
@@ -2027,7 +2027,7 @@
     "slug": "makerdao",
     "name": "Maker",
     "website": "https://makerdao.com",
-    "github": "makerdao",
+    "github": "https://github.com/makerdao",
     "logo": "makerdao.png",
     "socials": [
       {
@@ -2049,7 +2049,7 @@
     "slug": "avalanche",
     "name": "Avalanche",
     "website": "https://avax.network",
-    "github": "ava-labs",
+    "github": "https://github.com/ava-labs",
     "logo": "avalanche.png",
     "socials": [
       {
@@ -2071,7 +2071,7 @@
     "slug": "aave",
     "name": "Aave",
     "website": "https://aave.com",
-    "github": "aave",
+    "github": "https://github.com/aave",
     "logo": "aave.png",
     "socials": [
       {
@@ -2115,7 +2115,7 @@
     "slug": "kujira",
     "name": "Kujira",
     "website": "https://kujira.app",
-    "github": "team-kujira",
+    "github": "https://github.com/team-kujira",
     "logo": "kujira.png",
     "socials": [
       {
@@ -2137,7 +2137,7 @@
     "slug": "mirror",
     "name": "Mirror",
     "website": "https://mirrorprotocol.app",
-    "github": "mirror-protocol",
+    "github": "https://github.com/mirror-protocol",
     "logo": "mirror.png",
     "socials": [
       {
@@ -2181,7 +2181,7 @@
     "slug": "solana",
     "name": "Solana",
     "website": "https://solana.com",
-    "github": "solana-labs",
+    "github": "https://github.com/solana-labs",
     "logo": "solana.png",
     "socials": [
       {
@@ -2203,7 +2203,7 @@
     "slug": "bitcoin",
     "name": "Bitcoin",
     "website": "https:/bitcoin.org",
-    "github": "bitcoin",
+    "github": "https://github.com/bitcoin",
     "logo": "bitcoin.png",
     "socials": [
       {
@@ -2225,7 +2225,7 @@
     "slug": "icns",
     "name": "Interchain Name Service (ICNS)",
     "website": "https:/icns.xyz",
-    "github": "icns-xyz",
+    "github": "https://github.com/icns-xyz",
     "logo": "icns.png",
     "socials": [
       {
@@ -2247,7 +2247,7 @@
     "slug": "kava",
     "name": "Kava Network",
     "website": "https:/kava.io",
-    "github": "kava-labs",
+    "github": "https://github.com/kava-labs",
     "logo": "kava.png",
     "socials": [
       {
@@ -2269,7 +2269,7 @@
     "slug": "emoney",
     "name": "e-Money",
     "website": "https:/e-money.com",
-    "github": "e-money",
+    "github": "https://github.com/e-money",
     "logo": "e-money.png",
     "socials": [
       {
@@ -2291,7 +2291,7 @@
     "slug": "persistence",
     "name": "Persistence",
     "website": "https://persistence.one",
-    "github": "persistenceOne",
+    "github": "https://github.com/persistenceOne",
     "logo": "persistence.png",
     "socials": [
       {
@@ -2313,7 +2313,7 @@
     "slug": "chihuahua",
     "name": "Chihuahua",
     "website": "https://chihuahua.wtf",
-    "github": "chihuahuachain",
+    "github": "https://github.com/chihuahuachain",
     "logo": "chihuahua.png",
     "socials": [
       {
@@ -2357,7 +2357,7 @@
     "slug": "bitcanna",
     "name": "Bitcanna",
     "website": "https://bitcanna.io",
-    "github": "BitCannaGlobal",
+    "github": "https://github.com/BitCannaGlobal",
     "logo": "bitcanna.png",
     "socials": [
       {
@@ -2379,7 +2379,7 @@
     "slug": "reflexer",
     "name": "Reflexer",
     "website": "https://reflexer.finance",
-    "github": "reflexer-labs",
+    "github": "https://github.com/reflexer-labs",
     "logo": "reflexer.png",
     "socials": [
       {
@@ -2445,7 +2445,7 @@
     "slug": "junoswap",
     "name": "Junoswap",
     "website": "https://junoswap.com",
-    "github": "cosmoscontracts",
+    "github": "https://github.com/cosmoscontracts",
     "logo": "junoswap.png",
     "socials": [
       {
@@ -2511,7 +2511,7 @@
     "slug": "bitsong",
     "name": "BitSong",
     "website": "https://bitsong.io",
-    "github": "BitSongOfficial",
+    "github": "https://github.com/BitSongOfficial",
     "logo": "bitsong.png",
     "socials": [
       {
@@ -2533,7 +2533,7 @@
     "slug": "band",
     "name": "Band Protocol",
     "website": "https://bandprotocol.com",
-    "github": "bandprotocol",
+    "github": "https://github.com/bandprotocol",
     "logo": "band.png",
     "socials": [
       {
@@ -2577,7 +2577,7 @@
     "slug": "gravity",
     "name": "Gravity Bridge",
     "website": "https://gravitybridge.net",
-    "github": "gravity-bridge",
+    "github": "https://github.com/gravity-bridge",
     "logo": "gravity.png",
     "socials": [
       {
@@ -2599,7 +2599,7 @@
     "slug": "polkadot",
     "name": "Polkadot",
     "website": "https://polkadot.network",
-    "github": "paritytech",
+    "github": "https://github.com/paritytech",
     "logo": "polkadot.png",
     "socials": [
       {
@@ -2621,7 +2621,7 @@
     "slug": "stride",
     "name": "Stride",
     "website": "https://stride.zone",
-    "github": "Stride-Labs",
+    "github": "https://github.com/Stride-Labs",
     "logo": "stride.png",
     "socials": [
       {
@@ -2643,7 +2643,7 @@
     "slug": "comdex",
     "name": "Comdex",
     "website": "https://comdex.one",
-    "github": "comdex-official",
+    "github": "https://github.com/comdex-official",
     "logo": "comdex.png",
     "socials": [
       {
@@ -2665,7 +2665,7 @@
     "slug": "regen",
     "name": "Regen Network",
     "website": "https://regen.network",
-    "github": "regen-network",
+    "github": "https://github.com/regen-network",
     "logo": "regen.png",
     "socials": [
       {
@@ -2687,7 +2687,7 @@
     "slug": "regen",
     "name": "Regen Network",
     "website": "https://regen.network",
-    "github": "regen-network",
+    "github": "https://github.com/regen-network",
     "logo": "regen.png",
     "socials": [
       {
@@ -2709,7 +2709,7 @@
     "slug": "stargaze",
     "name": "Stargaze",
     "website": "https://stargaze.zone",
-    "github": "public-awesome",
+    "github": "https://github.com/public-awesome",
     "logo": "stargaze.png",
     "socials": [
       {
@@ -2731,7 +2731,7 @@
     "slug": "akash",
     "name": "Akash Network",
     "website": "https://akash.network",
-    "github": "ovrclk",
+    "github": "https://github.com/ovrclk",
     "logo": "akash.png",
     "socials": [
       {
@@ -2753,7 +2753,7 @@
     "slug": "umee",
     "name": "Umee",
     "website": "https://umee.cc",
-    "github": "umee-network",
+    "github": "https://github.com/umee-network",
     "logo": "umee.png",
     "socials": [
       {
@@ -2775,7 +2775,7 @@
     "slug": "sommelier",
     "name": "Sommelier",
     "website": "https://sommelier.finance",
-    "github": "peggyjv",
+    "github": "https://github.com/peggyjv",
     "logo": "sommelier.png",
     "socials": [
       {
@@ -2797,7 +2797,7 @@
     "slug": "evmos",
     "name": "Evmos",
     "website": "https://evmos.org",
-    "github": "evmos",
+    "github": "https://github.com/evmos",
     "logo": "evmos.png",
     "socials": [
       {
@@ -2819,7 +2819,7 @@
     "slug": "injective",
     "name": "Injective",
     "website": "https://injective.com",
-    "github": "injectivelabs",
+    "github": "https://github.com/injectivelabs",
     "logo": "injective.png",
     "socials": [
       {
@@ -2863,7 +2863,7 @@
     "slug": "moonbeam",
     "name": "Moonbeam Network",
     "website": "https://moonbeam.network",
-    "github": "PureStake",
+    "github": "https://github.com/PureStake",
     "logo": "moonbeam.png",
     "socials": [
       {
@@ -2885,7 +2885,7 @@
     "slug": "iris",
     "name": "IRIS Network",
     "website": "https://irisnet.org",
-    "github": "irisnet",
+    "github": "https://github.com/irisnet",
     "logo": "iris.png",
     "socials": [
       {
@@ -2929,7 +2929,7 @@
     "slug": "sentinel",
     "name": "Sentinel",
     "website": "https://sentinel.co",
-    "github": "sentinel-official",
+    "github": "https://github.com/sentinel-official",
     "logo": "sentinel.png",
     "socials": [
       {
@@ -2973,7 +2973,7 @@
     "slug": "orai",
     "name": "Oraichain",
     "website": "https://orai.io",
-    "github": "oraichain",
+    "github": "https://github.com/oraichain",
     "logo": "orai.png",
     "socials": [
       {
@@ -3061,7 +3061,7 @@
     "slug": "odin",
     "name": "Odin",
     "website": "https://odinprotocol.io",
-    "github": "odin-protocol",
+    "github": "https://github.com/odin-protocol",
     "logo": "odin.png",
     "socials": [
       {
@@ -3083,7 +3083,7 @@
     "slug": "desmos",
     "name": "Desmos",
     "website": "https://desmos.network",
-    "github": "odin-protocol",
+    "github": "https://github.com/odin-protocol",
     "logo": "desmos.png",
     "socials": [
       {
@@ -3127,7 +3127,7 @@
     "slug": "sienna",
     "name": "Sienna",
     "website": "https://sienna.network",
-    "github": "siennanetwork",
+    "github": "https://github.com/siennanetwork",
     "logo": "sienna.png",
     "socials": [
       {
