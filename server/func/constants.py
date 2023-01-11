@@ -14,6 +14,13 @@ HIVE_DICT = {
     "pisco-1": "https://pisco-hive.terra.dev",
 }
 
+GRAPHQL_DICT = {
+    "osmosis": {
+        "osmo-test-4": "https://osmosis-testnet-graphql.alleslabs.dev/v1/graphql",
+    },
+    "terra2": {"pisco-1": "https://terra-testnet-graphql.alleslabs.dev/v1/graphql"},
+}
+
 SCANWORKS_URL = (
     "https://raw.githubusercontent.com/teamscanworks/cw-contracts-registry/main/"
 )
