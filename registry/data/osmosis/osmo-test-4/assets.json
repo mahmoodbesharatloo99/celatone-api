@@ -10,5 +10,17 @@
     "slugs": ["osmosis"],
     "coingecko": "",
     "coinmarketcap": ""
+  },
+  {
+    "name": "Ion",
+    "symbol": "ION",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.svg",
+    "description": "",
+    "type": "native",
+    "id": "uion",
+    "precision": 6,
+    "slugs": ["ion-dao"],
+    "coingecko": "",
+    "coinmarketcap": ""
   }
 ]

@@ -12,16 +12,6 @@ def load_project_data(chain, network):
 
 def load_project(entity, accounts, assets, codes, contracts):
     entity_dict = {}
-    relevant_accounts = [
-        account for account in accounts if account["slug"] == entity["slug"]
-    ]
-    relevant_assets = [asset for asset in assets if entity["slug"] in asset["slugs"]]
-    relevant_codes = [code for code in codes if code["slug"] == entity["slug"]]
-    relevant_contracts = [
-        contract for contract in contracts if contract["slug"] == entity["slug"]
-    ]
-    if len(relevant_codes) == 0 and len(relevant_contracts) == 0:
-        return None
     entity_dict["slug"] = entity["slug"]
     entity_dict["details"] = {
         "name": entity["name"],
@@ -31,6 +21,20 @@ def load_project(entity, accounts, assets, codes, contracts):
         "logo": f"https://celatone-api.alleslabs.dev/images/entities/{entity['slug']}",
         "socials": entity["socials"],
     }
+    # only keep accounts for this entity
+    relevant_accounts = [
+        account for account in accounts if account["slug"] == entity["slug"]
+    ]
+    # only keep assets for this entity
+    relevant_assets = [asset for asset in assets if entity["slug"] in asset["slugs"]]
+    # only keep codes for this entity
+    relevant_codes = [code for code in codes if code["slug"] == entity["slug"]]
+    # only keep contracts for this entity
+    relevant_contracts = [
+        contract for contract in contracts if contract["slug"] == entity["slug"]
+    ]
+    if len(relevant_codes) == 0 and len(relevant_contracts) == 0:
+        return None
     entity_dict["accounts"] = relevant_accounts
     entity_dict["assets"] = relevant_assets
     entity_dict["codes"] = relevant_codes
