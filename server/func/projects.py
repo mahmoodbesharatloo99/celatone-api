@@ -66,7 +66,3 @@ def get_project(chain, network, slug):
     if project is None:
         return []
     return project
-
-
-if __name__ == "__main__":
-    get_projects("osmosis", "osmosis-1")
