@@ -43,7 +43,7 @@ def load_project(entity, accounts, assets, codes, contracts):
 
 
 def load_projects(chain, network):
-    entities = json.load(open(f"./registry/data/entities.json"))
+    entities = json.load(open(f"../registry/data/entities.json"))
     accounts, assets, codes, contracts = load_project_data(chain, network)
     projects = []
     for entity in entities:
