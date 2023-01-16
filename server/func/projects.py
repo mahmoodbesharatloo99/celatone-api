@@ -43,7 +43,7 @@ def load_project(entity, accounts, assets, codes, contracts):
 
 
 def load_projects(chain, network):
-    entities = json.load(open(f"../registry/data/entities.json"))
+    entities = json.load(open(f"./registry/data/entities.json"))
     accounts, assets, codes, contracts = load_project_data(chain, network)
     projects = []
     for entity in entities:
@@ -66,3 +66,7 @@ def get_project(chain, network, slug):
     if project is None:
         return []
     return project
+
+
+if __name__ == "__main__":
+    get_projects("osmosis", "osmosis-1")
