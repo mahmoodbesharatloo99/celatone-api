@@ -225,7 +225,7 @@
     "website": "https://wormhole.com",
     "github": "https://github.com/wormhole-foundation",
     "logo": "wormhole.png",
-    "social": [
+    "socials": [
       {
         "name": "twitter",
         "url": "https://twitter.com/wormholecrypto"
@@ -2230,7 +2230,7 @@
     "socials": [
       {
         "name": "twitter",
-        "url": "https://twitter.com/Bitcoin"
+        "url": "https://twitter.com/icns_xyz"
       },
       {
         "name": "telegram",
