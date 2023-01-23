@@ -28,5 +28,23 @@
     "name": "IBC Rate Limiting",
     "id": 6,
     "description": "Contract code for rate limiting IBC transactions"
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Name NFT",
+    "id": 7,
+    "description": "Interchain Nameservice NFT contract code"
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Resolver",
+    "id": 8,
+    "description": "Interchain Nameservice resolver contract code"
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Registrar",
+    "id": 9,
+    "description": "Interchain Nameservice registar contract code"
   }
 ]
