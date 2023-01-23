@@ -27,24 +27,24 @@
     "slug": "osmosis",
     "name": "IBC Rate Limiting",
     "id": 6,
-    "description": "Contract code for rate limiting IBC transactions"
+    "description": "IBC Rate Limiting code"
   },
   {
     "slug": "icns",
     "name": "ICNS Name NFT",
     "id": 7,
-    "description": "Interchain Nameservice NFT contract code"
+    "description": "Interchain Nameservice NFT code"
   },
   {
     "slug": "icns",
     "name": "ICNS Resolver",
     "id": 8,
-    "description": "Interchain Nameservice resolver contract code"
+    "description": "Interchain Nameservice resolver code"
   },
   {
     "slug": "icns",
     "name": "ICNS Registrar",
     "id": 9,
-    "description": "Interchain Nameservice registar contract code"
+    "description": "Interchain Nameservice registar code"
   }
 ]
