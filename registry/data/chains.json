@@ -1,0 +1,46 @@
+{
+  "name": "Osmosis",
+  "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+  "documentation": "https://docs.osmosis.zone",
+  "github": "https://github.com/osmosis-labs",
+  "networks": {
+    "testnet": {},
+    "mainnet": {
+      "chainId": "osmosis-1",
+      "chainName": "Osmosis Mainnet",
+      "bech32Prefix": "osmo",
+      "slip44": "330",
+      "publicLCD": "https://lcd.osmosis.zone",
+      "lcdSwagger": "https://lcd.osmosis.zone/swagger/",
+      "lcds": [
+        {
+          "provider": "All That Node",
+          "url": "https://osmosis-mainnet-rpc.allthatnode.com:1317",
+          "archive": false
+        },
+        {
+          "provider": "All That Node",
+          "url": "https://osmosis-mainnet-archive.allthatnode.com:1317",
+          "archive": true
+        }
+      ],
+      "publicRPC": "https://rpc.osmosis.zone",
+      "rpcSwagger": "https://rpc-docs.osmosis.zone/",
+      "rpcs": [
+        {
+          "provider": "All That Node",
+          "url": "https://osmosis-mainnet-rpc.allthatnode.com:26657",
+          "archive": false
+        },
+        {
+          "provider": "All That Node",
+          "url": "https://osmosis-mainnet-archive.allthatnode.com:26657",
+          "archive": true
+        }
+      ],
+      "publicGRPCEndpoint": "grpc.osmosis.zone:9090",
+      "publicGRPCGateway": "https://rpc.osmosis.zone:443",
+      "faucets": []
+    }
+  }
+}
