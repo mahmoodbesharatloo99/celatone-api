@@ -1,5 +1,7 @@
 {
   "name": "Osmosis",
+  "website": "https://osmosis/zone",
+  "celatone": "https://osmosis.celat.one",
   "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
   "documentation": "https://docs.osmosis.zone",
   "github": "https://github.com/osmosis-labs",
