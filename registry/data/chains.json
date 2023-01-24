@@ -1,156 +1,159 @@
-[
-  {
+{
+  "osmosis": {
     "name": "Osmosis",
     "website": "https://osmosis.zone",
-    "celatone": "https://osmosis.celat.one",
+
     "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
     "documentation": "https://docs.osmosis.zone",
     "github": "https://github.com/osmosis-labs",
     "networks": [
       {
-        "testnet": {
-          "chainId": "osmo-test-4",
-          "chainName": "Osmosis Testnet",
-          "bech32Prefix": "osmo",
-          "slip44": "330",
-          "publicLCD": "https://lcd-test.osmosis.zone",
-          "lcdSwagger": "https://lcd-test.osmosis.zone/swagger/",
-          "publicRPC": "https://rpc.osmosis.zone:443",
-          "rpcSwagger": "https://rpc-docs.osmosis.zone/",
-          "publicGRPC": "https://grpc-test.osmosis.zone:443",
-          "lcds": [
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-testnet-rpc.allthatnode.com:1317",
-              "archive": false
-            },
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-testnet-archive.allthatnode.com:1317",
-              "archive": true
-            }
-          ],
-          "rpcs": [
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-testnet-rpc.allthatnode.com:26657",
-              "archive": false
-            },
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-testnet-archive.allthatnode.com:26657",
-              "archive": true
-            }
-          ],
-          "faucets": []
-        },
-        "mainnet": {
-          "chainId": "osmosis-1",
-          "chainName": "Osmosis Mainnet",
-          "bech32Prefix": "osmo",
-          "slip44": "330",
-          "publicLCD": "https://lcd.osmosis.zone",
-          "lcdSwagger": "https://lcd.osmosis.zone/swagger/",
-          "publicRPC": "https://rpc.osmosis.zone",
-          "rpcSwagger": "https://rpc-docs.osmosis.zone/",
-          "publicGRPC": "https://grpc.osmosis.zone:9090",
-          "lcds": [
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-mainnet-rpc.allthatnode.com:1317",
-              "archive": false
-            },
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-mainnet-archive.allthatnode.com:1317",
-              "archive": true
-            }
-          ],
-          "rpcs": [
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-mainnet-rpc.allthatnode.com:26657",
-              "archive": false
-            },
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://osmosis-mainnet-archive.allthatnode.com:26657",
-              "archive": true
-            }
-          ],
-          "faucets": [
-            {
-              "provider": "Osmosis",
-              "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
-              "url": "https://faucet.osmosis.zone/"
-            },
-            {
-              "provider": "All That Node",
-              "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
-              "url": "https://www.allthatnode.com/faucet/osmosis.dsrv/"
-            },
-            {
-              "provider": "Stakely",
-              "logo": "https://pbs.twimg.com/profile_images/1612163541301092357/zhYotDeZ_400x400.jpg",
-              "url": "https://stakely.io/en/faucet/osmosis-osmo"
-            }
-          ]
-        }
+        "type": "testnet",
+        "celatone": "https://osmosis.celat.one/testnet",
+        "chainId": "osmo-test-4",
+        "chainName": "Osmosis Testnet",
+        "bech32Prefix": "osmo",
+        "slip44": "330",
+        "publicLCD": "https://lcd-test.osmosis.zone",
+        "lcdSwagger": "https://lcd-test.osmosis.zone/swagger/",
+        "publicRPC": "https://rpc.osmosis.zone:443",
+        "rpcSwagger": "https://rpc-docs.osmosis.zone/",
+        "publicGRPC": "https://grpc-test.osmosis.zone:443",
+        "lcds": [
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-testnet-rpc.allthatnode.com:1317",
+            "archive": false
+          },
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-testnet-archive.allthatnode.com:1317",
+            "archive": true
+          }
+        ],
+        "rpcs": [
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-testnet-rpc.allthatnode.com:26657",
+            "archive": false
+          },
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-testnet-archive.allthatnode.com:26657",
+            "archive": true
+          }
+        ],
+        "faucets": [
+          {
+            "provider": "Osmosis",
+            "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+            "url": "https://faucet.osmosis.zone/"
+          },
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://www.allthatnode.com/faucet/osmosis.dsrv/"
+          },
+          {
+            "provider": "Stakely",
+            "logo": "https://pbs.twimg.com/profile_images/1612163541301092357/zhYotDeZ_400x400.jpg",
+            "url": "https://stakely.io/en/faucet/osmosis-osmo"
+          }
+        ]
+      },
+      {
+        "type": "mainnet",
+        "celatone": "https://osmosis.celat.one/mainnet",
+        "chainId": "osmosis-1",
+        "chainName": "Osmosis Mainnet",
+        "bech32Prefix": "osmo",
+        "slip44": "330",
+        "publicLCD": "https://lcd.osmosis.zone",
+        "lcdSwagger": "https://lcd.osmosis.zone/swagger/",
+        "publicRPC": "https://rpc.osmosis.zone",
+        "rpcSwagger": "https://rpc-docs.osmosis.zone/",
+        "publicGRPC": "https://grpc.osmosis.zone:9090",
+        "lcds": [
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-mainnet-rpc.allthatnode.com:1317",
+            "archive": false
+          },
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-mainnet-archive.allthatnode.com:1317",
+            "archive": true
+          }
+        ],
+        "rpcs": [
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-mainnet-rpc.allthatnode.com:26657",
+            "archive": false
+          },
+          {
+            "provider": "All That Node",
+            "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
+            "url": "https://osmosis-mainnet-archive.allthatnode.com:26657",
+            "archive": true
+          }
+        ],
+        "faucets": []
       }
     ]
   },
-  {
+  "terra2": {
     "name": "Terra",
     "website": "https://terra.money",
-    "celatone": "https://terra.celat.one",
     "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
     "documentation": "https://docs.terra.money",
     "github": "https://github.com/terra.money",
     "networks": [
       {
-        "testnet": {
-          "chainId": "pisco-1",
-          "chainName": "Terra Testnet",
-          "bech32Prefix": "terra",
-          "slip44": "118",
-          "publicLCD": "https://pisco-lcd.terra.dev",
-          "lcdSwagger": "https://pisco-lcd.terra.dev/swagger/",
-          "publicRPC": null,
-          "rpcSwagger": null,
-          "publicGRPC": null,
-          "lcds": [],
-          "rpcs": [],
-          "faucets": []
-        },
-        "mainnet": {
-          "chainId": "phoenix-1",
-          "chainName": "Terra Mainnet",
-          "bech32Prefix": "terra",
-          "slip44": "118",
-          "publicLCD": "https://phoenix-lcd.terra.dev",
-          "lcdSwagger": "https://phoenix-lcd.terra.dev/swagger/",
-          "publicRPC": null,
-          "rpcSwagger": null,
-          "publicGRPC": null,
-          "lcds": [],
-          "rpcs": [],
-          "faucets": [
-            {
-              "provider": "Terra",
-              "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
-              "url": "https://faucet.terra.money/"
-            }
-          ]
-        }
+        "type": "testnet",
+        "celatone": "https://terra.celat.one/testnet",
+        "chainId": "pisco-1",
+        "chainName": "Terra Testnet",
+        "bech32Prefix": "terra",
+        "slip44": "118",
+        "publicLCD": "https://pisco-lcd.terra.dev",
+        "lcdSwagger": "https://pisco-lcd.terra.dev/swagger/",
+        "publicRPC": null,
+        "rpcSwagger": null,
+        "publicGRPC": null,
+        "lcds": [],
+        "rpcs": [],
+        "faucets": []
+      },
+      {
+        "type": "mainnet",
+        "celatone": "https://terra.celat.one/mainnet",
+        "chainId": "phoenix-1",
+        "chainName": "Terra Mainnet",
+        "bech32Prefix": "terra",
+        "slip44": "118",
+        "publicLCD": "https://phoenix-lcd.terra.dev",
+        "lcdSwagger": "https://phoenix-lcd.terra.dev/swagger/",
+        "publicRPC": null,
+        "rpcSwagger": null,
+        "publicGRPC": null,
+        "lcds": [],
+        "rpcs": [],
+        "faucets": [
+          {
+            "provider": "Terra",
+            "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+            "url": "https://faucet.terra.money/"
+          }
+        ]
       }
     ]
   }
-]
+}
