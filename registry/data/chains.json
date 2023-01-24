@@ -1,7 +1,6 @@
 {
   "name": "Osmosis",
   "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
-  "website": "https://osmosis.zone",
   "documentation": "https://docs.osmosis.zone",
   "github": "https://github.com/osmosis-labs",
   "networks": {
