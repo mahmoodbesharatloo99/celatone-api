@@ -38,7 +38,7 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
 if __name__ == "__main__":
     print(
         get_contract_instantiator_admin(
-            "terra2",
+            "terra",
             "pisco-1",
             [
                 "terra1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrs0k5j44",

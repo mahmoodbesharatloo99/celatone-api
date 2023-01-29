@@ -10,7 +10,7 @@ def get_balances(chain, network, account_address):
             network,
             account_address,
         )
-    elif chain == "terra2":
+    elif chain == "terra":
         return helper.get_native_balances(
             f"{constants.LCD_DICT[chain][network]}",
             chain,
