@@ -7,7 +7,7 @@
     "description": "",
     "type": "native",
     "id": "uluna",
-    "precision": "6",
+    "precision": 6,
     "coingecko": "https://www.coingecko.com/en/coins/terra",
     "coinmarketcap": "https://coinmarketcap.com/currencies/terra-luna-v2/"
   }
