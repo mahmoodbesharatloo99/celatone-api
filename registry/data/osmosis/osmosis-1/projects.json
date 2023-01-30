@@ -23,6 +23,44 @@
     ]
   },
   {
+    "slug": "icns",
+    "codes": [
+      {
+        "name": "ICNS Name NFT",
+        "id": "6",
+        "description": "Interchain Nameservice NFT contract code"
+      },
+      {
+        "name": "ICNS Resolver",
+        "id": "6",
+        "description": "Interchain Nameservice resolver contract code"
+      },
+      {
+        "name": "ICNS Registrar",
+        "id": "6",
+        "description": "Interchain Nameservice registrar contract code"
+      }
+    ],
+    "contracts": [
+      {
+        "name": "ICNS Name NFT",
+        "address": "osmo1mypljhatv0prfr9cjzzvamxdf2ctg34xkt50sudxads9zhqnyneqjuvy26",
+        "description": "Interchain Nameservice NFT contract"
+      },
+      {
+        "name": "ICNS Resolver",
+        "address": "osmo1xk0s8xgktn9x5vwcgtjdxqzadg88fgn33p8u9cnpdxwemvxscvast52cdd",
+        "description": "Interchain Nameservice resolver contract"
+      },
+      {
+        "name": "ICNS Registrar",
+        "address": "osmo1llh07xn7pcst3jqm0xpsucf90lzugfskkkhk8a3u2yznqmse4l5smydwpw",
+        "description": "Interchain Nameservice registar contract"
+      }
+    ],
+    "accounts": []
+  },
+  {
     "slug": "ion-dao",
     "codes": [
       {
@@ -70,44 +108,6 @@
         "name": "IBC Rate Limiting",
         "address": "osmo17r7qdw2zk6jyw62cvwm6flmhtj9q7zd26r8zc6sqyf0pnaq46cfss8hgxg",
         "description": "Osmosis IBC rate limiting contract"
-      }
-    ],
-    "accounts": []
-  },
-  {
-    "slug": "icns",
-    "codes": [
-      {
-        "name": "ICNS Name NFT",
-        "id": "6",
-        "description": "Interchain Nameservice NFT contract code"
-      },
-      {
-        "name": "ICNS Resolver",
-        "id": "6",
-        "description": "Interchain Nameservice resolver contract code"
-      },
-      {
-        "name": "ICNS Registrar",
-        "id": "6",
-        "description": "Interchain Nameservice registrar contract code"
-      }
-    ],
-    "contracts": [
-      {
-        "name": "ICNS Name NFT",
-        "address": "osmo1mypljhatv0prfr9cjzzvamxdf2ctg34xkt50sudxads9zhqnyneqjuvy26",
-        "description": "Interchain Nameservice NFT contract"
-      },
-      {
-        "name": "ICNS Resolver",
-        "address": "osmo1xk0s8xgktn9x5vwcgtjdxqzadg88fgn33p8u9cnpdxwemvxscvast52cdd",
-        "description": "Interchain Nameservice resolver contract"
-      },
-      {
-        "name": "ICNS Registrar",
-        "address": "osmo1llh07xn7pcst3jqm0xpsucf90lzugfskkkhk8a3u2yznqmse4l5smydwpw",
-        "description": "Interchain Nameservice registar contract"
       }
     ],
     "accounts": []

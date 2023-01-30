@@ -22,5 +22,101 @@
     "slugs": ["ion-dao"],
     "coingecko": "",
     "coinmarketcap": ""
+  },
+  {
+    "name": "Mars",
+    "symbol": "MARS",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/testnets/marstestnet/images/mars.svg",
+    "description": "The native token of Mars Protocol",
+    "type": "native",
+    "id": "ibc/ACA4C8A815A053CC027DB90D15915ADA31939FA331CE745862CDD00A2904FA17",
+    "precision": 6,
+    "slugs": ["mars"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  },
+  {
+    "name": "USD Coin",
+    "symbol": "aUSDC",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
+    "description": "Circle's stablecoin on Axelar",
+    "type": "native",
+    "id": "ibc/FF3065989E34457F342D4EFB8692406D49D4E2B5C70F725F127862E22CE6BDCD",
+    "precision": 6,
+    "slugs": ["circle", "axelar"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  },
+  {
+    "name": "Wrapped AVAX",
+    "symbol": "wAVAX",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/avalanche/images/avax.png",
+    "description": "Wrapped AVAX on Axelar.",
+    "type": "native",
+    "id": "ibc/7186C4B1A0596A1AB34C201E27D659B4A9837B46A328BCE5C0E452CD7146BC8F",
+    "precision": 18,
+    "slugs": ["avalanche", "axelar"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  },
+  {
+    "name": "Wrapped BNB",
+    "symbol": "wBNB",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/binancesmartchain/images/wbnb.svg",
+    "description": "Wrapped BNB on Axelar",
+    "type": "native",
+    "id": "ibc/D38FD4C586C397DDAAB715C654DAEE3C3C40462CD410254AC7576208E947605B",
+    "precision": 18,
+    "slugs": ["binance", "axelar"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  },
+  {
+    "name": "Wrapped Ether",
+    "symbol": "wETH",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/eth-white.png",
+    "description": "Wrapped Ether on Axelar",
+    "type": "native",
+    "id": "ibc/0BE7C3DAC50BB1C34565C76F01944DCC79B50CF359B63149B9E04E2A6736A6E6",
+    "precision": 18,
+    "slugs": ["ethereum", "axelar"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  },
+  {
+    "name": "Wrapped FTM",
+    "symbol": "wFTM",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/fantom/images/ftm.png",
+    "description": "Wrapped FTM on Axelar.",
+    "type": "native",
+    "id": "ibc/F9E624EB89ABEE4CB1EC04D7941F613BD8383EE7DE323589A82066D0345EF6EB",
+    "precision": 18,
+    "slugs": ["fantom", "axelar"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  },
+  {
+    "name": "Wrapped Moonbeam",
+    "symbol": "wGLMR",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/moonbeam/images/glmr.svg",
+    "description": "Wrapped Moonbeam on Axelar",
+    "type": "native",
+    "id": "ibc/3A8B6E50B8050FC8CD704CD48C7922EA221B5FDA672517E243DDFF603FF896ED",
+    "precision": 18,
+    "slugs": ["moonbeam", "axelar"],
+    "coingecko": "",
+    "coinmarketcap": ""
+  },
+  {
+    "name": "Wrapped Matic",
+    "symbol": "wMATIC",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/polygon/images/matic-purple.png",
+    "description": "Wrapped Matic on Axelar",
+    "type": "native",
+    "id": "ibc/16F3EB18413FD15154B02F9929473A3C0A23902BF8044157E9E5E0FBEB24FCEE",
+    "precision": 18,
+    "slugs": ["polygon", "axelar"],
+    "coingecko": "",
+    "coinmarketcap": ""
   }
 ]

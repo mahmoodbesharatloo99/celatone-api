@@ -3166,5 +3166,27 @@
       }
     ],
     "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Protocol",
+    "website": "https://marsprotocol.io",
+    "github": "https://github.com/mars-protocol",
+    "logo": "terra-classic.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.marsprotocol.io"
+      },
+      {
+        "name": "telegram",
+        "url": "https://telegram.marsprotocol.io"
+      },
+      {
+        "name": "discord",
+        "url": "http://discord.marsprotocol.io"
+      }
+    ],
+    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
   }
 ]
