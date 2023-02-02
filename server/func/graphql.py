@@ -46,6 +46,7 @@ def get_graphql_code_details(chain, network, code_ids):
           }}
           contract_instantiated
           access_config_permission
+          access_config_addresses
         }}
         """
     query += "}"
@@ -61,6 +62,7 @@ def get_graphql_code_details(chain, network, code_ids):
                 "creator": data["account"]["address"],
                 "contract_instantiated": data["contract_instantiated"],
                 "access_config_permission": data["access_config_permission"],
+                "access_config_addresses": data["access_config_addresses"],
             }
         )
     return code_data

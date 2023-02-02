@@ -26,6 +26,9 @@ def load_codes(chain, network):
             code["access_config_permission"] = code_graphql_detail[
                 "access_config_permission"
             ]
+            code["access_config_addresses"] = code_graphql_detail[
+                "access_config_addresses"
+            ]
             if code["id"] in verification_details:
                 code["verified"] = True
                 code["verification_details"] = verification_details[code["id"]]
