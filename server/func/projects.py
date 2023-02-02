@@ -1,12 +1,17 @@
 import json
 from func.registry import load_and_check_registry_data
 
+from func.accounts import get_accounts
+from func.assets import get_assets
+from func.codes import get_codes
+from func.contracts import get_contracts
+
 
 def load_project_data(chain, network):
-    accounts = load_and_check_registry_data(chain, network, "accounts")
-    assets = load_and_check_registry_data(chain, network, "assets")
-    codes = load_and_check_registry_data(chain, network, "codes")
-    contracts = load_and_check_registry_data(chain, network, "contracts")
+    accounts = get_accounts(chain, network)
+    assets = get_assets(chain, network)
+    codes = get_codes(chain, network)
+    contracts = get_contracts(chain, network)
     return accounts, assets, codes, contracts
 
 
