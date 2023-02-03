@@ -16,7 +16,7 @@ def get_contracts(chain, network):
 
 
 def get_contract(chain, network, contract_address):
-    contracts = load_and_check_registry_data(chain, network, "contracts")
+    contracts = get_contract(chain, network)
     contract = [
         contract for contract in contracts if contract["address"] == contract_address
     ][0]

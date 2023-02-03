@@ -7,7 +7,7 @@ def get_accounts(chain, network):
 
 
 def get_account(chain, network, account_address):
-    accounts = load_and_check_registry_data(chain, network, "accounts")
+    accounts = get_accounts(chain, network)
     account = [
         account for account in accounts if account["address"] == account_address
     ][0]

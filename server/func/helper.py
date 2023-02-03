@@ -1,7 +1,7 @@
 import requests
 
-import constants as constants
-import assets as assets
+import func.constants as constants
+import func.assets as assets
 
 
 def split(ls, n):
