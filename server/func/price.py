@@ -1,5 +1,5 @@
 import requests
-from constants import COINGECKO_API_KEY
+from func.constants import COINGECKO_API_KEY
 
 
 def get_prices(assets):
