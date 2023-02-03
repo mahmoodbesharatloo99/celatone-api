@@ -1,7 +1,7 @@
 import requests
 
-import func.constants as constants
-import func.assets as assets
+import constants as constants
+import assets as assets
 
 
 def split(ls, n):
@@ -59,7 +59,7 @@ def get_native_balances(endpoint, chain, network, account_address):
     balances = balances.json()
 
     # Get all supported assets for this chain and network
-    supported_assets = assets.get_asset_by_type(chain, network, "native")
+    supported_assets = assets.get_assets_by_type(chain, network, "native")
 
     if "balances" in balances:
         for balance in balances["balances"]:
@@ -78,6 +78,7 @@ def get_native_balances(endpoint, chain, network, account_address):
                         "amount": balance["amount"],
                         "precision": asset["precision"],
                         "type": "native",
+                        "price": asset["price"],
                     }
                 )
             # If it's not a supported asset, just return the balance with no extra info
