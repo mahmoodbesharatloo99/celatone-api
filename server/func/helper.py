@@ -78,7 +78,6 @@ def get_native_balances(endpoint, chain, network, account_address):
                         "amount": balance["amount"],
                         "precision": asset["precision"],
                         "type": "native",
-                        "price": asset["price"],
                     }
                 )
             # If it's not a supported asset, just return the balance with no extra info
