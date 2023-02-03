@@ -9,7 +9,10 @@ def get_prices(assets):
     for asset in assets:
         asset["price"] = 0
         if asset["coingecko"] != None:
-            asset["price"] = price_response[asset["coingecko"]]["usd"]
+            slug = asset["coingecko"]
+            price_data = price_response[slug]
+            price_usd = price_data["usd"]
+            asset["price"] = price_usd
     return assets
 
 
@@ -21,3 +24,22 @@ def get_price(asset):
         price_response = requests.get(url).json()
         asset["price"] = price_response[slug]["usd"]
     return asset
+
+
+if __name__ == "__main__":
+    get_prices(
+        [
+            {
+                "name": "Osmosis",
+                "symbol": "OSMO",
+                "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+                "description": "The native token of Osmosis",
+                "type": "native",
+                "id": "uosmo",
+                "precision": 6,
+                "slugs": ["osmosis"],
+                "coingecko": "osmosis",
+                "coinmarketcap": "",
+            }
+        ]
+    )
