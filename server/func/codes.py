@@ -22,16 +22,14 @@ def load_codes(chain, network):
                 detail for detail in graphql_details if detail["code_id"] == code["id"]
             ][0]
             code["creator"] = code_graphql_detail["creator"]
-            code["contract_instantiated"] = code_graphql_detail["contract_instantiated"]
-            code["access_config_permission"] = code_graphql_detail[
+            code["contracts"] = code_graphql_detail["contract_instantiated"]
+            code["instantiatePermission"] = code_graphql_detail[
                 "access_config_permission"
             ]
-            code["access_config_addresses"] = code_graphql_detail[
-                "access_config_addresses"
-            ]
+            code["permissionAddresses"] = code_graphql_detail["access_config_addresses"]
             if code["id"] in verification_details:
                 code["verified"] = True
-                code["verification_details"] = verification_details[code["id"]]
+                code["verificationDetails"] = verification_details[code["id"]]
             else:
                 code["verified"] = False
     return codes
