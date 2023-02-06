@@ -1,13 +1,13 @@
 [
   {
     "slug": "ion-dao",
-    "name": "Staking Governance",
+    "name": "ION Staking Governance",
     "address": "osmo1yg8930mj8pk288lmkjex0qz85mj8wgtns5uzwyn2hs25pwdnw42sf745wc",
     "description": "ION DAO governance staking contract"
   },
   {
     "slug": "ion-dao",
-    "name": "Governance",
+    "name": "ION Governance",
     "address": "osmo1k8re7jwz6rnnwrktnejdwkwnncte7ek7gt29gvnl3sdrg9mtnqkse6nmqm",
     "description": "ION DAO governance contract"
   },

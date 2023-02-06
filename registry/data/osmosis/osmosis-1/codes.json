@@ -1,25 +1,25 @@
 [
   {
     "slug": "apollodao",
-    "name": "Multisig",
+    "name": "ApolloDAO Fixed Multisig",
     "id": 1,
     "description": "ApolloDAO CW3 multisig code"
   },
   {
     "slug": "apollodao",
-    "name": "Liquid Staking",
+    "name": "ApolloDAO Liquid Staking",
     "id": 5,
     "description": "ApolloDAO liquid staking code"
   },
   {
     "slug": "ion-dao",
-    "name": "Governance Staking",
+    "name": "ION Governance Staking",
     "id": 2,
     "description": "ION DAO governance staking code"
   },
   {
     "slug": "ion-dao",
-    "name": "Governance",
+    "name": "ION Governance",
     "id": 3,
     "description": "ION DAO governance code"
   },

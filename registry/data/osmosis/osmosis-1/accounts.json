@@ -1,13 +1,13 @@
 [
   {
     "slug": "apollodao",
-    "name": "Deployer",
+    "name": "ApolloDAO Deployer",
     "address": "osmo1jxdhfvhedn3gv8fnmn4crzkevqfkm29me0pnht",
     "description": "Account owned by ApolloDAO used to deploy their CW3 multisig and liquid staking contracts."
   },
   {
     "slug": "ion-dao",
-    "name": "Deployer",
+    "name": "ION DAO Deployer",
     "address": "osmo14lr70k43wdry3fxl5ykkh630jhas2nsp8re0e4",
     "description": "Account owned by ION DAO contributors used to deploy their governance and governance staking contracts."
   }
