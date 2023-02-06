@@ -46,5 +46,11 @@
     "name": "ICNS Registrar",
     "id": 9,
     "description": "Interchain Nameservice registar code"
+  },
+  {
+    "slug": "osmosis",
+    "name": "SwapRouter",
+    "id": 10,
+    "description": "SwapRouter code"
   }
 ]
