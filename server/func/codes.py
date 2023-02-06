@@ -42,7 +42,6 @@ def load_codes(chain, network):
             ][0]
             code["uploader"] = code_graphql_detail["creator"]
             code["contracts"] = code_graphql_detail["contract_instantiated"]
-            code["cw2"] = get_cw2_details(chain, network, code["id"])
             code["instantiatePermission"] = code_graphql_detail[
                 "access_config_permission"
             ]
