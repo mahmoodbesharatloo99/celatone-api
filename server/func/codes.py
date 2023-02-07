@@ -56,11 +56,11 @@ def load_codes(chain, network):
 
 def get_codes(chain, network):
     codes = load_codes(chain, network)
-    print(codes, flush=True)
     return codes
 
 
 def get_code(chain, network, code_id):
     codes = load_codes(chain, network)
+    print(codes, flush=True)
     code = [code for code in codes if code["id"] == code_id][0]
     return code
