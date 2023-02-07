@@ -54,14 +54,12 @@ def load_codes(chain, network):
     return codes
 
 
-def get_codes(app, chain, network):
+def get_codes(chain, network):
     codes = load_codes(chain, network)
-    app.logger.info(codes)
     return codes
 
 
-def get_code(app, chain, network, code_id):
-    codes = load_codes(chain, network)
-    app.logger.info(codes)
+def get_code(chain, network, code_id):
+    codes = get_codes(chain, network)
     code = [code for code in codes if code["id"] == code_id][0]
     return code

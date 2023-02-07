@@ -65,7 +65,7 @@ def get_code(chain, network, code_id):
 
     Returns a specific code based on the input chain, network, and code_id
     """
-    return codes.get_code(app, chain, network, code_id)
+    return codes.get_code(chain, network, code_id)
 
 
 # Contracts
