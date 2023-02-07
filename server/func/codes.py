@@ -56,6 +56,7 @@ def load_codes(chain, network):
 
 def get_codes(chain, network):
     codes = load_codes(chain, network)
+    print(codes, flush=True)
     return codes
 
 
