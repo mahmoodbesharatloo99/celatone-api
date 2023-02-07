@@ -61,5 +61,5 @@ def get_codes(chain, network):
 
 def get_code(chain, network, code_id):
     codes = load_codes(chain, network)
-    code = codes[0]
+    code = [item for item in codes if item["id"] == code_id]
     return code
