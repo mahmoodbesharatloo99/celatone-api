@@ -34,5 +34,41 @@
     "name": "ICNS Registrar",
     "address": "osmo1llh07xn7pcst3jqm0xpsucf90lzugfskkkhk8a3u2yznqmse4l5smydwpw",
     "description": "Interchain Nameservice registar contract that keep track of the address for each ICNS name in a stateful manner, serving to resolve the ICNS Name to the correct address "
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Rewards Collector",
+    "address": "osmo1urvqe5mw00ws25yqdd4c4hlh8kdyf567mpcml7cdve9w08z0ydcqvsrgdy",
+    "description": ""
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Liquidation Filterer",
+    "address": "osmo1v0ezrc0f7l5tlw6ws2r8kalhmvrfhe0fywrmj8kjgrwvud5r83uqywn66c",
+    "description": ""
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Oracle",
+    "address": "osmo1mhznfr60vjdp2gejhyv2gax9nvyyzhd3z0qcwseyetkfustjauzqycsy2g",
+    "description": ""
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Incentives",
+    "address": "osmo1nkahswfr8shg8rlxqwup0vgahp0dk4x8w6tkv3rra8rratnut36sk22vrm",
+    "description": ""
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Red Bank",
+    "address": "osmo1c3ljch9dfw5kf52nfwpxd2zmj2ese7agnx0p9tenkrryasrle5sqf3ftpg",
+    "description": ""
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Address Provider",
+    "address": "osmo1g677w7mfvn78eeudzwylxzlyz69fsgumqrscj6tekhdvs8fye3asufmvxr",
+    "description": ""
   }
 ]

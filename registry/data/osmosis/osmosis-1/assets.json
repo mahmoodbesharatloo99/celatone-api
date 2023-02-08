@@ -1810,5 +1810,17 @@
     "slugs": ["binance", "axelar"],
     "symbol": "BUSD.axl",
     "type": "native"
+  },
+  {
+    "coingecko": "mars-protocol",
+    "coinmarketcap": "",
+    "description": "The native token of Mars Hub",
+    "id": "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/mars/images/mars-token.svg",
+    "name": "Mars",
+    "precision": 6,
+    "slugs": ["mars"],
+    "symbol": "MARS",
+    "type": "native"
   }
 ]

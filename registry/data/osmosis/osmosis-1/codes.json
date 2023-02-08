@@ -52,5 +52,41 @@
     "name": "SwapRouter",
     "id": 10,
     "description": "SwapRouter code"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Red Bank",
+    "id": 11,
+    "description": "Mars Red Bank code"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Address Provider",
+    "id": 12,
+    "description": "Mars Address Provider code"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Incentives",
+    "id": 13,
+    "description": "Mars Incentives code"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Oracle",
+    "id": 14,
+    "description": "Mars Oracle code"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Rewards Collector",
+    "id": 15,
+    "description": "Mars Rewards Collector code"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Liquidation Filterer",
+    "id": 16,
+    "description": "Mars Liquidation code"
   }
 ]
