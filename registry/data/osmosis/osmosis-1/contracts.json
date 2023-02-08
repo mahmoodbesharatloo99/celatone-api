@@ -37,20 +37,14 @@
   },
   {
     "slug": "mars",
-    "name": "Mars Rewards Collector",
-    "address": "osmo1urvqe5mw00ws25yqdd4c4hlh8kdyf567mpcml7cdve9w08z0ydcqvsrgdy",
+    "name": "Mars Red Bank",
+    "address": "osmo1c3ljch9dfw5kf52nfwpxd2zmj2ese7agnx0p9tenkrryasrle5sqf3ftpg",
     "description": ""
   },
   {
     "slug": "mars",
-    "name": "Mars Liquidation Filterer",
-    "address": "osmo1v0ezrc0f7l5tlw6ws2r8kalhmvrfhe0fywrmj8kjgrwvud5r83uqywn66c",
-    "description": ""
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Oracle",
-    "address": "osmo1mhznfr60vjdp2gejhyv2gax9nvyyzhd3z0qcwseyetkfustjauzqycsy2g",
+    "name": "Mars Address Provider",
+    "address": "osmo1g677w7mfvn78eeudzwylxzlyz69fsgumqrscj6tekhdvs8fye3asufmvxr",
     "description": ""
   },
   {
@@ -61,14 +55,20 @@
   },
   {
     "slug": "mars",
-    "name": "Mars Red Bank",
-    "address": "osmo1c3ljch9dfw5kf52nfwpxd2zmj2ese7agnx0p9tenkrryasrle5sqf3ftpg",
+    "name": "Mars Oracle",
+    "address": "osmo1mhznfr60vjdp2gejhyv2gax9nvyyzhd3z0qcwseyetkfustjauzqycsy2g",
     "description": ""
   },
   {
     "slug": "mars",
-    "name": "Mars Address Provider",
-    "address": "osmo1g677w7mfvn78eeudzwylxzlyz69fsgumqrscj6tekhdvs8fye3asufmvxr",
+    "name": "Mars Rewards Collector",
+    "address": "osmo1urvqe5mw00ws25yqdd4c4hlh8kdyf567mpcml7cdve9w08z0ydcqvsrgdy",
+    "description": ""
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Liquidation Filterer",
+    "address": "osmo1v0ezrc0f7l5tlw6ws2r8kalhmvrfhe0fywrmj8kjgrwvud5r83uqywn66c",
     "description": ""
   }
 ]
