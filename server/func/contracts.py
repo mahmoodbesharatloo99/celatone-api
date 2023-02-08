@@ -12,6 +12,7 @@ def get_contracts(chain, network):
             if contract["address"] == data["address"]:
                 contract["instantiator"] = data["instantiator"]
                 contract["admin"] = data["admin"]
+                contract["label"] = data["label"]
     return contracts
 
 

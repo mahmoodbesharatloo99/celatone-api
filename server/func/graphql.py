@@ -13,7 +13,8 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
           }}
           accountByInitBy {{
             address
-          }}  
+          }}
+          label
         }}
         """
     query += "}"
@@ -30,6 +31,7 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
                 "address": contract_address,
                 "instantiator": data["accountByInitBy"]["address"],
                 "admin": data["account"]["address"],
+                "label": data["label"],
             }
         )
     return contract_data
