@@ -2,6 +2,7 @@ from flask import send_file
 import os
 
 import func.codes as codes
+import func.chains as chains
 import func.contracts as contracts
 import func.accounts as accounts
 import func.assets as assets
@@ -193,6 +194,21 @@ def get_entities():
 @app.doc(tags=["Registry Data"])
 def get_entity(entity_slug):
     return entities.get_entity(entity_slug)
+
+
+# Chains
+
+
+@app.route("/chains", methods=["GET"])
+@app.doc(tags=["Registry Data"])
+def get_chains():
+    return chains.get_chains()
+
+
+@app.route("/chains/<chain>", methods=["GET"])
+@app.doc(tags=["Registry Data"])
+def get_chains(chain):
+    return chains.get_chain(chain)
 
 
 # Balances
