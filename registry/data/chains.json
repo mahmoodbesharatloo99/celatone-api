@@ -10,7 +10,7 @@
     "networks": [
       {
         "type": "testnet",
-        "celatone": "https://osmosis.celat.one/testnet",
+        "celatone": "https://celatone.osmosis.zone/testnet",
         "chainId": "osmo-test-4",
         "chainName": "Osmosis Testnet",
         "publicLCD": "https://lcd-test.osmosis.zone",
@@ -66,7 +66,7 @@
       },
       {
         "type": "mainnet",
-        "celatone": "https://osmosis.celat.one/mainnet",
+        "celatone": "https://celatone.osmosis.zone/mainnet",
         "chainId": "osmosis-1",
         "chainName": "Osmosis Mainnet",
         "publicLCD": "https://lcd.osmosis.zone",
@@ -100,115 +100,6 @@
             "logo": "https://pbs.twimg.com/profile_images/1476486139297300480/ZYOlbNS9_400x400.jpg",
             "url": "https://osmosis-mainnet-archive.allthatnode.com:26657",
             "archive": true
-          }
-        ],
-        "faucets": []
-      }
-    ]
-  },
-  "terra": {
-    "name": "Terra",
-    "bech32Prefix": "terra",
-    "slip44": "118",
-    "website": "https://terra.money",
-    "iconUri": "https://assets.website-files.com/611153e7af981472d8da199c/62d8d4463816d7f427a7600b_01_Tarra_icon.svg",
-    "documentation": "https://docs.terra.money",
-    "github": "https://github.com/terra.money",
-    "networks": [
-      {
-        "type": "testnet",
-        "celatone": "https://terra.celat.one/testnet",
-        "chainId": "pisco-1",
-        "chainName": "Terra Testnet",
-        "publicLCD": "https://pisco-lcd.terra.dev",
-        "lcdSwagger": "https://pisco-lcd.terra.dev/swagger/",
-        "publicRPC": null,
-        "rpcSwagger": null,
-        "publicGRPC": null,
-        "lcds": [
-          {
-            "provider": "Polkachu",
-            "logo": "https://pbs.twimg.com/profile_images/1457063156790935554/blYozUQC_400x400.jpg",
-            "url": "https://terra-testnet-lcd.polkachu.com",
-            "archive": false
-          }
-        ],
-        "rpcs": [
-          {
-            "provider": "Polkachu",
-            "logo": "https://pbs.twimg.com/profile_images/1457063156790935554/blYozUQC_400x400.jpg",
-            "url": "https://terra-testnet-rpc.polkachu.com",
-            "archive": false
-          }
-        ],
-        "faucets": [
-          {
-            "provider": "Terra",
-            "logo": "https://assets.website-files.com/611153e7af981472d8da199c/62d8d4463816d7f427a7600b_01_Tarra_icon.svg",
-            "url": "https://faucet.terra.money/"
-          }
-        ]
-      },
-      {
-        "type": "mainnet",
-        "celatone": "https://terra.celat.one/mainnet",
-        "chainId": "phoenix-1",
-        "chainName": "Terra Mainnet",
-        "publicLCD": "https://phoenix-lcd.terra.dev",
-        "lcdSwagger": "https://phoenix-lcd.terra.dev/swagger/",
-        "publicRPC": "http://public-node.terra.dev:26657",
-        "rpcSwagger": null,
-        "publicGRPC": null,
-        "lcds": [
-          {
-            "provider": "Stakely",
-            "logo": "https://pbs.twimg.com/profile_images/1612163541301092357/zhYotDeZ_400x400.jpg",
-            "url": "https://terra-lcd.stakely.io",
-            "archive": false
-          },
-          {
-            "provider": "Polkachu",
-            "logo": "https://pbs.twimg.com/profile_images/1457063156790935554/blYozUQC_400x400.jpg",
-            "url": "https://terra-api.polkachu.com",
-            "archive": false
-          },
-          {
-            "provider": "TDRsys",
-            "logo": "https://www.tdrsys.com/favicon.ico",
-            "url": "https://terra2.tdrsys.com",
-            "archive": false
-          },
-          {
-            "provider": "WildSage",
-            "logo": "https://wildsage.io/favicon.ico",
-            "url": "https://lcd-terra.wildsage.io",
-            "archive": false
-          }
-        ],
-        "rpcs": [
-          {
-            "provider": "Polkachu",
-            "logo": "https://pbs.twimg.com/profile_images/1457063156790935554/blYozUQC_400x400.jpg",
-            "url": "https://terra-rpc.polkachu.com",
-            "archive": false
-          },
-          {
-            "provider": "Stakely",
-            "logo": "https://pbs.twimg.com/profile_images/1612163541301092357/zhYotDeZ_400x400.jpg",
-            "url": "https://terra-rpc.stakely.io",
-            "archive": false
-          },
-          {
-            "provider": "TDRsys",
-            "logo": "https://www.tdrsys.com/favicon.ico",
-            "url": "https://terra2.tdrsys.com:2053",
-            "archive": false
-          },
-          {
-            "provider": "WildSage",
-            "logo": "https://wildsage.io/favicon.ico",
-            "url": "https://rpc-terra.wildsage.io",
-            "archive": false
           }
         ],
         "faucets": []
