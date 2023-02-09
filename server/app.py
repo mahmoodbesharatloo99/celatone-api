@@ -207,7 +207,7 @@ def get_chains():
 
 @app.route("/chains/<chain>", methods=["GET"])
 @app.doc(tags=["Registry Data"])
-def get_chains(chain):
+def get_chain(chain):
     return chains.get_chain(chain)
 
 
