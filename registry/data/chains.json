@@ -2,7 +2,7 @@
   "osmosis": {
     "name": "Osmosis",
     "bech32Prefix": "osmo",
-    "slip44": "330",
+    "slip44": "118",
     "website": "https://osmosis.zone",
     "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
     "documentation": "https://docs.osmosis.zone",
