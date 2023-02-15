@@ -1,6 +1,6 @@
 import base64
 from func.registry import load_and_check_registry_data
-from func.price import get_prices
+from func.prices import get_prices
 
 
 def encode_base64(string):
