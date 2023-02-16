@@ -70,5 +70,17 @@
     "name": "Mars Liquidation Filterer",
     "address": "osmo1v0ezrc0f7l5tlw6ws2r8kalhmvrfhe0fywrmj8kjgrwvud5r83uqywn66c",
     "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo Osmosis Liquidity Helper",
+    "address": "osmo1lg8plsdphya2mutm8vwf6yn5kg9vt6jrda5tfexuktz6mhfkerfsy83d0x",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo Osmosis CW Dex Router",
+    "address": "osmo1fnu7c7wsm3hy709qnyneujwd0w4v08jad7pj4ve3vstm3a2u89rqrllkjs",
+    "description": ""
   }
 ]

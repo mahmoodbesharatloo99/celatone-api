@@ -88,5 +88,17 @@
     "name": "Mars Liquidation Filterer",
     "id": 16,
     "description": "Mars Liquidation code"
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo Osmosis Liquidity Helper",
+    "id": 18,
+    "description": "Apollo Osmosis Liquidity Helper code"
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo Osmosis CW Dex Router",
+    "id": 19,
+    "description": "Apollo Osmosis CW Dex Router code"
   }
 ]
