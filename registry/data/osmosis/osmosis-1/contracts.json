@@ -82,5 +82,47 @@
     "name": "Apollo Osmosis CW Dex Router",
     "address": "osmo1fnu7c7wsm3hy709qnyneujwd0w4v08jad7pj4ve3vstm3a2u89rqrllkjs",
     "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo ATOM/OSMO 14D Vault",
+    "address": "osmo1g3kmqpp8608szfp0pdag3r6z85npph7wmccat8lgl3mp407kv73qlj7qwp",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo stATOM/ATOM 14D Vault",
+    "address": "osmo1a6tcf60pyz8qq2n532dzcs7s7sj8klcmra04tvaqympzcvxqg9esn7xz7l",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo DAI/OSMO 14D Vault",
+    "address": "osmo1lhs6kyuxytu4suua0qf88z5057wzpxs77tyrlgztw2uctcy75hcqf2ajrt",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo stOSMO/OSMO 14D Vault",
+    "address": "osmo1p4zqs5y2w5srzd2vesznzu5ql8wfq9tpz3e7mf2j3y07nxrtkdes5r5g0t",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo USDC/OSMO 14D Vault",
+    "address": "osmo1jfmwayj8jqp9tfy4v4eks5c2jpnqdumn8x8xvfllng0wfes770qqp7jl4j",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo WBTC/OSMO 14D Vault",
+    "address": "osmo185gqewrlde8vrqw7j8lpad67v8jfrx9u7770k9q87tqqecctp5tq50wt2c",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo WETH/OSMO 14D Vault",
+    "address": "osmo1r235f4tdkwrsnj3mdm9hf647l754y6g6xsmz0nas5r4vr5tda3qsgtftef",
+    "description": ""
   }
 ]

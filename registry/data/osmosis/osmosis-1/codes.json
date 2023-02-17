@@ -91,6 +91,12 @@
   },
   {
     "slug": "apollodao",
+    "name": "Apollo 14D Vaultr",
+    "id": 17,
+    "description": "Apollo 14 Day Vault code"
+  },
+  {
+    "slug": "apollodao",
     "name": "Apollo Osmosis Liquidity Helper",
     "id": 18,
     "description": "Apollo Osmosis Liquidity Helper code"
