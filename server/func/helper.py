@@ -9,6 +9,7 @@ def split(ls, n):
     for i in range(0, len(ls), n):
         yield ls[i : i + n]
 
+
 def generate_hive_query(account_address, contract_addresses):
     query = "query test {"
     for contract_address in contract_addresses:
@@ -21,6 +22,7 @@ def generate_hive_query(account_address, contract_addresses):
         """
     query += "}"
     return query
+
 
 def get_hive_balance(chain, network, account_address):
     output_balance = []
@@ -45,7 +47,7 @@ def get_hive_balance(chain, network, account_address):
                         "amount": data["contractQuery"]["balance"],
                         "precision": asset["precision"],
                         "type": "cw20",
-                        "price":1.00
+                        "price": 1.00,
                     }
                 )
     return output_balance
@@ -78,7 +80,7 @@ def get_native_balances(endpoint, chain, network, account_address):
                         "amount": balance["amount"],
                         "precision": asset["precision"],
                         "type": "native",
-                        "price":1.00
+                        "price": 1.00,
                     }
                 )
             # If it's not a supported asset, just return the balance with no extra info
