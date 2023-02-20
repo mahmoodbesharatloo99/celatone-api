@@ -27,13 +27,13 @@
     "slug": "ogp",
     "name": "OGP Native Multisig",
     "address": "osmo1duj0ldp5p3qmksas35q7cq977f38a8e7chsxnw",
-    "description": "Native multisig account by the Osmosis Grants Program used to distribute grants."
+    "description": "Native multisig account owned by the Osmosis Grants Program used to distribute grants."
   },
   {
     "slug": "ogp",
     "name": "OGP Apollo Safe Multisig",
     "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
-    "description": "Apollo Safe CW3 multisig account by the Osmosis Grants Program"
+    "description": "Apollo Safe CW3 multisig account owned by the Osmosis Grants Program"
   },
   {
     "slug": "apollodao",
@@ -81,6 +81,6 @@
     "slug": "apollodao",
     "name": "ApolloDAO Contract Admin",
     "address": "osmo19377ce3k2893s98xp58vg0jtgtvj5qv405y36l4wf4z2xhnjwh6se8kep3",
-    "description": "Apollo Safe CW3 multisig contract used as the admin for Apollo Vaults and other contracts."
+    "description": "Apollo Safe CW3 multisig contract owned by the Apollo team used as the admin for Apollo Vaults and other contracts."
   }
 ]
