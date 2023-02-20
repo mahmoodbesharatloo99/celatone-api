@@ -16,5 +16,65 @@
     "name": "Mars Deployer",
     "address": "osmo1cd4nn8yzdrrsfqsmmvaafq8r03xn38qgqt8fzh",
     "description": "Account owned by Delphi Labs used to deploy the Mars Protocol contracts on Osmosis."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig",
+    "address": "osmo1wl59k23zngj34l7d42y9yltask7rjlnxgccawc7ltrknp6n52fps94qsjd",
+    "description": ""
+  },
+  {
+    "slug": "ogp",
+    "name": "OGP Grants Distributor 1",
+    "address": "osmo1duj0ldp5p3qmksas35q7cq977f38a8e7chsxnw",
+    "description": "Native multisig account by the Osmosis Grants Program used to distribute grants."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig Voter 1",
+    "address": "osmo18kmnpjw6mj7juw6wmnzdyaa8e2tg9h3mqry0ym",
+    "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig Voter 2",
+    "address": "osmo18h47lm65q0r02gcuxe6vslk8u5ftgrl9wrtea6",
+    "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig Voter 3",
+    "address": "osmo1yv4shmch4kwtaqmnnrg5ep65r6e05wgq3p2dj4",
+    "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig Voter 4",
+    "address": "osmo1w4yv8uvc0neqhxwqsg0qm0axlt8wcms4zqyjwu",
+    "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig Voter 5",
+    "address": "osmo18fsecpmq5tuq59k3ezkrrdt6gyvr30lxct0aed",
+    "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig Voter 6",
+    "address": "osmo16u56nw6rhdt5wc63ammgdn565q6t825mdcffap",
+    "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Account 1",
+    "address": "osmo1pq47vuhc9gum8qjht0tamsgluuqjleqprgemhd",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Contract Admin",
+    "address": "osmo19377ce3k2893s98xp58vg0jtgtvj5qv405y36l4wf4z2xhnjwh6se8kep3",
+    "description": "Apollo Safe CW3 multisig contract used as the admin for Apollo Vaults and other contracts."
   }
 ]

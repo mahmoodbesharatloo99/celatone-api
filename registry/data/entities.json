@@ -3188,5 +3188,27 @@
       }
     ],
     "description": "The galaxy's most powerful credit protocol."
+  },
+  {
+    "slug": "ogp",
+    "name": "Osmosis Grants Program",
+    "website": "https://grants.osmosis.zone",
+    "github": "",
+    "logo": "ogp.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/OsmosisGrants"
+      },
+      {
+        "name": "telegram",
+        "url": ""
+      },
+      {
+        "name": "discord",
+        "url": ""
+      }
+    ],
+    "description": "Funding community projects that help Osmosis grow."
   }
 ]

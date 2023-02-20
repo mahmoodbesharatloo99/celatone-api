@@ -124,5 +124,71 @@
     "name": "Apollo WETH/OSMO 14D Vault",
     "address": "osmo1r235f4tdkwrsnj3mdm9hf647l754y6g6xsmz0nas5r4vr5tda3qsgtftef",
     "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo JUNO/OSMO 14D Vault",
+    "address": "osmo1ceku0zks6y43r9l35n7wnv5pf82s6l4k5jhlrhkurakeemey9n4snz3x6z",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo CRO/OSMO 14D Vault",
+    "address": "osmo1gmd2vc4crmv7urlfn3j5avhplfncjf5mg649dkgsu5a0zvd6cgrsn9dq4l",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo IST/OSMO 14D Vault",
+    "address": "osmo1qajgwrcce9srkq370pa9ew96dyk4hajyyk6rfpuexrktm8862xnst443kp",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo ION/OSMO 14D Vault",
+    "address": "osmo1869zena97sctemj78sgjmu737p2g94905hsf3hhkrfgummrfz4tsxj2k6r",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo AKT/OSMO 14D Vault",
+    "address": "osmo122ryl7pez7yjprtvjckltu2uvjxrq3kqt4nvclax2la7maj6757qg054ga",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo EVMOS/OSMO 14D Vault",
+    "address": "osmo1rkv6vcmty4rpypuxp2a6a0y5ze4ztm3y6d6xwy5a7cye85f7reqsm85c5s",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo SCRT/OSMO 14D Vault",
+    "address": "osmo1m9hn9sjk3tudx6fmjlefk45eml2exsa2gaa5vpyey82ypms78dnqc235an",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo STRD/OSMO 14D Vault",
+    "address": "osmo1e3qjfcg9adrauz6jg030ptfy35r6zzplsgaavnn6xrh6686udhfqq7muwy",
+    "description": ""
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo AXL/OSMO 14D Vault",
+    "address": "osmo1m9e4cks405tvzlppkw64znr35vkvujvptrdqtgu5q6luk4ccw9qqeuenwd",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig",
+    "address": "osmo1wl59k23zngj34l7d42y9yltask7rjlnxgccawc7ltrknp6n52fps94qsjd",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Contract Admin",
+    "address": "osmo19377ce3k2893s98xp58vg0jtgtvj5qv405y36l4wf4z2xhnjwh6se8kep3",
+    "description": "Apollo Safe CW3 multisig contract used as the admin for Apollo Vaults and other contracts."
   }
 ]
