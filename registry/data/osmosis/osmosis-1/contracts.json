@@ -193,7 +193,7 @@
   },
   {
     "slug": "ogp",
-    "name": "Osmosis Grants Program Apollo Safe Multisig",
+    "name": "OGP Apollo Safe Multisig",
     "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
     "description": "Apollo Safe CW3 multisig account by the Osmosis Grants Program"
   }

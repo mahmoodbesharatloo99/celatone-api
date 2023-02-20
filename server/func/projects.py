@@ -34,7 +34,7 @@ def load_project(entity, accounts, assets, codes, contracts):
     relevant_codes = [code for code in codes if code["slug"] == entity["slug"]]
     # only keep contracts for this entity
     relevant_contracts = [contract for contract in contracts if contract["slug"] == entity["slug"]]
-    if len(relevant_accounts) != 0 and len(relevant_codes) != 0 and len(relevant_contracts) != 0:
+    if len(relevant_accounts) != 0 or len(relevant_codes) != 0 or len(relevant_contracts) != 0:
         entity_dict["accounts"] = relevant_accounts
         entity_dict["assets"] = relevant_assets
         entity_dict["codes"] = relevant_codes
