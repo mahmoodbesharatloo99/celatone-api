@@ -39,49 +39,49 @@
     "slug": "mars",
     "name": "Mars Red Bank",
     "address": "osmo1c3ljch9dfw5kf52nfwpxd2zmj2ese7agnx0p9tenkrryasrle5sqf3ftpg",
-    "description": ""
+    "description": "Mars contract that manages asset deposits, borrowing, and liquidations."
   },
   {
     "slug": "mars",
     "name": "Mars Address Provider",
     "address": "osmo1g677w7mfvn78eeudzwylxzlyz69fsgumqrscj6tekhdvs8fye3asufmvxr",
-    "description": ""
+    "description": "Mars contract that stores the addresses of Mars Red Bank contracts."
   },
   {
     "slug": "mars",
     "name": "Mars Incentives",
     "address": "osmo1nkahswfr8shg8rlxqwup0vgahp0dk4x8w6tkv3rra8rratnut36sk22vrm",
-    "description": ""
+    "description": "Mars contract that manages MARS incentives for depositors."
   },
   {
     "slug": "mars",
     "name": "Mars Oracle",
     "address": "osmo1mhznfr60vjdp2gejhyv2gax9nvyyzhd3z0qcwseyetkfustjauzqycsy2g",
-    "description": ""
+    "description": "Mars contract that provides prices denominated in uosmo for assets used in the protocol."
   },
   {
     "slug": "mars",
     "name": "Mars Rewards Collector",
     "address": "osmo1urvqe5mw00ws25yqdd4c4hlh8kdyf567mpcml7cdve9w08z0ydcqvsrgdy",
-    "description": ""
+    "description": "Mars contract that receives revenue in various coins from the Red Bank, swaps them into MARS or other specified assets in the Osmosis DEX, and forwards the assets to Mars Hub via IBC to be distributed as staking rewards or be deposited into the safety fund."
   },
   {
     "slug": "mars",
     "name": "Mars Liquidation Filterer",
     "address": "osmo1v0ezrc0f7l5tlw6ws2r8kalhmvrfhe0fywrmj8kjgrwvud5r83uqywn66c",
-    "description": ""
+    "description": "Mars contract that queries the health status of each account to be liquidated on the current block height, and if the account is no longer health factor < 1 it will remove that liquidation from the msg in order to let other liquidation messages go through successfully."
   },
   {
     "slug": "apollodao",
     "name": "Apollo Osmosis Liquidity Helper",
     "address": "osmo1lg8plsdphya2mutm8vwf6yn5kg9vt6jrda5tfexuktz6mhfkerfsy83d0x",
-    "description": ""
+    "description": "Apollo contract that helps with providing liquidity to dexes when you have assets that are not in the correct ratio."
   },
   {
     "slug": "apollodao",
     "name": "Apollo Osmosis CW Dex Router",
     "address": "osmo1fnu7c7wsm3hy709qnyneujwd0w4v08jad7pj4ve3vstm3a2u89rqrllkjs",
-    "description": ""
+    "description": "Apollo contract that allows swapping through any DEX supported by Apollo's cw-dex abstrasction."
   },
   {
     "slug": "apollodao",
