@@ -25,9 +25,15 @@
   },
   {
     "slug": "ogp",
-    "name": "OGP Grants Distributor 1",
+    "name": "Osmosis Grants Program Native Multisig",
     "address": "osmo1duj0ldp5p3qmksas35q7cq977f38a8e7chsxnw",
     "description": "Native multisig account by the Osmosis Grants Program used to distribute grants."
+  },
+  {
+    "slug": "ogp",
+    "name": "Osmosis Grants Program Apollo Safe Multisig",
+    "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
+    "description": "Apollo Safe CW3 multisig account by the Osmosis Grants Program"
   },
   {
     "slug": "apollodao",
