@@ -1,87 +1,9 @@
 [
   {
-    "slug": "ion-dao",
-    "name": "ION Staking Governance",
-    "address": "osmo1yg8930mj8pk288lmkjex0qz85mj8wgtns5uzwyn2hs25pwdnw42sf745wc",
-    "description": "ION DAO governance staking contract"
-  },
-  {
-    "slug": "ion-dao",
-    "name": "ION Governance",
-    "address": "osmo1k8re7jwz6rnnwrktnejdwkwnncte7ek7gt29gvnl3sdrg9mtnqkse6nmqm",
-    "description": "ION DAO governance contract"
-  },
-  {
-    "slug": "osmosis",
-    "name": "IBC Rate Limiting",
-    "address": "osmo17r7qdw2zk6jyw62cvwm6flmhtj9q7zd26r8zc6sqyf0pnaq46cfss8hgxg",
-    "description": "Osmosis IBC rate limiting contract responsible for adding a governance-configurable rate limit to IBC transfers. This acts as a safety control intended to protect assets on Osmosis in the event of a bug/hack"
-  },
-  {
-    "slug": "icns",
-    "name": "ICNS Name NFT",
-    "address": "osmo1mypljhatv0prfr9cjzzvamxdf2ctg34xkt50sudxads9zhqnyneqjuvy26",
-    "description": "Interchain Nameservice NFT contract responsible for minting the nft of the ICNS name being claimed"
-  },
-  {
-    "slug": "icns",
-    "name": "ICNS Resolver",
-    "address": "osmo1xk0s8xgktn9x5vwcgtjdxqzadg88fgn33p8u9cnpdxwemvxscvast52cdd",
-    "description": "Interchain Nameservice resolver contract that work to orchestrate the oracle verifiers watching the Twitter API for unique Twitter handles of the user"
-  },
-  {
-    "slug": "icns",
-    "name": "ICNS Registrar",
-    "address": "osmo1llh07xn7pcst3jqm0xpsucf90lzugfskkkhk8a3u2yznqmse4l5smydwpw",
-    "description": "Interchain Nameservice registar contract that keep track of the address for each ICNS name in a stateful manner, serving to resolve the ICNS Name to the correct address "
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Red Bank",
-    "address": "osmo1c3ljch9dfw5kf52nfwpxd2zmj2ese7agnx0p9tenkrryasrle5sqf3ftpg",
-    "description": "Mars contract that manages asset deposits, borrowing, and liquidations."
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Address Provider",
-    "address": "osmo1g677w7mfvn78eeudzwylxzlyz69fsgumqrscj6tekhdvs8fye3asufmvxr",
-    "description": "Mars contract that stores the addresses of Mars Red Bank contracts."
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Incentives",
-    "address": "osmo1nkahswfr8shg8rlxqwup0vgahp0dk4x8w6tkv3rra8rratnut36sk22vrm",
-    "description": "Mars contract that manages MARS incentives for depositors."
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Oracle",
-    "address": "osmo1mhznfr60vjdp2gejhyv2gax9nvyyzhd3z0qcwseyetkfustjauzqycsy2g",
-    "description": "Mars contract that provides prices denominated in uosmo for assets used in the protocol."
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Rewards Collector",
-    "address": "osmo1urvqe5mw00ws25yqdd4c4hlh8kdyf567mpcml7cdve9w08z0ydcqvsrgdy",
-    "description": "Mars contract that receives revenue in various coins from the Red Bank, swaps them into MARS or other specified assets in the Osmosis DEX, and forwards the assets to Mars Hub via IBC to be distributed as staking rewards or be deposited into the safety fund."
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Liquidation Filterer",
-    "address": "osmo1v0ezrc0f7l5tlw6ws2r8kalhmvrfhe0fywrmj8kjgrwvud5r83uqywn66c",
-    "description": "Mars contract that queries the health status of each account to be liquidated on the current block height, and if the account is no longer health factor < 1 it will remove that liquidation from the msg in order to let other liquidation messages go through successfully."
-  },
-  {
     "slug": "apollodao",
-    "name": "Apollo Osmosis Liquidity Helper",
-    "address": "osmo1lg8plsdphya2mutm8vwf6yn5kg9vt6jrda5tfexuktz6mhfkerfsy83d0x",
-    "description": "Apollo contract that helps with providing liquidity to dexes when you have assets that are not in the correct ratio."
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo Osmosis CW Dex Router",
-    "address": "osmo1fnu7c7wsm3hy709qnyneujwd0w4v08jad7pj4ve3vstm3a2u89rqrllkjs",
-    "description": "Apollo contract that allows swapping through any DEX supported by Apollo's cw-dex abstrasction."
+    "name": "Apollo AKT/OSMO 14D Vault",
+    "address": "osmo122ryl7pez7yjprtvjckltu2uvjxrq3kqt4nvclax2la7maj6757qg054ga",
+    "description": ""
   },
   {
     "slug": "apollodao",
@@ -91,8 +13,14 @@
   },
   {
     "slug": "apollodao",
-    "name": "Apollo stATOM/ATOM 14D Vault",
-    "address": "osmo1a6tcf60pyz8qq2n532dzcs7s7sj8klcmra04tvaqympzcvxqg9esn7xz7l",
+    "name": "Apollo AXL/OSMO 14D Vault",
+    "address": "osmo1m9e4cks405tvzlppkw64znr35vkvujvptrdqtgu5q6luk4ccw9qqeuenwd",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo CRO/OSMO 14D Vault",
+    "address": "osmo1gmd2vc4crmv7urlfn3j5avhplfncjf5mg649dkgsu5a0zvd6cgrsn9dq4l",
     "description": ""
   },
   {
@@ -103,8 +31,50 @@
   },
   {
     "slug": "apollodao",
-    "name": "Apollo stOSMO/OSMO 14D Vault",
-    "address": "osmo1p4zqs5y2w5srzd2vesznzu5ql8wfq9tpz3e7mf2j3y07nxrtkdes5r5g0t",
+    "name": "Apollo EVMOS/OSMO 14D Vault",
+    "address": "osmo1rkv6vcmty4rpypuxp2a6a0y5ze4ztm3y6d6xwy5a7cye85f7reqsm85c5s",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo ION/OSMO 14D Vault",
+    "address": "osmo1869zena97sctemj78sgjmu737p2g94905hsf3hhkrfgummrfz4tsxj2k6r",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo IST/OSMO 14D Vault",
+    "address": "osmo1qajgwrcce9srkq370pa9ew96dyk4hajyyk6rfpuexrktm8862xnst443kp",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo JUNO/OSMO 14D Vault",
+    "address": "osmo1ceku0zks6y43r9l35n7wnv5pf82s6l4k5jhlrhkurakeemey9n4snz3x6z",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo Osmosis CW Dex Router",
+    "address": "osmo1fnu7c7wsm3hy709qnyneujwd0w4v08jad7pj4ve3vstm3a2u89rqrllkjs",
+    "description": "Apollo contract that allows swapping through any DEX supported by Apollo's cw-dex abstrasction."
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo Osmosis Liquidity Helper",
+    "address": "osmo1lg8plsdphya2mutm8vwf6yn5kg9vt6jrda5tfexuktz6mhfkerfsy83d0x",
+    "description": "Apollo contract that helps with providing liquidity to dexes when you have assets that are not in the correct ratio."
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo SCRT/OSMO 14D Vault",
+    "address": "osmo1m9hn9sjk3tudx6fmjlefk45eml2exsa2gaa5vpyey82ypms78dnqc235an",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "Apollo STRD/OSMO 14D Vault",
+    "address": "osmo1e3qjfcg9adrauz6jg030ptfy35r6zzplsgaavnn6xrh6686udhfqq7muwy",
     "description": ""
   },
   {
@@ -127,62 +97,14 @@
   },
   {
     "slug": "apollodao",
-    "name": "Apollo JUNO/OSMO 14D Vault",
-    "address": "osmo1ceku0zks6y43r9l35n7wnv5pf82s6l4k5jhlrhkurakeemey9n4snz3x6z",
+    "name": "Apollo stATOM/ATOM 14D Vault",
+    "address": "osmo1a6tcf60pyz8qq2n532dzcs7s7sj8klcmra04tvaqympzcvxqg9esn7xz7l",
     "description": ""
   },
   {
     "slug": "apollodao",
-    "name": "Apollo CRO/OSMO 14D Vault",
-    "address": "osmo1gmd2vc4crmv7urlfn3j5avhplfncjf5mg649dkgsu5a0zvd6cgrsn9dq4l",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo IST/OSMO 14D Vault",
-    "address": "osmo1qajgwrcce9srkq370pa9ew96dyk4hajyyk6rfpuexrktm8862xnst443kp",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo ION/OSMO 14D Vault",
-    "address": "osmo1869zena97sctemj78sgjmu737p2g94905hsf3hhkrfgummrfz4tsxj2k6r",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo AKT/OSMO 14D Vault",
-    "address": "osmo122ryl7pez7yjprtvjckltu2uvjxrq3kqt4nvclax2la7maj6757qg054ga",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo EVMOS/OSMO 14D Vault",
-    "address": "osmo1rkv6vcmty4rpypuxp2a6a0y5ze4ztm3y6d6xwy5a7cye85f7reqsm85c5s",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo SCRT/OSMO 14D Vault",
-    "address": "osmo1m9hn9sjk3tudx6fmjlefk45eml2exsa2gaa5vpyey82ypms78dnqc235an",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo STRD/OSMO 14D Vault",
-    "address": "osmo1e3qjfcg9adrauz6jg030ptfy35r6zzplsgaavnn6xrh6686udhfqq7muwy",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "Apollo AXL/OSMO 14D Vault",
-    "address": "osmo1m9e4cks405tvzlppkw64znr35vkvujvptrdqtgu5q6luk4ccw9qqeuenwd",
-    "description": ""
-  },
-  {
-    "slug": "apollodao",
-    "name": "ApolloDAO Dev Multisig",
-    "address": "osmo1wl59k23zngj34l7d42y9yltask7rjlnxgccawc7ltrknp6n52fps94qsjd",
+    "name": "Apollo stOSMO/OSMO 14D Vault",
+    "address": "osmo1p4zqs5y2w5srzd2vesznzu5ql8wfq9tpz3e7mf2j3y07nxrtkdes5r5g0t",
     "description": ""
   },
   {
@@ -192,9 +114,87 @@
     "description": "Apollo Safe CW3 multisig contract owned by the Apollo team used as the admin for Apollo Vaults and other contracts."
   },
   {
+    "slug": "apollodao",
+    "name": "ApolloDAO Dev Multisig",
+    "address": "osmo1wl59k23zngj34l7d42y9yltask7rjlnxgccawc7ltrknp6n52fps94qsjd",
+    "description": ""
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Name NFT",
+    "address": "osmo1mypljhatv0prfr9cjzzvamxdf2ctg34xkt50sudxads9zhqnyneqjuvy26",
+    "description": "Interchain Nameservice NFT contract responsible for minting the nft of the ICNS name being claimed"
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Registrar",
+    "address": "osmo1llh07xn7pcst3jqm0xpsucf90lzugfskkkhk8a3u2yznqmse4l5smydwpw",
+    "description": "Interchain Nameservice registar contract that keep track of the address for each ICNS name in a stateful manner, serving to resolve the ICNS Name to the correct address "
+  },
+  {
+    "slug": "icns",
+    "name": "ICNS Resolver",
+    "address": "osmo1xk0s8xgktn9x5vwcgtjdxqzadg88fgn33p8u9cnpdxwemvxscvast52cdd",
+    "description": "Interchain Nameservice resolver contract that work to orchestrate the oracle verifiers watching the Twitter API for unique Twitter handles of the user"
+  },
+  {
+    "slug": "ion-dao",
+    "name": "ION Governance",
+    "address": "osmo1k8re7jwz6rnnwrktnejdwkwnncte7ek7gt29gvnl3sdrg9mtnqkse6nmqm",
+    "description": "ION DAO governance contract"
+  },
+  {
+    "slug": "ion-dao",
+    "name": "ION Staking Governance",
+    "address": "osmo1yg8930mj8pk288lmkjex0qz85mj8wgtns5uzwyn2hs25pwdnw42sf745wc",
+    "description": "ION DAO governance staking contract"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Address Provider",
+    "address": "osmo1g677w7mfvn78eeudzwylxzlyz69fsgumqrscj6tekhdvs8fye3asufmvxr",
+    "description": "Mars contract that stores the addresses of Mars Red Bank contracts."
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Incentives",
+    "address": "osmo1nkahswfr8shg8rlxqwup0vgahp0dk4x8w6tkv3rra8rratnut36sk22vrm",
+    "description": "Mars contract that manages MARS incentives for depositors."
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Liquidation Filterer",
+    "address": "osmo1v0ezrc0f7l5tlw6ws2r8kalhmvrfhe0fywrmj8kjgrwvud5r83uqywn66c",
+    "description": "Mars contract that queries the health status of each account to be liquidated on the current block height, and if the account is no longer health factor < 1 it will remove that liquidation from the msg in order to let other liquidation messages go through successfully."
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Oracle",
+    "address": "osmo1mhznfr60vjdp2gejhyv2gax9nvyyzhd3z0qcwseyetkfustjauzqycsy2g",
+    "description": "Mars contract that provides prices denominated in uosmo for assets used in the protocol."
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Red Bank",
+    "address": "osmo1c3ljch9dfw5kf52nfwpxd2zmj2ese7agnx0p9tenkrryasrle5sqf3ftpg",
+    "description": "Mars contract that manages asset deposits, borrowing, and liquidations."
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Rewards Collector",
+    "address": "osmo1urvqe5mw00ws25yqdd4c4hlh8kdyf567mpcml7cdve9w08z0ydcqvsrgdy",
+    "description": "Mars contract that receives revenue in various coins from the Red Bank, swaps them into MARS or other specified assets in the Osmosis DEX, and forwards the assets to Mars Hub via IBC to be distributed as staking rewards or be deposited into the safety fund."
+  },
+  {
     "slug": "ogp",
     "name": "OGP Apollo Safe Multisig",
     "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
     "description": "Apollo Safe CW3 multisig account owned by the Osmosis Grants Program"
+  },
+  {
+    "slug": "osmosis",
+    "name": "IBC Rate Limiting",
+    "address": "osmo17r7qdw2zk6jyw62cvwm6flmhtj9q7zd26r8zc6sqyf0pnaq46cfss8hgxg",
+    "description": "Osmosis IBC rate limiting contract responsible for adding a governance-configurable rate limit to IBC transfers. This acts as a safety control intended to protect assets on Osmosis in the event of a bug/hack"
   }
 ]
