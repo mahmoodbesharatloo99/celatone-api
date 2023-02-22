@@ -11,7 +11,6 @@ def get_contracts(chain, network):
         )
         for contract in contracts:
             for data in instantiator_admin_data:
-                contract["logo"] = (f"https://celatone-api.alleslabs.dev/images/entities/{contract['slug']}",)
                 if contract["address"] == data["address"]:
                     contract["instantiator"] = data["instantiator"]
                     contract["admin"] = data["admin"]
