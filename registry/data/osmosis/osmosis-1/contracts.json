@@ -120,6 +120,12 @@
     "description": ""
   },
   {
+    "slug": "osmosis",
+    "name": "IBC Rate Limiting",
+    "address": "osmo17r7qdw2zk6jyw62cvwm6flmhtj9q7zd26r8zc6sqyf0pnaq46cfss8hgxg",
+    "description": "Osmosis IBC rate limiting contract responsible for adding a governance-configurable rate limit to IBC transfers. This acts as a safety control intended to protect assets on Osmosis in the event of a bug/hack"
+  },
+  {
     "slug": "icns",
     "name": "ICNS Name NFT",
     "address": "osmo1mypljhatv0prfr9cjzzvamxdf2ctg34xkt50sudxads9zhqnyneqjuvy26",
@@ -169,8 +175,14 @@
   },
   {
     "slug": "mars",
-    "name": "Mars Oracle",
+    "name": "Mars Osmosis Oracle (v1.0.0)",
     "address": "osmo1mhznfr60vjdp2gejhyv2gax9nvyyzhd3z0qcwseyetkfustjauzqycsy2g",
+    "description": "Mars contract that provides prices denominated in uosmo for assets used in the protocol."
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Osmosis Oracle (v1.0.1)",
+    "address": "osmo1s2qvxs83j8c28733dlsuceas5gjgdd30p30nhsxf0tfrf6q6h96s6rngk0",
     "description": "Mars contract that provides prices denominated in uosmo for assets used in the protocol."
   },
   {
@@ -190,11 +202,5 @@
     "name": "OGP Apollo Safe Multisig",
     "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
     "description": "Apollo Safe CW3 multisig account owned by the Osmosis Grants Program"
-  },
-  {
-    "slug": "osmosis",
-    "name": "IBC Rate Limiting",
-    "address": "osmo17r7qdw2zk6jyw62cvwm6flmhtj9q7zd26r8zc6sqyf0pnaq46cfss8hgxg",
-    "description": "Osmosis IBC rate limiting contract responsible for adding a governance-configurable rate limit to IBC transfers. This acts as a safety control intended to protect assets on Osmosis in the event of a bug/hack"
   }
 ]

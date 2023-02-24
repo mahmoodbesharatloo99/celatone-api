@@ -73,9 +73,9 @@
   },
   {
     "slug": "mars",
-    "name": "Mars Oracle",
+    "name": "Mars Osmosis Oracle (v1.0.0)",
     "id": 14,
-    "description": "Mars Oracle code"
+    "description": "Mars Osmosis Oracle code"
   },
   {
     "slug": "mars",
@@ -106,5 +106,11 @@
     "name": "Apollo Osmosis CW Dex Router",
     "id": 19,
     "description": "Apollo Osmosis CW Dex Router code"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Osmosis Oracle (v1.0.1)",
+    "id": 22,
+    "description": "Mars Osmosis Oracle code"
   }
 ]
