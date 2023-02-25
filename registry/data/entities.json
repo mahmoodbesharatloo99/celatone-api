@@ -3210,5 +3210,71 @@
       }
     ],
     "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+  },
+  {
+    "slug": "quicksilver",
+    "name": "Quicksilver",
+    "website": "https:/quicksilver.zone",
+    "github": "",
+    "logo": "quicksilver.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/quicksilverzone"
+      },
+      {
+        "name": "telegram",
+        "url": "https://t.me/quicksilverzone"
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.gg/quicksilverprotocol"
+      }
+    ],
+    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+  },
+  {
+    "slug": "wynd",
+    "name": "Wynd",
+    "website": "https:/wynddao.com",
+    "github": "https://github.com/wynddao",
+    "logo": "wynd.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/wynddao"
+      },
+      {
+        "name": "telegram",
+        "url": "https://telegram.me/wynd_dao"
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.gg/GAMrnkbmj4"
+      }
+    ],
+    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+  },
+  {
+    "slug": "canto",
+    "name": "Canto",
+    "website": "https://canto.io",
+    "github": "https://github.com/Canto-Network",
+    "logo": "canto.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/cantopublic"
+      },
+      {
+        "name": "telegram",
+        "url": ""
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.com/invite/ucRX6XCFbr"
+      }
+    ],
+    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
   }
 ]
