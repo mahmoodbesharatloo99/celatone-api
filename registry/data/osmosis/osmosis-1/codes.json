@@ -3,114 +3,161 @@
     "slug": "apollodao",
     "name": "ApolloDAO Fixed Multisig",
     "id": 1,
-    "description": "ApolloDAO CW3 multisig code"
-  },
-  {
-    "slug": "apollodao",
-    "name": "ApolloDAO Liquid Staking",
-    "id": 5,
-    "description": "ApolloDAO liquid staking code"
+    "description": "ApolloDAO CW3 multisig code",
+    "github": "https://github.com/apollodao/cw-plus-fork/tree/v0.13.2/contracts/cw3-fixed-multisig"
   },
   {
     "slug": "ion-dao",
     "name": "ION Governance Staking",
     "id": 2,
-    "description": "ION DAO governance staking code"
+    "description": "ION DAO governance staking code",
+    "github": "https://github.com/many-things/ion-dao-contracts/tree/dev/contracts/stake"
   },
   {
     "slug": "ion-dao",
     "name": "ION Governance",
     "id": 3,
-    "description": "ION DAO governance code"
+    "description": "ION DAO governance code",
+    "github": "https://github.com/many-things/ion-dao-contracts/tree/dev/contracts/dao"
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Liquid Staking",
+    "id": 5,
+    "description": "ApolloDAO liquid staking code",
+    "github": ""
   },
   {
     "slug": "osmosis",
     "name": "IBC Rate Limiting",
     "id": 6,
-    "description": "IBC Rate Limiting code"
+    "description": "IBC Rate Limiting code",
+    "github": "https://github.com/osmosis-labs/osmosis/tree/v13.0.0/x/ibc-rate-limit/contracts/rate-limiter"
   },
   {
     "slug": "icns",
     "name": "ICNS Name NFT",
     "id": 7,
-    "description": "Interchain Nameservice NFT code"
+    "description": "Interchain Nameservice NFT code",
+    "github": "https://github.com/icns-xyz/icns/tree/v0.1.0/contracts/icns-name-nft"
   },
   {
     "slug": "icns",
     "name": "ICNS Resolver",
     "id": 8,
-    "description": "Interchain Nameservice resolver code"
+    "description": "Interchain Nameservice resolver code",
+    "github": "https://github.com/icns-xyz/icns/tree/main/contracts/icns-resolver"
   },
   {
     "slug": "icns",
     "name": "ICNS Registrar",
     "id": 9,
-    "description": "Interchain Nameservice registar code"
+    "description": "Interchain Nameservice registar code",
+    "github": "https://github.com/icns-xyz/icns/tree/main/contracts/icns-registrar"
   },
   {
     "slug": "osmosis",
     "name": "SwapRouter",
     "id": 10,
-    "description": "SwapRouter code"
+    "description": "SwapRouter code",
+    "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/swaprouter"
   },
   {
     "slug": "mars",
     "name": "Mars Red Bank",
     "id": 11,
-    "description": "Mars Red Bank code"
+    "description": "Mars Red Bank code",
+    "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/swaprouter"
   },
   {
     "slug": "mars",
     "name": "Mars Address Provider",
     "id": 12,
-    "description": "Mars Address Provider code"
+    "description": "Mars Address Provider code",
+    "github": "https://github.com/mars-protocol/red-bank/tree/v1.0.0/contracts/address-provider"
   },
   {
     "slug": "mars",
     "name": "Mars Incentives",
     "id": 13,
-    "description": "Mars Incentives code"
+    "description": "Mars Incentives code",
+    "github": "https://github.com/mars-protocol/red-bank/tree/v1.0.0/contracts/incentives"
   },
   {
     "slug": "mars",
     "name": "Mars Osmosis Oracle (v1.0.0)",
     "id": 14,
-    "description": "Mars Osmosis Oracle code"
+    "description": "Mars Osmosis Oracle code",
+    "github": "https://github.com/mars-protocol/v2-fields-of-mars/tree/v1.0.0/contracts/oracle"
   },
   {
     "slug": "mars",
     "name": "Mars Rewards Collector",
     "id": 15,
-    "description": "Mars Rewards Collector code"
+    "description": "Mars Rewards Collector code",
+    "github": "https://github.com/mars-protocol/red-bank/tree/v1.0.0/contracts/rewards-collector"
   },
   {
     "slug": "mars",
     "name": "Mars Liquidation Filterer",
     "id": 16,
-    "description": "Mars Liquidation code"
+    "description": "Mars Liquidation code",
+    "github": ""
   },
   {
     "slug": "apollodao",
     "name": "Apollo CW-Vault",
     "id": 17,
-    "description": "Apollo CW-Vault code"
+    "description": "Apollo CW-Vault code",
+    "github": "https://github.com/apollodao/cw-vault-standard"
   },
   {
     "slug": "apollodao",
     "name": "Apollo Osmosis Liquidity Helper",
     "id": 18,
-    "description": "Apollo Osmosis Liquidity Helper code"
+    "description": "Apollo Osmosis Liquidity Helper code",
+    "github": "https://github.com/apollodao/liquidity-helpers/tree/v0.1.0/contracts/osmosis-liquidity-helper"
   },
   {
     "slug": "apollodao",
     "name": "Apollo Osmosis CW Dex Router",
     "id": 19,
-    "description": "Apollo Osmosis CW Dex Router code"
+    "description": "Apollo Osmosis CW Dex Router code",
+    "github": "https://github.com/apollodao/cw-dex-router/tree/v0.1.0"
   },
   {
     "slug": "mars",
     "name": "Mars Osmosis Oracle (v1.0.1)",
     "id": 22,
-    "description": "Mars Osmosis Oracle code"
+    "description": "Mars Osmosis Oracle code",
+    "github": "https://github.com/mars-protocol/red-bank/tree/v1.0.1/contracts/oracle"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Account NFT",
+    "id": 23,
+    "description": "Mars Account NFT code",
+    "github": "https://github.com/mars-protocol/v2-fields-of-mars/tree/v1.0.0/contracts/account-nft"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Swapper",
+    "id": 25,
+    "description": "Mars Swapper code",
+    "github": "https://github.com/mars-protocol/v2-fields-of-mars/tree/v1.0.0/contracts/swapper"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Zapper",
+    "id": 26,
+    "description": "Mars Zapper code",
+    "github": "https://github.com/mars-protocol/v2-fields-of-mars/tree/master/contracts/zapper"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Credit Manager code",
+    "id": 27,
+    "description": "Mars Credit Manager code",
+    "github": "https://github.com/mars-protocol/v2-fields-of-mars/tree/v1.0.0/contracts/credit-manager"
   }
 ]
