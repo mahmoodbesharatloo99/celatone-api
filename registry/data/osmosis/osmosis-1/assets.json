@@ -1824,7 +1824,7 @@
     "type": "native"
   },
   {
-    "coingecko": "avalanche",
+    "coingecko": "avalanche-2",
     "coinmarketcap": "",
     "description": "Wrapped AVAX on Axelar.",
     "id": "ibc/6F62F01D913E3FFE472A38C78235B8F021B511BC6596ADFF02615C8F83D3B373",
@@ -1884,7 +1884,7 @@
     "type": "native"
   },
   {
-    "coingecko": "hopers",
+    "coingecko": "hopers-io",
     "coinmarketcap": "",
     "description": "The native token cw20 for Hopers on Juno Chain",
     "id": "ibc/D3ADAF73F84CDF205BCB72C142FDAEEA2C612AB853CEE6D6C06F184FA38B1099",
