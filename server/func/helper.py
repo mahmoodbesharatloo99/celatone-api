@@ -58,24 +58,26 @@ def get_native_balances(endpoint, chain, network, account_address):
 
     # Get all supported assets for this chain and network
     supported_assets = assets.get_assets_by_type(chain, network, "native")
-    supported_assets_prices = prices.get_prices([supported_asset["id"] for supported_asset in supported_assets])
+    supported_assets_prices = prices.get_prices(
+        [supported_asset["id"] for supported_asset in supported_assets if supported_asset["coingecko"] != ""]
+    )
 
     if "balances" in balances:
         for balance in balances["balances"]:
             # Check if the balance is a supported asset
             if balance["denom"] in [asset["id"] for asset in supported_assets]:
                 asset = [asset for asset in supported_assets if asset["id"] == balance["denom"]][0]
-                output_balance.append(
-                    {
-                        "name": asset["name"],
-                        "symbol": asset["symbol"],
-                        "id": asset["id"],
-                        "amount": balance["amount"],
-                        "precision": asset["precision"],
-                        "type": "native",
-                        "price": supported_assets_prices[asset["id"]],
-                    }
-                )
+                balance = {
+                    "name": asset["name"],
+                    "symbol": asset["symbol"],
+                    "id": asset["id"],
+                    "amount": balance["amount"],
+                    "precision": asset["precision"],
+                    "type": "native",
+                }
+                if asset["id"] in supported_assets_prices:
+                    balance["price"] = supported_assets_prices[asset["id"]]
+                output_balance.append()
             # If it's not a supported asset, just return the balance with no extra info
             else:
                 output_balance.append(
