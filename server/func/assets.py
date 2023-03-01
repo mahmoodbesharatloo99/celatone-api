@@ -42,7 +42,9 @@ def get_asset_ibc(chain, network, hash):
 
 def get_asset_factory(chain, network, creator, symbol):
     assets = get_assets(chain, network)
-    asset = [asset for asset in assets if asset["id"] == f"factory/{creator}/{symbol}"][0]
+    asset = [asset for asset in assets if asset["id"] == f"factory/{creator}/{symbol}"][
+        0
+    ]
     return asset
 
 

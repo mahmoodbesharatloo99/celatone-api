@@ -9,6 +9,7 @@ def split(ls, n):
     for i in range(0, len(ls), n):
         yield ls[i : i + n]
 
+
 def generate_hive_query(account_address, contract_addresses):
     query = "query test {"
     for contract_address in contract_addresses:
@@ -22,9 +23,10 @@ def generate_hive_query(account_address, contract_addresses):
     query += "}"
     return query
 
+
 def get_hive_balance(chain, network, account_address):
     output_balance = []
-    supported_assets = assets.get_asset_by_type(chain, network, "cw20")
+    supported_assets = assets.get_assets_by_type(chain, network, "cw20")
     contract_addresses = [asset["id"] for asset in supported_assets]
     contract_address_chunks = split(contract_addresses, 50)
     for contract_address_chunk in contract_address_chunks:
@@ -45,7 +47,7 @@ def get_hive_balance(chain, network, account_address):
                         "amount": data["contractQuery"]["balance"],
                         "precision": asset["precision"],
                         "type": "cw20",
-                        "price":1.00
+                        "price": 1.00,
                     }
                 )
     return output_balance
@@ -78,7 +80,7 @@ def get_native_balances(endpoint, chain, network, account_address):
                         "amount": balance["amount"],
                         "precision": asset["precision"],
                         "type": "native",
-                        "price":1.00
+                        "price": 1.00,
                     }
                 )
             # If it's not a supported asset, just return the balance with no extra info

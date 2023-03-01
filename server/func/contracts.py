@@ -20,5 +20,7 @@ def get_contracts(chain, network):
 
 def get_contract(chain, network, contract_address):
     contracts = get_contracts(chain, network)
-    contract = [contract for contract in contracts if contract["address"] == contract_address][0]
+    contract = [
+        contract for contract in contracts if contract["address"] == contract_address
+    ][0]
     return contract

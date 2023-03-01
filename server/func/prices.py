@@ -25,11 +25,14 @@ def get_price(asset):
         asset["price"] = price_response[slug]["usd"]
     return asset """
 
+
 def get_prices(assets):
     return [1.00] * len(assets)
 
+
 def get_price(asset):
     return 1.00
+
 
 if __name__ == "__main__":
     get_prices(
