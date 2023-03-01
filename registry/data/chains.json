@@ -15,7 +15,7 @@
         "chainName": "Osmosis Testnet",
         "publicLCD": "https://lcd-test.osmosis.zone",
         "lcdSwagger": "https://lcd-test.osmosis.zone/swagger/",
-        "publicRPC": "https://rpc.osmosis.zone:443",
+        "publicRPC": "https://rpc-test.osmosis.zone:443",
         "rpcSwagger": "https://rpc-docs.osmosis.zone/",
         "publicGRPC": "https://grpc-test.osmosis.zone:443",
         "lcds": [
