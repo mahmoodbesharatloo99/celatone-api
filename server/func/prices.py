@@ -1,4 +1,5 @@
 import requests
+from constants import PRICE_CACHER_URL
 
 
 def chunks(ids):
@@ -11,9 +12,5 @@ def get_prices(chain, network, ids):
     prices = {}
     id_chunks = chunks(ids)
     for id_chunk in id_chunks:
-        prices.update(
-            requests.get(
-                f"https://celatone-price-cacher-h2bc4rnx5a-as.a.run.app/{chain}/{network}?ids={','.join(id_chunk)}"
-            ).json()
-        )
+        prices.update(requests.get(f"{PRICE_CACHER_URL}/{chain}/{network}?ids={','.join(id_chunk)}").json())
     return prices
