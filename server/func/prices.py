@@ -1,5 +1,5 @@
 import requests
-from constants import PRICE_CACHER_URL
+from func.constants import PRICE_CACHER_URL
 
 
 def chunks(ids):
