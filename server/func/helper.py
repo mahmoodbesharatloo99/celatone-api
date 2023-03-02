@@ -58,7 +58,8 @@ def get_native_balances(endpoint, chain, network, account_address):
 
     # Get all supported assets for this chain and network
     supported_assets = assets.get_assets_by_type(chain, network, "native")
-    asset_ids = [asset["id"] for asset in supported_assets]
+    asset_ids = [asset["id"] for asset in supported_assets if asset["coingecko"] != ""]
+    asset_prices = prices.get_prices(chain, network, asset_ids)
 
     if "balances" in balances:
         for balance in balances["balances"]:
