@@ -74,6 +74,8 @@ def get_native_balances(endpoint, chain, network, account_address):
                     "precision": asset["precision"],
                     "type": "native",
                 }
+                if asset["id"] in asset_prices:
+                    balance["price"] = asset_prices[asset["id"]]
                 output_balance.append(balance)
             # If it's not a supported asset, just return the balance with no extra info
             else:
