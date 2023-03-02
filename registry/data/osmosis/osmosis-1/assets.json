@@ -288,7 +288,7 @@
     "type": "native"
   },
   {
-    "coingecko": "mogul-productions",
+    "coingecko": "stargaze",
     "coinmarketcap": "",
     "description": "The native token of Stargaze",
     "id": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4",
@@ -420,7 +420,7 @@
     "type": "native"
   },
   {
-    "coingecko": "dark-energy-crystals",
+    "coingecko": "decentr",
     "coinmarketcap": "",
     "description": "DEC is the native token of Decentr.",
     "id": "ibc/9BCB27203424535B6230D594553F1659C77EC173E36D9CF4759E7186EE747E84",
@@ -576,7 +576,7 @@
     "type": "native"
   },
   {
-    "coingecko": "binance-peg-polkadot",
+    "coingecko": "polkadot",
     "coinmarketcap": "",
     "description": "Wrapped Polkadot on Axelar",
     "id": "ibc/3FF92D26B407FD61AE95D975712A7C319CDE28DE4D80BDC9978D935932B991D7",
@@ -720,7 +720,7 @@
     "type": "native"
   },
   {
-    "coingecko": "luna-wormhole",
+    "coingecko": "terra-luna",
     "coinmarketcap": "",
     "description": "The native staking token of Terra Classic.",
     "id": "ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0",
@@ -756,7 +756,7 @@
     "type": "native"
   },
   {
-    "coingecko": "force-bridge-usdc",
+    "coingecko": "usd-coin",
     "coinmarketcap": "",
     "description": "Gravity Bridge USDC",
     "id": "ibc/9F9B07EF9AD291167CF5700628145DE1DEB777C2CFC7907553B24446515F6D0E",
@@ -996,7 +996,7 @@
     "type": "native"
   },
   {
-    "coingecko": "rac",
+    "coingecko": "",
     "coinmarketcap": "",
     "description": "Racoon aims to simplify accessibility to AI, NFTs and Gambling on the Cosmos Ecosystem",
     "id": "ibc/6BDB4C8CCD45033F9604E4B93ED395008A753E01EECD6992E7D1EA23D9D3B788",
@@ -1116,7 +1116,7 @@
     "type": "native"
   },
   {
-    "coingecko": "degenerator",
+    "coingecko": "",
     "coinmarketcap": "",
     "description": "MEME Token (MEME) is the native staking token of the MEME Chain",
     "id": "ibc/67C89B8B0A70C08F093C909A4DD996DD10E0494C87E28FD9A551697BF173D4CA",
@@ -1176,7 +1176,7 @@
     "type": "native"
   },
   {
-    "coingecko": "geocoin",
+    "coingecko": "",
     "coinmarketcap": "",
     "description": "Geo token for ODIN Protocol",
     "id": "ibc/9B6FBABA36BB4A3BF127AE5E96B572A5197FD9F3111D895D8919B07BC290764A",
@@ -1248,7 +1248,7 @@
     "type": "native"
   },
   {
-    "coingecko": "dollars",
+    "coingecko": "usdx",
     "coinmarketcap": "",
     "description": "The native stablecoin of Kava",
     "id": "ibc/C78F65E1648A3DFE0BAEB6C4CDA69CC2A75437F1793C0E6386DFDA26393790AE",
@@ -1272,7 +1272,7 @@
     "type": "native"
   },
   {
-    "coingecko": "ape",
+    "coingecko": "apecoin",
     "coinmarketcap": "",
     "description": "ApeCoin on Axelar",
     "id": "ibc/F83CC6471DA4D4B508F437244F10B9E4C68975344E551A2DEB6B8617AB08F0D4",
@@ -1320,7 +1320,7 @@
     "type": "native"
   },
   {
-    "coingecko": "unicorn-token",
+    "coingecko": "uniswap",
     "coinmarketcap": "",
     "description": "Uniswap on Axelar",
     "id": "ibc/AE2719773D6FCDD05AC17B1ED63F672F5F9D84144A61965F348C86C2A83AD161",
@@ -1368,7 +1368,7 @@
     "type": "native"
   },
   {
-    "coingecko": "carry",
+    "coingecko": "crescent-network",
     "coinmarketcap": "",
     "description": "CRE is the native token of the Crescent Network.",
     "id": "ibc/5A7C219BA5F7582B99629BA3B2A01A61BFDA0F6FD1FE95B5366F7334C4BC0580",
@@ -1380,7 +1380,7 @@
     "type": "native"
   },
   {
-    "coingecko": "tranquility-city",
+    "coingecko": "",
     "coinmarketcap": "",
     "description": "The native token of Lumen Network",
     "id": "ibc/FFA652599C77E853F017193E36B5AB2D4D9AFC4B54721A74904F80C9236BF3B7",
@@ -1428,7 +1428,7 @@
     "type": "native"
   },
   {
-    "coingecko": "dawn-star-share",
+    "coingecko": "",
     "coinmarketcap": "",
     "description": "Solarbank DAO Governance Token for speeding up the shift to renewable and green energy",
     "id": "ibc/C3FC4DED273E7D1DD2E7BAA3317EC9A53CD3252B577AA33DC00D9DF2BDF3ED5C",
