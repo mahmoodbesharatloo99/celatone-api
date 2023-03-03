@@ -116,7 +116,7 @@
     "id": "ibc/16F3EB18413FD15154B02F9929473A3C0A23902BF8044157E9E5E0FBEB24FCEE",
     "precision": 18,
     "slugs": ["polygon", "axelar"],
-    "coingecko": "polygon",
+    "coingecko": "matic-network",
     "coinmarketcap": ""
   }
 ]
