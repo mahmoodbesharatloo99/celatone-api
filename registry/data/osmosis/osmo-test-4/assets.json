@@ -68,7 +68,7 @@
     "id": "ibc/D38FD4C586C397DDAAB715C654DAEE3C3C40462CD410254AC7576208E947605B",
     "precision": 18,
     "slugs": ["binance", "axelar"],
-    "coingecko": "binance-coin",
+    "coingecko": "binancecoin",
     "coinmarketcap": ""
   },
   {
