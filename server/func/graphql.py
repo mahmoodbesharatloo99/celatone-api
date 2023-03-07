@@ -18,9 +18,7 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
         }}
         """
     query += "}"
-    graphql_response = requests.post(
-        GRAPHQL_DICT[chain][network], json={"query": query}
-    ).json()["data"]
+    graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": query}).json()["data"]
     for contract_address, data in graphql_response.items():
         if data["account"] is None:
             data["account"] = {"address": ""}
@@ -46,15 +44,15 @@ def get_graphql_code_details(chain, network, code_ids):
           account {{
             address
           }}
+          cw2_contract
+          cw2_version
           contract_instantiated
           access_config_permission
           access_config_addresses
         }}
         """
     query += "}"
-    graphql_response = requests.post(
-        GRAPHQL_DICT[chain][network], json={"query": query}
-    ).json()["data"]
+    graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": query}).json()["data"]
     for code_id, data in graphql_response.items():
         if data["account"] is None:
             data["account"] = {"address": ""}
