@@ -57,7 +57,7 @@ def get_asset_gamm(chain, network, pool_id):
 
 def get_assets_with_prices(chain, network):
     assets = get_assets(chain, network)
-    priced_assets = [asset for asset in assets if asset["coingecko"] != ""]
+    priced_assets = [asset["id"] for asset in assets if asset["coingecko"] != ""]
     prices = get_prices(chain, network, priced_assets)
     for id, price in prices.items():
         assets[id]["price"] = price
