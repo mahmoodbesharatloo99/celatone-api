@@ -126,6 +126,16 @@ def get_assets(chain, network):
     return assets.get_assets(chain, network)
 
 
+@app.route("/assets/<chain>/<network>/prices", methods=["GET"])
+@app.doc(tags=["Registry Data", "External"])
+def get_assets(chain, network):
+    """Get All Assets with Prices
+
+    Returns a list of all the known assets based on the input chain and network
+    """
+    return assets.get_assets_with_prices(chain, network)
+
+
 @app.route("/assets/<chain>/<network>/type/<asset_type>", methods=["GET"])
 @app.doc(tags=["Registry Data"])
 def get_assets_by_type(chain, network, asset_type):
