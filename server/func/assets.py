@@ -9,7 +9,7 @@ def encode_base64(string):
 
 def get_assets(chain, network):
     assets = load_and_check_registry_data(chain, network, "assets")
-    assets = [dict(asset, **{"price": get_prices(chain, network, asset["id"])}) for asset in assets]
+    assets = [dict(asset, **{"price": 1.00}) for asset in assets]
     return assets
 
 
