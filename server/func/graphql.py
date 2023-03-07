@@ -59,6 +59,8 @@ def get_graphql_code_details(chain, network, code_ids):
         code_data.append(
             {
                 "code_id": int(code_id[1:]),
+                "cw2_contract": data["cw2_contract"],
+                "cw2_version": data["cw2_version"],
                 "creator": data["account"]["address"],
                 "contract_instantiated": data["contract_instantiated"],
                 "access_config_permission": data["access_config_permission"],
