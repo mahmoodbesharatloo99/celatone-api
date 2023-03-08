@@ -1,6 +1,6 @@
 import requests
 from func.constants import GRAPHQL_DICT
-from func.constants import GRAPHQL_TEST_BCD
+from func.constants import GRAPHQL_TEST_URL
 
 
 def get_contract_instantiator_admin(chain, network, contract_addresses):
@@ -79,7 +79,7 @@ def get_graphql_transaction(tx_hash, limit):
             }}
         }}
     """
-    return requests.post(GRAPHQL_TEST_BCD, json={"query": query})
+    return requests.post(GRAPHQL_TEST_URL, json={"query": query})
 
 if __name__ == "__main__":
     print(
