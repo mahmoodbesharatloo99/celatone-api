@@ -9,6 +9,7 @@ import func.assets as assets
 import func.projects as projects
 import func.entities as entities
 import func.balances as balances
+import func.transaction as transactions
 
 from apiflask import APIFlask
 from flask_cors import CORS
@@ -243,6 +244,15 @@ def get_entity_image(entity_slug):
 @app.doc(tags=["Registry Assets"])
 def get_asset_image(asset_symbol):
     return send_file(f"../registry/assets/assets/{asset_symbol}.png")
+
+
+# Transactions
+
+
+@app.route("/txs/hash/<tx_hash>", methods=["GET"])
+def get_tx(tx_hash):
+    return transactions.get_tx(tx_hash)
+
 
 
 if __name__ == "__main__":
