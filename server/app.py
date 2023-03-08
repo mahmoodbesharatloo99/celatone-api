@@ -250,6 +250,7 @@ def get_asset_image(asset_symbol):
 
 
 @app.route("/txs/hash/<tx_hash>", methods=["GET"])
+@app.doc(tags=["Registry Data"])
 def get_tx(tx_hash):
     return transactions.get_tx(tx_hash)
 

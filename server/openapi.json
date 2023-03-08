@@ -41,6 +41,25 @@
         "summary": "Hello World"
       }
     },
+    "/chains": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Registry Data"
+        ],
+        "summary": "Get Chains"
+      }
+    },
     "/entities": {
       "get": {
         "parameters": [],
@@ -58,6 +77,82 @@
           "Registry Data"
         ],
         "summary": "Get Entities"
+      }
+    },
+    "/chains/{chain}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Registry Data"
+        ],
+        "summary": "Get Chain"
+      }
+    },
+    "/txs/hash/{tx_hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "tx_hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Registry Data"
+        ],
+        "summary": "Get Tx"
       }
     },
     "/entities/{entity_slug}": {
@@ -332,6 +427,44 @@
         "description": "Returns a list of all the known contracts based on the input chain and network"
       }
     },
+    "/images/assets/{asset_symbol}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_symbol",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Registry Assets"
+        ],
+        "summary": "Get Asset Image"
+      }
+    },
     "/images/entities/{entity_slug}": {
       "get": {
         "parameters": [
@@ -368,6 +501,54 @@
           "Registry Assets"
         ],
         "summary": "Get Entity Image"
+      }
+    },
+    "/assets/{chain}/{network}/prices": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Registry Data",
+          "External"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
     "/codes/{chain}/{network}/{code_id}": {
