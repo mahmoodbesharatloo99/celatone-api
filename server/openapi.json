@@ -79,44 +79,6 @@
         "summary": "Get Entities"
       }
     },
-    "/txs/{tx_hash}": {
-      "get": {
-        "parameters": [
-          {
-            "in": "path",
-            "name": "tx_hash",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful response"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPError"
-                }
-              }
-            },
-            "description": "Not found"
-          }
-        },
-        "tags": [
-          "Registry Data"
-        ],
-        "summary": "Get Tx"
-      }
-    },
     "/chains/{chain}": {
       "get": {
         "parameters": [
@@ -549,6 +511,60 @@
         ],
         "summary": "Get All Assets with Prices",
         "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/txs/{chain}/{network}/{tx_hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "tx_hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Registry Data"
+        ],
+        "summary": "Get Tx"
       }
     },
     "/codes/{chain}/{network}/{code_id}": {

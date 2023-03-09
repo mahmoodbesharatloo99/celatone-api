@@ -249,10 +249,10 @@ def get_asset_image(asset_symbol):
 # Transactions
 
 
-@app.route("/txs/<tx_hash>", methods=["GET"])
+@app.route("/txs/<chain>/<network>/<tx_hash>", methods=["GET"])
 @app.doc(tags=["Registry Data"])
-def get_tx(tx_hash):
-    return transactions.get_tx(tx_hash)
+def get_tx(chain, network, tx_hash):
+    return transactions.get_tx(chain, network, tx_hash)
 
 
 if __name__ == "__main__":
