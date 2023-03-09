@@ -78,7 +78,7 @@ def get_graphql_code_details(chain, network, code_ids):
 def get_graphql_transaction(chain, network, tx_hash, limit):
     query = f"""
         query {{
-            lcd_tx_responses(where: {{hash: {{_eq: "{tx_hash}"}}}}, limit: {limit}) {{
+            lcd_tx_responses(where: {{hash: {{_eq: "{tx_hash}"}}}}, limit: {limit}, order_by: {{height: desc}}) {{
                 result
             }}
         }}
