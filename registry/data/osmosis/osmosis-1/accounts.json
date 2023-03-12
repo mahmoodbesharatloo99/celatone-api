@@ -1,39 +1,27 @@
 [
   {
     "slug": "apollodao",
+    "name": "ApolloDAO Account 1",
+    "address": "osmo1pq47vuhc9gum8qjht0tamsgluuqjleqprgemhd",
+    "description": ""
+  },
+  {
+    "slug": "apollodao",
+    "name": "ApolloDAO Contract Admin",
+    "address": "osmo19377ce3k2893s98xp58vg0jtgtvj5qv405y36l4wf4z2xhnjwh6se8kep3",
+    "description": "Apollo Safe CW3 multisig contract owned by the Apollo team used as the admin for Apollo Vaults and other contracts."
+  },
+  {
+    "slug": "apollodao",
     "name": "ApolloDAO Deployer",
     "address": "osmo1jxdhfvhedn3gv8fnmn4crzkevqfkm29me0pnht",
     "description": "Account owned by ApolloDAO used to deploy their CW3 multisig and liquid staking contracts."
-  },
-  {
-    "slug": "ion-dao",
-    "name": "ION DAO Deployer",
-    "address": "osmo14lr70k43wdry3fxl5ykkh630jhas2nsp8re0e4",
-    "description": "Account owned by ION DAO contributors used to deploy their governance and governance staking contracts."
-  },
-  {
-    "slug": "mars",
-    "name": "Mars Deployer",
-    "address": "osmo1cd4nn8yzdrrsfqsmmvaafq8r03xn38qgqt8fzh",
-    "description": "Account owned by Delphi Labs used to deploy the Mars Protocol contracts on Osmosis."
   },
   {
     "slug": "apollodao",
     "name": "ApolloDAO Dev Multisig",
     "address": "osmo1wl59k23zngj34l7d42y9yltask7rjlnxgccawc7ltrknp6n52fps94qsjd",
     "description": ""
-  },
-  {
-    "slug": "ogp",
-    "name": "OGP Native Multisig",
-    "address": "osmo1duj0ldp5p3qmksas35q7cq977f38a8e7chsxnw",
-    "description": "Native multisig account owned by the Osmosis Grants Program used to distribute grants."
-  },
-  {
-    "slug": "ogp",
-    "name": "OGP Apollo Safe Multisig",
-    "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
-    "description": "Apollo Safe CW3 multisig account owned by the Osmosis Grants Program"
   },
   {
     "slug": "apollodao",
@@ -72,15 +60,39 @@
     "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
   },
   {
-    "slug": "apollodao",
-    "name": "ApolloDAO Account 1",
-    "address": "osmo1pq47vuhc9gum8qjht0tamsgluuqjleqprgemhd",
-    "description": ""
+    "slug": "ion-dao",
+    "name": "ION DAO Deployer",
+    "address": "osmo14lr70k43wdry3fxl5ykkh630jhas2nsp8re0e4",
+    "description": "Account owned by ION DAO contributors used to deploy their governance and governance staking contracts."
   },
   {
-    "slug": "apollodao",
-    "name": "ApolloDAO Contract Admin",
-    "address": "osmo19377ce3k2893s98xp58vg0jtgtvj5qv405y36l4wf4z2xhnjwh6se8kep3",
-    "description": "Apollo Safe CW3 multisig contract owned by the Apollo team used as the admin for Apollo Vaults and other contracts."
+    "slug": "mars",
+    "name": "Mars Deployer",
+    "address": "osmo1cd4nn8yzdrrsfqsmmvaafq8r03xn38qgqt8fzh",
+    "description": "Account owned by Delphi Labs used to deploy the Mars Protocol contracts on Osmosis."
+  },
+  {
+    "slug": "ogp",
+    "name": "OGP Apollo Safe Multisig",
+    "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
+    "description": "Apollo Safe CW3 multisig account owned by the Osmosis Grants Program"
+  },
+  {
+    "slug": "ogp",
+    "name": "OGP Native Multisig",
+    "address": "osmo1duj0ldp5p3qmksas35q7cq977f38a8e7chsxnw",
+    "description": "Native multisig account owned by the Osmosis Grants Program used to distribute grants."
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Labs Proposal Code Uploader",
+    "address": "osmo10d07y265gmmuvt4z0w9aw880jnsr700jjeq4qp",
+    "description": "Main account used by the Osmosis Labs team as the uploader (run_as field) of contract codes for store code proposals"
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Labs Proposal Submitter",
+    "address": "osmo19mywfjzj324w5ukf7ss6jak0dg9hnljfp0rfx4",
+    "description": "Main account used by the Osmosis Labs team to create and submit on-chain governance proposals."
   }
 ]

@@ -106,9 +106,9 @@
   },
   {
     "slug": "apollodao",
-    "name": "Apollo CW-Vault",
+    "name": "Apollo Osmosis CW-Vault",
     "id": 17,
-    "description": "Apollo CW-Vault code",
+    "description": "Apollo Osmosis CW-Vault code",
     "github": "https://github.com/apollodao/cw-vault-standard"
   },
   {
@@ -155,9 +155,30 @@
   },
   {
     "slug": "mars",
-    "name": "Mars Credit Manager code",
+    "name": "Mars Credit Manager",
     "id": 27,
     "description": "Mars Credit Manager code",
     "github": "https://github.com/mars-protocol/v2-fields-of-mars/tree/v1.0.0/contracts/credit-manager"
+  },
+  {
+    "slug": "29",
+    "name": "Apollo Osmosis CW-Vault (v0.1.4)",
+    "id": 30,
+    "description": "Apollo Osmosis CW-Vault code",
+    "github": "https://github.com/apollodao/cw-vault-standard"
+  },
+  {
+    "slug": "osmosis",
+    "name": "CW721 Base",
+    "id": 30,
+    "description": "CW721 Base code",
+    "github": "https://github.com/CosmWasm/cw-nfts/tree/main/contracts/cw721-base"
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Cross-Chain Swaps",
+    "id": 31,
+    "description": "Osmosis Cross-Chain Swap Code",
+    "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/crosschain-swaps"
   }
 ]
