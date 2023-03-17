@@ -10,6 +10,7 @@ import func.projects as projects
 import func.entities as entities
 import func.balances as balances
 import func.transaction as transactions
+import func.pools as pools
 
 from apiflask import APIFlask
 from flask_cors import CORS
@@ -269,7 +270,7 @@ def get_pools(chain, network):
 
     Returns a list of all the known Osmosis pools based on the input chain and network
     """
-    return codes.get_codes(chain, network)
+    return pools.get_pools(chain, network)
 
 
 @app.route("/pool/<chain>/<network>/<pool_id>", methods=["GET"])
@@ -279,4 +280,4 @@ def get_pool(chain, network, pool_id):
 
     Returns a specific Osmosis pool based on the input chain, network, and code_id
     """
-    return codes.get_code(chain, network, pool_id)
+    return pools.get_pool(chain, network, pool_id)
