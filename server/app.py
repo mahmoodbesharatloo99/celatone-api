@@ -257,3 +257,26 @@ def get_tx(chain, network, tx_hash):
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
+
+# Pools
+
+
+@app.route("/pools/<chain>/<network>", methods=["GET"])
+@app.doc(tags=["Registry Data"])
+def get_pools(chain, network):
+    """Get All Pools
+
+    Returns a list of all the known Osmosis pools based on the input chain and network
+    """
+    return codes.get_codes(chain, network)
+
+
+@app.route("/pool/<chain>/<network>/<pool_id>", methods=["GET"])
+@app.doc(tags=["Registry Data"])
+def get_pool(chain, network, pool_id):
+    """Get Pool by ID
+
+    Returns a specific Osmosis pool based on the input chain, network, and code_id
+    """
+    return codes.get_code(chain, network, pool_id)
