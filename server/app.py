@@ -256,10 +256,6 @@ def get_tx(chain, network, tx_hash):
     return transactions.get_tx(chain, network, tx_hash)
 
 
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
-
-
 # Pools
 
 
@@ -281,3 +277,7 @@ def get_pool(chain, network, pool_id):
     Returns a specific Osmosis pool based on the input chain, network, and code_id
     """
     return pools.get_pool(chain, network, pool_id)
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
