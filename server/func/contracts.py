@@ -5,11 +5,15 @@ from func.graphql import get_contract_instantiator_admin
 def get_contracts(chain, network):
     contracts = []
     contracts = load_and_check_registry_data(chain, network, "contracts")
+    codes = load_and_check_registry_data(chain, network, "codes")
     if len(contracts) > 0:
         instantiator_admin_data = get_contract_instantiator_admin(
             chain, network, [contract["address"] for contract in contracts]
         )
         for contract in contracts:
+            if contract["description"] == "":
+                code_description = [code["description"] for code in codes if code["id"] == contract["code"]][0]
+                contract["description"] = code_description
             for data in instantiator_admin_data:
                 if contract["address"] == data["address"]:
                     contract["instantiator"] = data["instantiator"]
@@ -20,7 +24,5 @@ def get_contracts(chain, network):
 
 def get_contract(chain, network, contract_address):
     contracts = get_contracts(chain, network)
-    contract = [
-        contract for contract in contracts if contract["address"] == contract_address
-    ][0]
+    contract = [contract for contract in contracts if contract["address"] == contract_address][0]
     return contract

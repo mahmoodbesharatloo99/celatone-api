@@ -94,5 +94,17 @@
     "name": "Osmosis Labs Proposal Submitter",
     "address": "osmo19mywfjzj324w5ukf7ss6jak0dg9hnljfp0rfx4",
     "description": "Main account used by the Osmosis Labs team to create and submit on-chain governance proposals."
+  },
+  {
+    "slug": "skip",
+    "name": "ProtoRev Admin Account",
+    "address": "osmo17nv67dvc7f8yr00rhgxd688gcn9t9wvhn783z4",
+    "description": "Admin account used to add and set various parameters in the ProtoRev module."
+  },
+  {
+    "slug": "skip",
+    "name": "ProtoRev Deeloper Account",
+    "address": "osmo1qs9akhf0s05hqskmu9gdnzz3e6u4xc7aaya0u0",
+    "description": "Developer account controlled by the Skip team to receive portion of the ProtoRev revenue from arbitraging Osmosis swaps."
   }
 ]
