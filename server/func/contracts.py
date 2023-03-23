@@ -14,6 +14,9 @@ def get_contracts(chain, network):
             if contract["description"] == "":
                 code_description = [code["description"] for code in codes if code["id"] == contract["code"]][0]
                 contract["description"] = code_description
+            if "github" not in contract or contract["github"] == "":
+                code_github = [code["github"] for code in codes if code["id"] == contract["code"]][0]
+                contract["github"] = code_github
             for data in instantiator_admin_data:
                 if contract["address"] == data["address"]:
                     contract["instantiator"] = data["instantiator"]
