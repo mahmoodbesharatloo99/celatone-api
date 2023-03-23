@@ -260,7 +260,7 @@
     "name": "Mars Red Bank",
     "address": "osmo1c3ljch9dfw5kf52nfwpxd2zmj2ese7agnx0p9tenkrryasrle5sqf3ftpg",
     "description": "Mars contract that manages asset deposits, borrowing, and liquidations.",
-    "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/swaprouter",
+    "github": "https://github.com/mars-protocol/red-bank/tree/master/contracts",
     "code": 11
   },
   {
