@@ -60,10 +60,22 @@
     "description": "One of the voter accounts on the ApolloDAO Dev Multisig."
   },
   {
+    "slug": "autonomy",
+    "name": "Autonomy Contract Uploader",
+    "address": "osmo1hvkucfyhjxdhv4gv6kwmuzxyjn0qufqzp4xr99",
+    "description": "Account used to upload Autonomy Network contracts."
+  },
+  {
     "slug": "ion-dao",
     "name": "ION DAO Deployer",
     "address": "osmo14lr70k43wdry3fxl5ykkh630jhas2nsp8re0e4",
     "description": "Account owned by ION DAO contributors used to deploy their governance and governance staking contracts."
+  },
+  {
+    "slug": "kado",
+    "name": "Kado Contract Uploader",
+    "address": "osmo19vxp8vq8qm368dr026qxh8v82satwaf79y235lfv6wmgpwxx8dtskedaku",
+    "description": "Account whitelisted to upload Kado Router contracts."
   },
   {
     "slug": "mars",

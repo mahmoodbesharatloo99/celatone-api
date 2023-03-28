@@ -220,6 +220,28 @@
     "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
   },
   {
+    "slug": "autonomy",
+    "name": "Autonomy Network",
+    "website": "https://www.autonomynetwork.io/",
+    "github": "https://github.com/Autonomy-Network",
+    "logo": "autonoomy.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/AutonomyNetwork"
+      },
+      {
+        "name": "telegram",
+        "url": ""
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.com/invite/kbDwaW7jfv"
+      }
+    ],
+    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+  },
+  {
     "slug": "avalanche",
     "name": "Avalanche",
     "website": "https://avax.network",

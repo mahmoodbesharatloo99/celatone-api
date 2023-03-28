@@ -208,6 +208,14 @@
     "github": "https://github.com/many-things/ion-dao-contracts/tree/dev/contracts/stake"
   },
   {
+    "slug": "kado",
+    "name": "Kado Dev Multisig",
+    "address": "osmo19vxp8vq8qm368dr026qxh8v82satwaf79y235lfv6wmgpwxx8dtskedaku",
+    "description": "Apollo Safe CW3 multisig account owned by the Kado team",
+    "code": 1,
+    "github": "https://github.com/apollodao/cw-plus-fork/tree/v0.13.2/contracts/cw3-fixed-multisig"
+  },
+  {
     "slug": "mars",
     "name": "Mars Field of Mars Account NFT",
     "address": "osmo1450hrg6dv2l58c0rvdwx8ec2a0r6dd50hn4frk370tpvqjhy8khqw7sw09",
