@@ -1321,7 +1321,7 @@
   },
   {
     "slug": "kado",
-    "name": "Kado Money",
+    "name": "Kado",
     "website": "https://kado.money",
     "github": "",
     "logo": "kado.png",
@@ -1339,7 +1339,7 @@
         "url": ""
       }
     ],
-    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+    "description": "A web3 payments infrastructure provider. Buy, sell, or swap with Kado."
   },
   {
     "slug": "kava",
