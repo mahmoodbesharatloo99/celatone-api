@@ -2062,5 +2062,82 @@
     "slugs": [],
     "symbol": "EBL",
     "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Quicksilver Liquid Staked ATOM",
+    "id": "ibc/FA602364BEC305A696CBDF987058E99D8B479F0318E47314C49173E8838C5BAC",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qatom.svg",
+    "name": "Quicksilver Liquid Staked ATOM",
+    "precision": 6,
+    "symbol": "qATOM",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Governance Token of Harbor protocol on Comdex network",
+    "id": "ibc/AD4DEA52408EA07C0C9E19444EC8DA84A274A70AD2687A710EFDDEB28BB2986A",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/images/harbor.svg",
+    "name": "Harbor",
+    "precision": 6,
+    "symbol": "HARBOR",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Quicksilver Liquid Staked REGEN",
+    "id": "ibc/79A676508A2ECA1021EDDC7BB9CF70CEEC9514C478DA526A5A8B3E78506C2206",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qregen.svg",
+    "name": "Quicksilver Liquid Staked Regen",
+    "precision": 6,
+    "symbol": "qREGEN",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Inspired by Bonk. A community project to celebrate the settlers of JunoNetwork.",
+    "id": "ibc/4F24D904BAB5FFBD3524F2DE3EC3C7A9E687A2408D9A985E57B356D9FA9201C6",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/fox.png",
+    "name": "Juno Fox",
+    "precision": 6,
+    "symbol": "FOX",
+    "type": "native"
+  },
+  {
+    "coingecko": "quicksilver",
+    "coinmarketcap": "",
+    "description": "QCK - native token of Quicksilver",
+    "id": "ibc/635CB83EF1DFE598B10A3E90485306FD0D47D34217A4BE5FD9977FA010A5367D",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qck.png",
+    "name": "Quicksilver",
+    "precision": 6,
+    "symbol": "QCK",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The native token of Arkhadian",
+    "id": "ibc/0F91EE8B98AAE3CF393D94CD7F89A10F8D7758C5EC707E721899DFE65C164C28",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/arkh/images/arkh.svg",
+    "name": "Arkh",
+    "precision": 6,
+    "symbol": "ARKH",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Quicksilver Liquid Staked OSMO",
+    "id": "ibc/42D24879D4569CE6477B7E88206ADBFE47C222C6CAD51A54083E4A72594269FC",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qosmo.svg",
+    "name": "Quicksilver Liquid Staked OSMO",
+    "precision": 6,
+    "symbol": "qOSMO",
+    "type": "native"
   }
 ]
