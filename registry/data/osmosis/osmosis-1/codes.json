@@ -57,9 +57,9 @@
   },
   {
     "slug": "osmosis",
-    "name": "SwapRouter",
+    "name": "Osmosis SwapRouter",
     "id": 10,
-    "description": "SwapRouter code",
+    "description": "The SwapRouter contract serves as a way to define, on-chain, routes that swaps from one asset to another will take.",
     "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/swaprouter"
   },
   {
