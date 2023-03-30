@@ -97,6 +97,96 @@
   },
   {
     "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 1",
+    "address": "osmo14kjcwdwcqsujkdt8n5qwpd8x8ty2rys5rjrdjj",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 2",
+    "address": "osmo1gw445ta0aqn26suz2rg3tkqfpxnq2hs224d7gq",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 3",
+    "address": "osmo13lt0hzc6u3htsk7z5rs6vuurmgg4hh2ecgxqkf",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 4",
+    "address": "osmo1kvc3he93ygc0us3ycslwlv2gdqry4ta73vk9hu",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 5",
+    "address": "osmo19qgldlsk7hdv3ddtwwpvzff30pxqe9phq9evxf",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 6",
+    "address": "osmo19fs55cx4594een7qr8tglrjtt5h9jrxg458htd",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 7",
+    "address": "osmo1ssp6px3fs3kwreles3ft6c07mfvj89a544yj9k",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 8",
+    "address": "osmo1c5yu8498yzqte9cmfv5zcgtl07lhpjrj0skqdx",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 9",
+    "address": "osmo1yhj3r9t9vw7qgeg22cehfzj7enwgklw5k5v7lj",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 10",
+    "address": "osmo18nzmtyn5vy5y45dmcdnta8askldyvehx66lqgm",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 11",
+    "address": "osmo1z2x9z58cg96ujvhvu6ga07yv9edq2mvkxpgwmc",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 12",
+    "address": "osmo1tvf3373skua8e6480eyy38avv8mw3hnt8jcxg9",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 13",
+    "address": "osmo1zs0txy03pv5crj2rvty8wemd3zhrka2ne8u05n",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 14",
+    "address": "osmo1djgf9p53n7m5a55hcn6gg0cm5mue4r5g3fadee",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
+    "name": "Osmosis Developer Rewards Receiver 15",
+    "address": "osmo1488zldkrn8xcjh3z40v2mexq7d088qkna8ceze",
+    "description": ""
+  },
+  {
+    "slug": "osmosis",
     "name": "Osmosis Labs Proposal Code Uploader",
     "address": "osmo10d07y265gmmuvt4z0w9aw880jnsr700jjeq4qp",
     "description": "Main account used by the Osmosis Labs team as the uploader (run_as field) of contract codes for store code proposals"
@@ -109,13 +199,13 @@
   },
   {
     "slug": "skip",
-    "name": "ProtoRev Admin Account",
+    "name": "Skip ProtoRev Admin Account",
     "address": "osmo17nv67dvc7f8yr00rhgxd688gcn9t9wvhn783z4",
     "description": "Admin account used to add and set various parameters in the ProtoRev module."
   },
   {
     "slug": "skip",
-    "name": "ProtoRev Deeloper Account",
+    "name": "Skip ProtoRev Deeloper Account",
     "address": "osmo1qs9akhf0s05hqskmu9gdnzz3e6u4xc7aaya0u0",
     "description": "Developer account controlled by the Skip team to receive portion of the ProtoRev revenue from arbitraging Osmosis swaps."
   }
