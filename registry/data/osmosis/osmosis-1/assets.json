@@ -2072,7 +2072,8 @@
     "name": "Quicksilver Liquid Staked ATOM",
     "precision": 6,
     "symbol": "qATOM",
-    "type": "native"
+    "type": "native",
+    "slugs": ["quicksilver", "cosmos-hub"]
   },
   {
     "coingecko": "",
@@ -2083,7 +2084,8 @@
     "name": "Harbor",
     "precision": 6,
     "symbol": "HARBOR",
-    "type": "native"
+    "type": "native",
+    "slugs": []
   },
   {
     "coingecko": "",
@@ -2094,7 +2096,8 @@
     "name": "Quicksilver Liquid Staked Regen",
     "precision": 6,
     "symbol": "qREGEN",
-    "type": "native"
+    "type": "native",
+    "slugs": ["quicksilver", "regen"]
   },
   {
     "coingecko": "",
@@ -2105,7 +2108,8 @@
     "name": "Juno Fox",
     "precision": 6,
     "symbol": "FOX",
-    "type": "native"
+    "type": "native",
+    "slugs": []
   },
   {
     "coingecko": "quicksilver",
@@ -2116,7 +2120,8 @@
     "name": "Quicksilver",
     "precision": 6,
     "symbol": "QCK",
-    "type": "native"
+    "type": "native",
+    "slugs": ["quicksilver"]
   },
   {
     "coingecko": "",
@@ -2127,7 +2132,8 @@
     "name": "Arkh",
     "precision": 6,
     "symbol": "ARKH",
-    "type": "native"
+    "type": "native",
+    "slugs": []
   },
   {
     "coingecko": "",
@@ -2138,6 +2144,7 @@
     "name": "Quicksilver Liquid Staked OSMO",
     "precision": 6,
     "symbol": "qOSMO",
-    "type": "native"
+    "type": "native",
+    "slugs": ["quicksilver", "osmosis"]
   }
 ]
