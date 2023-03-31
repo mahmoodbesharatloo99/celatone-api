@@ -83,7 +83,7 @@ def get_graphql_transaction(chain, network, tx_hash, limit):
             }}
         }}
     """
-    return requests.post(GRAPHQL_TEST_DICT[chain][network], json={"query": query})
+    return requests.post(GRAPHQL_TEST_DICT[chain][network], json={"query": query}, timeout=2)
 
 
 if __name__ == "__main__":
