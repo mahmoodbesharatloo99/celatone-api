@@ -169,7 +169,7 @@
   {
     "slug": "autonomy",
     "name": "Autonomy Network Wrapper",
-    "address": "osmo1fy547nr4ewfc38z73ghr6x62p7eguuupm66xwk8v8rjnjyeyxdqs6gdqx7",
+    "address": "osmo1gvkwn0yclk0cwjzeu65cnl0uq0msx9sq0zk24q9gmfrenwerxyps2w3x87",
     "code": 33,
     "github": "https://github.com/Autonomy-Network/autonomy-osmosis-contracts/tree/main/contracts/wrapper-osmosis"
   },
