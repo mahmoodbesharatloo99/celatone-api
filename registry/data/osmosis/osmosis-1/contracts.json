@@ -160,6 +160,20 @@
     "github": "https://github.com/apollodao/cw-plus-fork/tree/v0.13.2/contracts/cw3-fixed-multisig"
   },
   {
+    "slug": "autonomy",
+    "name": "Autonomy Network Registry",
+    "address": "osmo1wg5qzw6yn88yz9kxtwvs36fmq5jxa03pg6zptvgte62hrlw0c4rqc9mjtf",
+    "code": 32,
+    "github": "https://github.com/Autonomy-Network/autonomy-osmosis-contracts/tree/main/contracts/registry-stake"
+  },
+  {
+    "slug": "autonomy",
+    "name": "Autonomy Network Wrapper",
+    "address": "osmo1fy547nr4ewfc38z73ghr6x62p7eguuupm66xwk8v8rjnjyeyxdqs6gdqx7",
+    "code": 33,
+    "github": "https://github.com/Autonomy-Network/autonomy-osmosis-contracts/tree/main/contracts/wrapper-osmosis"
+  },
+  {
     "slug": "osmosis",
     "name": "IBC Rate Limiting",
     "address": "osmo17r7qdw2zk6jyw62cvwm6flmhtj9q7zd26r8zc6sqyf0pnaq46cfss8hgxg",

@@ -183,14 +183,14 @@
   },
   {
     "slug": "autonomy",
-    "name": "Autonomy Network Registry Stake Contract",
+    "name": "Autonomy Network Registry",
     "id": 32,
     "description": "Autonomy registry contract responsible for storing requests created by users.",
     "github": "https://github.com/Autonomy-Network/autonomy-osmosis-contracts/tree/main/contracts/registry-stake"
   },
   {
     "slug": "autonomy",
-    "name": "Autonomy Network Limits/Stops Wrapper",
+    "name": "Autonomy Network Wrapper",
     "id": 33,
     "description": "Autonomy wrapper contract for Osmosis swap operations, responsible for executing the swap operation between assets and validate results,",
     "github": "https://github.com/Autonomy-Network/autonomy-osmosis-contracts/tree/main/contracts/wrapper-osmosis"
