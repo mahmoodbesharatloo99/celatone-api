@@ -452,7 +452,7 @@
     "name": "USD Coin",
     "precision": 6,
     "slugs": ["circle", "axelar"],
-    "symbol": "USDC",
+    "symbol": "USDC.axl",
     "type": "native"
   },
   {
@@ -464,7 +464,7 @@
     "name": "Wrapped Ether",
     "precision": 18,
     "slugs": ["ethereum", "axelar"],
-    "symbol": "WETH",
+    "symbol": "WETH.axl",
     "type": "native"
   },
   {
@@ -476,7 +476,7 @@
     "name": "Dai Stablecoin",
     "precision": 18,
     "slugs": ["makerdao", "axelar"],
-    "symbol": "DAI",
+    "symbol": "DAI.axl",
     "type": "native"
   },
   {
@@ -512,7 +512,7 @@
     "name": "Wrapped Bitcoin",
     "precision": 8,
     "slugs": ["bitcoin", "axelar"],
-    "symbol": "WBTC",
+    "symbol": "WBTC.axl",
     "type": "native"
   },
   {
@@ -1772,7 +1772,7 @@
     "name": "Wrapped Matic",
     "precision": 18,
     "slugs": ["polygon", "axelar"],
-    "symbol": "WMATIC",
+    "symbol": "WMATIC.axl",
     "type": "native"
   },
   {
@@ -1832,7 +1832,7 @@
     "name": "Wrapped AVAX",
     "precision": 18,
     "slugs": ["avalanche"],
-    "symbol": "AVAX",
+    "symbol": "AVAX.axl",
     "type": "native"
   },
   {
@@ -1928,7 +1928,7 @@
     "name": "Wrapped FTM",
     "precision": 18,
     "slugs": ["fantom"],
-    "symbol": "FTM",
+    "symbol": "FTM.axl",
     "type": "native"
   },
   {
