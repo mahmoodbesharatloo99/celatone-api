@@ -11,6 +11,8 @@ def get_contracts(chain, network):
             chain, network, [contract["address"] for contract in contracts]
         )
         for contract in contracts:
+            contract["description"] = ""
+            contract["github"] = ""
             if "description" not in contract or contract["description"] == "":
                 code_description = [code["description"] for code in codes if code["id"] == contract["code"]][0]
                 contract["description"] = code_description
