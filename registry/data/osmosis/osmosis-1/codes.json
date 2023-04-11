@@ -176,7 +176,7 @@
   },
   {
     "slug": "osmosis",
-    "name": "Osmosis Cross-Chain Swaps",
+    "name": "Osmosis Cross-Chain Swap v1 (DEPRECATED)",
     "id": 31,
     "description": "Osmosis Cross-Chain Swap code mainly acting as a swap and forward contract that takes the received tokens, swaps them via a swaprouter contract, and sends them to an IBC receiver.",
     "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/crosschain-swaps"
@@ -194,5 +194,12 @@
     "id": 33,
     "description": "Autonomy wrapper contract for Osmosis swap operations, responsible for executing the swap operation between assets and validate results,",
     "github": "https://github.com/Autonomy-Network/autonomy-osmosis-contracts/tree/main/contracts/wrapper-osmosis"
+  },
+  {
+    "slug": "osmosis",
+    "name": "Cross-Chain Swap v2",
+    "id": 37,
+    "description": "The Crosschain Swaps contract enables trades on Osmosis to be carried out remotely from another chain connected to Osmosis by IBC.",
+    "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/crosschain-swaps"
   }
 ]
