@@ -15,8 +15,9 @@ def get_assets(chain, network):
 
 def get_assets_with_prices(chain, network):
     assets = get_assets(chain, network)
-    priced_assets = [asset["id"] for asset in assets if asset["coingecko"] != ""]
-    prices = get_prices(chain, network, priced_assets)
+    priced_assets = [asset for asset in assets if asset["coingecko"] != ""]
+    priced_asset_ids = [asset["id"] for asset in priced_assets]
+    prices = get_prices(chain, network, priced_asset_ids)
     for id, price in prices.items():
         for asset in priced_assets:
             if asset["id"] == id:
