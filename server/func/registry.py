@@ -12,10 +12,10 @@ def load_asset_data(chain, network):
     if os.path.exists(relevant_assets_path):
         relevant_assets = json.load(open(relevant_assets_path))
     assets = []
-    for asset in relevant_assets:
-        asset_data = [a for a in global_assets if a["symbol"] == asset][0]
-        asset_data["id"] = asset_data["id"][chain][network]
-        assets.append(asset_data)
+    for asset in global_assets:
+        if chain in asset["id"] and network in asset["id"][chain]:
+            asset["id"] = asset["id"][chain][network]
+            assets.append(asset)
     return assets
 
 
