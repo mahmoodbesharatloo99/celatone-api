@@ -11,7 +11,7 @@
     "name": "ApolloDAO Contract Admin",
     "address": "osmo19377ce3k2893s98xp58vg0jtgtvj5qv405y36l4wf4z2xhnjwh6se8kep3",
     "description": "Apollo Safe CW3 multisig contract owned by the Apollo team used as the admin for Apollo Vaults and other contracts.",
-    "type": "cosmwasm"
+    "type": "contract"
   },
   {
     "slug": "apollodao",
@@ -88,7 +88,7 @@
     "name": "Kado Contract Uploader",
     "address": "osmo19vxp8vq8qm368dr026qxh8v82satwaf79y235lfv6wmgpwxx8dtskedaku",
     "description": "Account whitelisted to upload Kado Router contracts.",
-    "type": "cosmwasm"
+    "type": "contract"
   },
   {
     "slug": "mars",
@@ -102,7 +102,7 @@
     "name": "OGP Apollo Safe Multisig",
     "address": "osmo1xwu4c2apw2nxd75leph52aaw85ryhpfqcwfqtyjtz38tvjln7x7qwd6scg",
     "description": "Apollo Safe CW3 multisig account owned by the Osmosis Grants Program",
-    "type": "cosmwasm"
+    "type": "contract"
   },
   {
     "slug": "ogp",
