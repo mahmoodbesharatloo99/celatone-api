@@ -3254,5 +3254,27 @@
       }
     ],
     "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+  },
+  {
+    "slug": "initia",
+    "name": "Initia",
+    "website": "https:/initia.tech",
+    "github": "https://github.com/initia-labs",
+    "logo": "initia.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/initiafnd"
+      },
+      {
+        "name": "telegram",
+        "url": ""
+      },
+      {
+        "name": "discord",
+        "url": ""
+      }
+    ],
+    "description": "init innit"
   }
 ]

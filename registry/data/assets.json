@@ -2873,5 +2873,21 @@
     "symbol": "qOSMO",
     "type": "native",
     "slugs": ["quicksilver", "osmosis"]
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The native token of Initia",
+    "id": {
+      "initia": {
+        "stone-7": "uinit"
+      }
+    },
+    "logo": "https://assets.initia.tech/INIT.svg",
+    "name": "Quicksilver Liquid Staked OSMO",
+    "precision": 6,
+    "symbol": "qOSMO",
+    "type": "native",
+    "slugs": ["quicksilver", "osmosis"]
   }
 ]
