@@ -11,6 +11,9 @@
         "osmosis-1": "uosmo",
         "osmo-test-4": "uosmo",
         "osmo-test-5": "uosmo"
+      },
+      "initia": {
+        "stone-7": "ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
@@ -622,7 +625,7 @@
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/uausdc L@3x.png",
-    "name": "USD Coin",
+    "name": "USD Coin on Axelar",
     "precision": 6,
     "slugs": ["circle", "axelar"],
     "symbol": "USDC.axl",
@@ -636,6 +639,9 @@
       "osmosis": {
         "osmosis-1": "ibc/EA1D43981D5C9A1C4AAEA9C23BB1D4FA126BA9BC7020A25E0AE4AA841EA25DC5",
         "osmo-test-4": "ibc/0BE7C3DAC50BB1C34565C76F01944DCC79B50CF359B63149B9E04E2A6736A6E6"
+      },
+      "initia": {
+        "stone-7": "ibc/B8FEE8FE30746C96641E48F94053D5D0BE99CCB5B98C58A0239B70F082E713EA"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/weth-wei L@3x.png",
@@ -844,6 +850,9 @@
     "id": {
       "osmosis": {
         "osmosis-1": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
+      },
+      "initia": {
+        "stone-7": "move/c2470ee64bffb09a08726bd7139ce930df777668aafb0310c434b878fe7dad09"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/statom.svg",
@@ -860,6 +869,9 @@
     "id": {
       "osmosis": {
         "osmosis-1": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
+      },
+      "initia": {
+        "stone-7": "ibc/2CC0B1B7A981ACC74854717F221008484603BB8360E81B262411B0D830EDE9B0"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/axl.svg",
@@ -2884,10 +2896,90 @@
       }
     },
     "logo": "https://assets.initia.tech/INIT.svg",
-    "name": "Quicksilver Liquid Staked OSMO",
+    "name": "Initia",
     "precision": 6,
-    "symbol": "qOSMO",
+    "symbol": "INIT",
     "type": "native",
-    "slugs": ["quicksilver", "osmosis"]
+    "slugs": ["initia"]
+  },
+  {
+    "coingecko": "usd-coin",
+    "coinmarketcap": "",
+    "description": "Circle's stablecoin",
+    "id": {
+      "initia": {
+        "stone-7": "uusdc"
+      }
+    },
+    "logo": "https://list.initia.tech/images/0x1::native_uusdc::Coin.webp",
+    "name": "USD Coin",
+    "precision": 6,
+    "slugs": ["circle"],
+    "symbol": "USDC",
+    "type": "native"
+  },
+  {
+    "coingecko": "stader-maticx",
+    "coinmarketcap": "",
+    "description": "Circle's stablecoin",
+    "id": {
+      "initia": {
+        "stone-7": "move/4e0b08c632d4d732c3d1fe50bb43bbb8112225b60786f0561547127498679d31"
+      }
+    },
+    "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::coins::MaticX.webp",
+    "name": "Stader MaticX",
+    "precision": 6,
+    "slugs": ["stader", "polygon"],
+    "symbol": "MaticX",
+    "type": "native"
+  },
+  {
+    "coingecko": "wrapped-steth",
+    "coinmarketcap": "",
+    "description": "Wrapped Staked ETH",
+    "id": {
+      "initia": {
+        "stone-7": "move/529883138fad49ed83096066dd574ec75791cf31f202e06ec80ca12671331220"
+      }
+    },
+    "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::coins::MaticX.webp",
+    "name": "Wrapped stETH",
+    "precision": 6,
+    "slugs": ["stader", "polygon"],
+    "symbol": "wstETH",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "NOVA",
+    "id": {
+      "initia": {
+        "stone-7": "move/e44590a2aa2cd3cf07f4f10f0739a68e579b3218cf2772fc2c52e624c5060837"
+      }
+    },
+    "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::my_module::Nova.webpu",
+    "name": "Novel Optical Vision Algorithms",
+    "precision": 6,
+    "slugs": ["initia"],
+    "symbol": "NOVA",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Tether USD stablecoin",
+    "id": {
+      "initia": {
+        "stone-7": "move/d78efe514ee1201b0004fae683bb977ae172bf8cf9ff9e56048d708cb88e2eb7"
+      }
+    },
+    "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::my_module::Usdt.webp",
+    "name": "Tether",
+    "precision": 6,
+    "slugs": ["tether"],
+    "symbol": "USDT",
+    "type": "native"
   }
 ]
