@@ -25,7 +25,7 @@
     "name": "ApolloDAO Dev Multisig",
     "address": "osmo1wl59k23zngj34l7d42y9yltask7rjlnxgccawc7ltrknp6n52fps94qsjd",
     "description": "",
-    "type": "account"
+    "type": "contract"
   },
   {
     "slug": "apollodao",
