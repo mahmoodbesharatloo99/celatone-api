@@ -201,5 +201,12 @@
     "id": 37,
     "description": "The Crosschain Swaps contract enables trades on Osmosis to be carried out remotely from another chain connected to Osmosis by IBC.",
     "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/crosschain-swaps"
+  },
+  {
+    "slug": "streamswap",
+    "name": "StreamSwap",
+    "address": "osmo17kqws7fy2qnejdw68cqjlw456gdxcdukk0wq6026u826zlda3y7qdhzqlv",
+    "description": "",
+    "github": "https://github.com/StreamSwapProtocol/cw-streamswap/commit/4e8e096bb2718c11a4144465925a056c9e87e053"
   }
 ]

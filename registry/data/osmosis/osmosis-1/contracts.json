@@ -340,5 +340,13 @@
     "description": "The SwapRouter contract serves as a way to define, on-chain, routes that swaps from one asset to another will take.",
     "code": 10,
     "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/swaprouter"
+  },
+  {
+    "slug": "streamswap",
+    "name": "StreamSwap",
+    "address": "osmo17kqws7fy2qnejdw68cqjlw456gdxcdukk0wq6026u826zlda3y7qdhzqlv",
+    "description": "",
+    "code": 39,
+    "github": "https://github.com/StreamSwapProtocol/cw-streamswap/commit/4e8e096bb2718c11a4144465925a056c9e87e053"
   }
 ]

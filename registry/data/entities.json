@@ -3276,5 +3276,27 @@
       }
     ],
     "description": "init innit"
+  },
+  {
+    "slug": "streamswap",
+    "name": "SteramSwap",
+    "website": "https:/streamswap.io",
+    "github": "https://github.com/streamswapprotocol",
+    "logo": "streamswap.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/streamswap_io"
+      },
+      {
+        "name": "telegram",
+        "url": "https://t.me/StreamSwap_io"
+      },
+      {
+        "name": "discord",
+        "url": ""
+      }
+    ],
+    "description": "Interchain Launchpad with the underlying protocol supporting time-based token swaps."
   }
 ]
