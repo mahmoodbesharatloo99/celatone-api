@@ -1522,7 +1522,7 @@
     "type": "native"
   },
   {
-    "coingecko": "",
+    "coingecko": "meme-network",
     "coinmarketcap": "",
     "description": "MEME Token (MEME) is the native staking token of the MEME Chain",
     "id": {
@@ -1530,7 +1530,7 @@
         "osmosis-1": "ibc/67C89B8B0A70C08F093C909A4DD996DD10E0494C87E28FD9A551697BF173D4CA"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/meme/images/meme.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/meme/images/meme.png",
     "name": "Meme",
     "precision": 6,
     "slugs": [],
