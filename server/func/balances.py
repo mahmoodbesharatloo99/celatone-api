@@ -3,7 +3,7 @@ import func.helper as helper
 
 
 def get_balances(chain, network, account_address):
-    if chain == "osmosis":
+    if chain in ["osmosis", "stargaze"]:
         return helper.get_native_balances(
             f"{constants.LCD_DICT[chain][network]}",
             chain,
