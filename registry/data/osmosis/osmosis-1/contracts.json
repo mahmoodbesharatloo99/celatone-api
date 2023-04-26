@@ -348,5 +348,13 @@
     "description": "",
     "code": 39,
     "github": "https://github.com/StreamSwapProtocol/cw-streamswap/commit/4e8e096bb2718c11a4144465925a056c9e87e053"
+  },
+  {
+    "slug": "tfm",
+    "name": "TFM Multisig",
+    "address": "osmo1e0x2hnhhwyek7eq3kcxu2x6pt77wdnwz0lutz9fespdr9utq963qr0y5p5",
+    "description": "",
+    "code": 1,
+    "github": ""
   }
 ]
