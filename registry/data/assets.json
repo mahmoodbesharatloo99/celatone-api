@@ -2981,5 +2981,37 @@
     "slugs": ["tether"],
     "symbol": "USDT",
     "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The native token of Neutron",
+    "id": {
+      "neutron": {
+        "pion-1": "untrn"
+      }
+    },
+    "logo": "https://github.com/cosmostation/chainlist/blob/main/chain/neutron-testnet/asset/ntrn.png",
+    "name": "Neutron",
+    "precision": 6,
+    "slugs": ["neutron"],
+    "symbol": "NTRN",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The native token of Sei",
+    "id": {
+      "sei": {
+        "atlantic-1": "usei"
+      }
+    },
+    "logo": "https://github.com/cosmostation/chainlist/blob/main/chain/sei/asset/sei.png",
+    "name": "Sei",
+    "precision": 6,
+    "slugs": ["sei"],
+    "symbol": "SEI",
+    "type": "native"
   }
 ]
