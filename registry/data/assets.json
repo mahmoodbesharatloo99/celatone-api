@@ -1799,7 +1799,7 @@
         "pion-1": "untrn"
       }
     },
-    "logo": "https://github.com/cosmostation/chainlist/blob/main/chain/neutron-testnet/asset/ntrn.png",
+    "logo": "https://raw.githubusercontent.com/cosmostation/chainlist/main/chain/neutron-testnet/asset/ntrn.png",
     "name": "Neutron",
     "precision": 6,
     "slugs": ["neutron"],
@@ -2095,7 +2095,7 @@
         "atlantic-2": "usei"
       }
     },
-    "logo": "https://github.com/cosmostation/chainlist/blob/main/chain/sei/asset/sei.png",
+    "logo": "https://raw.githubusercontent.com/cosmostation/chainlist/main/chain/sei/asset/sei.png",
     "name": "Sei",
     "precision": 6,
     "slugs": ["sei"],
