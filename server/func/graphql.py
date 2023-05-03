@@ -71,7 +71,18 @@ def get_graphql_code_details(chain, network, code_ids):
     return code_data
 
 
-def get_graphql_transaction(chain, network, tx_hash, limit):
+def get_lcd_tx_results(chain, network, tx_hash):
+    query = f"""
+        query {{
+            lcd_tx_results(where: {{transaction: {{hash: {{_eq: "\\\\x{tx_hash}"}}}}}}) {{
+                result
+            }}
+        }}
+    """
+    return requests.post(GRAPHQL_DICT[chain][network], json={"query": query}, timeout=2)
+
+
+def get_lcd_tx_responses(chain, network, tx_hash, limit):
     query = f"""
         query {{
             lcd_tx_responses(where: {{hash: {{_eq: "{tx_hash}"}}}}, limit: {limit}, order_by: {{height: desc}}) {{
