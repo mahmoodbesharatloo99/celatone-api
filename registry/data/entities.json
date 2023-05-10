@@ -3342,5 +3342,27 @@
       }
     ],
     "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+  },
+  {
+    "slug": "ibcx",
+    "name": "Interchain Index Token (IBCX)",
+    "website": "https://index.ion.wtf/",
+    "github": "https://github.com/many-things",
+    "logo": "ibcx.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/ibcindex"
+      },
+      {
+        "name": "telegram",
+        "url": "https://t.me/IONGovernanceWorkingGroup"
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.gg/9gD5wDaZWU"
+      }
+    ],
+    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
   }
 ]

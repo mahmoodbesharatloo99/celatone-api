@@ -205,9 +205,15 @@
   {
     "slug": "streamswap",
     "name": "StreamSwap",
-    "address": "osmo17kqws7fy2qnejdw68cqjlw456gdxcdukk0wq6026u826zlda3y7qdhzqlv",
     "description": "",
     "id": 39,
     "github": "https://github.com/StreamSwapProtocol/cw-streamswap/commit/4e8e096bb2718c11a4144465925a056c9e87e053"
+  },
+  {
+    "slug": "tfm",
+    "name": "TFM Router",
+    "description": "",
+    "id": 41,
+    "github": ""
   }
 ]

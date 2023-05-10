@@ -85,7 +85,7 @@
   },
   {
     "slug": "kado",
-    "name": "Kado Contract Uploader",
+    "name": "Kado Deployer",
     "address": "osmo19vxp8vq8qm368dr026qxh8v82satwaf79y235lfv6wmgpwxx8dtskedaku",
     "description": "Account whitelisted to upload Kado Router contracts.",
     "type": "contract"
@@ -243,5 +243,19 @@
     "address": "osmo1qs9akhf0s05hqskmu9gdnzz3e6u4xc7aaya0u0",
     "description": "Developer account controlled by the Skip team to receive portion of the ProtoRev revenue from arbitraging Osmosis swaps.",
     "type": "account"
+  },
+  {
+    "slug": "ibcx",
+    "name": "IBCX Deployer",
+    "address": "osmo14n3a65fnqz9jve85l23al6m3pjugf0atvrfqh5",
+    "description": "Account whitelisted to upload IBCX contracts.",
+    "type": "account"
+  },
+  {
+    "slug": "tfm",
+    "name": "TFM Multisig",
+    "address": "osmo1e0x2hnhhwyek7eq3kcxu2x6pt77wdnwz0lutz9fespdr9utq963qr0y5p5",
+    "description": "",
+    "tpye": "contract"
   }
 ]

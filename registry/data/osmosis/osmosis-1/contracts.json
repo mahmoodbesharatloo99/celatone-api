@@ -356,5 +356,13 @@
     "description": "",
     "code": 1,
     "github": ""
+  },
+  {
+    "slug": "tfm",
+    "name": "TFM Router",
+    "address": "osmo1q065arwc6ka5xrne8j6aafg0j0zv57p7njjcecu5xdqjdpwgruzsttut0c",
+    "description": "",
+    "code": 41,
+    "github": ""
   }
 ]
