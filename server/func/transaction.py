@@ -11,10 +11,17 @@ def get_tx(chain, network, tx_hash):
         if len(graphql_tx_res):
             return graphql_tx_res[0]["result"]
     except:
-        print("Graphql error")
-
-    graphql_res = get_lcd_tx_responses(chain, network, tx_hash, 1)
-    graphql_tx_res = graphql_res.json()["data"]["lcd_tx_responses"]
-    if len(graphql_tx_res):
-        return graphql_tx_res[0]["result"]
+        print("lcd_tx_results error")
+    try:
+        graphql_res = get_lcd_tx_responses(chain, network, tx_hash, 1)
+        graphql_tx_res = graphql_res.json()["data"]["lcd_tx_responses"]
+        if len(graphql_tx_res):
+            return graphql_tx_res[0]["result"]
+    except:
+        print("lcd_tx_response error")
+    try:
+        lcd = get_lcd_transaction(chain, network, tx_hash).json()
+        return lcd
+    except:
+        print("lcd error")
     return abort(404)
