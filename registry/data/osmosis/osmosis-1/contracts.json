@@ -364,5 +364,13 @@
     "description": "",
     "code": 41,
     "github": ""
+  },
+  {
+    "slug": "ibvx",
+    "name": "IBCX Periphery",
+    "address": "osmo10z78vdfj2skumuxmcq53yahckras5f7fp03cjknlaj9rr9nzk66scfkkft",
+    "description": "",
+    "code": 44,
+    "github": "https://github.com/many-things/ibcx-contracts/tree/main/contracts/periphery"
   }
 ]

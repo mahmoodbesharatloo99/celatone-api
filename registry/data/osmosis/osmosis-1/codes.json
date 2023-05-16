@@ -215,5 +215,33 @@
     "description": "",
     "id": 41,
     "github": ""
+  },
+  {
+    "slug": "ibcx",
+    "name": "IBCX Core",
+    "description": "",
+    "id": 43,
+    "github": "https://github.com/many-things/ibcx-contracts/tree/main/contracts/core"
+  },
+  {
+    "slug": "ibcx",
+    "name": "IBCX Periphery",
+    "description": "",
+    "id": 44,
+    "github": "https://github.com/many-things/ibcx-contracts/tree/main/contracts/periphery"
+  },
+  {
+    "slug": "pyth",
+    "name": "Pyth",
+    "description": "",
+    "id": 45,
+    "github": ""
+  },
+  {
+    "slug": "wormhole",
+    "name": "Wormhole",
+    "description": "",
+    "id": 46,
+    "github": ""
   }
 ]

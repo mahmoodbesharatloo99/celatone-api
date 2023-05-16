@@ -3364,5 +3364,27 @@
       }
     ],
     "description": "A fully collateralized index token curated & composed of leading Cosmos coins."
+  },
+  {
+    "slug": "pyth",
+    "name": "Pyth",
+    "website": "https://pyth.network/",
+    "github": "https://github.com/pyth-network",
+    "logo": "pyth.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/pythnetwork"
+      },
+      {
+        "name": "telegram",
+        "url": "https://t.me/Pyth_Network"
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.gg/invite/PythNetwork"
+      }
+    ],
+    "description": "Smarter Data for Smarter Contracts"
   }
 ]
