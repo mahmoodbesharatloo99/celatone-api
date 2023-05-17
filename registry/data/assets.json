@@ -1799,7 +1799,7 @@
     "description": "The native token of Neutron",
     "id": {
       "neutron": {
-        "neutron-1": "utrn",
+        "neutron-1": "untrn",
         "pion-1": "untrn"
       }
     },
