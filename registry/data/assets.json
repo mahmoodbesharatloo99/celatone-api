@@ -3034,5 +3034,21 @@
     "slugs": ["stader", "polygon"],
     "symbol": "wstETH",
     "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The Interchain Index Token",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "factory/osmo14klwqgkmackvx2tqa0trtg69dmy0nrg4ntq4gjgw2za4734r5seqjqm4gm/uibcx"
+      }
+    },
+    "logo": "https://i.ibb.co/9t7whLx/twitter-a8d87f5b7759935e4c2f94640a8b28f6.jpg",
+    "name": "IBCX Token",
+    "precision": 6,
+    "slugs": ["ibcx"],
+    "symbol": "IBCX",
+    "type": "native"
   }
 ]
