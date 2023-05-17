@@ -378,7 +378,7 @@
     "name": "IBCX Periphery",
     "address": "osmo1w2kz2pmmvmvjkrah98xuw5lun5gljfr4nfw87le23ke0e8p4yp8s6la2mr",
     "description": "",
-    "code": 49,
+    "code": 52,
     "github": "https://github.com/many-things/ibcx-contracts/tree/main/contracts/periphery"
   }
 ]
