@@ -198,6 +198,9 @@
     "id": {
       "osmosis": {
         "osmosis-1": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+      },
+      "neutron": {
+        "neutron-1": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg",
@@ -2093,7 +2096,8 @@
     "description": "The native token of Sei",
     "id": {
       "sei": {
-        "atlantic-2": "usei"
+        "atlantic-2": "usei",
+        "pacific-1": "usei"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmostation/chainlist/main/chain/sei/asset/sei.png",
