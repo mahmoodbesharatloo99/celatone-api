@@ -220,14 +220,14 @@
     "slug": "ibcx",
     "name": "IBCX Core",
     "description": "",
-    "id": 43,
+    "id": 49,
     "github": "https://github.com/many-things/ibcx-contracts/tree/main/contracts/core"
   },
   {
     "slug": "ibcx",
     "name": "IBCX Periphery",
     "description": "",
-    "id": 44,
+    "id": 52,
     "github": "https://github.com/many-things/ibcx-contracts/tree/main/contracts/periphery"
   },
   {
