@@ -77,13 +77,13 @@
         "lcds": [
           {
             "provider": "AutoStake",
-            "logo": "https://pbs.twimg.com/profile_images/1557643521212940288/vC_cVxHx_400x400.jpg",
+            "logo": "https://i.ibb.co/YyXk0R1/twitter-p5-Xo-QUQU-400x400.png",
             "url": "https://osmosis-mainnet-lcd-autostake.net:443",
             "archive": false
           },
           {
             "provider": "Chainapsis",
-            "logo": "https://pbs.twimg.com/profile_images/1557643521212940288/vC_cVxHx_400x400.jpg",
+            "logo": "https://i.ibb.co/BwyySrM/twitter-DHqcti-N8-400x400.jpg",
             "url": "https://lcd-osmosis.blockapsis.com",
             "archive": false
           },
@@ -119,7 +119,7 @@
           },
           {
             "provider": "Lavender.Five",
-            "logo": "https://pbs.twimg.com/profile_images/1557643521212940288/vC_cVxHx_400x400.jpg",
+            "logo": "https://i.ibb.co/k3yDs1Q/twitter-NYJe-Peb-Q-400x400.jpg",
             "url": "https://osmosis-api.lavenderfive.com:443",
             "archive": false
           },
@@ -169,7 +169,7 @@
         "rpcs": [
           {
             "provider": "Chainapsis",
-            "logo": "https://pbs.twimg.com/profile_images/1552227877323583488/qFPHdhcZ_400x400.jpg",
+            "logo": "https://i.ibb.co/BwyySrM/twitter-DHqcti-N8-400x400.jpg",
             "url": "https://rpc-osmosis.blockapsis.com",
             "archive": false
           },
@@ -211,7 +211,7 @@
           },
           {
             "provider": "Lavender.Five",
-            "logo": "https://pbs.twimg.com/profile_images/1571159763962011651/NYJePebQ_400x400.jpg",
+            "logo": "https://i.ibb.co/k3yDs1Q/twitter-NYJe-Peb-Q-400x400.jpg",
             "url": "https://osmosis-rpc.lavenderfive.com:443",
             "archive": false
           },
@@ -344,7 +344,7 @@
             "url": "https://neutron-api.lavenderfive.com",
             "provider": "Lavender.Five",
             "archive": false,
-            "logo": "https://pbs.twimg.com/profile_images/1571159763962011651/NYJePebQ_400x400.jpg"
+            "logo": "https://i.ibb.co/k3yDs1Q/twitter-NYJe-Peb-Q-400x400.jpg"
           }
         ],
         "rpcs": [
@@ -364,7 +364,7 @@
             "url": "https://neutron-rpc.lavenderfive.com",
             "provider": "Lavender.Five",
             "archive": false,
-            "logo": "https://pbs.twimg.com/profile_images/1571159763962011651/NYJePebQ_400x400.jpg"
+            "logo": "https://i.ibb.co/k3yDs1Q/twitter-NYJe-Peb-Q-400x400.jpg"
           }
         ],
         "faucets": []
