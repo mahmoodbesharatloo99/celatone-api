@@ -17,5 +17,6 @@ def get_chains():
 
 def get_chain(chain):
     chains = get_chains()
-    chain = [chain for chain in chains if chain["name"].lower() == chain][0]
-    return chain
+    chain_data = [chain_tuple for chain_tuple in chains.items() if chain_tuple[0].lower() == chain][0]
+
+    return {chain_data[0]: chain_data[1]}
