@@ -283,9 +283,9 @@
         "chainId": "pion-1",
         "chainName": "Neutron Testnet",
         "publicLCD": "https://rest-kralum.neutron-1.neutron.org",
-        "lcdSwagger": "",
+        "lcdSwagger": "https://rest-kralum.neutron-1.neutron.org",
         "publicRPC": "https://rpc-kralum.neutron-1.neutron.org",
-        "rpcSwagger": "",
+        "rpcSwagger": "https://rest-kralum.neutron-1.neutron.org",
         "publicGRPC": "https://grpc-kralum.neutron-1.neutron.org:80",
         "lcds": [
           {
@@ -323,9 +323,9 @@
         "chainId": "neutron-1",
         "chainName": "Neutron Mainnet",
         "publicLCD": "https://rest-kralum.neutron-1.neutron.org",
-        "lcdSwagger": "",
+        "lcdSwagger": "https://rest-kralum.neutron-1.neutron.org",
         "publicRPC": "https://rpc-kralum.neutron-1.neutron.org",
-        "rpcSwagger": "",
+        "rpcSwagger": "https://rest-kralum.neutron-1.neutron.org",
         "publicGRPC": "https://grpc-kralum.neutron-1.neutron.org:80",
         "lcds": [
           {
