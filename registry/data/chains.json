@@ -267,5 +267,108 @@
         "faucets": []
       }
     ]
+  },
+  "neutron": {
+    "name": "Neutron",
+    "bech32Prefix": "neutron",
+    "slip44": "118",
+    "website": "https://neutron.org",
+    "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/neutron.svg",
+    "documentation": "https://docs.neutron.org",
+    "github": "https://github.com/neutron-org",
+    "networks": [
+      {
+        "type": "testnet",
+        "celatone": "https://neutron.celat.one/pion-1",
+        "chainId": "pion-1",
+        "chainName": "Neutron Testnet",
+        "publicLCD": "https://rest-kralum.neutron-1.neutron.org",
+        "lcdSwagger": "",
+        "publicRPC": "https://rpc-kralum.neutron-1.neutron.org",
+        "rpcSwagger": "",
+        "publicGRPC": "https://grpc-kralum.neutron-1.neutron.org:80",
+        "lcds": [
+          {
+            "url": "https://rest-palvus.pion-1.ntrn.tech",
+            "provider": "Neutron",
+            "archive": false,
+            "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/neutron.svg"
+          },
+          {
+            "url": "https://api.pion.remedy.tm.p2p.org",
+            "provider": "P2P.ORG",
+            "archive": false,
+            "logo": "https://i.ibb.co/BsCsR1s/p2p-logo-white-2x.png"
+          }
+        ],
+        "rpcs": [
+          {
+            "url": "https://rpc-palvus.pion-1.ntrn.tech",
+            "provider": "Neutron",
+            "archive": false,
+            "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/neutron.svg"
+          },
+          {
+            "url": "https://rpc.pion.remedy.tm.p2p.org",
+            "provider": "P2P.ORG",
+            "archive": false,
+            "logo": "https://i.ibb.co/BsCsR1s/p2p-logo-white-2x.png"
+          }
+        ],
+        "faucets": []
+      },
+      {
+        "type": "mainnet",
+        "celatone": "https://neutron.celat.one/neutron-1",
+        "chainId": "neutron-1",
+        "chainName": "Neutron Mainnet",
+        "publicLCD": "https://rest-kralum.neutron-1.neutron.org",
+        "lcdSwagger": "",
+        "publicRPC": "https://rpc-kralum.neutron-1.neutron.org",
+        "rpcSwagger": "",
+        "publicGRPC": "https://grpc-kralum.neutron-1.neutron.org:80",
+        "lcds": [
+          {
+            "url": "https://rest-kralum.neutron-1.neutron.org",
+            "provider": "Neutron",
+            "archive": false,
+            "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/neutron.svg"
+          },
+          {
+            "url": "https://api.novel.remedy.tm.p2p.org",
+            "provider": "P2P",
+            "archive": false,
+            "logo": "https://i.ibb.co/BsCsR1s/p2p-logo-white-2x.png"
+          },
+          {
+            "url": "https://neutron-api.lavenderfive.com",
+            "provider": "Lavender.Five",
+            "archive": false,
+            "logo": "https://pbs.twimg.com/profile_images/1571159763962011651/NYJePebQ_400x400.jpg"
+          }
+        ],
+        "rpcs": [
+          {
+            "url": "https://rpc-kralum.neutron-1.neutron.org",
+            "provider": "Neutron",
+            "archive": false,
+            "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/neutron.svg"
+          },
+          {
+            "url": "https://rpc.novel.remedy.tm.p2p.org",
+            "provider": "P2P",
+            "archive": false,
+            "logo": "https://i.ibb.co/BsCsR1s/p2p-logo-white-2x.png"
+          },
+          {
+            "url": "https://neutron-rpc.lavenderfive.com",
+            "provider": "Lavender.Five",
+            "archive": false,
+            "logo": "https://pbs.twimg.com/profile_images/1571159763962011651/NYJePebQ_400x400.jpg"
+          }
+        ],
+        "faucets": []
+      }
+    ]
   }
 }
