@@ -3386,5 +3386,27 @@
       }
     ],
     "description": "Smarter Data for Smarter Contracts"
+  },
+  {
+    "slug": "croncat",
+    "name": "CronCat",
+    "website": "https://cron.cat/",
+    "github": "https://github.com/CronCats",
+    "logo": "croncat.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/croncats"
+      },
+      {
+        "name": "telegram",
+        "url": ""
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.gg/GJY7QBsDft"
+      }
+    ],
+    "description": "If This Then That for the #Interchain. The blockchain automation layer, built for scheduled or event driven workflows."
   }
 ]
