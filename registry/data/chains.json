@@ -273,7 +273,7 @@
     "bech32Prefix": "neutron",
     "slip44": "118",
     "website": "https://neutron.org",
-    "iconUri": "https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/images/neutron.svg",
+    "iconUri": "https://raw.githubusercontent.com/neutron-org/brandbook/main/Logo/Icon/SVG/icon-white.svg",
     "documentation": "https://docs.neutron.org",
     "github": "https://github.com/neutron-org",
     "networks": [
