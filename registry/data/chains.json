@@ -10,6 +10,7 @@
     "networks": [
       {
         "type": "testnet",
+        "bech32Prefix": "osmo",
         "celatone": "https://celatone.osmosis.zone/testnet",
         "chainId": "osmo-test-4",
         "chainName": "Osmosis Testnet",
@@ -66,6 +67,7 @@
       },
       {
         "type": "mainnet",
+        "bech32Prefix": "osmo",
         "celatone": "https://celatone.osmosis.zone/mainnet",
         "chainId": "osmosis-1",
         "chainName": "Osmosis Mainnet",
@@ -279,6 +281,7 @@
     "networks": [
       {
         "type": "testnet",
+        "bech32Prefix": "neutron",
         "celatone": "https://neutron.celat.one/pion-1",
         "chainId": "pion-1",
         "chainName": "Neutron Testnet",
@@ -319,6 +322,7 @@
       },
       {
         "type": "mainnet",
+        "bech32Prefix": "neutron",
         "celatone": "https://neutron.celat.one/neutron-1",
         "chainId": "neutron-1",
         "chainName": "Neutron Mainnet",
