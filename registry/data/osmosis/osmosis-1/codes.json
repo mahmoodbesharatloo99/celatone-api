@@ -235,13 +235,13 @@
     "name": "Pyth",
     "description": "",
     "id": 45,
-    "github": ""
+    "github": "https://github.com/pyth-network/pyth-crosschain/tree/0ac771266c90864237a9e8f2c596c5be3318958c/target_chains/cosmwasm/contracts"
   },
   {
     "slug": "wormhole",
     "name": "Wormhole",
     "description": "",
     "id": 46,
-    "github": ""
+    "github": "https://github.com/wormhole-foundation/wormhole/tree/ae7de3d575a0cee7ceaf69080952fa148dc0a346/cosmwasm/contracts/wormhole"
   }
 ]

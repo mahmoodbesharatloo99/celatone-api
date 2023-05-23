@@ -388,5 +388,21 @@
     "description": "Apollo Safe CW3 multisig owned by the CronCat team whitelisted to upload contracts",
     "code": 1,
     "github": ""
+  },
+  {
+    "slug": "wormhole",
+    "name": "Wormhole",
+    "address": "osmo1t7qham5kle36rs28se2xd7cckm9mpwzgt65t40lrdf8fcq3837qqjvw80s",
+    "description": "",
+    "code": 46,
+    "github": ""
+  },
+  {
+    "slug": "pyth",
+    "name": "Pyth",
+    "address": "osmo13ge29x4e2s63a8ytz2px8gurtyznmue4a69n5275692v3qn3ks8q7cwck7",
+    "description": "",
+    "code": 45,
+    "github": ""
   }
 ]
