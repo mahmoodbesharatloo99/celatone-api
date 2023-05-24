@@ -22,6 +22,7 @@ def load_codes(chain, network):
                 code["contracts"] = code_graphql_detail["contract_instantiated"]
                 code["instantiatePermission"] = code_graphql_detail["access_config_permission"]
                 code["permissionAddresses"] = code_graphql_detail["access_config_addresses"]
+                contract["imageUrl"] = "https://celatone-api.alleslabs.dev/images/entities/" + code["slug"]
     return codes
 
 

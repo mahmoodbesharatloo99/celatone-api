@@ -24,6 +24,7 @@ def get_contracts(chain, network):
                     contract["instantiator"] = data["instantiator"]
                     contract["admin"] = data["admin"]
                     contract["label"] = data["label"]
+            contract["imageUrl"] = "https://celatone-api.alleslabs.dev/images/entities/" + contract["slug"]
     return contracts
 
 
