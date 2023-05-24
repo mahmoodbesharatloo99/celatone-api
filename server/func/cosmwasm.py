@@ -1,5 +1,3 @@
-
-
 import json
 import requests
 import os
@@ -10,6 +8,7 @@ from func.registry import load_and_check_registry_data
 from func.graphql import get_contract_instantiator_admin, get_graphql_code_details
 
 # contracts
+
 
 def get_contracts(chain, network):
     contracts = []
@@ -42,8 +41,8 @@ def get_contract(chain, network, contract_address):
     return contract
 
 
-
 # codes
+
 
 def load_codes(chain, network):
     codes = []
@@ -76,17 +75,20 @@ def get_code(chain, network, code_id):
 
 # helper
 
-def get_upload_access(chain,network):
+
+def get_upload_access(chain, network):
     upload_access = {}
-    try:        
-      res = requests.get(f"{LCD_DICT[chain][network]}/cosmwasm/wasm/v1/codes/params").json()
-      upload_access = res["params"]["code_upload_access"]
+    try:
+        res = requests.get(f"{LCD_DICT[chain][network]}/cosmwasm/wasm/v1/codes/params").json()
+        upload_access = res["params"]["code_upload_access"]
     except:
-        res = requests.get(f"{LCD_DICT[chain][network]}/cosmos/params/v1beta1/params?subspace=wasm&key=uploadAccess").json()
-        res_value = json.loads(res["param"]["value"].replace("\\",""))
-        upload_access = {
-            "address":"",
-            "addresses": res_value["addresses"],
-            "permission": res_value["permission"]
-        }
+        res = requests.get(
+            f"{LCD_DICT[chain][network]}/cosmos/params/v1beta1/params?subspace=wasm&key=uploadAccess"
+        ).json()
+        res_value = json.loads(res["param"]["value"].replace("\\", ""))
+        address = ""
+        addresses = []
+        if res_value["permission"] == "AnyOfAddresses":
+            addresses = res_value["addresses"]
+        upload_access = {"permission": res_value["permission"], "addresses": addresses, "address": address}
     return upload_access
