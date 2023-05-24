@@ -4,6 +4,7 @@ import os
 import func.codes as codes
 import func.chains as chains
 import func.contracts as contracts
+import func.cosmwasm as cosmwasm
 import func.accounts as accounts
 import func.assets as assets
 import func.projects as projects
@@ -47,8 +48,7 @@ app.config["TAGS"] = [
 def hello_world():
     return {"gm": "gm"}
 
-
-# Codes
+# CosmWasm
 
 
 @app.route("/codes/<chain>/<network>", methods=["GET"])
@@ -71,9 +71,6 @@ def get_code(chain, network, code_id):
     return codes.get_code(chain, network, code_id)
 
 
-# Contracts
-
-
 @app.route("/contracts/<chain>/<network>", methods=["GET"])
 @app.doc(tags=["Registry Data"])
 def get_contracts(chain, network):
@@ -90,6 +87,14 @@ def get_contract(chain, network, contract_address):
 
     Returns a specific contract based on the input chain, network, and contract_address"""
     return contracts.get_contract(chain, network, contract_address)
+
+
+@app.route("/cosmwasm/<chain>/<network>/upload_access", methods=["GET"])
+def get_upload_access(chain, network):
+    """Get Upload Access
+
+    Returns the upload access for the input chain and network"""
+    return cosmwasm.get_upload_access(chain, network)
 
 
 # Accounts
