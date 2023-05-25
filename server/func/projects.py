@@ -27,14 +27,14 @@ def load_project(entity, accounts, assets, codes, contracts):
         "socials": entity["socials"],
     }
     # only keep accounts for this entity
-    relevant_accounts = [account for account in accounts if account["slug"] == entity["slug"]]
+    relevant_accounts = list(filter(lambda account: account["slug"] == entity["slug"], accounts))
     # only keep assets for this entity
-    relevant_assets = [asset for asset in assets if entity["slug"] in asset["slugs"]]
+    relevant_assets = list(filter(lambda asset: entity["slug"] in asset["slugs"], assets))
     # only keep codes for this entity
-    relevant_codes = [code for code in codes if code["slug"] == entity["slug"]]
+    relevant_codes = list(filter(lambda code: code["slug"] == entity["slug"], codes))
     # only keep contracts for this entity
-    relevant_contracts = [contract for contract in contracts if contract["slug"] == entity["slug"]]
-    if len(relevant_codes) != 0 or len(relevant_contracts) != 0 or len(relevant_accounts):
+    relevant_contracts = list(filter(lambda contract: contract["slug"] == entity["slug"], contracts))
+    if any([relevant_codes, relevant_contracts, relevant_accounts]):
         entity_dict["accounts"] = relevant_accounts
         entity_dict["assets"] = relevant_assets
         entity_dict["codes"] = relevant_codes

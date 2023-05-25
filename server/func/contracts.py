@@ -3,28 +3,22 @@ from func.graphql import get_contract_instantiator_admin
 
 
 def get_contracts(chain, network):
-    contracts = []
     contracts = load_and_check_registry_data(chain, network, "contracts")
     codes = load_and_check_registry_data(chain, network, "codes")
-    if len(contracts) > 0:
-        instantiator_admin_data = get_contract_instantiator_admin(
-            chain, network, [contract["address"] for contract in contracts]
-        )
-        for contract in contracts:
-            contract["description"] = ""
-            contract["github"] = ""
-            if "description" not in contract or contract["description"] == "":
-                code_description = [code["description"] for code in codes if code["id"] == contract["code"]][0]
-                contract["description"] = code_description
-            if "github" not in contract or contract["github"] == "":
-                code_github = [code["github"] for code in codes if code["id"] == contract["code"]][0]
-                contract["github"] = code_github
-            for data in instantiator_admin_data:
-                if contract["address"] == data["address"]:
-                    contract["instantiator"] = data["instantiator"]
-                    contract["admin"] = data["admin"]
-                    contract["label"] = data["label"]
-            contract["imageUrl"] = "https://celatone-api.alleslabs.dev/images/entities/" + contract["slug"]
+    code_descriptions = {code["id"]: code["description"] for code in codes}
+    code_githubs = {code["id"]: code["github"] for code in codes}
+    instantiator_admin_data = get_contract_instantiator_admin(
+        chain, network, [contract["address"] for contract in contracts]
+    )
+    contract_data = {data["address"]: data for data in instantiator_admin_data}
+    for contract in contracts:
+        contract["description"] = code_descriptions.get(contract["code"], "")
+        contract["github"] = code_githubs.get(contract["code"], "")
+        data = contract_data.get(contract["address"], {})
+        contract["instantiator"] = data.get("instantiator", "")
+        contract["admin"] = data.get("admin", "")
+        contract["label"] = data.get("label", "")
+        contract["imageUrl"] = f"https://celatone-api.alleslabs.dev/images/entities/{contract['slug']}"
     return contracts
 
 

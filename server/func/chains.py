@@ -17,6 +17,8 @@ def get_chains():
 
 def get_chain(chain):
     chains = get_chains()
-    chain_data = [chain_tuple for chain_tuple in chains.items() if chain_tuple[0].lower() == chain][0]
-
+    try:
+        chain_data = next(chain_tuple for chain_tuple in chains.items() if chain_tuple[0].lower() == chain)
+    except StopIteration:
+        raise ValueError(f"Chain {chain} not found")
     return {chain_data[0]: chain_data[1]}

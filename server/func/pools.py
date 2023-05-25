@@ -8,5 +8,5 @@ def get_pools(chain, network):
 
 def get_pool(chain, network, pool_id):
     pools = get_pools(chain, network)
-    pool = [pool for pool in pools if pool["id"] == pool_id][0]
+    pool = next(filter(lambda pool: pool["id"] == int(pool_id), pools), None)
     return pool

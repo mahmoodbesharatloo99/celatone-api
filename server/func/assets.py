@@ -9,49 +9,40 @@ def encode_base64(string):
 
 def get_assets(chain, network):
     assets = load_and_check_registry_data(chain, network, "assets")
-    assets = [dict(asset, **{"price": 0.00}) for asset in assets]
-    return assets
+    return [dict(asset, **{"price": 0.00}) for asset in assets]
 
 
 def get_assets_with_prices(chain, network):
     assets = get_assets(chain, network)
-    print(assets)
-    priced_assets = [asset for asset in assets if asset["coingecko"] != ""]
+    priced_assets = filter(lambda asset: asset["coingecko"], assets)
     priced_asset_ids = [asset["id"] for asset in priced_assets]
     prices = get_prices(chain, network, priced_asset_ids)
+    asset_prices = {id: prices.get(id, 0.00) for id in priced_asset_ids}
     for asset in assets:
-        print(asset)
-        if asset["coingecko"] == "":
-            asset["price"] = 0.00
-        else:
-            for id, price in prices.items():
-                if asset["id"] == id:
-                    asset["price"] = price
+        asset["price"] = asset_prices.get(asset["id"], 0.00)
     return assets
 
 
 def get_assets_by_type(chain, network, asset_type):
     assets = get_assets(chain, network)
-    assets = [asset for asset in assets if asset["type"] == asset_type]
-    return assets
+    return list(filter(lambda asset: asset["type"] == asset_type, assets))
 
 
 def get_assets_by_slug(chain, network, asset_slug):
     assets = get_assets(chain, network)
-    assets = [asset for asset in assets if asset_slug in asset["slugs"]]
-    return assets
+    return list(filter(lambda asset: asset_slug in asset["slugs"], assets))
 
 
 def get_asset(chain, network, asset_id):
     assets = get_assets(chain, network)
-    asset = [asset for asset in assets if asset["id"] == asset_id][0]
-    return asset
+    asset_map = {asset["id"]: asset for asset in assets}
+    return asset_map[asset_id]
 
 
 def get_asset_ibc(chain, network, hash):
     assets = get_assets(chain, network)
-    asset = [asset for asset in assets if asset["id"] == f"ibc/{hash}"][0]
-    return asset
+    asset_map = {asset["id"]: asset for asset in assets}
+    return asset_map[f"ibc/{hash}"]
 
 
 # Osmosis Assets
@@ -59,11 +50,11 @@ def get_asset_ibc(chain, network, hash):
 
 def get_asset_factory(chain, network, creator, symbol):
     assets = get_assets_with_prices(chain, network)
-    asset = [asset for asset in assets if asset["id"] == f"factory/{creator}/{symbol}"][0]
-    return asset
+    asset_map = {asset["id"]: asset for asset in assets}
+    return asset_map[f"factory/{creator}/{symbol}"]
 
 
 def get_asset_gamm(chain, network, pool_id):
     assets = get_assets_with_prices(chain, network)
-    asset = [asset for asset in assets if asset["id"] == f"gamm/pool/{pool_id}"][0]
-    return asset
+    asset_map = {asset["id"]: asset for asset in assets}
+    return asset_map[f"gamm/pool/{pool_id}"]

@@ -10,19 +10,24 @@ from func.graphql import get_graphql_code_details
 def load_codes(chain, network):
     codes = []
     path = f"../registry/data/{chain}/{network}/codes.json"
-    if os.path.exists(path):
-        codes = json.load(open(path))
-        if len(codes) > 0:
-            graphql_details = get_graphql_code_details(chain, network, [code["id"] for code in codes])
-            for code in codes:
-                code_graphql_detail = [detail for detail in graphql_details if detail["code_id"] == code["id"]][0]
-                code["cw2Contract"] = code_graphql_detail["cw2_contract"]
-                code["cw2Version"] = code_graphql_detail["cw2_version"]
-                code["uploader"] = code_graphql_detail["creator"]
-                code["contracts"] = code_graphql_detail["contract_instantiated"]
-                code["instantiatePermission"] = code_graphql_detail["access_config_permission"]
-                code["permissionAddresses"] = code_graphql_detail["access_config_addresses"]
-                code["imageUrl"] = "https://celatone-api.alleslabs.dev/images/entities/" + code["slug"]
+    try:
+        with open(path) as f:
+            codes = json.load(f)
+    except FileNotFoundError:
+        pass
+    if len(codes) > 0:
+        code_ids = map(lambda code: code["id"], codes)
+        graphql_details = get_graphql_code_details(chain, network, code_ids)
+        graphql_map = {detail["code_id"]: detail for detail in graphql_details}
+        for code in codes:
+            code_graphql_detail = graphql_map[code["id"]]
+            code["cw2Contract"] = code_graphql_detail["cw2_contract"]
+            code["cw2Version"] = code_graphql_detail["cw2_version"]
+            code["uploader"] = code_graphql_detail["creator"]
+            code["contracts"] = code_graphql_detail["contract_instantiated"]
+            code["instantiatePermission"] = code_graphql_detail["access_config_permission"]
+            code["permissionAddresses"] = code_graphql_detail["access_config_addresses"]
+            code["imageUrl"] = "https://celatone-api.alleslabs.dev/images/entities/" + code["slug"]
     return codes
 
 

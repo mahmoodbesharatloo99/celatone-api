@@ -8,7 +8,8 @@ def get_accounts(chain, network):
 
 def get_account(chain, network, account_address):
     accounts = get_accounts(chain, network)
-    account = [
-        account for account in accounts if account["address"] == account_address
-    ][0]
+    try:
+        account = next(account for account in accounts if account["address"] == account_address)
+    except StopIteration:
+        raise ValueError(f"Account {account_address} not found")
     return account
