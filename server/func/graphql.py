@@ -5,7 +5,10 @@ from func.constants import GRAPHQL_TEST_DICT
 
 def get_contract_instantiator_admin(chain, network, contract_addresses):
     contract_data = []
-    queries = [f'{address}: contracts_by_pk(address: "{address}") {{ account {{ address }} accountByInitBy {{ address }} label }}' for address in contract_addresses]
+    queries = [
+        f'{address}: contracts_by_pk(address: "{address}") {{ account {{ address }} accountByInitBy {{ address }} label }}'
+        for address in contract_addresses
+    ]
     query = "query {" + " ".join(queries) + "}"
     graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": query}).json()["data"]
     for contract_address, data in graphql_response.items():
@@ -21,7 +24,12 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
 
 
 def get_graphql_code_details(chain, network, code_ids):
-    query = "\n".join([f'a{code_id}: codes_by_pk(id: {code_id}) {{\n  account {{\n    address\n  }}\n  cw2_contract\n  cw2_version\n  contract_instantiated\n  access_config_permission\n  access_config_addresses\n}}' for code_id in code_ids])
+    query = "\n".join(
+        [
+            f"a{code_id}: codes_by_pk(id: {code_id}) {{\n  account {{\n    address\n  }}\n  cw2_contract\n  cw2_version\n  contract_instantiated\n  access_config_permission\n  access_config_addresses\n}}"
+            for code_id in code_ids
+        ]
+    )
     graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"})
     graphql_data = graphql_response.json().get("data", {})
     code_data = [
@@ -47,7 +55,7 @@ def get_lcd_tx_results(chain, network, tx_hash):
             }}
         }}
     """
-    return requests.post(GRAPHQL_DICT[chain][network], data=query)
+    return requests.post(GRAPHQL_DICT[chain][network], json={"query": query})
 
 
 def get_lcd_tx_responses(chain, network, tx_hash, limit):
@@ -58,4 +66,4 @@ def get_lcd_tx_responses(chain, network, tx_hash, limit):
             }}
         }}
     """
-    return requests.post(GRAPHQL_TEST_DICT[chain][network], data=query)
+    return requests.post(GRAPHQL_TEST_DICT[chain][network], json={"query": query})
