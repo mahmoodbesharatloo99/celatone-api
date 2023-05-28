@@ -3057,5 +3057,21 @@
     "slugs": ["ibcx"],
     "symbol": "IBCX",
     "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The native staking token of Juno Network",
+    "id": {
+      "osmosis": {
+      "osmo-test-5": "ibc/8E2FEFCBD754FA3C97411F0126B9EC76191BAA1B3959CB73CECF396A4037BBF0"
+      }
+    },
+    "logo": "https://celatone-api.alleslabs.dev/images/entities/juno",
+    "name": "JUNO token",
+    "precision": 6,
+    "slugs": ["juno"],
+    "symbol": "JUNO",
+    "type": "native"
   }
 ]
