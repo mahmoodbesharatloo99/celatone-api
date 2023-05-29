@@ -54,7 +54,7 @@
     "id": {
       "osmosis": {
         "osmosis-1": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4",
-        "osmo-test-5": "ibc/4DAE26570FD24ABA40E2BE4137E39D946C78B00B248D3F78B0919567C4371156"
+        "osmo-test-5": "ibc/7153C8C55DB988805FAC69E449B680A8BAAC15944B87CF210ADCD1A3A9542857"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.svg",

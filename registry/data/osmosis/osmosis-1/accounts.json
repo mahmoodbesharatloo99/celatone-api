@@ -266,7 +266,7 @@
     "tpye": "contract"
   },
   {
-    "slug": "croncat",
+    "slug": "calc",
     "name": "Calculated Finance Deployer",
     "address": "osmo1r02tlyyaqs6tmrfa4jf37t7ewuxr57qp8ghzly",
     "description": "Apollo Safe CW3 multisig owned by the Calculated Finance team whitelisted to upload contracts",
