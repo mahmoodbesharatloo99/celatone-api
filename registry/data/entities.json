@@ -3408,5 +3408,27 @@
       }
     ],
     "description": "If This Then That for the #Interchain. The blockchain automation layer, built for scheduled or event driven workflows."
+  },
+  {
+    "slug": "calc",
+    "name": "Calculated Finance",
+    "website": "https://calculated.fi/",
+    "github": "",
+    "logo": "calc.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/calc_finance"
+      },
+      {
+        "name": "telegram",
+        "url": "https://t.me/calcprotocol"
+      },
+      {
+        "name": "discord",
+        "url": ""
+      }
+    ],
+    "description": "The most calculated way to enter and exit positions."
   }
 ]

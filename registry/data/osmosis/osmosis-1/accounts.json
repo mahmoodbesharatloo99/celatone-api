@@ -264,5 +264,12 @@
     "address": "osmo15wna5dwylkuzvljsudyn6zfsd4zl0rkg5ge888mzk4vtnjpp0z5q4e9w58",
     "description": "Apollo Safe CW3 multisig owned by the CronCat team whitelisted to upload contracts",
     "tpye": "contract"
+  },
+  {
+    "slug": "croncat",
+    "name": "Calculated Finance Deployer",
+    "address": "osmo15wna5dwylkuzvljsudyn6zfsd4zl0rkg5ge888mzk4vtnjpp0z5q4e9w58",
+    "description": "Apollo Safe CW3 multisig owned by the Calculated Finance team whitelisted to upload contracts",
+    "tpye": "account"
   }
 ]

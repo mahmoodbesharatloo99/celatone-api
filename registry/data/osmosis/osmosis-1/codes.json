@@ -243,5 +243,12 @@
     "description": "",
     "id": 46,
     "github": "https://github.com/wormhole-foundation/wormhole/tree/ae7de3d575a0cee7ceaf69080952fa148dc0a346/cosmwasm/contracts/wormhole"
+  },
+  {
+    "slug": "calc",
+    "name": "Calculated Finance DCA",
+    "description": "",
+    "id": 54,
+    "github": ""
   }
 ]
