@@ -239,7 +239,7 @@
   },
   {
     "slug": "skip",
-    "name": "Skip ProtoRev Deeloper Account",
+    "name": "Skip ProtoRev Developer Account",
     "address": "osmo1qs9akhf0s05hqskmu9gdnzz3e6u4xc7aaya0u0",
     "description": "Developer account controlled by the Skip team to receive portion of the ProtoRev revenue from arbitraging Osmosis swaps.",
     "type": "account"
