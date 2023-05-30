@@ -5,21 +5,24 @@ from func.constants import GRAPHQL_TEST_DICT
 
 def get_contract_instantiator_admin(chain, network, contract_addresses):
     contract_data = []
-    queries = [
-        f'{address}: contracts_by_pk(address: "{address}") {{ account {{ address }} accountByInitBy {{ address }} label }}'
-        for address in contract_addresses
-    ]
-    query = "query {" + " ".join(queries) + "}"
-    graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": query}).json()["data"]
-    for contract_address, data in graphql_response.items():
-        contract_data.append(
-            {
-                "address": contract_address,
-                "instantiator": data.get("accountByInitBy", {"address": ""})["address"],
-                "admin": "" if data["account"] is None else data.get("account", {"address": ""})["address"],
-                "label": data["label"],
-            }
-        )
+    try:
+        queries = [
+            f'{address}: contracts_by_pk(address: "{address}") {{ account {{ address }} accountByInitBy {{ address }} label }}'
+            for address in contract_addresses
+        ]
+        query = "query {" + " ".join(queries) + "}"
+        graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": query}).json()["data"]
+        for contract_address, data in graphql_response.items():
+            contract_data.append(
+                {
+                    "address": contract_address,
+                    "instantiator": data.get("accountByInitBy", {"address": ""})["address"],
+                    "admin": "" if data["account"] is None else data.get("account", {"address": ""})["address"],
+                    "label": data["label"],
+                }
+            )
+    except:
+        pass
     return contract_data
 
 
