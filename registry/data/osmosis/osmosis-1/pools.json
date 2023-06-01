@@ -4889,6 +4889,24 @@
     ]
   },
   {
+    "id": 581,
+    "name": "KRTC/USTC",
+    "address": "osmo150wfa0gum6sz5crkpvt9pztjf35dc8gvaufzrc40d6hr99wvyxlqcaddv9",
+    "assets": [
+      "ibc/204A582244FC241613DBB50B04D1D454116C58C4AF7866C186AA0D6EEAD42780",
+      "ibc/BE1BB42D4BE3C30D50B68D7C41DB4DFCE9678E8EF8C539F6E6A9345048894FCC"
+    ]
+  },
+  {
+    "id": 582,
+    "name": "KRTC/USTC",
+    "address": "osmo1620l9ewga9f6w3wyvfx5vhpuum3wwgz2haamn4t8lckfyzvnxd0q0chmeu",
+    "assets": [
+      "ibc/204A582244FC241613DBB50B04D1D454116C58C4AF7866C186AA0D6EEAD42780",
+      "ibc/BE1BB42D4BE3C30D50B68D7C41DB4DFCE9678E8EF8C539F6E6A9345048894FCC"
+    ]
+  },
+  {
     "id": 583,
     "name": "AKT/CRO",
     "address": "osmo1rclh8r9e0qtn284uusgqydgnjjv2d2w5v9e5ngrk0exzlua9x2ssnmtk48",
@@ -5307,6 +5325,15 @@
     ]
   },
   {
+    "id": 629,
+    "name": "ROWAN/OSMO",
+    "address": "osmo1dufw6sdwhp6cxuxh8kfg9t50erne08t9sl37a6jeyswpknufftws5w7w8y",
+    "assets": [
+      "ibc/8318FD63C42203D16DDCAF49FE10E8590669B3219A3E87676AC9DA50722687FB",
+      "uosmo"
+    ]
+  },
+  {
     "id": 630,
     "name": "NETA/ION",
     "address": "osmo16d92nnsxj9nyc6j46k0pj6q0phhdu89nrz0y8657nn4el5fm3lwsut9e6k",
@@ -5461,6 +5488,15 @@
     ]
   },
   {
+    "id": 649,
+    "name": "MARBLE/OSMO",
+    "address": "osmo1kskty9u0uvqrn89p4ultt4m2se2jjkrt404d20zgqftdch5t4k6qmysqvn",
+    "assets": [
+      "ibc/F6B691D5F7126579DDC87357B09D653B47FDCE0A3383FF33C8D8B544FE29A8A6",
+      "uosmo"
+    ]
+  },
+  {
     "id": 650,
     "name": "USTC/VDL",
     "address": "osmo1p352w3c2ms04cj6un55hnkwuw2fq748tgxjn57fujvp9pmx8mhnsr4jsgv",
@@ -5533,6 +5569,24 @@
     ]
   },
   {
+    "id": 659,
+    "name": "EEUR/ROWAN",
+    "address": "osmo1v8289lc5hweg6qr3jhhsy3d4m2lf8663xz4fkwv8jcc5k3chgkwsxwky24",
+    "assets": [
+      "ibc/5973C068568365FFF40DEDCF1A1CB7582B6116B731CD31A12231AE25E20B871F",
+      "ibc/8318FD63C42203D16DDCAF49FE10E8590669B3219A3E87676AC9DA50722687FB"
+    ]
+  },
+  {
+    "id": 660,
+    "name": "JUNO/MARBLE",
+    "address": "osmo1kqmrg9qyqfgkys9q892m8st5mkesez8vpnegppecex0ylqqp8h8sedeu4q",
+    "assets": [
+      "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED",
+      "ibc/F6B691D5F7126579DDC87357B09D653B47FDCE0A3383FF33C8D8B544FE29A8A6"
+    ]
+  },
+  {
     "id": 661,
     "name": "CRBRUS/OSMO",
     "address": "osmo1nreqp8gx5nmej0ckrh7v2jy2p6j8pjv7xcyzrpylkstfamkm2slqxsvllj",
@@ -5602,6 +5656,15 @@
     "assets": [
       "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
       "ibc/BE1BB42D4BE3C30D50B68D7C41DB4DFCE9678E8EF8C539F6E6A9345048894FCC"
+    ]
+  },
+  {
+    "id": 669,
+    "name": "RAC/OSMO",
+    "address": "osmo13tc9ntd0rnxumtlczqefzg5nk2kf6z7agmgj898sd3gl40dkccvqy06vkm",
+    "assets": [
+      "ibc/6BDB4C8CCD45033F9604E4B93ED395008A753E01EECD6992E7D1EA23D9D3B788",
+      "uosmo"
     ]
   },
   {
@@ -5797,12 +5860,66 @@
     ]
   },
   {
+    "id": 692,
+    "name": "HASH/OSMO",
+    "address": "osmo14klwpt49lrs76l24puae7jnct4430ufl9u42rdmz49vews0vu6zqrypt4c",
+    "assets": [
+      "ibc/CE5BFF1D9BADA03BB5CCA5F56939392A761B53A10FBD03B37506669C3218D3B2",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 693,
+    "name": "HASH/OSMO",
+    "address": "osmo1yuu7x52t2df6f0287md68q8l3u90h9jxjurcnxpskvve2de9krgqmm7mjm",
+    "assets": [
+      "ibc/CE5BFF1D9BADA03BB5CCA5F56939392A761B53A10FBD03B37506669C3218D3B2",
+      "uosmo"
+    ]
+  },
+  {
     "id": 694,
     "name": "ATOM/WBTC.grv",
     "address": "osmo1kdnj8qjhya69n2yj820mzt9wjunjekkyu5ewwn7l5ppyn6qhu9zqzj8fk8",
     "assets": [
       "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
       "ibc/C9B0D48FD2C5B91135F118FF2484551888966590D7BDC20F6A87308DBA670796"
+    ]
+  },
+  {
+    "id": 695,
+    "name": "DHK/OSMO",
+    "address": "osmo14ppp79wvq6xlg3tnwr86sgpqv36m4gs3uurrf8wlmgdx8cz9ly0sanpqjr",
+    "assets": [
+      "ibc/52E12CF5CA2BB903D84F5298B4BFD725D66CAB95E09AA4FC75B2904CA5485FEB",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 696,
+    "name": "GLX/OSMO",
+    "address": "osmo17dyt6827sq83px7gl7gsuzumlh0je00j0z9slcp08cxy8vn0ye0syrr2gh",
+    "assets": [
+      "ibc/F49DE040EBA5AB2FAD5F660C2A1DDF98A68470FAE82229818BE775EBF3EE79F2",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 697,
+    "name": "GLX/OSMO",
+    "address": "osmo16dafzdug0nreqs3h8g2rdtp5dr75ck9k2a9qzyvvgksn6cgukteqkafeu5",
+    "assets": [
+      "ibc/F49DE040EBA5AB2FAD5F660C2A1DDF98A68470FAE82229818BE775EBF3EE79F2",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 698,
+    "name": "GLX/OSMO",
+    "address": "osmo1wv6v6mgychqdmf9fj5esyrethnu86akn6gyqq7rlexacjjcht37qfsqjdl",
+    "assets": [
+      "ibc/F49DE040EBA5AB2FAD5F660C2A1DDF98A68470FAE82229818BE775EBF3EE79F2",
+      "uosmo"
     ]
   },
   {
@@ -5820,6 +5937,15 @@
     "address": "osmo1yqqtrljj2xcdldwgtwgjeqte69lf8wdyfcx99jffc669natgslcske6ku3",
     "assets": [
       "ibc/00B6E60AD3D65CBEF5579AC8AF609527C0B57535B6E32D96C80A735344FD9DCC",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 701,
+    "name": "MEME/OSMO",
+    "address": "osmo1j4j7kxkmu6kdenrx9ky50k9x86s36mcaqxukr8sjtl2rwp9vkwfqljjd3r",
+    "assets": [
+      "ibc/67C89B8B0A70C08F093C909A4DD996DD10E0494C87E28FD9A551697BF173D4CA",
       "uosmo"
     ]
   },
@@ -5956,6 +6082,24 @@
     ]
   },
   {
+    "id": 716,
+    "name": "ROWAN/ASVT",
+    "address": "osmo1cafjr2f6uek4jc7g0sgxwxnssu3uq2c5uvlzkg2mwkg6jdwu6a9sa7qg4m",
+    "assets": [
+      "ibc/8318FD63C42203D16DDCAF49FE10E8590669B3219A3E87676AC9DA50722687FB",
+      "ibc/AA1C80225BCA7B32ED1FC6ABF8B8E899BEB48ECDB4B417FD69873C6D715F97E7"
+    ]
+  },
+  {
+    "id": 717,
+    "name": "EEUR/ASVT",
+    "address": "osmo1yjpgrff07qx7q2tykqthtenyk7tmlnjy83097y00g20ncuxut8hsgwm4p9",
+    "assets": [
+      "ibc/5973C068568365FFF40DEDCF1A1CB7582B6116B731CD31A12231AE25E20B871F",
+      "ibc/AA1C80225BCA7B32ED1FC6ABF8B8E899BEB48ECDB4B417FD69873C6D715F97E7"
+    ]
+  },
+  {
     "id": 718,
     "name": "JOE/OSMO",
     "address": "osmo1k6mv2aefssjt0jq8gwvccwaa0xsv7m0dxl5kzqay47pepy6e8kqq3rage2",
@@ -6078,6 +6222,15 @@
     "address": "osmo1nxm52c20twfrr44cdh5g4f7dufnuc7r60n5y9uqe27494qgw2qes2g4432",
     "assets": [
       "ibc/D3327A763C23F01EC43D1F0DB3CEFEC390C362569B6FD191F40A5192F8960049",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 732,
+    "name": "L1/OSMO",
+    "address": "osmo195vm9cpsdntewfe7l83yx2w28hkfvx33lyu454gvfrr6f5m7gcas420nk8",
+    "assets": [
+      "ibc/F16FDC11A7662B86BC0B9CE61871CBACF7C20606F95E86260FD38915184B75B4",
       "uosmo"
     ]
   },
@@ -6226,6 +6379,123 @@
     ]
   },
   {
+    "id": 756,
+    "name": "BTSG/RWNE",
+    "address": "osmo19jeyxdr0maeeh9uedgaemyghd8jgfcucv59mjnw867vhwkysf7fsqf2yxk",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/56C276FC136E239449DCE664292DBEEF5795C4EF4B5B35DB98BD1C0948274867"
+    ]
+  },
+  {
+    "id": 757,
+    "name": "ENMODA/BTSG",
+    "address": "osmo18dpk6wfldlfzkk2tdas2tztcth26v39tt7sc2t30drzrex6mlnqqa3hd78",
+    "assets": [
+      "ibc/051A38BBEF92B9D8293AFBE1FA293E704359E9CB28297A0FD5DBA3E9CCEE9AB1",
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452"
+    ]
+  },
+  {
+    "id": 758,
+    "name": "BTSG/404DR",
+    "address": "osmo1eg26w7fg3hdzjxyxv5x846ekjmw0rdewlxlp6rf20efursfurh7q78cyu2",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/B797E4F42CD33C50511B341E50C5CC0E8EF0D93B1E1247ABAA071583B8619202"
+    ]
+  },
+  {
+    "id": 759,
+    "name": "BTSG/N43",
+    "address": "osmo1q07hmk9ewecaa9mtnpz9uerq0tlfxj55yp2fg67lqy4xp704l5as56uq9e",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/E4FFAACCDB7D55CE2D257DF637C00158CB841F11D0013B2D03E31FF7800A2C58"
+    ]
+  },
+  {
+    "id": 760,
+    "name": "BTSG/LOBO",
+    "address": "osmo1kljure6uz60xec9ecmq7sldzgz2x8n2r8snxgvuwla4rn7kpvjzsjczqqx",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/C9864D1B9623F703C75BBF72B7FF8A7317E1535C96538D21467A4311246DC3B5"
+    ]
+  },
+  {
+    "id": 761,
+    "name": "BTSG/VIBRA",
+    "address": "osmo1e0m28qylp9k0s4l6quk2skv9g3w0p8qvu8aqmxuf2n6tt7ctkuyqrw5d48",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/8A07D4BD40E0F44ECFDF360F7EA7008B288926FB87C54489FE54DB81A5340E0C"
+    ]
+  },
+  {
+    "id": 762,
+    "name": "BTSG/KARINA",
+    "address": "osmo14ymxts36p4z2eef06qeeuqd5s0x7fmyhzs382qvnqxsv45zcqf7q0vztv0",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/6A6174468758D207DD2D880363BF699C6568A29E87651337AEDAFD9E69EA7E58"
+    ]
+  },
+  {
+    "id": 763,
+    "name": "TESTA/BTSG",
+    "address": "osmo1rsr5pqt50eml482jhtg44mx9nc555wjd90vhz4hwkmrm7qngqx9sr3pvvp",
+    "assets": [
+      "ibc/022A879A5301CBCACF96216C967805F15C33C615B74DC7236027C1BA1BF664FF",
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452"
+    ]
+  },
+  {
+    "id": 764,
+    "name": "BTSG/CMQZ",
+    "address": "osmo1xky9ttqjpqltad9y420x7ylnw5k8sh6ctnk57dvytvgaesywzccsnyptkl",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/C1CEF00F016FE89EA6E5B07DA895AACD91B0AAD69A991033D846B988AD4FB69D"
+    ]
+  },
+  {
+    "id": 765,
+    "name": "FASANO/BTSG",
+    "address": "osmo1rpu7k863l2pmdcw95452j487jxrh0mp77au489z3gjq7quhnk75st72zs4",
+    "assets": [
+      "ibc/423967B46B1A51D78619085105B04FCFA14F7CBC0BE7539A316B2DCDFC7D8C07",
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452"
+    ]
+  },
+  {
+    "id": 766,
+    "name": "D9X/BTSG",
+    "address": "osmo1e5xkxxpszq9t08yuu828rjzrmj5gvpwnf9ywv74ryz4frsyr0zlqyx76xf",
+    "assets": [
+      "ibc/1DE9A32D603EE05E9B8619DF24D90FD518C932AE0B5B3209A986B7262DBADE2A",
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452"
+    ]
+  },
+  {
+    "id": 767,
+    "name": "FONTI/BTSG",
+    "address": "osmo1k4nr7aguzj733ch3kdpl4834ex5uep84gcvtnumj2ekgrh4xlfssslwlpd",
+    "assets": [
+      "ibc/239A507997222805E441956EBE8087D7E2D05D6535C6D4C75EF8DCF83B3DE1A1",
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452"
+    ]
+  },
+  {
+    "id": 768,
+    "name": "BTSG/BJKS",
+    "address": "osmo17h0ay5zhcllwgshem7r40a2wyx7a43w2ngfrrc7w2w60rrhdklws7u6zy6",
+    "assets": [
+      "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452",
+      "ibc/B3FB7128CE957DE1ADB687A919AA0786C77C62FB1280C07CDD78AEA032D56853"
+    ]
+  },
+  {
     "id": 769,
     "name": "TGD/OSMO",
     "address": "osmo1zzn7rddfytcjg26g3s97g2qck2nwz5upfth430fdmnnyph9vjxhqpytc3l",
@@ -6244,11 +6514,38 @@
     ]
   },
   {
+    "id": 771,
+    "name": "ATOM/ASVT",
+    "address": "osmo1ephgyd57rw7mzf0p5gdjjezt2j442jpzdezvkjdvpke703fyy06qtstsmk",
+    "assets": [
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "ibc/AA1C80225BCA7B32ED1FC6ABF8B8E899BEB48ECDB4B417FD69873C6D715F97E7"
+    ]
+  },
+  {
+    "id": 772,
+    "name": "LVN/XKI",
+    "address": "osmo18p7qaaevs9kzsyuzmva969s4klx4xjxtn93cccpypfkhl3mqpcrqlwvu3j",
+    "assets": [
+      "ibc/AD185F62399F770CCCE8A36A180A77879FF6C26A0398BD3D2A74E087B0BFA121",
+      "ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E"
+    ]
+  },
+  {
     "id": 773,
     "name": "DOT.axl/OSMO",
     "address": "osmo12zlm0f4wrgvdks83gue66zs97hchhc2mf75xwgg5q89ev6hd45gs7hn0zt",
     "assets": [
       "ibc/3FF92D26B407FD61AE95D975712A7C319CDE28DE4D80BDC9978D935932B991D7",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 774,
+    "name": "LVN/OSMO",
+    "address": "osmo1lg3y6n2qc382ukpl8y6hfxlk6lprw3aye47zsld7xpnktfhvxneqxjf4f7",
+    "assets": [
+      "ibc/AD185F62399F770CCCE8A36A180A77879FF6C26A0398BD3D2A74E087B0BFA121",
       "uosmo"
     ]
   },
@@ -6276,6 +6573,15 @@
     "address": "osmo10xnwkjzqpdvgzxpz7eu5mcne5jc73c5h0xuhv9qmz0jsfyyxvr4qvhje97",
     "assets": [
       "ibc/C360EF34A86D334F625E4CBB7DA3223AEA97174B61F35BB3758081A8160F7D9B",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 778,
+    "name": "GLTO/OSMO",
+    "address": "osmo1v9r9d4xk9j2r3m59hcnsy7037wu75ymyg6nc0em23rpwmp9nj3yqgz5wvw",
+    "assets": [
+      "ibc/52C57FCA7D6854AA178E7A183DDBE4EF322B904B1D719FC485F6FFBC1F72A19E",
       "uosmo"
     ]
   },
@@ -6343,11 +6649,38 @@
     ]
   },
   {
+    "id": 787,
+    "name": "GEO/OSMO",
+    "address": "osmo1ccfjmcfe09k0f6fdcfdgkc52c52l2c0jywfc57sn5qd22texqr3qla0e5m",
+    "assets": [
+      "ibc/9B6FBABA36BB4A3BF127AE5E96B572A5197FD9F3111D895D8919B07BC290764A",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 788,
+    "name": "LUMEN/OSMO",
+    "address": "osmo10cm3vypuxkrvq4uznf4px5lv43ej99f6shushwtur3fpy6z69huq7gfce8",
+    "assets": [
+      "ibc/FFA652599C77E853F017193E36B5AB2D4D9AFC4B54721A74904F80C9236BF3B7",
+      "uosmo"
+    ]
+  },
+  {
     "id": 789,
     "name": "WMATIC.axl/OSMO",
     "address": "osmo1ayjsj697r8ne5pnda82s96hdjvu5svp7ucjj3ekzlj886epq78cs2e48n3",
     "assets": [
       "ibc/AB589511ED0DD5FA56171A39978AFBF1371DB986EC1C3526CE138A16377E39BB",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 790,
+    "name": "GKEY/OSMO",
+    "address": "osmo1shzv0vcddhe0jh4wdh2xudrrw20uzu96ugsmyv29p5zscpk85snsmyjnjl",
+    "assets": [
+      "ibc/7C781B4C2082CD62129A972D47486D78EC17155C299270E3C89348EA026BEAF8",
       "uosmo"
     ]
   },
@@ -6478,6 +6811,15 @@
     ]
   },
   {
+    "id": 805,
+    "name": "O9W/OSMO",
+    "address": "osmo12nv2sf5qe5t93ly3fktdgrw5u9f5nn9cf8cakgt0pvhhqghvkrnqqhadah",
+    "assets": [
+      "ibc/0CD46223FEABD2AEAAAF1F057D01E63BCA79B7D4BD6B68F1EB973A987344695D",
+      "uosmo"
+    ]
+  },
+  {
     "id": 806,
     "name": "STRD/OSMO",
     "address": "osmo1x0ptme5tp8r2qw8gsypg3qftfwfpt2hdk4jyvp7gryywmg5l9fsqvhs8fk",
@@ -6513,6 +6855,15 @@
       "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED",
       "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4",
       "uosmo"
+    ]
+  },
+  {
+    "id": 810,
+    "name": "stSTARS/STARS",
+    "address": "osmo1ccjfm7gpa37mc9zwq553p0ttzq3ga5g6jzarz37lcq4qlnsdcxhsghcv3y",
+    "assets": [
+      "ibc/5DD1F95ED336014D00CE2520977EC71566D282F9749170ADC83A392E0EA7426A",
+      "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
     ]
   },
   {
@@ -6679,6 +7030,15 @@
     ]
   },
   {
+    "id": 829,
+    "name": "LVN/USDC.axl",
+    "address": "osmo1g2y3ptjh8rndpsq6r2cty94nl777fugke3z2rq37ac3uldtfagcsspp8xt",
+    "assets": [
+      "ibc/AD185F62399F770CCCE8A36A180A77879FF6C26A0398BD3D2A74E087B0BFA121",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+    ]
+  },
+  {
     "id": 830,
     "name": "FUND/OSMO",
     "address": "osmo1qekmfz65ce08nee5c5caags2h24uhztjn9j6vr8uvnv4hcx44deq2xds6p",
@@ -6841,6 +7201,33 @@
     ]
   },
   {
+    "id": 848,
+    "name": "ECH/OSMO",
+    "address": "osmo1kavqnurym4exfwyz85j68mkggacegptpkvpv08d3g6q9vavhw94qvj756k",
+    "assets": [
+      "ibc/47EE224A9B33CF0ABEAC82106E52F0F6E8D8CEC5BA80B9D9A6F55172CBB0177D",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 849,
+    "name": "ECH/USDC.axl",
+    "address": "osmo120echqk9sfelg47lrultsc0em257582cxrp86epqhcz8gfqxf6fsluzp7z",
+    "assets": [
+      "ibc/47EE224A9B33CF0ABEAC82106E52F0F6E8D8CEC5BA80B9D9A6F55172CBB0177D",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+    ]
+  },
+  {
+    "id": 850,
+    "name": "ECH/USDC.axl",
+    "address": "osmo1xxg0pnmyxj7xlvdvxrqdzrecaa2fquq97egpkf248t6kxuklsdjqazsyq0",
+    "assets": [
+      "ibc/47EE224A9B33CF0ABEAC82106E52F0F6E8D8CEC5BA80B9D9A6F55172CBB0177D",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+    ]
+  },
+  {
     "id": 851,
     "name": "FET/JKL/BCNA",
     "address": "osmo1mumjnyu36jkguwjq5gd8w6yw6jah6anq443llrhj0qpaz7ud7njqv4stwe",
@@ -6869,12 +7256,30 @@
     ]
   },
   {
+    "id": 854,
+    "name": "SCRT/stkd-SCRT",
+    "address": "osmo1qxswx2sy9u0cpf9hrgqd29gjnudpjkpffkzjtplckjkkv7mjnh5s04vy0j",
+    "assets": [
+      "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A",
+      "ibc/D0E5BF2940FB58D9B283A339032DE88111407AAD7D94A7F1F3EB78874F8616D4"
+    ]
+  },
+  {
     "id": 855,
     "name": "SCRT/SHD",
     "address": "osmo15zzs8muh0lgnhdmzax35e90cskgulz7x566q6fpknguvdw95s0msen0l80",
     "assets": [
       "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A",
       "ibc/71055835C7639739EAE03AACD1324FE162DBA41D09F197CB72D966D014225B1C"
+    ]
+  },
+  {
+    "id": 856,
+    "name": "BZE/OSMO",
+    "address": "osmo12fzg5z9xzw8yde57fj5w2rwqmxe6f4g3lgjdrjhhsqx8m43fqpgs7d8x8q",
+    "assets": [
+      "ibc/C822645522FC3EECF817609AA38C24B64D04F5C267A23BCCF8F2E3BC5755FA88",
+      "uosmo"
     ]
   },
   {
@@ -6892,6 +7297,15 @@
     "address": "osmo17rudnglqgrcnvn3am3xm02d94y4sa3l43ywkv3cp4je44p2ez5nq590lae",
     "assets": [
       "ibc/BB936517F7E5D77A63E0ADB05217A6608B0C4CF8FBA7EA2F4BAE4107A7238F06",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 859,
+    "name": "MEDAS/OSMO",
+    "address": "osmo19gffpaavnhhzryktpskz7782ttt5qfs4cqfmhyuygc3cxytljfcqyggf5t",
+    "assets": [
+      "ibc/01E94A5FF29B8DDEFC86F412CC3927F7330E9B523CC63A6194B1108F5276025C",
       "uosmo"
     ]
   },
@@ -6933,12 +7347,57 @@
     ]
   },
   {
+    "id": 864,
+    "name": "IMV/USDC.axl",
+    "address": "osmo1fyav6ky62qrtu5hu6hv6jrx2mu058gvke6ncqyke6ns5mjgvtj5sv52acw",
+    "assets": [
+      "ibc/92B223EBFA74DB99BEA92B23DEAA6050734FEEAABB84689CB8E1AE8F9C9F9AF4",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+    ]
+  },
+  {
+    "id": 865,
+    "name": "IMV/USDC.axl",
+    "address": "osmo15eg4aq5fxdehdjv5zr385h4zmswamvw6pguqhykd3fs2jrgpgr0qqmlfqc",
+    "assets": [
+      "ibc/92B223EBFA74DB99BEA92B23DEAA6050734FEEAABB84689CB8E1AE8F9C9F9AF4",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+    ]
+  },
+  {
+    "id": 866,
+    "name": "IMV/USDC.axl",
+    "address": "osmo1pg8mzjdn3yxg4gf96axyw8gpn2ur6jxq5alctz7lmjkwk9n98neshpmtkj",
+    "assets": [
+      "ibc/92B223EBFA74DB99BEA92B23DEAA6050734FEEAABB84689CB8E1AE8F9C9F9AF4",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+    ]
+  },
+  {
     "id": 867,
     "name": "ATOM/PHMN",
     "address": "osmo1mtarz7hmt5m0h7muks3pdnwfmwqps9nndrrq6xrz5rhdsl6s3cwssm4vv3",
     "assets": [
       "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
       "ibc/D3B574938631B0A1BA704879020C696E514CFADAA7643CDE4BD5EB010BDE327B"
+    ]
+  },
+  {
+    "id": 868,
+    "name": "MEDAS/ATOM",
+    "address": "osmo1ewsz7a8zefxq67h4205hlncpfm3np4mky34upu3sktc3llrj5rgqdutjgk",
+    "assets": [
+      "ibc/01E94A5FF29B8DDEFC86F412CC3927F7330E9B523CC63A6194B1108F5276025C",
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+    ]
+  },
+  {
+    "id": 869,
+    "name": "MEDAS/ATOM",
+    "address": "osmo18fdae3yzc2ycw27gzftx0czkpszzrsflw8cyqe99ku3c9aj7lfcq3tjzyt",
+    "assets": [
+      "ibc/01E94A5FF29B8DDEFC86F412CC3927F7330E9B523CC63A6194B1108F5276025C",
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
     ]
   },
   {
@@ -7047,6 +7506,33 @@
     ]
   },
   {
+    "id": 881,
+    "name": "NOM/OSMO",
+    "address": "osmo14sy9cpm4adfrut88u4869ue2sz72rjjcq6hlsmf5uz97tkswvvnqnujj6t",
+    "assets": [
+      "ibc/B9606D347599F0F2FDF82BA3EE339000673B7D274EA50F59494DC51EFCD42163",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 882,
+    "name": "NOM/OSMO",
+    "address": "osmo1czqlvqjdlm2raj6t65nansxt5zlv8ny04fn66gcm9llgl24axmksd2px7e",
+    "assets": [
+      "ibc/B9606D347599F0F2FDF82BA3EE339000673B7D274EA50F59494DC51EFCD42163",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 883,
+    "name": "DYS/OSMO",
+    "address": "osmo1c89mqqr6p979nl0jheysulp84zzpg84ujq5r0dzsmn7xl6aj38pq5fvwdw",
+    "assets": [
+      "ibc/E27CD305D33F150369AB526AEB6646A76EC3FFB1A6CA58A663B5DE657A89D55D",
+      "uosmo"
+    ]
+  },
+  {
     "id": 884,
     "name": "WETH.grv/WETH.axl",
     "address": "osmo1r4r0ryw0pq2yhwcqwf8pg4w0fr764k3ztv9weuyqcn5hv0zxy67srvgfj2",
@@ -7056,12 +7542,32 @@
     ]
   },
   {
+    "id": 885,
+    "name": "ATOM/NOM",
+    "address": "osmo1rp8xap0z59k20fkt7078q8g4t37ee8reqpwt6afgglhe3h70hvls9xl5c4",
+    "assets": [
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "ibc/B9606D347599F0F2FDF82BA3EE339000673B7D274EA50F59494DC51EFCD42163"
+    ]
+  },
+  {
     "id": 886,
     "name": "ATOM/stkATOM",
     "address": "osmo1aqmdce4f8ymqcf7v0a8xcukt8xqga50zqcprta89e9p2fmscfzpscru5lr",
     "assets": [
       "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
       "ibc/CAA179E40F0266B0B29FB5EAA288FB9212E628822265D4141EBD1C47C3CBFCBC"
+    ]
+  },
+  {
+    "id": 887,
+    "name": "LUNC/KRTC/BUSD.axl/USTC",
+    "address": "osmo1cn97km6q3xutm76xuawfkaf0cs4hxly2sqfnuswc92jzutyfc6hqqh70z3",
+    "assets": [
+      "ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0",
+      "ibc/204A582244FC241613DBB50B04D1D454116C58C4AF7866C186AA0D6EEAD42780",
+      "ibc/6329DD8CF31A334DD5BE3F68C846C9FE313281362B37686A62343BAC1EB1546D",
+      "ibc/BE1BB42D4BE3C30D50B68D7C41DB4DFCE9678E8EF8C539F6E6A9345048894FCC"
     ]
   },
   {
@@ -7201,6 +7707,24 @@
     ]
   },
   {
+    "id": 903,
+    "name": "qSTARS/STARS",
+    "address": "osmo1cxlrfu8r0v3cyqj78fuvlsmhjdgna0r7tum8cpd0g3x7w7pte8fsfvcs84",
+    "assets": [
+      "ibc/46C83BB054E12E189882B5284542DB605D94C99827E367C9192CF0579CD5BC83",
+      "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
+    ]
+  },
+  {
+    "id": 905,
+    "name": "DYS/OSMO",
+    "address": "osmo17pk7pcuqxz2hn0j2rhqknzn4npujncpzdakpe9hclz5jr605023qcgc9ty",
+    "assets": [
+      "ibc/E27CD305D33F150369AB526AEB6646A76EC3FFB1A6CA58A663B5DE657A89D55D",
+      "uosmo"
+    ]
+  },
+  {
     "id": 906,
     "name": "DAI.axl/USDC.axl",
     "address": "osmo1hayyjltd3mjx6w8g7wtpu2zckk83ecxen2eux6c7tl42unfvnfysqg9myf",
@@ -7229,6 +7753,24 @@
     ]
   },
   {
+    "id": 909,
+    "name": "USDC.axl/CNTO",
+    "address": "osmo1lherhrcrxe9yev22rjda9auagvr9nupncmtn4yajs48kvfe42t2sq83s4w",
+    "assets": [
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858",
+      "ibc/D38BB3DD46864694F009AF01DA5A815B3A875F8CC52FF5679BFFCC35DC7451D5"
+    ]
+  },
+  {
+    "id": 910,
+    "name": "MEDAS/DVPN",
+    "address": "osmo13tp73hg0skhenwrhp4sqg48a4e6459spyvnp7ptnz2galhpcz3lsalsh0w",
+    "assets": [
+      "ibc/01E94A5FF29B8DDEFC86F412CC3927F7330E9B523CC63A6194B1108F5276025C",
+      "ibc/9712DBB13B9631EDFA9BF61B55F1B2D290B2ADB67E3A4EB3A875F3B6081B3B84"
+    ]
+  },
+  {
     "id": 911,
     "name": "WETH.grv/BOOT",
     "address": "osmo1vtqgpkdd7taj8ssw4rlcd7ulu7wgmujfxlyaa3qkfztva07pm0sq2qkscy",
@@ -7244,6 +7786,15 @@
     "assets": [
       "ibc/EA1D43981D5C9A1C4AAEA9C23BB1D4FA126BA9BC7020A25E0AE4AA841EA25DC5",
       "ibc/FE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4"
+    ]
+  },
+  {
+    "id": 913,
+    "name": "LUNA/stLUNA",
+    "address": "osmo17n9drfwd7sqa5rc7v7xwfv5ucfngg8nttu6j2plvxgvrrt2099qsq54urf",
+    "assets": [
+      "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9",
+      "ibc/C491E7582E94AE921F6A029790083CDE1106C28F3F6C4AD7F1340544C13EC372"
     ]
   },
   {
@@ -7319,6 +7870,15 @@
     ]
   },
   {
+    "id": 922,
+    "name": "EVMOS/stEVMOS",
+    "address": "osmo1q80sc32t5nesvl4hyncfrnvj2qhucnl77jxvz977e0rlgc6ljv6q0vftu3",
+    "assets": [
+      "ibc/6AE98883D4D5D5FF9E50D7130F1305DA2FFA0C652D1DD9C123657C6B4EB2DF8A",
+      "ibc/C5579A9595790017C600DD726276D978B9BF314CF82406CE342720A9C7911A01"
+    ]
+  },
+  {
     "id": 923,
     "name": "ORAI/CRE/INJ/KUJI",
     "address": "osmo19yv0fxm8xt3dww5jdx5yenpmwcle6mrlsrycftmwhvrwskg6te5qsa3q38",
@@ -7327,6 +7887,36 @@
       "ibc/5A7C219BA5F7582B99629BA3B2A01A61BFDA0F6FD1FE95B5366F7334C4BC0580",
       "ibc/64BA6E31FE887D66C6F8F31C7B1A80C7CA179239677B4088BB55F5EA07DBE273",
       "ibc/BB6BCDB515050BAE97516111873CCD7BCF1FD0CCB723CC12F3C4F704D6C646CE"
+    ]
+  },
+  {
+    "id": 924,
+    "name": "NRIDE/OSMO",
+    "address": "osmo1h84gjstauyk2lheq5vat955wt2lht0nsls8066kz7lz5h408nkqsfeuyd0",
+    "assets": [
+      "ibc/E750D31033DC1CF4A044C3AA0A8117401316DC918FBEBC4E3D34F91B09D5F54C",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 925,
+    "name": "WYND/KAVA/MEME/PSTAKE/STRD",
+    "address": "osmo18fvrzxpw4jrllp5tur67y39l8z8x8u30jx8nk7s43l4k4j0shunqv043pe",
+    "assets": [
+      "ibc/2FBAC4BF296D7844796844B35978E5899984BA5A6314B2DD8F83C215550010B3",
+      "ibc/57AA1A70A4BC9769C525EBF6386F7A21536E04A79D62E1981EFCEF9428EBB205",
+      "ibc/67C89B8B0A70C08F093C909A4DD996DD10E0494C87E28FD9A551697BF173D4CA",
+      "ibc/8061A06D3BD4D52C4A28FFECF7150D370393AF0BA661C3776C54FF32836C3961",
+      "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
+    ]
+  },
+  {
+    "id": 926,
+    "name": "EBL/OSMO",
+    "address": "osmo1qh460geara3hrqag82hth6qqkjj25gcj3v30wpfak5rjkff85t9qgk2s25",
+    "assets": [
+      "ibc/8BE73A810E22F80E5E850531A688600D63AE7392E7C2770AE758CAA4FD921B7F",
+      "uosmo"
     ]
   },
   {
@@ -7393,6 +7983,24 @@
     ]
   },
   {
+    "id": 934,
+    "name": "EBL/OSMO",
+    "address": "osmo1fdwlde8hrunju672r4r7f6vsusl8e3fjh2g548u0s8err9k8wylqppdn7w",
+    "assets": [
+      "ibc/8BE73A810E22F80E5E850531A688600D63AE7392E7C2770AE758CAA4FD921B7F",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 935,
+    "name": "EBL/OSMO",
+    "address": "osmo124cnggeuxufml293ka5ql06u0svdtv6gd44udahxu29s42u0u55qm4vyae",
+    "assets": [
+      "ibc/8BE73A810E22F80E5E850531A688600D63AE7392E7C2770AE758CAA4FD921B7F",
+      "uosmo"
+    ]
+  },
+  {
     "id": 936,
     "name": "NGM/JUNO",
     "address": "osmo1lf0ej0u842huzaanwcrqymsa50sea7m2qpu0krsrp04vwhlzesfqxzfe02",
@@ -7439,6 +8047,15 @@
     ]
   },
   {
+    "id": 941,
+    "name": "SOLAR/OSMO",
+    "address": "osmo1ndw7kn9jmkf43au08rj36zqj5705289s7fzulaf5nynl6dwaqp6qta4je8",
+    "assets": [
+      "ibc/C3FC4DED273E7D1DD2E7BAA3317EC9A53CD3252B577AA33DC00D9DF2BDF3ED5C",
+      "uosmo"
+    ]
+  },
+  {
     "id": 942,
     "name": "FET/LINK.axl/BAND",
     "address": "osmo17vk2qtyxqgzytxl5gdmy3ux3kjkyr8ex2q58aves7m0f02dzkzqstl9umz",
@@ -7458,6 +8075,15 @@
     ]
   },
   {
+    "id": 944,
+    "name": "ATOM/qATOM",
+    "address": "osmo1awr39mc2hrkt8gq8gt3882ru40ay45k8a3yg69nyypqe9g0ryycs66lhkh",
+    "assets": [
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "ibc/FA602364BEC305A696CBDF987058E99D8B479F0318E47314C49173E8838C5BAC"
+    ]
+  },
+  {
     "id": 946,
     "name": "WAVAX.axl/WMATIC.axl/LINK.axl",
     "address": "osmo1yt4yhzdpx89d3t50h6yhf079pzskm8kk2lzegnxjgcz33vxyhy7qpwn6u2",
@@ -7465,6 +8091,51 @@
       "ibc/6F62F01D913E3FFE472A38C78235B8F021B511BC6596ADFF02615C8F83D3B373",
       "ibc/AB589511ED0DD5FA56171A39978AFBF1371DB986EC1C3526CE138A16377E39BB",
       "ibc/D3327A763C23F01EC43D1F0DB3CEFEC390C362569B6FD191F40A5192F8960049"
+    ]
+  },
+  {
+    "id": 947,
+    "name": "HARBOR/OSMO",
+    "address": "osmo1729rweaf59kzdlnn9pvphgcqwwcjekrwtah8dnsscy77ewxudvyqqmm80z",
+    "assets": [
+      "ibc/AD4DEA52408EA07C0C9E19444EC8DA84A274A70AD2687A710EFDDEB28BB2986A",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 948,
+    "name": "REGEN/qREGEN",
+    "address": "osmo1hylqy4uu5el36wykhzzhj786eh8rx4epyvg6nrtl503wjufz8z3sdptdzw",
+    "assets": [
+      "ibc/1DCC8A6CB5689018431323953344A9F6CC4D0BFB261E88C9F7777372C10CD076",
+      "ibc/79A676508A2ECA1021EDDC7BB9CF70CEEC9514C478DA526A5A8B3E78506C2206"
+    ]
+  },
+  {
+    "id": 949,
+    "name": "FOX/OSMO",
+    "address": "osmo1fjr7tel87a53yzrzs7kjzxyqqhe6tvvkk4st874m8nqndud5hsvqwk75vt",
+    "assets": [
+      "ibc/4F24D904BAB5FFBD3524F2DE3EC3C7A9E687A2408D9A985E57B356D9FA9201C6",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 950,
+    "name": "WBTC.axl/DYS",
+    "address": "osmo1fu8kwe6mnjejnuxrk0w004jrfd5u73wtyu35738695lv4u8wxx3qh6u25q",
+    "assets": [
+      "ibc/D1542AA8762DB13087D8364F3EA6509FD6F009A34F00426AF9E4F9FA85CBBF1F",
+      "ibc/E27CD305D33F150369AB526AEB6646A76EC3FFB1A6CA58A663B5DE657A89D55D"
+    ]
+  },
+  {
+    "id": 951,
+    "name": "HARBOR/OSMO",
+    "address": "osmo1qe8zymj2efcdt7e2sl9arunsg838g6pk04xz003lhfrw59qamn7qr3pw4m",
+    "assets": [
+      "ibc/AD4DEA52408EA07C0C9E19444EC8DA84A274A70AD2687A710EFDDEB28BB2986A",
+      "uosmo"
     ]
   },
   {
@@ -7486,6 +8157,15 @@
     ]
   },
   {
+    "id": 954,
+    "name": "ARKH/OSMO",
+    "address": "osmo1wg9km2m9wefr7yvw7mm3cf7ede0lqr9tftcv8p6xpcryjmm8l0ps7ahlua",
+    "assets": [
+      "ibc/0F91EE8B98AAE3CF393D94CD7F89A10F8D7758C5EC707E721899DFE65C164C28",
+      "uosmo"
+    ]
+  },
+  {
     "id": 955,
     "name": "DAI.axl/GRAV/DAI.grv/OSMO",
     "address": "osmo1n78zfpjxmtmgelg993hm7zveggzndaz9xn470xl4c03gwsuj2nrsf85x5y",
@@ -7497,11 +8177,165 @@
     ]
   },
   {
+    "id": 956,
+    "name": "qOSMO/OSMO",
+    "address": "osmo1q023e9m4d3ffvr96xwaeraa62yfvufkufkr7yf7lmacgkuspsuqsga4xp2",
+    "assets": [
+      "ibc/42D24879D4569CE6477B7E88206ADBFE47C222C6CAD51A54083E4A72594269FC",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 957,
+    "name": "FOX/USDC.axl",
+    "address": "osmo1ggtapk8qwkad3y5j8jwgg5a66h69270wxn88nlsg8e7cca7w8ccsz6hhyx",
+    "assets": [
+      "ibc/4F24D904BAB5FFBD3524F2DE3EC3C7A9E687A2408D9A985E57B356D9FA9201C6",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+    ]
+  },
+  {
+    "id": 963,
+    "name": "qOSMO/OSMO",
+    "address": "osmo18e0en0klsl80vtyhg9djyx4wz5d3jfhh22t2yyyfyfpwspzw9ypqtts9zn",
+    "assets": [
+      "ibc/42D24879D4569CE6477B7E88206ADBFE47C222C6CAD51A54083E4A72594269FC",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 965,
+    "name": "qOSMO/OSMO",
+    "address": "osmo1mkyngr9ged5ame8agju2770z32fxzjndg9zpd3vm6s88cww7w6uqd345xv",
+    "assets": [
+      "ibc/42D24879D4569CE6477B7E88206ADBFE47C222C6CAD51A54083E4A72594269FC",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 967,
+    "name": "HARBOR/OSMO",
+    "address": "osmo19562dscefczcwd7mhdpuz0vwxnt9wlt55pm7n0kkxaps0j58l6msxalsuq",
+    "assets": [
+      "ibc/AD4DEA52408EA07C0C9E19444EC8DA84A274A70AD2687A710EFDDEB28BB2986A",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 984,
+    "name": "AMBER/OSMO",
+    "address": "osmo19vyknzpyp5nwmd0hkyck3y44r4v50n8re8vaktrrrmxmvmg33hxqnseurz",
+    "assets": [
+      "ibc/18A1B70E3205A48DE8590C0D11030E7146CDBF1048789261D53FFFD7527F8B55",
+      "uosmo"
+    ]
+  },
+  {
     "id": 985,
     "name": "BUTT/OSMO",
     "address": "osmo1ew3lw2wg37aengzkuvgkxp2ppwz9d9emrhgtnhxr46xq789e6vcqhlult2",
     "assets": [
       "ibc/1FBA9E763B8679BEF7BAAAF2D16BCA78C3B297D226C3F31312C769D7B8F992D8",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 999,
+    "name": "ATOM/OSMO",
+    "address": "osmo1d5gsp0vmcn2535tezusxfdnar6ptjz4fnp59s869838qww7wzwnqq783ct",
+    "assets": [
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 1008,
+    "name": "ATOM/LUMEN",
+    "address": "osmo1x6e8lf40vwlc2ynyj59gm6k85lrzv8s4ayn3hmwf70frps0yqs2s4gaph9",
+    "assets": [
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "ibc/FFA652599C77E853F017193E36B5AB2D4D9AFC4B54721A74904F80C9236BF3B7"
+    ]
+  },
+  {
+    "id": 1010,
+    "name": "ATOM/USDC.axl/LUMEN",
+    "address": "osmo1egdtcnccuusy0djqczj7a2nqd2mkw6t6wkjkseclhptjejn09yfs2awdtf",
+    "assets": [
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858",
+      "ibc/FFA652599C77E853F017193E36B5AB2D4D9AFC4B54721A74904F80C9236BF3B7"
+    ]
+  },
+  {
+    "id": 1013,
+    "name": "ION/OSMO",
+    "address": "osmo1lw29375rj8fq79j7djghuyasugchjstr7rrwl68vd0vaj90ulaqs7s37lh",
+    "assets": [
+      "uion",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 1020,
+    "name": "CTK/OSMO",
+    "address": "osmo1rrcc7rvvyvejcf96y03a63e9mr4lfl42w3shux60gmhfpv67z74q93zngr",
+    "assets": [
+      "ibc/7ED954CFFFC06EE8419387F3FC688837FF64EF264DE14219935F724EEEDBF8D3",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 1021,
+    "name": "ATOM/EVMOS",
+    "address": "osmo1kf4uggtvmw28t3tfnm623ehgulvrn34dvn8xs3m6x0385xk349rslpuwfg",
+    "assets": [
+      "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2",
+      "ibc/6AE98883D4D5D5FF9E50D7130F1305DA2FFA0C652D1DD9C123657C6B4EB2DF8A"
+    ]
+  },
+  {
+    "id": 1022,
+    "name": "IBCX/OSMO",
+    "address": "osmo1ayhu6ezg9fvxj0sla3wyw0ul8ynecv9v3dnhsu3jvchsm40jk2zszujgmh",
+    "assets": [
+      "factory/osmo14klwqgkmackvx2tqa0trtg69dmy0nrg4ntq4gjgw2za4734r5seqjqm4gm/uibcx",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 1031,
+    "name": "IBCX/OSMO",
+    "address": "osmo1pvsghgdext4mamrfulephtttktrj28xstpczjt2megtjc46c562qn4plpc",
+    "assets": [
+      "factory/osmo14klwqgkmackvx2tqa0trtg69dmy0nrg4ntq4gjgw2za4734r5seqjqm4gm/uibcx",
+      "uosmo"
+    ]
+  },
+  {
+    "id": 1032,
+    "name": "LUNC/MARS",
+    "address": "osmo1araf2pw29hwfr70r8tydvevv99uze7vppaaz63pxl82an8g6l70sz5cegd",
+    "assets": [
+      "ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0",
+      "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580"
+    ]
+  },
+  {
+    "id": 1033,
+    "name": "LUNC/WETH.axl",
+    "address": "osmo152yn2nwuchrh4pzm5tgwrk0sqzqk9pd8kwwtkz3nv8lwjex92hcsumgsqf",
+    "assets": [
+      "ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0",
+      "ibc/EA1D43981D5C9A1C4AAEA9C23BB1D4FA126BA9BC7020A25E0AE4AA841EA25DC5"
+    ]
+  },
+  {
+    "id": 1034,
+    "name": "IBCX/OSMO",
+    "address": "osmo16x2emyy8s9hulvgm72pklsd6lwhm6exyns45tcjju8cha40r55gqep44d7",
+    "assets": [
+      "factory/osmo14klwqgkmackvx2tqa0trtg69dmy0nrg4ntq4gjgw2za4734r5seqjqm4gm/uibcx",
       "uosmo"
     ]
   }
