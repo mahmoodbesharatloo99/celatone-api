@@ -222,5 +222,19 @@
     "id": 41,
     "description": "",
     "github": "https://github.com/neutron-org/neutron-dao/tree/main/contracts/dao/voting/vesting-lp-vault"
+  },
+  {
+    "slug": "astroport",
+    "name": "Astroport CW1 Whitelist",
+    "id": 42,
+    "description": "",
+    "github": "https://github.com/neutron-org/neutron-dao/tree/main/contracts/dao/voting/vesting-lp-vault"
+  },
+  {
+    "slug": "apollo",
+    "name": "Apollo CW3 Fixed Multisig",
+    "id": 45,
+    "description": "Contract code for the Apollo variant of the CW3 fixed multisig contract.",
+    "github": "https://github.com/apollodao/cw-plus-fork/tree/v0.13.2/contracts/cw3-fixed-multisig"
   }
 ]

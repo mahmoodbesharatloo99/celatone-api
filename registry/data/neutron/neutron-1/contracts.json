@@ -286,5 +286,13 @@
     "description": "",
     "code": 41,
     "github": ""
+  },
+  {
+    "slug": "astroport",
+    "name": "Astroport Proxy Rewards Holder",
+    "address": "neutron1mm640rda0zmkfwyprmchk2gg54wj7mn8maqzycgzpul0pml448ysd0htq3",
+    "description": "",
+    "code": 42,
+    "github": ""
   }
 ]
