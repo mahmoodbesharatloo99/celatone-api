@@ -231,7 +231,7 @@
     "github": "https://github.com/neutron-org/neutron-dao/tree/main/contracts/dao/voting/vesting-lp-vault"
   },
   {
-    "slug": "apollo",
+    "slug": "apollodao",
     "name": "Apollo CW3 Fixed Multisig",
     "id": 45,
     "description": "Contract code for the Apollo variant of the CW3 fixed multisig contract.",
