@@ -11,7 +11,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft99091610CCC66F4277C66D14AF2BC4C5EE52E27A.png",
     "name": "404Deep Records FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "404DR",
     "type": "native"
   },
@@ -27,7 +29,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/aave-wei L@3x.png",
     "name": "Aave",
     "precision": 18,
-    "slugs": ["aave", "axelar"],
+    "slugs": [
+      "aave",
+      "axelar"
+    ],
     "symbol": "AAVE.axl",
     "type": "native"
   },
@@ -60,7 +65,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.svg",
     "name": "Akash Network",
     "precision": 6,
-    "slugs": ["akash"],
+    "slugs": [
+      "akash"
+    ],
     "symbol": "AKT",
     "type": "native"
   },
@@ -76,7 +83,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/alter.svg",
     "name": "Alter",
     "precision": 8,
-    "slugs": ["alter"],
+    "slugs": [
+      "alter"
+    ],
     "symbol": "ALTER",
     "type": "native"
   },
@@ -108,7 +117,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/ape-wei L@3x.png",
     "name": "ApeCoin",
     "precision": 18,
-    "slugs": ["yuga", "axelar"],
+    "slugs": [
+      "yuga",
+      "axelar"
+    ],
     "symbol": "APE.axl",
     "type": "native"
   },
@@ -140,7 +152,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/astro.png",
     "name": "Astroport",
     "precision": 6,
-    "slugs": ["astroport"],
+    "slugs": [
+      "astroport"
+    ],
     "symbol": "ASTRO",
     "type": "native"
   },
@@ -156,7 +170,9 @@
     "logo": "https://app.astroport.fi/tokens/astro.svg",
     "name": "Astroport Token",
     "precision": 6,
-    "slugs": ["astroport"],
+    "slugs": [
+      "astroport"
+    ],
     "symbol": "ASTRO",
     "type": "native"
   },
@@ -208,7 +224,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg",
     "name": "Cosmos",
     "precision": 6,
-    "slugs": ["cosmos-hub"],
+    "slugs": [
+      "cosmos-hub"
+    ],
     "symbol": "ATOM",
     "type": "native"
   },
@@ -227,7 +245,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/axl.svg",
     "name": "Axelar",
     "precision": 6,
-    "slugs": ["axelar"],
+    "slugs": [
+      "axelar"
+    ],
     "symbol": "AXL",
     "type": "native"
   },
@@ -243,7 +263,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/axs-wei L@3x.png",
     "name": "Axie Infinity Shard",
     "precision": 18,
-    "slugs": ["axie", "axelar"],
+    "slugs": [
+      "axie",
+      "axelar"
+    ],
     "symbol": "AXS.axl",
     "type": "native"
   },
@@ -259,7 +282,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/images/band.svg",
     "name": "Band Protocol",
     "precision": 6,
-    "slugs": ["band"],
+    "slugs": [
+      "band"
+    ],
     "symbol": "BAND",
     "type": "native"
   },
@@ -275,7 +300,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/images/bcna.svg",
     "name": "BitCanna",
     "precision": 6,
-    "slugs": ["bitcanna"],
+    "slugs": [
+      "bitcanna"
+    ],
     "symbol": "BCNA",
     "type": "native"
   },
@@ -291,7 +318,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft52EEB0EE509AC546ED92EAC8591F731F213DDD16.png",
     "name": "BlackJack FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "BJKS",
     "type": "native"
   },
@@ -307,7 +336,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/images/bld.png",
     "name": "Agoric",
     "precision": 6,
-    "slugs": ["agoric"],
+    "slugs": [
+      "agoric"
+    ],
     "symbol": "BLD",
     "type": "native"
   },
@@ -355,7 +386,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/btsg.svg",
     "name": "BitSong",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "BTSG",
     "type": "native"
   },
@@ -371,7 +404,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/busd.png",
     "name": "Binance USD",
     "precision": 18,
-    "slugs": ["binance", "axelar"],
+    "slugs": [
+      "binance",
+      "axelar"
+    ],
     "symbol": "BUSD.axl",
     "type": "native"
   },
@@ -419,7 +455,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/canto/images/canto.png",
     "name": "Canto",
     "precision": 18,
-    "slugs": ["canto"],
+    "slugs": [
+      "canto"
+    ],
     "symbol": "CANTO",
     "type": "native"
   },
@@ -451,7 +489,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft2D8E7041556CE93E1EFD66C07C45D551A6AAAE09.png",
     "name": "Adam Clay FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "CLAY",
     "type": "native"
   },
@@ -467,7 +507,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/images/cmdx.png",
     "name": "Comdex",
     "precision": 6,
-    "slugs": ["comdex"],
+    "slugs": [
+      "comdex"
+    ],
     "symbol": "CMDX",
     "type": "native"
   },
@@ -483,7 +525,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ftD4B6290EDEE1EC7B97AB5A1DC6C177EFD08ADCC3.png",
     "name": "Carolina Marquez FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "CMQZ",
     "type": "native"
   },
@@ -499,7 +543,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/images/cmst.png",
     "name": "CMST",
     "precision": 6,
-    "slugs": ["comdex"],
+    "slugs": [
+      "comdex"
+    ],
     "symbol": "CMST",
     "type": "native"
   },
@@ -547,7 +593,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/crescent/images/cre.svg",
     "name": "Crescent",
     "precision": 6,
-    "slugs": ["crescent"],
+    "slugs": [
+      "crescent"
+    ],
     "symbol": "CRE",
     "type": "native"
   },
@@ -563,7 +611,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cryptoorgchain/images/cro.png",
     "name": "Cronos",
     "precision": 8,
-    "slugs": ["cronos"],
+    "slugs": [
+      "cronos"
+    ],
     "symbol": "CRO",
     "type": "native"
   },
@@ -611,7 +661,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft575B10B0CEE2C164D9ED6A96313496F164A9607C.png",
     "name": "Delta 9 FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "D9X",
     "type": "native"
   },
@@ -627,7 +679,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/dai-wei L@3x.png",
     "name": "Dai Stablecoin",
     "precision": 18,
-    "slugs": ["makerdao", "axelar"],
+    "slugs": [
+      "makerdao",
+      "axelar"
+    ],
     "symbol": "DAI.axl",
     "type": "native"
   },
@@ -643,7 +698,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/gdai.png",
     "name": "Dai Stablecoin",
     "precision": 18,
-    "slugs": ["makerdao", "gravity"],
+    "slugs": [
+      "makerdao",
+      "gravity"
+    ],
     "symbol": "DAI.grv",
     "type": "native"
   },
@@ -723,7 +781,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/dot-planck L@3x.png",
     "name": "DOT",
     "precision": 10,
-    "slugs": ["polkadot", "axelar"],
+    "slugs": [
+      "polkadot",
+      "axelar"
+    ],
     "symbol": "DOT.axl",
     "type": "native"
   },
@@ -739,7 +800,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/desmos/images/dsm.svg",
     "name": "Desmos",
     "precision": 6,
-    "slugs": ["desmos"],
+    "slugs": [
+      "desmos"
+    ],
     "symbol": "DSM",
     "type": "native"
   },
@@ -755,7 +818,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/images/dvpn.png",
     "name": "Sentinel",
     "precision": 6,
-    "slugs": ["sentinel"],
+    "slugs": [
+      "sentinel"
+    ],
     "symbol": "DVPN",
     "type": "native"
   },
@@ -819,7 +884,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/images/eeur.svg",
     "name": "e-Money EUR",
     "precision": 6,
-    "slugs": ["emoney"],
+    "slugs": [
+      "emoney"
+    ],
     "symbol": "EEUR",
     "type": "native"
   },
@@ -835,7 +902,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft85AE1716C5E39EA6D64BBD7898C3899A7B500626.png",
     "name": "Enmoda FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "ENMODA",
     "type": "native"
   },
@@ -851,7 +920,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/images/evmos.svg",
     "name": "Evmos",
     "precision": 18,
-    "slugs": ["evmos"],
+    "slugs": [
+      "evmos"
+    ],
     "symbol": "EVMOS",
     "type": "native"
   },
@@ -867,7 +938,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft25B30C386CDDEBD1413D5AE1180956AE9EB3B9F7.png",
     "name": "Nicola Fasano FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "FASANO",
     "type": "native"
   },
@@ -899,7 +972,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft56664FC98A2CF5F4FBAC3566D1A11D891AD88305.png",
     "name": "FONTI FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "FONTI",
     "type": "native"
   },
@@ -931,7 +1006,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/frax-wei L@3x.png",
     "name": "Frax",
     "precision": 18,
-    "slugs": ["frax"],
+    "slugs": [
+      "frax"
+    ],
     "symbol": "FRAX.axl",
     "type": "native"
   },
@@ -963,7 +1040,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/fanfury.png",
     "name": "Fanfury",
     "precision": 6,
-    "slugs": ["fanfury"],
+    "slugs": [
+      "fanfury"
+    ],
     "symbol": "FURY",
     "type": "native"
   },
@@ -979,7 +1058,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/odin/images/geo.svg",
     "name": "GEO",
     "precision": 6,
-    "slugs": ["odin"],
+    "slugs": [
+      "odin"
+    ],
     "symbol": "GEO",
     "type": "native"
   },
@@ -1046,7 +1127,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/grav.svg",
     "name": "Graviton",
     "precision": 6,
-    "slugs": ["graviton"],
+    "slugs": [
+      "graviton"
+    ],
     "symbol": "GRAV",
     "type": "native"
   },
@@ -1078,7 +1161,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/hard.svg",
     "name": "Hard",
     "precision": 6,
-    "slugs": ["kava"],
+    "slugs": [
+      "kava"
+    ],
     "symbol": "HARD",
     "type": "native"
   },
@@ -1142,7 +1227,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/images/huahua.svg",
     "name": "Chihuahua",
     "precision": 6,
-    "slugs": ["chihuahua"],
+    "slugs": [
+      "chihuahua"
+    ],
     "symbol": "HUAHUA",
     "type": "native"
   },
@@ -1176,7 +1263,9 @@
     "precision": 6,
     "symbol": "INIT",
     "type": "native",
-    "slugs": ["initia"]
+    "slugs": [
+      "initia"
+    ]
   },
   {
     "coingecko": "injective-protocol",
@@ -1190,7 +1279,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/images/inj.svg",
     "name": "Injective",
     "precision": 18,
-    "slugs": ["injective"],
+    "slugs": [
+      "injective"
+    ],
     "symbol": "INJ",
     "type": "native"
   },
@@ -1211,7 +1302,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.svg",
     "name": "Ion",
     "precision": 6,
-    "slugs": ["ion-dao"],
+    "slugs": [
+      "ion-dao"
+    ],
     "symbol": "ION",
     "type": "native"
   },
@@ -1227,7 +1320,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/starname/images/iov.svg",
     "name": "Starname",
     "precision": 6,
-    "slugs": ["starname"],
+    "slugs": [
+      "starname"
+    ],
     "symbol": "IOV",
     "type": "native"
   },
@@ -1243,7 +1338,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/irisnet/images/iris.png",
     "name": "IRISnet",
     "precision": 6,
-    "slugs": ["iris"],
+    "slugs": [
+      "iris"
+    ],
     "symbol": "IRIS",
     "type": "native"
   },
@@ -1259,7 +1356,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/images/ist.png",
     "name": "Inter Stable Token",
     "precision": 6,
-    "slugs": ["agoric", "inter"],
+    "slugs": [
+      "agoric",
+      "inter"
+    ],
     "symbol": "IST",
     "type": "native"
   },
@@ -1326,7 +1426,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/juno.svg",
     "name": "Juno",
     "precision": 6,
-    "slugs": ["juno"],
+    "slugs": [
+      "juno"
+    ],
     "symbol": "JUNO",
     "type": "native"
   },
@@ -1342,7 +1444,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft2DD67F5D99E9A141142B48474FA7B6B3FF00A3FE.png",
     "name": "Karina FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "KARINA",
     "type": "native"
   },
@@ -1358,7 +1462,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/kava.png",
     "name": "Kava",
     "precision": 6,
-    "slugs": ["kava"],
+    "slugs": [
+      "kava"
+    ],
     "symbol": "KAVA",
     "type": "native"
   },
@@ -1374,7 +1480,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/krt.png",
     "name": "TerraClassicKRW",
     "precision": 6,
-    "slugs": ["terra-classic"],
+    "slugs": [
+      "terra-classic"
+    ],
     "symbol": "KRTC",
     "type": "native"
   },
@@ -1390,7 +1498,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kujira/images/kuji.png",
     "name": "Kuji",
     "precision": 6,
-    "slugs": ["kujira"],
+    "slugs": [
+      "kujira"
+    ],
     "symbol": "KUJI",
     "type": "native"
   },
@@ -1454,7 +1564,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/link-wei L@3x.png",
     "name": "Chainlink",
     "precision": 18,
-    "slugs": ["chainlink", "axelar"],
+    "slugs": [
+      "chainlink",
+      "axelar"
+    ],
     "symbol": "LINK.axl",
     "type": "native"
   },
@@ -1470,7 +1583,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft24C9FA4F10B0F235F4A815B15FC774E046A2B2EB.png",
     "name": "Puro Lobo FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "LOBO",
     "type": "native"
   },
@@ -1518,7 +1633,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/images/luna.png",
     "name": "Luna",
     "precision": 6,
-    "slugs": ["terra"],
+    "slugs": [
+      "terra"
+    ],
     "symbol": "LUNA",
     "type": "native"
   },
@@ -1534,7 +1651,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/luna.svg",
     "name": "Luna Classic",
     "precision": 6,
-    "slugs": ["terra-classic"],
+    "slugs": [
+      "terra-classic"
+    ],
     "symbol": "LUNC",
     "type": "native"
   },
@@ -1584,7 +1703,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/mars/images/mars-token.svg",
     "name": "Mars",
     "precision": 6,
-    "slugs": ["mars"],
+    "slugs": [
+      "mars"
+    ],
     "symbol": "MARS",
     "type": "native"
   },
@@ -1648,7 +1769,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/mkr-wei L@3x.png",
     "name": "Maker",
     "precision": 18,
-    "slugs": ["makerdao", "axelar"],
+    "slugs": [
+      "makerdao",
+      "axelar"
+    ],
     "symbol": "MKR.axl",
     "type": "native"
   },
@@ -1696,7 +1820,10 @@
     "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::coins::MaticX.webp",
     "name": "Stader MaticX",
     "precision": 6,
-    "slugs": ["stader", "polygon"],
+    "slugs": [
+      "stader",
+      "polygon"
+    ],
     "symbol": "MaticX",
     "type": "native"
   },
@@ -1712,7 +1839,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft387C1C279D962ED80C09C1D592A92C4275FD7C5D.png",
     "name": "N43 FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "N43",
     "type": "native"
   },
@@ -1744,7 +1873,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/images/ngm.svg",
     "name": "e-Money",
     "precision": 6,
-    "slugs": ["emoney"],
+    "slugs": [
+      "emoney"
+    ],
     "symbol": "NGM",
     "type": "native"
   },
@@ -1776,7 +1907,9 @@
     "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::my_module::Nova.webpu",
     "name": "Novel Optical Vision Algorithms",
     "precision": 6,
-    "slugs": ["initia"],
+    "slugs": [
+      "initia"
+    ],
     "symbol": "NOVA",
     "type": "native"
   },
@@ -1809,7 +1942,9 @@
     "logo": "https://raw.githubusercontent.com/cosmostation/chainlist/main/chain/neutron-testnet/asset/ntrn.png",
     "name": "Neutron",
     "precision": 6,
-    "slugs": ["neutron"],
+    "slugs": [
+      "neutron"
+    ],
     "symbol": "NTRN",
     "type": "native"
   },
@@ -1825,7 +1960,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/odin/images/o9w.svg",
     "name": "O9W",
     "precision": 6,
-    "slugs": ["odin"],
+    "slugs": [
+      "odin"
+    ],
     "symbol": "O9W",
     "type": "native"
   },
@@ -1841,7 +1978,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/odin/images/odin.svg",
     "name": "ODIN",
     "precision": 6,
-    "slugs": ["odin"],
+    "slugs": [
+      "odin"
+    ],
     "symbol": "ODIN",
     "type": "native"
   },
@@ -1857,7 +1996,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-white.svg",
     "name": "Oraichain",
     "precision": 6,
-    "slugs": ["orai"],
+    "slugs": [
+      "orai"
+    ],
     "symbol": "ORAI",
     "type": "native"
   },
@@ -1881,7 +2022,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
     "name": "Osmosis",
     "precision": 6,
-    "slugs": ["osmosis"],
+    "slugs": [
+      "osmosis"
+    ],
     "symbol": "OSMO",
     "type": "native"
   },
@@ -1897,7 +2040,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/phmn.svg",
     "name": "Posthuman",
     "precision": 6,
-    "slugs": ["posthuman"],
+    "slugs": [
+      "posthuman"
+    ],
     "symbol": "PHMN",
     "type": "native"
   },
@@ -1929,7 +2074,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/images/pstake.svg",
     "name": "PSTAKE",
     "precision": 18,
-    "slugs": ["persistence"],
+    "slugs": [
+      "persistence"
+    ],
     "symbol": "PSTAKE",
     "type": "native"
   },
@@ -1947,7 +2094,9 @@
     "precision": 6,
     "symbol": "QCK",
     "type": "native",
-    "slugs": ["quicksilver"]
+    "slugs": [
+      "quicksilver"
+    ]
   },
   {
     "coingecko": "",
@@ -1977,7 +2126,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/rai-wei L@3x.png",
     "name": "Rai Reflex Index",
     "precision": 18,
-    "slugs": ["reflexer", "axelar"],
+    "slugs": [
+      "reflexer",
+      "axelar"
+    ],
     "symbol": "RAI.axl",
     "type": "native"
   },
@@ -1993,7 +2145,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/raw.png",
     "name": "JunoSwap",
     "precision": 6,
-    "slugs": ["junoswap"],
+    "slugs": [
+      "junoswap"
+    ],
     "symbol": "RAW",
     "type": "native"
   },
@@ -2025,7 +2179,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/images/regen.png",
     "name": "Regen Network",
     "precision": 6,
-    "slugs": ["regen"],
+    "slugs": [
+      "regen"
+    ],
     "symbol": "REGEN",
     "type": "native"
   },
@@ -2057,7 +2213,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ftE4903ECC861CA45F2C2BC7EAB8255D2E6E87A33A.png",
     "name": "Rawanne FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "RWNE",
     "type": "native"
   },
@@ -2073,7 +2231,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/scrt.svg",
     "name": "Secret Network",
     "precision": 6,
-    "slugs": ["secret"],
+    "slugs": [
+      "secret"
+    ],
     "symbol": "SCRT",
     "type": "native"
   },
@@ -2106,7 +2266,9 @@
     "logo": "https://raw.githubusercontent.com/cosmostation/chainlist/main/chain/sei/asset/sei.png",
     "name": "Sei",
     "precision": 6,
-    "slugs": ["sei"],
+    "slugs": [
+      "sei"
+    ],
     "symbol": "SEI",
     "type": "native"
   },
@@ -2122,7 +2284,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/shd.svg",
     "name": "Shade",
     "precision": 8,
-    "slugs": ["shade"],
+    "slugs": [
+      "shade"
+    ],
     "symbol": "SHD",
     "type": "native"
   },
@@ -2138,7 +2302,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/shib-wei L@3x.png",
     "name": "Shiba Inu",
     "precision": 18,
-    "slugs": ["axelar"],
+    "slugs": [
+      "axelar"
+    ],
     "symbol": "SHIB.axl",
     "type": "native"
   },
@@ -2154,7 +2320,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/sienna.svg",
     "name": "SIENNA",
     "precision": 18,
-    "slugs": ["sienna"],
+    "slugs": [
+      "sienna"
+    ],
     "symbol": "SIENNA",
     "type": "native"
   },
@@ -2186,7 +2354,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/sommelier/images/somm.svg",
     "name": "Sommelier",
     "precision": 6,
-    "slugs": ["sommelier"],
+    "slugs": [
+      "sommelier"
+    ],
     "symbol": "SOMM",
     "type": "native"
   },
@@ -2205,7 +2375,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/images/stars.png",
     "name": "Stargaze",
     "precision": 6,
-    "slugs": ["stargaze"],
+    "slugs": [
+      "stargaze"
+    ],
     "symbol": "STARS",
     "type": "native"
   },
@@ -2221,7 +2393,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/strd.svg",
     "name": "Stride",
     "precision": 6,
-    "slugs": ["stride"],
+    "slugs": [
+      "stride"
+    ],
     "symbol": "STRD",
     "type": "native"
   },
@@ -2237,7 +2411,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/swp.svg",
     "name": "Swap",
     "precision": 6,
-    "slugs": ["kava"],
+    "slugs": [
+      "kava"
+    ],
     "symbol": "SWP",
     "type": "native"
   },
@@ -2269,7 +2445,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft4B030260D99E3ABE2B604EA2B33BAF3C085CDA12.png",
     "name": "Luca Testa FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "TESTA",
     "type": "native"
   },
@@ -2285,7 +2463,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/tgrade/images/tgrade-symbol-gradient.svg",
     "name": "Tgrade",
     "precision": 6,
-    "slugs": ["tgrade"],
+    "slugs": [
+      "tgrade"
+    ],
     "symbol": "TGD",
     "type": "native"
   },
@@ -2317,7 +2497,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/teritori/images/tori.svg",
     "name": "teritori",
     "precision": 6,
-    "slugs": ["teritori"],
+    "slugs": [
+      "teritori"
+    ],
     "symbol": "TORI",
     "type": "native"
   },
@@ -2333,7 +2515,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/images/umee.png",
     "name": "Umee",
     "precision": 6,
-    "slugs": ["umee"],
+    "slugs": [
+      "umee"
+    ],
     "symbol": "UMEE",
     "type": "native"
   },
@@ -2349,7 +2533,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/uni-wei L@3x.png",
     "name": "Uniswap",
     "precision": 18,
-    "slugs": ["uniswap", "axelar"],
+    "slugs": [
+      "uniswap",
+      "axelar"
+    ],
     "symbol": "UNI.axl",
     "type": "native"
   },
@@ -2365,7 +2552,9 @@
     "logo": "https://list.initia.tech/images/0x1::native_uusdc::Coin.webp",
     "name": "USD Coin",
     "precision": 6,
-    "slugs": ["circle"],
+    "slugs": [
+      "circle"
+    ],
     "symbol": "USDC",
     "type": "native"
   },
@@ -2386,7 +2575,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/uausdc L@3x.png",
     "name": "USD Coin on Axelar",
     "precision": 6,
-    "slugs": ["circle", "axelar"],
+    "slugs": [
+      "circle",
+      "axelar"
+    ],
     "symbol": "USDC.axl",
     "type": "native"
   },
@@ -2402,7 +2594,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/gusdc.png",
     "name": "USD Coin",
     "precision": 6,
-    "slugs": ["circle", "gravity"],
+    "slugs": [
+      "circle",
+      "gravity"
+    ],
     "symbol": "USDC.grv",
     "type": "native"
   },
@@ -2418,7 +2613,9 @@
     "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::my_module::Usdt.webp",
     "name": "Tether",
     "precision": 6,
-    "slugs": ["tether"],
+    "slugs": [
+      "tether"
+    ],
     "symbol": "USDT",
     "type": "native"
   },
@@ -2434,7 +2631,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/uusdt L@3x.png",
     "name": "Tether USD",
     "precision": 6,
-    "slugs": ["tether", "axelar"],
+    "slugs": [
+      "tether",
+      "axelar"
+    ],
     "symbol": "USDT.axl",
     "type": "native"
   },
@@ -2450,7 +2650,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/gusdt.svg",
     "name": "Tether USD",
     "precision": 6,
-    "slugs": ["tether", "gravity"],
+    "slugs": [
+      "tether",
+      "gravity"
+    ],
     "symbol": "USDT.grv",
     "type": "native"
   },
@@ -2466,7 +2669,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/usdx.png",
     "name": "USDX",
     "precision": 6,
-    "slugs": ["kava"],
+    "slugs": [
+      "kava"
+    ],
     "symbol": "USDX",
     "type": "native"
   },
@@ -2482,7 +2687,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kujira/images/usk.png",
     "name": "USK",
     "precision": 6,
-    "slugs": ["kujira"],
+    "slugs": [
+      "kujira"
+    ],
     "symbol": "USK",
     "type": "native"
   },
@@ -2498,7 +2705,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/ust.png",
     "name": "TerraClassicUSD",
     "precision": 6,
-    "slugs": ["terra-classic"],
+    "slugs": [
+      "terra-classic"
+    ],
     "symbol": "USTC",
     "type": "native"
   },
@@ -2530,7 +2739,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/ft7020C2A8E984EEBCBB383E91CD6FBB067BB2272B.png",
     "name": "Vibranium FanToken",
     "precision": 6,
-    "slugs": ["bitsong"],
+    "slugs": [
+      "bitsong"
+    ],
     "symbol": "VIBRA",
     "type": "native"
   },
@@ -2547,7 +2758,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/avalanche/images/avax.png",
     "name": "Wrapped AVAX",
     "precision": 18,
-    "slugs": ["avalanche"],
+    "slugs": [
+      "avalanche"
+    ],
     "symbol": "WAVAX.axl",
     "type": "native"
   },
@@ -2564,7 +2777,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/binancesmartchain/images/wbnb.svg",
     "name": "Wrapped BNB",
     "precision": 18,
-    "slugs": ["binance", "axelar"],
+    "slugs": [
+      "binance",
+      "axelar"
+    ],
     "symbol": "WBNB.axl",
     "type": "native"
   },
@@ -2580,7 +2796,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/wbtc-satoshi L@3x.png",
     "name": "Wrapped Bitcoin",
     "precision": 8,
-    "slugs": ["bitcoin", "axelar"],
+    "slugs": [
+      "bitcoin",
+      "axelar"
+    ],
     "symbol": "WBTC.axl",
     "type": "native"
   },
@@ -2596,7 +2815,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/gwbtc.png",
     "name": "Wrapped Bitcoin",
     "precision": 8,
-    "slugs": ["bitcoin", "gravity"],
+    "slugs": [
+      "bitcoin",
+      "gravity"
+    ],
     "symbol": "WBTC.grv",
     "type": "native"
   },
@@ -2616,7 +2838,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/weth-wei L@3x.png",
     "name": "Wrapped Ether",
     "precision": 18,
-    "slugs": ["ethereum", "axelar"],
+    "slugs": [
+      "ethereum",
+      "axelar"
+    ],
     "symbol": "WETH.axl",
     "type": "native"
   },
@@ -2632,7 +2857,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/gweth.png",
     "name": "Wrapped Ethereum",
     "precision": 18,
-    "slugs": ["ethereum", "gravity"],
+    "slugs": [
+      "ethereum",
+      "gravity"
+    ],
     "symbol": "WETH.grv",
     "type": "native"
   },
@@ -2649,7 +2877,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/fantom/images/ftm.png",
     "name": "Wrapped FTM",
     "precision": 18,
-    "slugs": ["fantom"],
+    "slugs": [
+      "fantom"
+    ],
     "symbol": "WFTM.axl",
     "type": "native"
   },
@@ -2666,7 +2896,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/wdev-wei.png",
     "name": "Wrapped GLMR",
     "precision": 18,
-    "slugs": ["moonbeam", "axelar"],
+    "slugs": [
+      "moonbeam",
+      "axelar"
+    ],
     "symbol": "WGLMR.axl",
     "type": "native"
   },
@@ -2683,7 +2916,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/polygon/images/wmatic.svg",
     "name": "Wrapped Matic",
     "precision": 18,
-    "slugs": ["polygon", "axelar"],
+    "slugs": [
+      "polygon",
+      "axelar"
+    ],
     "symbol": "WMATIC.axl",
     "type": "native"
   },
@@ -2699,7 +2935,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/wynd.svg",
     "name": "Wynd DAO Governance Token",
     "precision": 6,
-    "slugs": ["wynd"],
+    "slugs": [
+      "wynd"
+    ],
     "symbol": "WYND",
     "type": "native"
   },
@@ -2715,7 +2953,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/xcn-wei L@3x.png",
     "name": "Chain",
     "precision": 18,
-    "slugs": ["axelar"],
+    "slugs": [
+      "axelar"
+    ],
     "symbol": "XCN.axl",
     "type": "native"
   },
@@ -2747,7 +2987,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/images/xprt.png",
     "name": "Persistence",
     "precision": 6,
-    "slugs": ["persistence"],
+    "slugs": [
+      "persistence"
+    ],
     "symbol": "XPRT",
     "type": "native"
   },
@@ -2779,7 +3021,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
     "name": "USD Coin from Avalanche",
     "precision": 6,
-    "slugs": ["circle", "avalanche"],
+    "slugs": [
+      "circle",
+      "avalanche"
+    ],
     "symbol": "avalanche.USDC",
     "type": "native"
   },
@@ -2795,7 +3040,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/bjuno.svg",
     "name": "StakeEasy bJUNO",
     "precision": 6,
-    "slugs": ["juno"],
+    "slugs": [
+      "juno"
+    ],
     "symbol": "bJUNO",
     "type": "native"
   },
@@ -2811,7 +3058,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
     "name": "USD Coin from Polygon",
     "precision": 6,
-    "slugs": ["circle", "polygon"],
+    "slugs": [
+      "circle",
+      "polygon"
+    ],
     "symbol": "polygon.USDC",
     "type": "native"
   },
@@ -2829,7 +3079,10 @@
     "precision": 6,
     "symbol": "qATOM",
     "type": "native",
-    "slugs": ["quicksilver", "cosmos-hub"]
+    "slugs": [
+      "quicksilver",
+      "cosmos-hub"
+    ]
   },
   {
     "coingecko": "",
@@ -2845,7 +3098,10 @@
     "precision": 6,
     "symbol": "qOSMO",
     "type": "native",
-    "slugs": ["quicksilver", "osmosis"]
+    "slugs": [
+      "quicksilver",
+      "osmosis"
+    ]
   },
   {
     "coingecko": "",
@@ -2861,7 +3117,10 @@
     "precision": 6,
     "symbol": "qREGEN",
     "type": "native",
-    "slugs": ["quicksilver", "regen"]
+    "slugs": [
+      "quicksilver",
+      "regen"
+    ]
   },
   {
     "coingecko": "",
@@ -2875,7 +3134,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qstars.svg",
     "name": "Quicksilver Liquid Staked STARS",
     "precision": 6,
-    "slugs": ["quicksilver", "stargaze"],
+    "slugs": [
+      "quicksilver",
+      "stargaze"
+    ],
     "symbol": "qSTARS",
     "type": "native"
   },
@@ -2891,7 +3153,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/sejuno.svg",
     "name": "StakeEasy seJUNO",
     "precision": 6,
-    "slugs": ["juno"],
+    "slugs": [
+      "juno"
+    ],
     "symbol": "seJUNO",
     "type": "native"
   },
@@ -2905,12 +3169,18 @@
       },
       "initia": {
         "stone-7": "move/c2470ee64bffb09a08726bd7139ce930df777668aafb0310c434b878fe7dad09"
+      },
+      "neutron": {
+        "neutron-1": "ibc/B7864B03E1B9FD4F049243E92ABD691586F682137037A9F3FCA5222815620B3C"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/statom.svg",
     "name": "Stride Staked Atom",
     "precision": 6,
-    "slugs": ["stride", "cosmos-hub"],
+    "slugs": [
+      "stride",
+      "cosmos-hub"
+    ],
     "symbol": "stATOM",
     "type": "native"
   },
@@ -2926,7 +3196,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/stevmos.svg",
     "name": "stEVMOS",
     "precision": 18,
-    "slugs": ["stride", "evmos"],
+    "slugs": [
+      "stride",
+      "evmos"
+    ],
     "symbol": "stEVMOS",
     "type": "native"
   },
@@ -2942,7 +3215,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/stjuno.svg",
     "name": "Stride Juno",
     "precision": 6,
-    "slugs": ["stride", "juno"],
+    "slugs": [
+      "stride",
+      "juno"
+    ],
     "symbol": "stJUNO",
     "type": "native"
   },
@@ -2958,7 +3234,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/stluna.svg",
     "name": "stLUNA",
     "precision": 6,
-    "slugs": ["stride", "terra"],
+    "slugs": [
+      "stride",
+      "terra"
+    ],
     "symbol": "stLUNA",
     "type": "native"
   },
@@ -2974,7 +3253,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/stosmo.svg",
     "name": "Stride Staked osmo",
     "precision": 6,
-    "slugs": ["stride", "osmosis"],
+    "slugs": [
+      "stride",
+      "osmosis"
+    ],
     "symbol": "stOSMO",
     "type": "native"
   },
@@ -2990,7 +3272,10 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/ststars.svg",
     "name": "Stride Staked Stars",
     "precision": 6,
-    "slugs": ["stargaze", "stride"],
+    "slugs": [
+      "stargaze",
+      "stride"
+    ],
     "symbol": "stSTARS",
     "type": "native"
   },
@@ -3006,7 +3291,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/images/stkatom.svg",
     "name": "PSTAKE staked ATOM",
     "precision": 6,
-    "slugs": ["persistence"],
+    "slugs": [
+      "persistence"
+    ],
     "symbol": "stkATOM",
     "type": "native"
   },
@@ -3022,7 +3309,9 @@
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/stkd-scrt.svg",
     "name": "SCRT Staking Derivatives",
     "precision": 6,
-    "slugs": ["secret"],
+    "slugs": [
+      "secret"
+    ],
     "symbol": "stkd-SCRT",
     "type": "native"
   },
@@ -3038,7 +3327,10 @@
     "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::coins::MaticX.webp",
     "name": "Wrapped stETH",
     "precision": 6,
-    "slugs": ["stader", "polygon"],
+    "slugs": [
+      "stader",
+      "polygon"
+    ],
     "symbol": "wstETH",
     "type": "native"
   },
@@ -3054,7 +3346,9 @@
     "logo": "https://celatone-api.alleslabs.dev/images/entities/ibcx",
     "name": "IBCX Token",
     "precision": 6,
-    "slugs": ["ibcx"],
+    "slugs": [
+      "ibcx"
+    ],
     "symbol": "IBCX",
     "type": "native"
   },
@@ -3064,13 +3358,15 @@
     "description": "The native staking token of Juno Network",
     "id": {
       "osmosis": {
-      "osmo-test-5": "ibc/8E2FEFCBD754FA3C97411F0126B9EC76191BAA1B3959CB73CECF396A4037BBF0"
+        "osmo-test-5": "ibc/8E2FEFCBD754FA3C97411F0126B9EC76191BAA1B3959CB73CECF396A4037BBF0"
       }
     },
     "logo": "https://celatone-api.alleslabs.dev/images/entities/juno",
     "name": "JUNO token",
     "precision": 6,
-    "slugs": ["juno"],
+    "slugs": [
+      "juno"
+    ],
     "symbol": "JUNO",
     "type": "native"
   }
