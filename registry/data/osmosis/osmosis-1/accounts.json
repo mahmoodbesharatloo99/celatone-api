@@ -271,5 +271,12 @@
     "address": "osmo1r02tlyyaqs6tmrfa4jf37t7ewuxr57qp8ghzly",
     "description": "Apollo Safe CW3 multisig owned by the Calculated Finance team whitelisted to upload contracts",
     "type": "account"
+  },
+  {
+    "slug": "tfm",
+    "name": "TFM Account 1",
+    "address": "osmo1ch3en3tm0z6xlkswh4reca6qk44v90laputdzl",
+    "description": "",
+    "type": ""
   }
 ]

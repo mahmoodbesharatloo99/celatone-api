@@ -412,5 +412,13 @@
     "description": "",
     "code": 54,
     "github": ""
+  },
+  {
+    "slug": "tfm",
+    "name": "TFM Limit Order",
+    "address": "osmo1rqamy6jc3f0rwrg5xz8hy8q7n932t2488f2gqg3d0cadvd3uqaxq4wazn8",
+    "description": "",
+    "code": 55,
+    "github": ""
   }
 ]
