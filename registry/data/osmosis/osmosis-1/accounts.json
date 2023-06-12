@@ -277,6 +277,12 @@
     "name": "TFM Account 1",
     "address": "osmo1ch3en3tm0z6xlkswh4reca6qk44v90laputdzl",
     "description": "",
-    "type": ""
+    "type": "account"
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Account 1",
+    "description": "osmo1yhqft6d2msmzpugdjtawsgdlwvgq3samajy9jq",
+    "type": "account"
   }
 ]

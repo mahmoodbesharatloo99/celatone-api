@@ -257,5 +257,61 @@
     "description": "",
     "id": 55,
     "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Factory",
+    "description": "",
+    "id": 65,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Manager",
+    "description": "",
+    "id": 67,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Tasks",
+    "description": "",
+    "id": 68,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Agents",
+    "description": "",
+    "id": 69,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod Balances",
+    "description": "",
+    "id": 70,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod DAO",
+    "description": "",
+    "id": 72,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod Generic",
+    "description": "",
+    "id": 75,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod NFT",
+    "description": "",
+    "id": 76,
+    "github": ""
   }
 ]

@@ -420,5 +420,69 @@
     "description": "",
     "code": 55,
     "github": ""
-  }
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Factory",
+    "address": "osmo14yjyt057saxauzc7scc5e0qce7c2dmeuzuhgsul0lnyy25xtz7ksxfzf07",
+    "description": "",
+    "code": 65,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Manager",
+    "address": "osmo15wq5q90exu89nanaynfxvmemznmrskazljug76deqmwxwlpszzmsgpctj4",
+    "description": "",
+    "code": 67,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Tasks",
+    "address": "osmo16f2t3yyax8ahau7g37v4r6vl65py3mh6wg63kzvz39mknc7txgmsyy2aws",
+    "description": "",
+    "code": 68,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Agents",
+    "address": "osmo1q39pzrfsm0cfjk662n2pr0az3zdc2eesxhshvteu8ypkwvrwr4uslm7vzt",
+    "description": "",
+    "code": 69,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod Balances",
+    "address": "osmo12ahvavwz53q7ysy34lnhwclgfyd9ngrg5gy46pn4h35t7dw8lj2qgwgf4y",
+    "description": "",
+    "code": 70,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod DAO",
+    "address": "osmo1z36n965w96mznd5arvw2eqlyv49nejheaalaseq2wkm27hn9y7sq823gzj",
+    "description": "",
+    "code": 72,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod Generic",
+    "address": "osmo17axf0sqsdzcnavwqvpmt3c9g5u9yswprln9qxt0adcjx9smuzdesqjefs5",
+    "description": "",
+    "code": 75,
+    "github": ""
+  },
+  {
+    "slug": "croncat",
+    "name": "Croncat Mod NFT",
+    "address": "osmo1kgx5faf3pmd83etvhgwmgl7kvlntk6a586ya65mxux7s4jj7dkvs3wmher",
+    "description": "",
+    "code": 76,
+    "github": ""
+  },
 ]
