@@ -6,6 +6,11 @@ from func.lcd import get_lcd_transaction
 
 def get_tx(chain, network, tx_hash):
     try:
+        lcd = get_lcd_transaction(chain, network, tx_hash).json()
+        return lcd
+    except Exception as e:
+        logging.error(f"Error getting lcd transaction: {e}")
+    try:
         graphql_res = get_lcd_tx_results(chain, network, tx_hash)
         graphql_tx_res = graphql_res.json()["data"]["lcd_tx_results"]
         if graphql_tx_res:
@@ -19,9 +24,4 @@ def get_tx(chain, network, tx_hash):
             return graphql_tx_res[0]["result"]
     except Exception as e:
         logging.error(f"Error getting lcd_tx_responses: {e}")
-    try:
-        lcd = get_lcd_transaction(chain, network, tx_hash).json()
-        return lcd
-    except Exception as e:
-        logging.error(f"Error getting lcd transaction: {e}")
     return abort(404)
