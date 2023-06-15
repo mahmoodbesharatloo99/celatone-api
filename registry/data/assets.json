@@ -3369,5 +3369,23 @@
     ],
     "symbol": "JUNO",
     "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The Stride LST for the IBCX token",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "factory/osmo1xqw2sl9zk8a6pch0csaw78n4swg5ws8t62wc5qta4gnjxfqg6v2qcs243k/stuibcx"
+      }
+    },
+    "logo": "https://celatone-api.alleslabs.dev/images/assets/stIBCX",
+    "name": "Stride Staked IBCX",
+    "precision": 6,
+    "slugs": [
+      "ibcx"
+    ],
+    "symbol": "stIBCX",
+    "type": "native"
   }
 ]
