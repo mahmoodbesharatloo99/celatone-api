@@ -283,7 +283,14 @@
     "slug": "croncat",
     "name": "Croncat Account 1",
     "address": "osmo1yhqft6d2msmzpugdjtawsgdlwvgq3samajy9jq",
-    "description": "osmo1yhqft6d2msmzpugdjtawsgdlwvgq3samajy9jq",
+    "description": "",
+    "type": "account"
+  },
+  {
+    "slug": "squidrouter",
+    "name": "Squid Router Deployer",
+    "address": "osmo1ae2z8svz9nvklt94mvrskr7kdwy0qrlrsehe6f",
+    "description": "",
     "type": "account"
   }
 ]
