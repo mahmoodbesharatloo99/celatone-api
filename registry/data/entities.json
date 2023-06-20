@@ -3430,5 +3430,27 @@
       }
     ],
     "description": "The most calculated way to enter and exit positions."
+  },
+  {
+    "slug": "squidrouter",
+    "name": "Squid",
+    "website": "https://squidrouter.com",
+    "github": "https://github.com/0xsquid",
+    "logo": "squidrouter.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/squidrouter"
+      },
+      {
+        "name": "telegram",
+        "url": ""
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.gg/squidrouter"
+      }
+    ],
+    "description": "Squid lets you swap tokens between blockchains, and unlocks access to apps across chains in 1 click "
   }
 ]

@@ -8,14 +8,14 @@
   },
   {
     "slug": "ion-dao",
-    "name": "ION Governance Staking",
+    "name": "ION DAO Governance Staking",
     "id": 2,
     "description": "ION DAO governance staking code implementing the logic for staking ION tokens.",
     "github": "https://github.com/many-things/ion-dao-contracts/tree/dev/contracts/stake"
   },
   {
     "slug": "ion-dao",
-    "name": "ION Governance",
+    "name": "ION DAO Governance",
     "id": 3,
     "description": "ION DAO governance staking code implementing governance-related logic.",
     "github": "https://github.com/many-things/ion-dao-contracts/tree/dev/contracts/dao"
@@ -29,7 +29,7 @@
   },
   {
     "slug": "osmosis",
-    "name": "IBC Rate Limiting",
+    "name": "Osmosis IBC Rate Limiting",
     "id": 6,
     "description": "IBC Rate Limiting code",
     "github": "https://github.com/osmosis-labs/osmosis/tree/v13.0.0/x/ibc-rate-limit/contracts/rate-limiter"
@@ -106,21 +106,21 @@
   },
   {
     "slug": "apollodao",
-    "name": "Apollo Osmosis CW-Vault",
+    "name": "ApolloDAO Osmosis CW-Vault",
     "id": 17,
     "description": "Apollo Osmosis CW-Vault code acting as a standard interface for tokenized vaults.",
     "github": "https://github.com/apollodao/cw-vault-standard"
   },
   {
     "slug": "apollodao",
-    "name": "Apollo Osmosis Liquidity Helper",
+    "name": "ApolloDAO Osmosis Liquidity Helper",
     "id": 18,
     "description": "Apollo Osmosis Liquidity Helper code mainly responsible for helping provide liquidity for Osmosis pools and supports supplying liquidity with imbalanced assets",
     "github": "https://github.com/apollodao/liquidity-helpers/tree/v0.1.0/contracts/osmosis-liquidity-helper"
   },
   {
     "slug": "apollodao",
-    "name": "Apollo Osmosis CW Dex Router",
+    "name": "ApolloDAO Osmosis CW Dex Router",
     "id": 19,
     "description": "Apollo Osmosis CW Dex Router code mainly responsible for routing swaps between Osmosis pools and other DEXs in which there is a cw_dex::Pool implementation",
     "github": "https://github.com/apollodao/cw-dex-router/tree/v0.1.0"
@@ -162,7 +162,7 @@
   },
   {
     "slug": "29",
-    "name": "Apollo Osmosis CW-Vault (v0.1.4)",
+    "name": "ApolloDAO Osmosis CW-Vault (v0.1.4)",
     "id": 30,
     "description": "Apollo Osmosis CW-Vault code acting as a standard interface for tokenized vaults.",
     "github": "https://github.com/apollodao/cw-vault-standard"
@@ -197,7 +197,7 @@
   },
   {
     "slug": "osmosis",
-    "name": "Cross-Chain Swap v2",
+    "name": "Osmosis Cross-Chain Swap v2",
     "id": 37,
     "description": "The Crosschain Swaps contract enables trades on Osmosis to be carried out remotely from another chain connected to Osmosis by IBC.",
     "github": "https://github.com/osmosis-labs/osmosis/tree/main/cosmwasm/contracts/crosschain-swaps"
@@ -312,6 +312,20 @@
     "name": "Croncat Mod NFT",
     "description": "",
     "id": 76,
+    "github": ""
+  },
+  {
+    "slug": "squidrouter",
+    "name": "Squid Router V1",
+    "description": "",
+    "id": 81,
+    "github": "https://github.com/0xsquid/cosmos-contracts/tree/1.1.0/contracts/osmosis"
+  },
+  {
+    "slug": "mars",
+    "name": "Mars Pyth Oracle",
+    "description": "",
+    "id": 84,
     "github": ""
   }
 ]
