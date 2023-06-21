@@ -1,7 +1,12 @@
 import logging
+import requests
 from flask import abort
-from func.graphql import get_lcd_tx_responses, get_lcd_tx_results
-from func.lcd import get_lcd_transaction
+from utils.graphql import get_lcd_tx_responses, get_lcd_tx_results
+from constants import LCD_DICT
+
+
+def get_lcd_transaction(chain, network, tx_hash):
+    return requests.get(f"{LCD_DICT[chain][network]}/cosmos/tx/v1beta1/txs/{tx_hash}")
 
 
 def get_tx(chain, network, tx_hash):

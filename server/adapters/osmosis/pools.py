@@ -1,4 +1,4 @@
-from func.registry import load_and_check_registry_data
+from adapters.registry.registry import load_and_check_registry_data
 
 
 def get_pools(chain, network):

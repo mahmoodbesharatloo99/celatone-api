@@ -1,5 +1,5 @@
-import func.constants as constants
-import func.helper as helper
+import constants
+import utils.helper as helper
 
 
 def get_balances(chain, network, account_address):
