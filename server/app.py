@@ -286,13 +286,13 @@ if __name__ == "__main__":
 # ICNS
 
 
-@app.route("/icns/<chain>/<network>/address/<name>/<bech32_prefix>", methods=["GET"])
+@app.route("/icns/address/<name>/<bech32_prefix>", methods=["GET"])
 @app.doc(tags=["Registry Data"])
-def get_icns_address(chain, network, name, bech32_prefix):
-    return resolver.get_icns_address(chain, network, name, bech32_prefix)
+def get_icns_address(name, bech32_prefix):
+    return resolver.get_icns_address(name, bech32_prefix)
 
 
-@app.route("/icns/<chain>/<network>/names/<address>", methods=["GET"])
+@app.route("/icns/names/<address>", methods=["GET"])
 @app.doc(tags=["Registry Data"])
-def get_icns_names(chain, network, address):
-    return resolver.get_icns_names(chain, network, address)
+def get_icns_names(address):
+    return resolver.get_icns_names(address)

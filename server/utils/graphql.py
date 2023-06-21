@@ -4,44 +4,40 @@ from constants import GRAPHQL_DICT, GRAPHQL_TEST_DICT
 
 def get_contract_instantiator_admin(chain, network, contract_addresses):
     contract_data = []
-    try:
-        queries = [
-            f'{address}: contracts_by_pk(address: "{address}") {{ account {{ address }} accountByInitBy {{ address }} label }}'
-            for address in contract_addresses
-        ]
-        query = "query {" + " ".join(queries) + "}"
-        graphql_response = requests.post(
-            GRAPHQL_DICT[chain][network], json={"query": query}
-        ).json()["data"]
-        for contract_address, data in graphql_response.items():
-            contract_data.append(
-                {
-                    "address": contract_address,
-                    "instantiator": data.get("accountByInitBy", {"address": ""})[
-                        "address"
-                    ],
-                    "admin": ""
-                    if data["account"] is None
-                    else data.get("account", {"address": ""})["address"],
-                    "label": data["label"],
-                }
-            )
-    except:
-        pass
+    queries = [
+        f'{address}: contracts_by_pk(address: "{address}") {{ account {{ address }} accountByInitBy {{ address }} label }}'
+        for address in contract_addresses
+    ]
+    query = "query {" + " ".join(queries) + "}"
+    res = requests.post(GRAPHQL_DICT[chain][network], json={"query": query})
+    res.raise_for_status()
+    graphql_response = res.json()["data"]
+    for contract_address, data in graphql_response.items():
+        print(contract_address)
+        print(data)
+        contract_data.append(
+            {
+                "address": contract_address,
+                "instantiator": data.get("accountByInitBy", {}).get("address", ""),
+                "admin": data.get("account", {}).get("address", "")
+                if data["account"] is not None
+                else "",
+                "label": data["label"],
+            }
+        )
     return contract_data
 
 
+def generate_code_query(code_id):
+    return f"a{code_id}: codes_by_pk(id: {code_id}) {{\n  account {{\n    address\n  }}\n  cw2_contract\n  cw2_version\n  contract_instantiated\n  access_config_permission\n  access_config_addresses\n}}"
+
+
 def get_graphql_code_details(chain, network, code_ids):
-    query = "\n".join(
-        [
-            f"a{code_id}: codes_by_pk(id: {code_id}) {{\n  account {{\n    address\n  }}\n  cw2_contract\n  cw2_version\n  contract_instantiated\n  access_config_permission\n  access_config_addresses\n}}"
-            for code_id in code_ids
-        ]
-    )
+    query = "\n".join(generate_code_query(code_id) for code_id in code_ids)
     graphql_response = requests.post(
         GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"}
     )
-    graphql_data = graphql_response.json().get("data", {})
+    graphql_data = graphql_response.json().get("data") or {}
     code_data = [
         {
             "code_id": int(code_id[1:]),
