@@ -1,6 +1,5 @@
 import requests
-from func.constants import GRAPHQL_DICT
-from func.constants import GRAPHQL_TEST_DICT
+from constants import GRAPHQL_DICT, GRAPHQL_TEST_DICT
 
 
 def get_contract_instantiator_admin(chain, network, contract_addresses):
@@ -11,13 +10,19 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
             for address in contract_addresses
         ]
         query = "query {" + " ".join(queries) + "}"
-        graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": query}).json()["data"]
+        graphql_response = requests.post(
+            GRAPHQL_DICT[chain][network], json={"query": query}
+        ).json()["data"]
         for contract_address, data in graphql_response.items():
             contract_data.append(
                 {
                     "address": contract_address,
-                    "instantiator": data.get("accountByInitBy", {"address": ""})["address"],
-                    "admin": "" if data["account"] is None else data.get("account", {"address": ""})["address"],
+                    "instantiator": data.get("accountByInitBy", {"address": ""})[
+                        "address"
+                    ],
+                    "admin": ""
+                    if data["account"] is None
+                    else data.get("account", {"address": ""})["address"],
                     "label": data["label"],
                 }
             )
@@ -33,7 +38,9 @@ def get_graphql_code_details(chain, network, code_ids):
             for code_id in code_ids
         ]
     )
-    graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"})
+    graphql_response = requests.post(
+        GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"}
+    )
     graphql_data = graphql_response.json().get("data", {})
     code_data = [
         {

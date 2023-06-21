@@ -1,17 +1,11 @@
 from flask import send_file
 import os
 
-import func.codes as codes
-import func.chains as chains
-import func.contracts as contracts
-import func.cosmwasm as cosmwasm
-import func.accounts as accounts
-import func.assets as assets
-import func.projects as projects
-import func.entities as entities
-import func.balances as balances
-import func.transaction as transactions
-import func.pools as pools
+from adapters.core import accounts, assets, balances, chains, transactions
+from adapters.cosmwasm import codes, contracts, helpers
+from adapters.registry import entities, projects
+from adapters.osmosis import pools
+from adapters.icns import resolver
 
 from apiflask import APIFlask
 from flask_cors import CORS
@@ -47,6 +41,7 @@ app.config["TAGS"] = [
 @app.doc(tags=["Default"])
 def hello_world():
     return {"gm": "gm"}
+
 
 # CosmWasm
 
@@ -85,7 +80,8 @@ def get_contracts(chain, network):
 def get_contract(chain, network, contract_address):
     """Get Get Contract by ID
 
-    Returns a specific contract based on the input chain, network, and contract_address"""
+    Returns a specific contract based on the input chain, network, and contract_address
+    """
     return contracts.get_contract(chain, network, contract_address)
 
 
@@ -94,7 +90,7 @@ def get_upload_access(chain, network):
     """Get Upload Access
 
     Returns the upload access for the input chain and network"""
-    return cosmwasm.get_upload_access(chain, network)
+    return helpers.get_upload_access(chain, network)
 
 
 # Accounts
@@ -286,3 +282,17 @@ def get_pool(chain, network, pool_id):
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
+# ICNS
+
+
+@app.route("/icns/<chain>/<network>/address/<name>/<bech32_prefix>", methods=["GET"])
+@app.doc(tags=["Registry Data"])
+def get_icns_address(chain, network, name, bech32_prefix):
+    return resolver.get_icns_address(chain, network, name, bech32_prefix)
+
+
+@app.route("/icns/<chain>/<network>/names/<address>", methods=["GET"])
+@app.doc(tags=["Registry Data"])
+def get_icns_names(chain, network, address):
+    return resolver.get_icns_names(chain, network, address)

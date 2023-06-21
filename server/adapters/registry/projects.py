@@ -1,18 +1,15 @@
 import json
-from func.registry import load_and_check_registry_data
 
-from func.accounts import get_accounts
-from func.assets import get_assets
-from func.codes import get_codes
-from func.contracts import get_contracts
+from adapters.core import accounts, assets
+from adapters.cosmwasm import codes, contracts
 
 
 def load_project_data(chain, network):
-    accounts = get_accounts(chain, network)
-    assets = get_assets(chain, network)
-    codes = get_codes(chain, network)
-    contracts = get_contracts(chain, network)
-    return accounts, assets, codes, contracts
+    loaded_accounts = accounts.get_accounts(chain, network)
+    loaded_assets = assets.get_assets(chain, network)
+    loaded_codes = codes.get_codes(chain, network)
+    loaded_contracts = contracts.get_contracts(chain, network)
+    return loaded_accounts, loaded_assets, loaded_codes, loaded_contracts
 
 
 def load_project(entity, accounts, assets, codes, contracts):
@@ -27,13 +24,19 @@ def load_project(entity, accounts, assets, codes, contracts):
         "socials": entity["socials"],
     }
     # only keep accounts for this entity
-    relevant_accounts = list(filter(lambda account: account["slug"] == entity["slug"], accounts))
+    relevant_accounts = list(
+        filter(lambda account: account["slug"] == entity["slug"], accounts)
+    )
     # only keep assets for this entity
-    relevant_assets = list(filter(lambda asset: entity["slug"] in asset["slugs"], assets))
+    relevant_assets = list(
+        filter(lambda asset: entity["slug"] in asset["slugs"], assets)
+    )
     # only keep codes for this entity
     relevant_codes = list(filter(lambda code: code["slug"] == entity["slug"], codes))
     # only keep contracts for this entity
-    relevant_contracts = list(filter(lambda contract: contract["slug"] == entity["slug"], contracts))
+    relevant_contracts = list(
+        filter(lambda contract: contract["slug"] == entity["slug"], contracts)
+    )
     if any([relevant_codes, relevant_contracts, relevant_accounts]):
         entity_dict["accounts"] = relevant_accounts
         entity_dict["assets"] = relevant_assets

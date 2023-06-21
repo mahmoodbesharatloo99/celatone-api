@@ -1,8 +1,8 @@
 import requests
 
-import func.constants as constants
-import func.assets as assets
-import func.prices as prices
+import constants as constants
+import adapters.core.assets as assets
+import adapters.prices.prices as prices
 
 
 def split(ls, n):
@@ -30,7 +30,9 @@ def get_hive_balance(chain, network, account_address):
     contract_address_chunks = split(contract_addresses, 50)
     for contract_address_chunk in contract_address_chunks:
         query = generate_hive_query(account_address, contract_address_chunk)
-        hive_data = requests.post(f"{constants.HIVE_DICT[network]}/graphql", json={"query": query}).json()["data"]
+        hive_data = requests.post(
+            f"{constants.HIVE_DICT[network]}/graphql", json={"query": query}
+        ).json()["data"]
         output_balance += [
             {
                 "name": asset["name"],
@@ -41,14 +43,26 @@ def get_hive_balance(chain, network, account_address):
                 "type": "cw20",
                 "price": 1.00,
             }
-            for asset, data in zip(supported_assets, [hive_data.get(contract_address, {}) for contract_address in contract_address_chunk])
+            for asset, data in zip(
+                supported_assets,
+                [
+                    hive_data.get(contract_address, {})
+                    for contract_address in contract_address_chunk
+                ],
+            )
             if data.get("contractQuery", {}).get("balance", 0) > 0
         ]
     return output_balance
 
 
 def get_native_balances(endpoint, chain, network, account_address):
-    balances = requests.get(f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500").json().get("balances", [])
+    balances = (
+        requests.get(
+            f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
+        )
+        .json()
+        .get("balances", [])
+    )
     supported_assets = assets.get_assets_by_type(chain, network, "native")
     asset_ids = [asset["id"] for asset in supported_assets if asset["coingecko"] != ""]
     asset_prices = prices.get_prices(chain, network, asset_ids)
@@ -60,9 +74,20 @@ def get_native_balances(endpoint, chain, network, account_address):
             "amount": balance["amount"],
             "precision": asset["precision"] if asset else 0,
             "type": "native",
-            "price": asset_prices.get(balance["denom"], 0) if asset and balance["denom"] in asset_prices else 0,
+            "price": asset_prices.get(balance["denom"], 0)
+            if asset and balance["denom"] in asset_prices
+            else 0,
         }
         for balance in balances
-        for asset in [next((asset for asset in supported_assets if asset["id"] == balance["denom"]), None)]
+        for asset in [
+            next(
+                (
+                    asset
+                    for asset in supported_assets
+                    if asset["id"] == balance["denom"]
+                ),
+                None,
+            )
+        ]
     ]
     return output_balance
