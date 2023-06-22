@@ -1,6 +1,6 @@
 [
   {
-    "coingecko": "",
+    "coingecko": "bitsong",
     "coinmarketcap": "",
     "description": "404Deep Records a BitSong Music FanToken",
     "id": {
@@ -1420,7 +1420,8 @@
         "stargaze-1": "ibc/448C1061CE97D86CC5E86374CD914870FB8EBA16C58661B5F1D3F46729A2422D"
       },
       "osmosis": {
-        "osmosis-1": "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED"
+        "osmosis-1": "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED",
+        "osmo-test-5": "ibc/8E2FEFCBD754FA3C97411F0126B9EC76191BAA1B3959CB73CECF396A4037BBF0"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/juno.svg",
@@ -3351,24 +3352,6 @@
       "ibcx"
     ],
     "symbol": "IBCX",
-    "type": "native"
-  },
-  {
-    "coingecko": "",
-    "coinmarketcap": "",
-    "description": "The native staking token of Juno Network",
-    "id": {
-      "osmosis": {
-        "osmo-test-5": "ibc/8E2FEFCBD754FA3C97411F0126B9EC76191BAA1B3959CB73CECF396A4037BBF0"
-      }
-    },
-    "logo": "https://celatone-api.alleslabs.dev/images/entities/juno",
-    "name": "JUNO token",
-    "precision": 6,
-    "slugs": [
-      "juno"
-    ],
-    "symbol": "JUNO",
     "type": "native"
   },
   {
