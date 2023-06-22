@@ -1,7 +1,7 @@
 from flask import send_file
 import os
 
-from adapters.core import accounts, assets, balances, chains, transactions
+from adapters.core import accounts, assets, balances, chains, cosmos, transactions
 from adapters.cosmwasm import codes, contracts, helpers
 from adapters.registry import entities, projects
 from adapters.osmosis import pools
@@ -231,6 +231,14 @@ def get_chain(chain):
 @app.doc(tags=["Registry Data", "External"])
 def get_balances(chain, network, account_address):
     return balances.get_balances(chain, network, account_address)
+
+
+# Cosmos Rest
+
+
+@app.route("/rest/<chain>/<network>/<path:path>", methods=["GET"])
+def get_some_rest(chain, network, path):
+    return cosmos.get_rest(chain, network, path)
 
 
 # Images
