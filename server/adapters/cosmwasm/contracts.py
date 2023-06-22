@@ -9,19 +9,30 @@ from utils.graphql import get_contract_instantiator_admin
 def get_contracts(chain, network):
     contracts = load_and_check_registry_data(chain, network, "contracts")
     codes = load_and_check_registry_data(chain, network, "codes")
-    if len(contracts) > 0:
-        instantiator_admin_data = get_contract_instantiator_admin(
-            chain, network, [contract["address"] for contract in contracts]
+    contract_addresses = []
+    for contract in contracts:
+        contract_addresses.append(contract["address"])
+    instantiator_admin_data = get_contract_instantiator_admin(
+        chain, network, contract_addresses
+    )
+    code_map = {code["id"]: code for code in codes}
+    instantiator_admin_map = {
+        data["address"]: {
+            "instantiator": data["instantiator"],
+            "admin": data["admin"],
+            "label": data["label"],
+        }
+        for data in instantiator_admin_data
+    }
+    for contract in contracts:
+        code = code_map[contract["code"]]
+        contract.update(
+            {
+                "description": code["description"],
+                "github": code["github"],
+                **instantiator_admin_map.get(contract["address"], {}),
+            }
         )
-        code_map = {code["id"]: code for code in codes}
-        for contract in contracts:
-            contract["description"] = code_map[contract["code"]]["description"]
-            contract["github"] = code_map[contract["code"]]["github"]
-            for data in instantiator_admin_data:
-                if contract["address"] == data["address"]:
-                    contract["instantiator"] = data["instantiator"]
-                    contract["admin"] = data["admin"]
-                    contract["label"] = data["label"]
     return contracts
 
 

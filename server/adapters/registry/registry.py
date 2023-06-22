@@ -1,39 +1,29 @@
 import os
 import json
+import os
 
 
 def load_asset_data(chain, network):
     global_assets_path = f"../registry/data/assets.json"
-    relevant_assets_path = f"../registry/data/{chain}/{network}/assets.json"
-    global_assets = []
-    relevant_assets = []
-    try:
-        with open(global_assets_path) as f:
-            global_assets = json.loads(f.read())
-    except FileNotFoundError:
-        pass
-    try:
-        with open(relevant_assets_path) as f:
-            relevant_assets = json.loads(f.read())
-    except FileNotFoundError:
-        pass
+    if not os.path.exists(global_assets_path):
+        return []
+    with open(global_assets_path) as f:
+        global_assets = json.load(f)
     assets = []
     for asset in global_assets:
-        if chain in asset["id"] and network in asset["id"][chain]:
-            asset["id"] = asset["id"][chain][network]
+        asset_id = asset["id"].get(chain, {}).get(network)
+        if asset_id:
+            asset["id"] = asset_id
             assets.append(asset)
     return assets
 
 
 def load_and_check_registry_data(chain, network, content):
     path = f"../registry/data/{chain}/{network}/{content}.json"
-    data = []
+    data = None
     if content == "assets":
         data = load_asset_data(chain, network)
-    else:
-        try:
-            with open(path) as f:
-                data = json.loads(f.read())
-        except FileNotFoundError:
-            pass
-    return data
+    elif os.path.exists(path):
+        with open(path) as f:
+            data = json.load(f)
+    return data or []

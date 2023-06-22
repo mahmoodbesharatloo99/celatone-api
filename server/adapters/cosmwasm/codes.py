@@ -1,4 +1,5 @@
 import json
+import os.path
 
 from utils.graphql import get_graphql_code_details
 
@@ -6,26 +7,33 @@ from utils.graphql import get_graphql_code_details
 def load_codes(chain, network):
     codes = []
     path = f"../registry/data/{chain}/{network}/codes.json"
-    try:
+    if os.path.exists(path):
         with open(path) as f:
             codes = json.load(f)
-    except FileNotFoundError:
-        pass
-    if len(codes) > 0:
-        graphql_details = get_graphql_code_details(
-            chain, network, [code["id"] for code in codes]
+
+    code_ids = []
+    for code in codes:
+        code_ids.append(code["id"])
+
+    graphql_details = get_graphql_code_details(chain, network, code_ids)
+
+    graphql_map = {}
+    for detail in graphql_details:
+        graphql_map[detail["code_id"]] = detail
+
+    for code in codes:
+        code_details = graphql_map[code["id"]]
+        code.update(
+            {
+                "cw2Contract": code_details["cw2_contract"],
+                "cw2Version": code_details["cw2_version"],
+                "uploader": code_details["creator"],
+                "contracts": code_details["contract_instantiated"],
+                "instantiatePermission": code_details["access_config_permission"],
+                "permissionAddresses": code_details["access_config_addresses"],
+            }
         )
-        graphql_map = {detail["code_id"]: detail for detail in graphql_details}
-        for code in codes:
-            code_graphql_detail = graphql_map[code["id"]]
-            code["cw2Contract"] = code_graphql_detail["cw2_contract"]
-            code["cw2Version"] = code_graphql_detail["cw2_version"]
-            code["uploader"] = code_graphql_detail["creator"]
-            code["contracts"] = code_graphql_detail["contract_instantiated"]
-            code["instantiatePermission"] = code_graphql_detail[
-                "access_config_permission"
-            ]
-            code["permissionAddresses"] = code_graphql_detail["access_config_addresses"]
+
     return codes
 
 
