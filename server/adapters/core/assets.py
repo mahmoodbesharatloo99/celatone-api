@@ -12,7 +12,8 @@ def get_assets(chain, network):
     return [dict(asset, **{"price": 0.00}) for asset in assets]
 
 
-def get_assets_prices(chain, network, assets):
+def get_assets_with_prices(chain, network):
+    assets = get_assets(chain, network)
     priced_assets = filter(lambda asset: asset["coingecko"], assets)
     priced_asset_ids = [asset["id"] for asset in priced_assets]
     prices = get_prices(chain, network, priced_asset_ids)
@@ -20,18 +21,6 @@ def get_assets_prices(chain, network, assets):
     for asset in assets:
         asset["price"] = asset_prices.get(asset["id"], 0.00)
     return assets
-
-
-def get_assets_with_prices(chain, network):
-    assets = get_assets(chain, network)
-    return get_assets_prices(chain, network, assets)
-
-
-# TODO - Refactor this
-def get_native_assets(chain, network):
-    loaded_assets = load_and_check_registry_data(chain, network, "native_assets")
-    assets = [dict(asset, **{"price": 0.00}) for asset in loaded_assets]
-    return get_assets_prices(chain, network, assets)
 
 
 def get_assets_by_type(chain, network, asset_type):
