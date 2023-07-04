@@ -1,0 +1,48 @@
+[
+  {
+    "coingecko": "osmosis",
+    "coinmarketcap": "",
+    "description": "The native token of Osmosis",
+    "id": {
+      "stargaze": {
+        "stargaze-1": "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518"
+      },
+      "osmosis": {
+        "localosmosis": "uosmo",
+        "osmosis-1": "uosmo",
+        "osmo-test-4": "uosmo",
+        "osmo-test-5": "uosmo"
+      },
+      "initia": {
+        "stone-7": "ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
+    "name": "Osmosis",
+    "precision": 6,
+    "slugs": ["osmosis"],
+    "symbol": "OSMO",
+    "type": "native"
+  },
+  {
+    "coingecko": "ion",
+    "coinmarketcap": "",
+    "description": "",
+    "id": {
+      "stargaze": {
+        "stargaze-1": "ibc/F7E92EE59B5428793F3EF5C1A4CB2494F61A9D0C9A69469D02390714A1372E16"
+      },
+      "osmosis": {
+        "osmosis-1": "uion",
+        "osmo-test-4": "uion",
+        "osmo-test-5": "uion"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.svg",
+    "name": "Ion",
+    "precision": 6,
+    "slugs": ["ion-dao"],
+    "symbol": "ION",
+    "type": "native"
+  }
+]

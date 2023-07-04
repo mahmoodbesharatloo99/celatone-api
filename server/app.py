@@ -1,7 +1,14 @@
 from flask import send_file
 import os
 
-from adapters.core import accounts, assets, balances, chains, cosmos, transactions
+from adapters.core import (
+    accounts,
+    assets,
+    balances,
+    chains,
+    cosmos,
+    transactions,
+)
 from adapters.cosmwasm import codes, contracts, helpers
 from adapters.registry import entities, projects
 from adapters.osmosis import pools
@@ -177,6 +184,16 @@ def get_asset_factory(chain, network, creator, symbol):
 @app.doc(tags=["Registry Data"])
 def get_asset_gamm(chain, network, pool_id):
     return assets.get_asset_gamm(chain, network, pool_id)
+
+
+@app.route("/native-assets/<chain>/<network>", methods=["GET"])
+@app.doc(tags=["Registry Data"])
+def get_native_assets(chain, network):
+    """Get All Native Assets
+
+    Returns a list of all the chain native assets based on the input chain and network
+    """
+    return assets.get_native_assets(chain, network)
 
 
 # Projects

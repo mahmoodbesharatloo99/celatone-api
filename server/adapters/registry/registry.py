@@ -2,12 +2,16 @@ import os
 import json
 import os
 
+# TODO - Refactor this
+def load_asset_data(chain, network, content):
+    if content == "assets":
+        path = f"../registry/data/assets.json"
+    elif content == "native_assets":
+        path = f"./registry/data/{chain}/native_assets.json"
 
-def load_asset_data(chain, network):
-    global_assets_path = f"../registry/data/assets.json"
-    if not os.path.exists(global_assets_path):
+    if not os.path.exists(path):
         return []
-    with open(global_assets_path) as f:
+    with open(path) as f:
         global_assets = json.load(f)
     assets = []
     for asset in global_assets:
@@ -21,8 +25,8 @@ def load_asset_data(chain, network):
 def load_and_check_registry_data(chain, network, content):
     path = f"../registry/data/{chain}/{network}/{content}.json"
     data = None
-    if content == "assets":
-        data = load_asset_data(chain, network)
+    if content != "":
+        data = load_asset_data(chain, network, content)
     elif os.path.exists(path):
         with open(path) as f:
             data = json.load(f)
