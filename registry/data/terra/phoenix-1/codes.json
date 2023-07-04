@@ -3,24 +3,28 @@
     "slug": "edge",
     "name": "eToken",
     "id": 895,
-    "description": "Edge eToken code"
+    "description": "Edge eToken code",
+    "github": ""
   },
   {
     "slug": "edge",
     "name": "Pool",
     "id": 896,
-    "description": "Edge pool code"
+    "description": "Edge pool code",
+    "github": ""
   },
   {
     "slug": "edge",
     "name": "Oracle",
     "id": 897,
-    "description": "Edge oracle code"
+    "description": "Edge oracle code",
+    "github": ""
   },
   {
     "slug": "edge",
     "name": "Liquidator",
     "id": 898,
-    "description": "Edge liquidator oracle"
+    "description": "Edge liquidator oracle",
+    "github": ""
   }
 ]
