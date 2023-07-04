@@ -302,5 +302,21 @@
     "description": "",
     "code": 16,
     "github": ""
+  },
+  {
+    "slug": "wormhole",
+    "name": "Wormhole",
+    "address": "neutron178ruq7gf6gk3uus5n8xztj5tsrt5xwxfelw88mc9egfw5d99ktksnk5rsh",
+    "description": "",
+    "code": 66,
+    "github": "https://github.com/wormhole-foundation/wormhole/tree/ae7de3d575a0cee7ceaf69080952fa148dc0a346/cosmwasm/contracts/wormhole"
+  },
+  {
+    "slug": "pyth",
+    "name": "Pyth",
+    "address": "neutron1m2emc93m9gpwgsrsf2vylv9xvgqh654630v7dfrhrkmr5slly53spg85wv",
+    "description": "",
+    "code": 67,
+    "github": "neutron1m2emc93m9gpwgsrsf2vylv9xvgqh654630v7dfrhrkmr5slly53spg85wv"
   }
 ]
