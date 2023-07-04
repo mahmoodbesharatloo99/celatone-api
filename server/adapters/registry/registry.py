@@ -5,7 +5,7 @@ import os
 # TODO - Refactor this
 def load_asset_data(chain, network, content):
     if content == "assets":
-        path = f"../registry/data/assets.json"
+        path = f"./registry/data/assets.json"
     elif content == "native_assets":
         path = f"./registry/data/{chain}/native_assets.json"
 
