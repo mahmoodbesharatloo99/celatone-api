@@ -25,7 +25,7 @@ def load_asset_data(chain, network, content):
 def load_and_check_registry_data(chain, network, content):
     path = f"../registry/data/{chain}/{network}/{content}.json"
     data = None
-    if content != "":
+    if content == "assets" or content == "native_assets":
         data = load_asset_data(chain, network, content)
     elif os.path.exists(path):
         with open(path) as f:
