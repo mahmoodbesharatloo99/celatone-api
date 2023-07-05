@@ -193,7 +193,8 @@ def get_native_assets(chain, network):
 
     Returns a list of all the chain native assets based on the input chain and network
     """
-    return assets.get_native_assets(chain, network)
+    # TODO - Fix native assets
+    return assets.get_assets_with_prices(chain, network)
 
 
 # Projects
