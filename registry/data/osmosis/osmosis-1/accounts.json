@@ -297,7 +297,7 @@
     "slug": "levana",
     "name": "Levana Uploader",
     "address": "osmo1lqyn9ncwkcqj8e0pnugu72tyyfehe2tre98c5qfzjg4d3vdw7n5q5a0x37",
-    "description": "Apollo multisig contract whitelisted to upload Levana Protocol contracts.",
+    "description": "Apollo Safe CW3 multisig contract whitelisted to upload Levana Protocol contracts.",
     "type": "contract"
   }
 ]
