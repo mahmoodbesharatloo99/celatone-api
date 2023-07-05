@@ -15,7 +15,7 @@
   },
   {
     "slug": "apollodao",
-    "name": "ApolloDAO Deployer",
+    "name": "ApolloDAO Uploader",
     "address": "osmo1jxdhfvhedn3gv8fnmn4crzkevqfkm29me0pnht",
     "description": "Account owned by ApolloDAO used to deploy their CW3 multisig and liquid staking contracts.",
     "type": "account"
@@ -78,21 +78,21 @@
   },
   {
     "slug": "ion-dao",
-    "name": "ION DAO Deployer",
+    "name": "ION DAO Uploader",
     "address": "osmo14lr70k43wdry3fxl5ykkh630jhas2nsp8re0e4",
     "description": "Account owned by ION DAO contributors used to deploy their governance and governance staking contracts.",
     "type": "account"
   },
   {
     "slug": "kado",
-    "name": "Kado Deployer",
+    "name": "Kado Uploader",
     "address": "osmo19vxp8vq8qm368dr026qxh8v82satwaf79y235lfv6wmgpwxx8dtskedaku",
     "description": "Account whitelisted to upload Kado Router contracts.",
     "type": "contract"
   },
   {
     "slug": "mars",
-    "name": "Mars Deployer",
+    "name": "Mars Uploader",
     "address": "osmo1cd4nn8yzdrrsfqsmmvaafq8r03xn38qgqt8fzh",
     "description": "Account owned by Delphi Labs used to deploy the Mars Protocol contracts on Osmosis.",
     "type": "account"
@@ -246,7 +246,7 @@
   },
   {
     "slug": "ibcx",
-    "name": "IBCX Deployer",
+    "name": "IBCX Uploader",
     "address": "osmo14n3a65fnqz9jve85l23al6m3pjugf0atvrfqh5",
     "description": "Account whitelisted to upload IBCX contracts.",
     "type": "account"
@@ -260,14 +260,14 @@
   },
   {
     "slug": "croncat",
-    "name": "CronCat Multisig",
+    "name": "CronCat Uploader",
     "address": "osmo15wna5dwylkuzvljsudyn6zfsd4zl0rkg5ge888mzk4vtnjpp0z5q4e9w58",
     "description": "Apollo Safe CW3 multisig owned by the CronCat team whitelisted to upload contracts",
     "tpye": "contract"
   },
   {
     "slug": "calc",
-    "name": "Calculated Finance Deployer",
+    "name": "Calculated Finance Uploader",
     "address": "osmo1r02tlyyaqs6tmrfa4jf37t7ewuxr57qp8ghzly",
     "description": "Apollo Safe CW3 multisig owned by the Calculated Finance team whitelisted to upload contracts",
     "type": "account"
@@ -288,9 +288,16 @@
   },
   {
     "slug": "squidrouter",
-    "name": "Squid Router Deployer",
+    "name": "Squid Router Uploader",
     "address": "osmo1ae2z8svz9nvklt94mvrskr7kdwy0qrlrsehe6f",
     "description": "",
     "type": "account"
+  },
+  {
+    "slug": "levana",
+    "name": "Levana Uploader",
+    "address": "osmo1lqyn9ncwkcqj8e0pnugu72tyyfehe2tre98c5qfzjg4d3vdw7n5q5a0x37",
+    "description": "Apollo multisig contract whitelisted to upload Levana Protocol contracts.",
+    "type": "contract"
   }
 ]
