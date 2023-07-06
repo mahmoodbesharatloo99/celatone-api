@@ -9,24 +9,7 @@ CORS(app)
 
 app.config["SYNC_LOCAL_SPEC"] = True
 app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
-app.config["TAGS"] = [
-    {
-        "name": "Default",
-        "description": "Default queries",
-    },
-    {
-        "name": "Registry Data",
-        "description": "Queries that uses data from the registry data JSONs",
-    },
-    {
-        "name": "Registry Assets",
-        "description": "Queries that uses data from the registry data asset images",
-    },
-    {
-        "name": "External",
-        "description": "Queries that uses also uses data from external sources",
-    },
-]
+
 
 app.register_blueprint(osmosis_1_blueprint, url_prefix='/osmosis/osmosis-1')
 
