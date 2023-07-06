@@ -1,0 +1,43 @@
+{
+  "info": {
+    "title": "My API",
+    "version": "1.0"
+  },
+  "tags": [
+    {
+      "name": "Default",
+      "description": "Default queries"
+    },
+    {
+      "name": "Registry Data",
+      "description": "Queries that uses data from the registry data JSONs"
+    },
+    {
+      "name": "Registry Assets",
+      "description": "Queries that uses data from the registry data asset images"
+    },
+    {
+      "name": "External",
+      "description": "Queries that uses also uses data from external sources"
+    }
+  ],
+  "paths": {
+    "/osmosis/osmosis-1/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Accounts"
+      }
+    }
+  },
+  "openapi": "3.0.3"
+}
