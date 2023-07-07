@@ -1,5 +1,5 @@
 from typing import Any, List, Dict
-from base.base_service import BaseService
+from core.base.base_service import BaseService
 
 class OsmosisBaseService(BaseService):
     def get_asset_factory(self, creator, symbol):

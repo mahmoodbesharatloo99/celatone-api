@@ -2,7 +2,7 @@ from flask import Flask, send_file
 import os
 from apiflask import APIFlask
 from flask_cors import CORS
-from osmosis.routes import blueprint as osmosis
+from core.osmosis.routes import blueprint as osmosis
 
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
