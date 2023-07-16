@@ -73,7 +73,3 @@ def get_project(accounts, assets, codes, contracts, slug):
         return []
     return project
 
-def load_entities():
-    with open("../registry/data/entities.json") as f:
-        entities = json.load(f)
-    return entities

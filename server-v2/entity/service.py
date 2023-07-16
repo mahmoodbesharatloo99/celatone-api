@@ -1,9 +1,11 @@
+import json
 from utils.registry import load_entities
 
 class EntityService():
     
     def __init__(self):
-        self._entities = load_entities()
+        with open("../registry/data/entities.json") as f:
+            self._entities = json.load(f)
 
     @property
     def entities(self):
@@ -17,3 +19,4 @@ class EntityService():
         if entity:
             entity["logo_path"] = f"/images/entities/{entity_slug}"
         return entity
+    
