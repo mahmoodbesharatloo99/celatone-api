@@ -1,5 +1,4 @@
 import json
-from utils.registry import load_entities
 
 class EntityService():
     
