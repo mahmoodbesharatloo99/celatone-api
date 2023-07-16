@@ -9,7 +9,7 @@ blueprint = APIBlueprint("osmosis-1", __name__, url_prefix="/osmosis-1")
 ### ACCOUNT ###
 @blueprint.route("/accounts", methods=["GET"])
 def accounts():
-    return service.accounts()
+    return service.accounts
 
 @blueprint.route("/account/<account_address>", methods=["GET"])
 def account(account_address: str) :
@@ -23,7 +23,7 @@ def get_assets():
 
     Returns a list of all the known assets based on the input chain and network
     """
-    return service.assets()
+    return service.assets
 
 
 @blueprint.route('/assets/prices', methods=["GET"])
@@ -55,12 +55,9 @@ def get_asset(asset_id):
 
 
 ## Project ##
-# Projects
-
-
 @blueprint.route("/projects", methods=["GET"])
 def get_projects():
-    return service.get_projects(chain, network)
+    return service.projects
 
 
 @blueprint.route("/projects/<slug>", methods=["GET"])

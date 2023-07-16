@@ -1,5 +1,6 @@
 import os
 import json
+from .graphql import get_graphql_code_details
 
 
 def load_asset_data(chain, network):
@@ -64,6 +65,37 @@ def load_projects(accounts, assets, codes, contracts):
             projects.append(entity_dict)
     return projects
 
+def load_codes(chain, network):
+    codes = []
+    path = f"../registry/data/{chain}/{network}/codes.json"
+    if os.path.exists(path):
+        with open(path) as f:
+            codes = json.load(f)
+
+    code_ids = []
+    for code in codes:
+        code_ids.append(code["id"])
+
+    graphql_details = get_graphql_code_details(chain, network, code_ids)
+
+    graphql_map = {}
+    for detail in graphql_details:
+        graphql_map[detail["code_id"]] = detail
+
+    for code in codes:
+        code_details = graphql_map[code["id"]]
+        code.update(
+            {
+                "cw2Contract": code_details["cw2_contract"],
+                "cw2Version": code_details["cw2_version"],
+                "uploader": code_details["creator"],
+                "contracts": code_details["contract_instantiated"],
+                "instantiatePermission": code_details["access_config_permission"],
+                "permissionAddresses": code_details["access_config_addresses"],
+            }
+        )
+
+    return codes
 
 def get_project(accounts, assets, codes, contracts, slug):
     entities = json.load(open(f"../registry/data/entities.json"))
