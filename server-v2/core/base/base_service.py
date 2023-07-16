@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any
-from utils.registry import load_and_check_registry_data
+
+from utils.registry import load_and_check_registry_data, load_projects, get_project
 from utils.price import get_prices
 from flask import abort, Response
 from .graphql import get_lcd_tx_responses, get_lcd_tx_results
@@ -23,6 +24,7 @@ class BaseService(ABC):
             dict(asset, **{"price": 0.00}) 
             for asset in load_and_check_registry_data(self.chain, self.network, "assets")
             ]
+        self._projects = load_projects(self._assets, self._codes, self._codes, self._contracts)
             
     @property
     def accounts(self) -> List[Dict]:
@@ -39,6 +41,10 @@ class BaseService(ABC):
     @property
     def assets(self) -> Any:
         return self._assets
+    
+    @property
+    def projects(self) -> Any:
+        return self._projects
 
     def get_account(self, account_address: str) -> Dict:
         accounts = self.accounts()
@@ -149,4 +155,8 @@ class BaseService(ABC):
         except Exception as e:
             logging.error(f"Error getting lcd_tx_responses: {e}")
         return abort(404)
+    
+    # TODO: Use the `projects` injected in the service and manually filter them
+    def get_project(self, slug: str):
+        return get_project(self.accounts(), self.assets(), self.codes(), self.contracts(), slug)
 

@@ -14,4 +14,4 @@ app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
 app.register_blueprint(osmosis)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=8080, debug=True)

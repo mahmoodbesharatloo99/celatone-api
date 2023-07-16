@@ -4,12 +4,12 @@ from .service import Osmosis1Service
 
 service = Osmosis1Service()
 
-blueprint = APIBlueprint("/osmosis/osmosis-1", __name__, tag="Osmosis-1", url_prefix="/osmosis-1")
+blueprint = APIBlueprint("osmosis-1", __name__, url_prefix="/osmosis-1")
 
 ### ACCOUNT ###
 @blueprint.route("/accounts", methods=["GET"])
 def accounts():
-    return service.accounts
+    return service.accounts()
 
 @blueprint.route("/account/<account_address>", methods=["GET"])
 def account(account_address: str) :
@@ -52,3 +52,17 @@ def get_asset_by_slug(asset_slug):
 @blueprint.route('/assets/<asset_id>', methods=["GET"])
 def get_asset(asset_id):
     return service.get_asset(asset_id)
+
+
+## Project ##
+# Projects
+
+
+@blueprint.route("/projects", methods=["GET"])
+def get_projects():
+    return service.get_projects(chain, network)
+
+
+@blueprint.route("/projects/<slug>", methods=["GET"])
+def get_project(slug):
+    return service.get_project(slug)
