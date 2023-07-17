@@ -9,6 +9,7 @@ blueprint = APIBlueprint("chain", __name__)
 def chains():
     return service.chains
 
+## TODO: Handler Chain not found error
 @blueprint.route("/chain/<name>", methods=["GET"])
 def chainByName(name: str) :
     return service.get_chain(name)
