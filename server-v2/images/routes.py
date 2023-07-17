@@ -3,7 +3,7 @@ from .service import ImagesService
 
 service = ImagesService()
 
-blueprint = APIBlueprint("blueprint_name", __name__, url_prefix="/images")
+blueprint = APIBlueprint("images", __name__, url_prefix="/images")
 
 @blueprint.route("/entities/<entity_slug>", methods=["GET"])
 def get_entity_image(entity_slug):
