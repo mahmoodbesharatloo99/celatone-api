@@ -63,3 +63,34 @@ def get_projects():
 @blueprint.route("/projects/<slug>", methods=["GET"])
 def get_project(slug):
     return service.get_project(slug)
+
+
+## Cosmos Rest ##
+@blueprint.route("/rest/<path:path>", methods=["GET"])
+def get_some_rest(path):
+    return service.get_rest(path)
+
+
+# Transactions
+
+@blueprint.route("/txs/<tx_hash>", methods=["GET"])
+def get_tx(tx_hash):
+    return service.get_tx(tx_hash)
+
+## Osmosis - Pools ##
+@blueprint.route("/pools", methods=["GET"])
+def get_pools():
+    """Get All Pools
+
+    Returns a list of all the known Osmosis pools based on the input chain and network
+    """
+    return service.pools
+
+
+@blueprint.route("/pool/<pool_id>", methods=["GET"])
+def get_pool(pool_id):
+    """Get Pool by ID
+
+    Returns a specific Osmosis pool based on the input chain, network, and code_id
+    """
+    return service.get_pool(pool_id)

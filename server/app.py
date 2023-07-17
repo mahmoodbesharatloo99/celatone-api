@@ -243,7 +243,6 @@ def get_some_rest(chain, network, path):
 
 # Images
 
-
 @app.route("/images/entities/<entity_slug>", methods=["GET"])
 @app.doc(tags=["Registry Assets"])
 def get_entity_image(entity_slug):
