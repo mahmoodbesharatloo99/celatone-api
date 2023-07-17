@@ -1,4 +1,3 @@
-from ast import Dict, List
 from apiflask import APIBlueprint
 from .service import Osmosis1Service
 
