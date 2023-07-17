@@ -6,6 +6,7 @@ from core.osmosis.routes import blueprint as osmosis
 from entity.routes import blueprint as entity
 from chain.routes import blueprint as chain
 from images.routes import blueprint as images
+from icns.routes import blueprint as icns
 
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
@@ -18,6 +19,7 @@ app.register_blueprint(osmosis)
 app.register_blueprint(entity)
 app.register_blueprint(chain)
 app.register_blueprint(images)
+app.register_blueprint(icns)
 
 if __name__ == "__main__":
     app.run(port=8080, debug=True)
