@@ -4,6 +4,7 @@ from core.base.base_service import BaseService
 
 class OsmosisBaseService(BaseService):
     def __init__(self):
+        super().__init__()
         self._pools = load_and_check_registry_data(
             chain=self.chain,
             network=self.network, 
