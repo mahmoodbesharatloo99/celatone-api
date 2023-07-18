@@ -3452,5 +3452,27 @@
       }
     ],
     "description": "Squid lets you swap tokens between blockchains, and unlocks access to apps across chains in 1 click "
+  },
+  {
+    "slug": "levana",
+    "name": "Levana Protocol",
+    "website": "https://levana.finance",
+    "github": "https://github.com/levana-protocol",
+    "logo": "levana.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/levana_protocol"
+      },
+      {
+        "name": "telegram",
+        "url": "https://t.me/levanaprotocol"
+      },
+      {
+        "name": "discord",
+        "url": ""
+      }
+    ],
+    "description": "Fully-collateralized perps trading. Safe, low-cost perpetual swaps on Cosmos"
   }
 ]
