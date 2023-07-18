@@ -31,6 +31,7 @@ def generate_code_query(code_id):
 
 
 def get_graphql_code_details(chain, network, code_ids):
+    if len(code_ids) == 0: return []
     query = "\n".join(generate_code_query(code_id) for code_id in code_ids)
     graphql_response = requests.post(
         GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"}
