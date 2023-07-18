@@ -304,12 +304,14 @@
     "slug": "daodao",
     "name": "DAODAO Uploader",
     "address": "osmo1559zgk3mxm00qtr0zu2x5n4rh5vw704q4mp2tn",
-    "description": "Account owned by DAODAO whitelisted to upload their contracts."
+    "description": "Account owned by DAODAO whitelisted to upload their contracts.",
+    "type": "account"
   },
   {
     "slug": "skip",
     "name": "Skip Uploader",
     "address": "osmo1raa4kyx5ypz75qqk3566c6slx2mw3qzsu6rymw",
-    "description": "Account owned by Skip whitelisted to upload their Skip API contracts."
+    "description": "Account owned by Skip whitelisted to upload their Skip API contracts.",
+    "type": "account"
   }
 ]
