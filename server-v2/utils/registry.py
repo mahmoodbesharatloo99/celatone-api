@@ -84,7 +84,7 @@ def load_codes(chain, network):
 
     for code in codes:
         if code["id"] not in graphql_map:
-            print(f"{chain}-{network}: code detail for id: {code['id']}is not found")
+            print(f"{chain}-{network}: code detail for id: {code['id']} is not found")
             continue
         code_details = graphql_map[code["id"]]
         code.update(
