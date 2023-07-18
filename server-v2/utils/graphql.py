@@ -52,7 +52,7 @@ def get_graphql_code_details(chain, network, code_ids):
         ]
         return code_data
     except:
-        print(f"Cannot load codes for chain: ${chain}, Network: ${network}")
+        print(f"Cannot load codes for chain: {chain}, Network: {network}")
         return []
 
 
