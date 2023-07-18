@@ -9,6 +9,7 @@ from core.osmosis.routes import blueprint as osmosis
 from core.neutron.routes import blueprint as neutron
 from core.sei.routes import blueprint as sei
 from core.stargaze.routes import blueprint as stargaze
+from core.terra.routes import blueprint as terra
 
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
@@ -27,6 +28,7 @@ app.register_blueprint(osmosis)
 app.register_blueprint(neutron)
 app.register_blueprint(sei)
 app.register_blueprint(stargaze)
+app.register_blueprint(terra)
 
 if __name__ == "__main__":
     app.run(port=8080, debug=True)
