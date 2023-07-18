@@ -69,6 +69,14 @@ class BaseBlueprint:
         @self.blueprint.route("/rest/<path:path>", methods=["GET"])
         def get_some_rest(path):
             return self.service.get_rest(path)
+        
+        @self.blueprint.route("/upload_access", methods=["GET"])
+        def get_upload_access():
+            """Get Upload Access
+
+            Returns the upload access for the input chain and network
+            """
+            return service.get_upload_access()
 
     def get_blueprint(self):
         return self.blueprint

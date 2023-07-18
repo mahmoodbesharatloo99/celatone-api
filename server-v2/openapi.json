@@ -39,6 +39,12 @@
     },
     {
       "name": "Stargaze.Stargaze-1"
+    },
+    {
+      "name": "Terra.Phoenix-1"
+    },
+    {
+      "name": "Terra.Pisco-1"
     }
   ],
   "paths": {
@@ -175,6 +181,25 @@
         "summary": "Get Codes"
       }
     },
+    "/terra/pisco-1/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Codes"
+      }
+    },
     "/icns/names/{address}": {
       "get": {
         "parameters": [
@@ -271,6 +296,26 @@
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
+    "/terra/pisco-1/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
     "/neutron/pion-1/assets": {
       "get": {
         "parameters": [],
@@ -311,6 +356,25 @@
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
+    "/terra/phoenix-1/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Codes"
+      }
+    },
     "/sei/pacific-1/accounts": {
       "get": {
         "parameters": [],
@@ -345,6 +409,64 @@
         },
         "tags": [
           "Sei.Pacific-1"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/terra/phoenix-1/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/terra/pisco-1/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/terra/pisco-1/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
         ],
         "summary": "Get Projects"
       }
@@ -521,6 +643,44 @@
         ],
         "summary": "Get All Assets",
         "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/terra/phoenix-1/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/terra/phoenix-1/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Projects"
       }
     },
     "/osmosis/osmo-test-4/codes": {
@@ -776,6 +936,66 @@
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
+    "/sei/pacific-1/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
+      }
+    },
+    "/terra/pisco-1/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/terra/pisco-1/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
+      }
+    },
     "/images/assets/{asset_symbol}": {
       "get": {
         "parameters": [
@@ -910,6 +1130,26 @@
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
+    "/neutron/pion-1/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
+      }
+    },
     "/sei/atlantic-2/assets/prices": {
       "get": {
         "parameters": [],
@@ -928,6 +1168,26 @@
         ],
         "summary": "Get All Assets with Prices",
         "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/sei/atlantic-2/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
       }
     },
     "/sei/pacific-1/code/{code_id}": {
@@ -1004,6 +1264,44 @@
           "Stargaze.Stargaze-1"
         ],
         "summary": "Get Projects"
+      }
+    },
+    "/terra/pisco-1/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Code"
       }
     },
     "/images/entities/{entity_slug}": {
@@ -1158,6 +1456,84 @@
         "summary": "Get Project"
       }
     },
+    "/terra/phoenix-1/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/terra/phoenix-1/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
+      }
+    },
+    "/terra/pisco-1/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Project"
+      }
+    },
     "/neutron/pion-1/projects/{slug}": {
       "get": {
         "parameters": [
@@ -1272,6 +1648,82 @@
         "summary": "Get Some Rest"
       }
     },
+    "/terra/phoenix-1/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/terra/pisco-1/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
     "/osmosis/osmosis-1/assets/prices": {
       "get": {
         "parameters": [],
@@ -1292,6 +1744,26 @@
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
+    "/osmosis/osmosis-1/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
+      }
+    },
     "/neutron/neutron-1/assets/prices": {
       "get": {
         "parameters": [],
@@ -1310,6 +1782,26 @@
         ],
         "summary": "Get All Assets with Prices",
         "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/neutron/neutron-1/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
       }
     },
     "/neutron/pion-1/rest/{path}": {
@@ -1422,6 +1914,82 @@
         },
         "tags": [
           "Sei.Pacific-1"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/terra/phoenix-1/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/terra/pisco-1/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
         ],
         "summary": "Get Asset"
       }
@@ -1617,6 +2185,44 @@
         "summary": "Get Asset"
       }
     },
+    "/terra/phoenix-1/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
     "/osmosis/osmosis-1/projects/{slug}": {
       "get": {
         "parameters": [
@@ -1675,6 +2281,26 @@
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
+    "/osmosis/osmo-test-4/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
+      }
+    },
     "/osmosis/osmo-test-5/assets/prices": {
       "get": {
         "parameters": [],
@@ -1693,6 +2319,26 @@
         ],
         "summary": "Get All Assets with Prices",
         "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/osmosis/osmo-test-5/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
       }
     },
     "/neutron/neutron-1/projects/{slug}": {
@@ -1751,6 +2397,64 @@
         ],
         "summary": "Get All Assets with Prices",
         "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/stargaze/stargaze-2/upload_access": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
+      }
+    },
+    "/terra/phoenix-1/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Asset"
       }
     },
     "/osmosis/osmosis-1/rest/{path}": {
@@ -2562,6 +3266,83 @@
         "summary": "Get Asset By Slug"
       }
     },
+    "/terra/pisco-1/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/terra/pisco-1/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
     "/neutron/pion-1/assets/type/{asset_type}": {
       "get": {
         "parameters": [
@@ -2754,6 +3535,44 @@
         "summary": "Account"
       }
     },
+    "/terra/pisco-1/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Account"
+      }
+    },
     "/neutron/pion-1/account/{account_address}": {
       "get": {
         "parameters": [
@@ -2826,6 +3645,121 @@
         },
         "tags": [
           "Sei.Atlantic-2"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/terra/phoenix-1/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/terra/phoenix-1/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/terra/phoenix-1/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
         ],
         "summary": "Account"
       }

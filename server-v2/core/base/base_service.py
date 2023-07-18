@@ -5,6 +5,7 @@ from utils.registry import load_and_check_registry_data, load_projects, get_proj
 from utils.price import get_prices
 from flask import abort, Response
 from utils.graphql import get_lcd_tx_responses, get_lcd_tx_results
+from utils.helper import get_upload_access
 import requests
 import logging
 import constants
@@ -188,3 +189,6 @@ class BaseService(ABC):
         codes = self.codes
         code = [code for code in codes if code["id"] == int(code_id)][0]
         return code
+    
+    def get_upload_access(self):
+        return get_upload_access(self.chain, self.network)
