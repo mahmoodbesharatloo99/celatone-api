@@ -1,10 +1,9 @@
-from apiflask import APIBlueprint
-from .service import TemplateService
+from core.base.base_blueprint import BaseBlueprint
+from .service import TemplateService as Service
 
-service = TemplateService()
+service_instance = Service() 
+name = 'my_blueprint'
+url_prefix = '/sth'
 
-blueprint = APIBlueprint("blueprint_name", __name__, url_prefix="/some_prefix")
-
-@blueprint.route("/endpoint_name", methods=["GET"])
-def field():
-    return service.field()
+base_blueprint = BaseBlueprint(service_instance, name, url_prefix)
+blueprint = base_blueprint.get_blueprint()

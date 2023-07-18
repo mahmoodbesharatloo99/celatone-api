@@ -183,6 +183,7 @@ class BaseService(ABC):
     def get_project(self, slug: str):
         return get_project(self.accounts, self.assets, self.codes, self.contracts, slug)
 
+    # TODO: Handle invalid code_id / list index out of range
     def get_code(self, code_id):
         codes = self.codes
         code = [code for code in codes if code["id"] == int(code_id)][0]
