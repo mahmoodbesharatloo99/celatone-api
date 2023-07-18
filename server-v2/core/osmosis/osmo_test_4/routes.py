@@ -1,6 +1,9 @@
-from .service import OsmosisTest4Service
+from .service import OsmosisTest4Service as Service
 from ..osmosis_base_blueprint import OsmosisBaseBlueprint
 
-service = OsmosisTest4Service()
-blueprint_instance = OsmosisBaseBlueprint(service, "osmo-test-4", "/osmo-test-4")
+service_instance = Service() 
+name = 'osmo-test-4'
+url_prefix = '/osmo-test-4'
+
+blueprint_instance = OsmosisBaseBlueprint(service_instance, name, url_prefix)
 blueprint = blueprint_instance.get_blueprint()
