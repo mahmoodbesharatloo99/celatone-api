@@ -5,23 +5,621 @@
   },
   "tags": [
     {
-      "name": "Default",
-      "description": "Default queries"
+      "name": "Entity"
     },
     {
-      "name": "Registry Data",
-      "description": "Queries that uses data from the registry data JSONs"
+      "name": "Chain"
     },
     {
-      "name": "Registry Assets",
-      "description": "Queries that uses data from the registry data asset images"
+      "name": "Images"
     },
     {
-      "name": "External",
-      "description": "Queries that uses also uses data from external sources"
+      "name": "Icns"
+    },
+    {
+      "name": "Osmosis.Osmosis-1"
+    },
+    {
+      "name": "Osmosis.Osmo-Test-4"
+    },
+    {
+      "name": "Osmosis.Osmo-Test-5"
+    },
+    {
+      "name": "Neutron.Neutron-1"
+    },
+    {
+      "name": "Neutron.Pion-1"
+    },
+    {
+      "name": "Sei.Atlantic-2"
+    },
+    {
+      "name": "Sei.Pacific-1"
+    },
+    {
+      "name": "Stargaze.Stargaze-1"
     }
   ],
   "paths": {
+    "/chains": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Chain"
+        ],
+        "summary": "Chains"
+      }
+    },
+    "/entities": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Entities"
+      }
+    },
+    "/chain/{name}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Chain"
+        ],
+        "summary": "Chainbyname"
+      }
+    },
+    "/entity/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Entity"
+        ],
+        "summary": "Entitybyslug"
+      }
+    },
+    "/sei/pacific-1/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/icns/names/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Icns"
+        ],
+        "summary": "Get Icns Names"
+      }
+    },
+    "/neutron/pion-1/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/sei/atlantic-2/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/sei/pacific-1/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/neutron/pion-1/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/sei/atlantic-2/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/sei/pacific-1/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/sei/pacific-1/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/osmosis/osmosis-1/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/osmosis/osmosis-1/pools": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get All Pools",
+        "description": "Returns a list of all the known Osmosis pools based on the input chain and network"
+      }
+    },
+    "/neutron/neutron-1/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/neutron/pion-1/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/neutron/pion-1/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/sei/atlantic-2/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/sei/atlantic-2/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/osmosis/osmosis-1/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/neutron/neutron-1/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/osmosis/osmo-test-4/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/osmosis/osmo-test-4/pools": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get All Pools",
+        "description": "Returns a list of all the known Osmosis pools based on the input chain and network"
+      }
+    },
+    "/osmosis/osmo-test-5/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/osmosis/osmo-test-5/pools": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get All Pools",
+        "description": "Returns a list of all the known Osmosis pools based on the input chain and network"
+      }
+    },
+    "/stargaze/stargaze-2/codes": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Codes"
+      }
+    },
     "/osmosis/osmosis-1/accounts": {
       "get": {
         "parameters": [],
@@ -35,9 +633,2793 @@
             "description": "Successful response"
           }
         },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
         "summary": "Accounts"
+      }
+    },
+    "/osmosis/osmosis-1/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/osmosis/osmo-test-4/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/osmosis/osmo-test-5/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/neutron/neutron-1/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/neutron/neutron-1/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/stargaze/stargaze-2/assets": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get All Assets",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/sei/pacific-1/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/images/assets/{asset_symbol}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_symbol",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Images"
+        ],
+        "summary": "Get Asset Image"
+      }
+    },
+    "/osmosis/osmo-test-4/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/osmosis/osmo-test-4/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/osmosis/osmo-test-5/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/osmosis/osmo-test-5/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/neutron/pion-1/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/sei/atlantic-2/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/sei/pacific-1/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/stargaze/stargaze-2/accounts": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Accounts"
+      }
+    },
+    "/stargaze/stargaze-2/projects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Projects"
+      }
+    },
+    "/images/entities/{entity_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Images"
+        ],
+        "summary": "Get Entity Image"
+      }
+    },
+    "/neutron/pion-1/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/sei/atlantic-2/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/sei/pacific-1/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/neutron/pion-1/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/sei/atlantic-2/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/sei/pacific-1/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/osmosis/osmosis-1/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/neutron/neutron-1/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/neutron/pion-1/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/sei/atlantic-2/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/sei/pacific-1/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/osmosis/osmosis-1/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/osmosis/osmosis-1/pool/{pool_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pool_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Pool by ID",
+        "description": "Returns a specific Osmosis pool based on the input chain, network, and code_id"
+      }
+    },
+    "/neutron/neutron-1/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/neutron/pion-1/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/sei/atlantic-2/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/osmosis/osmosis-1/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/osmosis/osmo-test-4/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/osmosis/osmo-test-5/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/neutron/neutron-1/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/stargaze/stargaze-2/assets/prices": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get All Assets with Prices",
+        "description": "Returns a list of all the known assets based on the input chain and network"
+      }
+    },
+    "/osmosis/osmosis-1/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/osmosis/osmo-test-4/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/osmosis/osmo-test-4/pool/{pool_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pool_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Pool by ID",
+        "description": "Returns a specific Osmosis pool based on the input chain, network, and code_id"
+      }
+    },
+    "/osmosis/osmo-test-5/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/osmosis/osmo-test-5/pool/{pool_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pool_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Pool by ID",
+        "description": "Returns a specific Osmosis pool based on the input chain, network, and code_id"
+      }
+    },
+    "/neutron/neutron-1/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/stargaze/stargaze-2/code/{code_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Code"
+      }
+    },
+    "/icns/address/{name}/{bech32_prefix}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "bech32_prefix",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Icns"
+        ],
+        "summary": "Get Icns Address"
+      }
+    },
+    "/osmosis/osmosis-1/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/osmosis/osmo-test-4/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/osmosis/osmo-test-5/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/neutron/neutron-1/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/stargaze/stargaze-2/projects/{slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Project"
+      }
+    },
+    "/osmosis/osmo-test-4/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/osmosis/osmo-test-5/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/stargaze/stargaze-2/rest/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Some Rest"
+      }
+    },
+    "/osmosis/osmo-test-4/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/osmosis/osmo-test-5/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/stargaze/stargaze-2/assets/{asset_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Asset"
+      }
+    },
+    "/sei/pacific-1/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/sei/pacific-1/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/neutron/pion-1/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/neutron/pion-1/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/sei/atlantic-2/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/sei/atlantic-2/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/sei/pacific-1/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/neutron/pion-1/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/sei/atlantic-2/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/osmosis/osmosis-1/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/osmosis/osmosis-1/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/neutron/neutron-1/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/neutron/neutron-1/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/osmosis/osmosis-1/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/neutron/neutron-1/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/osmosis/osmo-test-4/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/osmosis/osmo-test-4/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/osmosis/osmo-test-5/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/osmosis/osmo-test-5/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/stargaze/stargaze-2/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Assets by Type",
+        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+      }
+    },
+    "/stargaze/stargaze-2/assets/slug/{asset_slug}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "asset_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Asset By Slug"
+      }
+    },
+    "/osmosis/osmo-test-4/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/osmosis/osmo-test-5/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Account"
+      }
+    },
+    "/stargaze/stargaze-2/account/{account_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Account"
       }
     }
   },
-  "openapi": "3.0.3"
+  "openapi": "3.0.3",
+  "components": {
+    "schemas": {
+      "HTTPError": {
+        "properties": {
+          "detail": {
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    }
+  }
 }
