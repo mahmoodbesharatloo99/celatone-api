@@ -3474,5 +3474,27 @@
       }
     ],
     "description": "Fully-collateralized perps trading. Safe, low-cost perpetual swaps on Cosmos"
+  },
+  {
+    "slug": "daodao",
+    "name": "DAODAO",
+    "website": "https://daodao.zone",
+    "github": "https://github.com/DA0-DA0",
+    "logo": "daodao.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/DA0_DA0"
+      },
+      {
+        "name": "telegram",
+        "url": ""
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.gg/sAaGuyW3D2"
+      }
+    ],
+    "description": "A DAO that builds DAO tooling."
   }
 ]

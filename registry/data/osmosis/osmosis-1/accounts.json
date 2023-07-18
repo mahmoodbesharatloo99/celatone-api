@@ -299,5 +299,17 @@
     "address": "osmo1lqyn9ncwkcqj8e0pnugu72tyyfehe2tre98c5qfzjg4d3vdw7n5q5a0x37",
     "description": "Apollo Safe CW3 multisig contract whitelisted to upload Levana Protocol contracts.",
     "type": "contract"
+  },
+  {
+    "slug": "daodao",
+    "name": "DAODAO Uploader",
+    "address": "osmo1559zgk3mxm00qtr0zu2x5n4rh5vw704q4mp2tn",
+    "description": "Account owned by DAODAO whitelisted to upload their contracts."
+  },
+  {
+    "slug": "skip",
+    "name": "Skip Uploader",
+    "address": "osmo1raa4kyx5ypz75qqk3566c6slx2mw3qzsu6rymw",
+    "description": "Account owned by Skip whitelisted to upload their Skip API contracts."
   }
 ]
