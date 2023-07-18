@@ -29,27 +29,31 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
 def generate_code_query(code_id):
     return f"a{code_id}: codes_by_pk(id: {code_id}) {{\n  account {{\n    address\n  }}\n  cw2_contract\n  cw2_version\n  contract_instantiated\n  access_config_permission\n  access_config_addresses\n}}"
 
-
+## TODO: Handle When GraphQL URL is not found
 def get_graphql_code_details(chain, network, code_ids):
     if len(code_ids) == 0: return []
-    query = "\n".join(generate_code_query(code_id) for code_id in code_ids)
-    graphql_response = requests.post(
-        GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"}
-    )
-    graphql_data = graphql_response.json().get("data") or {}
-    code_data = [
-        {
-            "code_id": int(code_id[1:]),
-            "cw2_contract": data.get("cw2_contract", ""),
-            "cw2_version": data.get("cw2_version", ""),
-            "creator": data.get("account", {}).get("address", ""),
-            "contract_instantiated": data.get("contract_instantiated", []),
-            "access_config_permission": data.get("access_config_permission", ""),
-            "access_config_addresses": data.get("access_config_addresses", []),
-        }
-        for code_id, data in graphql_data.items()
-    ]
-    return code_data
+    try:
+        query = "\n".join(generate_code_query(code_id) for code_id in code_ids)
+        graphql_response = requests.post(
+            GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"}
+        )
+        graphql_data = graphql_response.json().get("data") or {}
+        code_data = [
+            {
+                "code_id": int(code_id[1:]),
+                "cw2_contract": data.get("cw2_contract", ""),
+                "cw2_version": data.get("cw2_version", ""),
+                "creator": data.get("account", {}).get("address", ""),
+                "contract_instantiated": data.get("contract_instantiated", []),
+                "access_config_permission": data.get("access_config_permission", ""),
+                "access_config_addresses": data.get("access_config_addresses", []),
+            }
+            for code_id, data in graphql_data.items()
+        ]
+        return code_data
+    except:
+        print(f"Cannot load codes for chain: ${chain}, Network: ${network}")
+        return []
 
 
 def get_lcd_tx_results(chain, network, tx_hash):
