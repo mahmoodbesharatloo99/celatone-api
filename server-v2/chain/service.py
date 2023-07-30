@@ -1,6 +1,8 @@
 import json
 import os
 
+from flask import Response
+
 class ChainService():
     
     def __init__(self):
@@ -22,6 +24,7 @@ class ChainService():
                 if chain_tuple[0].lower() == name
             )
         except StopIteration:
-            raise ValueError(f"Chain {name} not found")
+            # raise ValueError(f"Chain {name} not found")
+            return Response(f"Chain {name} not found", status=404)
         return {chain_data[0]: chain_data[1]}
     
