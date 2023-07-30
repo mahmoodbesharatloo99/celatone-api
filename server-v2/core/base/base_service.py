@@ -55,19 +55,19 @@ class BaseService(ABC):
         return self._accounts
 
     @property
-    def codes(self) -> Any:
+    def codes(self) -> List[Dict]:
         return self._codes
 
     @property
-    def contracts(self) -> Any:
+    def contracts(self) -> List[Dict]:
         return self._contracts
     
     @property
-    def assets(self) -> Any:
+    def assets(self) -> List[Dict]:
         return self._assets
     
     @property
-    def projects(self) -> Any:
+    def projects(self) -> List[Dict]:
         return self._projects
 
     def get_account(self, account_address: str) -> Dict:
@@ -81,7 +81,7 @@ class BaseService(ABC):
         return account
 
     def get_assets_with_prices(self) -> List[Dict]:
-        assets = self.assets
+        assets = [asset.copy() for asset in self.assets]
         priced_assets = filter(lambda asset: asset["coingecko"], assets)
         priced_asset_ids = [asset["id"] for asset in priced_assets]
         prices = get_prices(self.chain, self.network, priced_asset_ids)
@@ -101,12 +101,18 @@ class BaseService(ABC):
     def get_asset(self, asset_id: int) -> Dict:
         assets = self.assets
         asset_map = {asset["id"]: asset for asset in assets}
-        return asset_map[asset_id]
+        if asset_id in asset_map:
+            return asset_map[asset_id]
+        else:
+            return Response("Asset Not found", status=404)
     
     def get_asset_ibc(self, hash: str) -> List[Dict]:
         assets = self.assets
         asset_map = {asset["id"]: asset for asset in assets}
-        return asset_map[f"ibc/{hash}"]
+        if f"ibc/{hash}" in asset_map:
+            return asset_map[f"ibc/{hash}"]
+        else:
+            return Response("Asset Not found", status=404)
     
     def get_balances(self, account_address):
         endpoint = f"{constants.LCD_DICT[self.chain][self.network]}"

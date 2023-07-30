@@ -46,6 +46,10 @@ class BaseBlueprint:
         @self.blueprint.route('/assets/<asset_id>', methods=["GET"])
         def get_asset(asset_id):
             return self.service.get_asset(asset_id)
+        
+        @self.blueprint.route('/assets/ibc/<hash>', methods=["GET"])
+        def get_asset_ibc(hash):
+            return self.service.get_asset_ibc(hash)
 
         ## Code ##
         @self.blueprint.route("/codes", methods=["GET"])
