@@ -102,8 +102,10 @@ def load_codes(chain, network):
 
 def get_project(accounts, assets, codes, contracts, slug):
     entities = json.load(open(f"../registry/data/entities.json"))
-    entity = [entity for entity in entities if entity["slug"] == slug][0]
-    project = load_project(entity, accounts, assets, codes, contracts)
+    entity = [entity for entity in entities if entity["slug"] == slug]
+    if len(entity) == 0: return []
+    
+    project = load_project(entity[0], accounts, assets, codes, contracts)
     if project is None:
         return []
     return project
