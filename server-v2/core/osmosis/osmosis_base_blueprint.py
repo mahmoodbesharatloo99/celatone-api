@@ -13,7 +13,7 @@ class OsmosisBaseBlueprint(BaseBlueprint):
             """
             return self.service.pools
 
-        @self.blueprint.route("/pool/<pool_id>", methods=["GET"])
+        @self.blueprint.route("/pools/<pool_id>", methods=["GET"])
         def get_pool(pool_id):
             """Get Pool by ID
 

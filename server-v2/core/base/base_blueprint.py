@@ -10,7 +10,7 @@ class BaseBlueprint:
         def accounts():
             return self.service.accounts
 
-        @self.blueprint.route("/account/<account_address>", methods=["GET"])
+        @self.blueprint.route("/accounts/<account_address>", methods=["GET"])
         def account(account_address: str):
             return self.service.get_account(account_address)
 
@@ -56,7 +56,7 @@ class BaseBlueprint:
         def get_codes():
             return self.service.codes
         
-        @self.blueprint.route("/code/<code_id>", methods=["GET"])
+        @self.blueprint.route("/codes/<code_id>", methods=["GET"])
         def get_code(code_id):
             return self.service.get_code(code_id)
 

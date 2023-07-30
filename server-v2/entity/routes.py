@@ -3,13 +3,13 @@ from .service import EntityService
 
 service = EntityService()
 
-blueprint = APIBlueprint("entity", __name__)
+blueprint = APIBlueprint("entity", __name__, url_prefix="/entities")
 
-@blueprint.route("/entities", methods=["GET"])
+@blueprint.route("", methods=["GET"])
 def entities():
     return service.entities
 
-@blueprint.route("/entity/<slug>", methods=["GET"])
+@blueprint.route("/<slug>", methods=["GET"])
 def entityBySlug(slug: str) :
     return service.get_entity(slug)
 
