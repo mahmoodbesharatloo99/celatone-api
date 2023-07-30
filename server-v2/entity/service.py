@@ -1,5 +1,7 @@
 import json
 
+from flask import Response
+
 class EntityService():
     
     def __init__(self):
@@ -17,5 +19,7 @@ class EntityService():
         )
         if entity:
             entity["logo_path"] = f"/images/entities/{entity_slug}"
-        return entity
+            return entity
+        else:
+            return Response(f"Entity with slug {entity_slug} not found", status=404)
     
