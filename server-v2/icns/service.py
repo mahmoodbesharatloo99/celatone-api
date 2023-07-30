@@ -1,3 +1,4 @@
+from flask import Response
 import requests
 import base64
 import json
@@ -22,10 +23,15 @@ class IcnsService():
             LCD_DICT["osmosis"]["osmosis-1"],
             f"/cosmwasm/wasm/v1/contract/{ICNS_RESOLVER_ADDRESS}/smart/{query_b64encoded}",
         )
-        res = requests.get(url)
-        res.raise_for_status()
-        data = res.json()["data"]
-        return data if data else {"address": ""}
+        try:
+            res = requests.get(url)
+            res.raise_for_status()
+            data = res.json()["data"]
+            return data if data else {"address": ""}
+        except requests.HTTPError as e:
+            return Response("LCD Request Error", status=e.response.status_code)
+        except:
+            return Response("Error occured", status=500)
 
 
     def get_icns_names(address):
@@ -37,7 +43,12 @@ class IcnsService():
             LCD_DICT["osmosis"]["osmosis-1"],
             f"/cosmwasm/wasm/v1/contract/{ICNS_RESOLVER_ADDRESS}/smart/{query_b64encoded}",
         )
-        res = requests.get(url)
-        res.raise_for_status()
-        data = res.json()["data"]
-        return data if data else {"names": [], "primary_name": None}
+        try:
+            res = requests.get(url)
+            res.raise_for_status()
+            data = res.json()["data"]
+            return data if data else {"names": [], "primary_name": None}
+        except requests.HTTPError as e:
+            return Response("LCD Request Error", status=e.response.status_code)
+        except:
+            return Response("Error occured", status=500)
