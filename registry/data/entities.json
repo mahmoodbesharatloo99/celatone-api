@@ -899,7 +899,7 @@
         "url": ""
       }
     ],
-    "description": "qui quis culpa aliquip proident excepteur labore cupidatat esse aliquip amet aliqua nulla fugiat ad elit tempor pariatur commodo non"
+    "description": "Liquid Staking and Slow Burn Arbitrage Protocol."
   },
   {
     "slug": "ethereum",
@@ -3496,5 +3496,27 @@
       }
     ],
     "description": "A DAO that builds DAO tooling."
+  },
+  {
+    "slug": "quasar",
+    "name": "Quasar",
+    "website": "https://quasar.fi",
+    "github": "https://github.com/quasar-finance/",
+    "logo": "quasar.png",
+    "socials": [
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/quasarfi"
+      },
+      {
+        "name": "telegram",
+        "url": "https://t.me/+shSFVLA14B4yNmM6"
+      },
+      {
+        "name": "discord",
+        "url": "https://discord.com/invite/quasarfi"
+      }
+    ],
+    "description": "Home of the only IBC enabled vaults, leveraging ICQ & ICA. Interchain Asset Management - evolved."
   }
 ]

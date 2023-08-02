@@ -147,6 +147,10 @@
     "id": {
       "osmosis": {
         "osmosis-1": "ibc/8410580A4F5421DFDBD888212624591E92A9E3B5C87D3C58913CE16ABD98B9B4"
+      },
+      "neutron": {
+        "neutron-1": "ibc/5751B8BCDA688FD0A8EC0B292EEF1CDEAB4B766B63EC632778B196D317C40C3A",
+        "pion-1": "ibc/EFB00E728F98F0C4BBE8CA362123ACAB466EDA2826DC6837E49F4C1902F21BBA"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/astro.png",

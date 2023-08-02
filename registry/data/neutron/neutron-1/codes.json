@@ -250,5 +250,19 @@
     "id": 67,
     "description": "",
     "github": "https://github.com/pyth-network/pyth-crosschain/tree/0ac771266c90864237a9e8f2c596c5be3318958c/target_chains/cosmwasm/contracts"
+  },
+  {
+    "slug": "astroport",
+    "name": "Astroport Pair",
+    "id": 35,
+    "description": "",
+    "github": ""
+  },
+  {
+    "slug": "astroport",
+    "name": "Astroport Stable Pair",
+    "id": 40,
+    "description": "",
+    "github": ""
   }
 ]

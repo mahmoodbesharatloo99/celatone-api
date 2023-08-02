@@ -313,5 +313,19 @@
     "address": "osmo1raa4kyx5ypz75qqk3566c6slx2mw3qzsu6rymw",
     "description": "Account owned by Skip whitelisted to upload their Skip API contracts.",
     "type": "account"
+  },
+  {
+    "slug": "quasar",
+    "name": "Quasar Uploader",
+    "address": "osmo1ed6ezqx9t4e9sfm6nfgulq3005umrh6hkclagk",
+    "description": "Account owned by Quasar whitelisted to upload their Quasar Vaults contracts.",
+    "type": "account"
+  },
+  {
+    "slug": "eris",
+    "name": "Eris Uploader",
+    "address": "osmo1dpaaxgw48595hew094s87l0he8tfea3lv30jfc",
+    "description": "Account owned by Eris whitelisted to upload their contracts.",
+    "type": "account"
   }
 ]
