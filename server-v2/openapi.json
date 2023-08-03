@@ -86,7 +86,7 @@
         "summary": "Entities"
       }
     },
-    "/chain/{name}": {
+    "/chains/{name}": {
       "get": {
         "parameters": [
           {
@@ -124,7 +124,7 @@
         "summary": "Chainbyname"
       }
     },
-    "/entity/{slug}": {
+    "/entities/{slug}": {
       "get": {
         "parameters": [
           {
@@ -761,7 +761,7 @@
         "description": "Returns a list of all the known Osmosis pools based on the input chain and network"
       }
     },
-    "/stargaze/stargaze-2/codes": {
+    "/stargaze/stargaze-1/codes": {
       "get": {
         "parameters": [],
         "responses": {
@@ -896,7 +896,7 @@
         "summary": "Get Projects"
       }
     },
-    "/stargaze/stargaze-2/assets": {
+    "/stargaze/stargaze-1/assets": {
       "get": {
         "parameters": [],
         "responses": {
@@ -1228,7 +1228,7 @@
         "summary": "Get Code"
       }
     },
-    "/stargaze/stargaze-2/accounts": {
+    "/stargaze/stargaze-1/accounts": {
       "get": {
         "parameters": [],
         "responses": {
@@ -1247,7 +1247,7 @@
         "summary": "Accounts"
       }
     },
-    "/stargaze/stargaze-2/projects": {
+    "/stargaze/stargaze-1/projects": {
       "get": {
         "parameters": [],
         "responses": {
@@ -1918,6 +1918,44 @@
         "summary": "Get Asset"
       }
     },
+    "/sei/pacific-1/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Pacific-1"
+        ],
+        "summary": "Get Asset Ibc"
+      }
+    },
     "/terra/phoenix-1/projects/{slug}": {
       "get": {
         "parameters": [
@@ -1992,6 +2030,44 @@
           "Terra.Pisco-1"
         ],
         "summary": "Get Asset"
+      }
+    },
+    "/terra/pisco-1/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Pisco-1"
+        ],
+        "summary": "Get Asset Ibc"
       }
     },
     "/osmosis/osmosis-1/code/{code_id}": {
@@ -2147,6 +2223,44 @@
         "summary": "Get Asset"
       }
     },
+    "/neutron/pion-1/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Pion-1"
+        ],
+        "summary": "Get Asset Ibc"
+      }
+    },
     "/sei/atlantic-2/assets/{asset_id}": {
       "get": {
         "parameters": [
@@ -2183,6 +2297,44 @@
           "Sei.Atlantic-2"
         ],
         "summary": "Get Asset"
+      }
+    },
+    "/sei/atlantic-2/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Sei.Atlantic-2"
+        ],
+        "summary": "Get Asset Ibc"
       }
     },
     "/terra/phoenix-1/rest/{path}": {
@@ -2379,7 +2531,7 @@
         "summary": "Get Project"
       }
     },
-    "/stargaze/stargaze-2/assets/prices": {
+    "/stargaze/stargaze-1/assets/prices": {
       "get": {
         "parameters": [],
         "responses": {
@@ -2399,7 +2551,7 @@
         "description": "Returns a list of all the known assets based on the input chain and network"
       }
     },
-    "/stargaze/stargaze-2/upload_access": {
+    "/stargaze/stargaze-1/upload_access": {
       "get": {
         "parameters": [],
         "responses": {
@@ -2455,6 +2607,44 @@
           "Terra.Phoenix-1"
         ],
         "summary": "Get Asset"
+      }
+    },
+    "/terra/phoenix-1/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Terra.Phoenix-1"
+        ],
+        "summary": "Get Asset Ibc"
       }
     },
     "/osmosis/osmosis-1/rest/{path}": {
@@ -2687,7 +2877,7 @@
         "summary": "Get Some Rest"
       }
     },
-    "/stargaze/stargaze-2/code/{code_id}": {
+    "/stargaze/stargaze-1/code/{code_id}": {
       "get": {
         "parameters": [
           {
@@ -2809,6 +2999,44 @@
         "summary": "Get Asset"
       }
     },
+    "/osmosis/osmosis-1/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Asset Ibc"
+      }
+    },
     "/osmosis/osmo-test-4/projects/{slug}": {
       "get": {
         "parameters": [
@@ -2923,7 +3151,45 @@
         "summary": "Get Asset"
       }
     },
-    "/stargaze/stargaze-2/projects/{slug}": {
+    "/neutron/neutron-1/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Neutron.Neutron-1"
+        ],
+        "summary": "Get Asset Ibc"
+      }
+    },
+    "/stargaze/stargaze-1/projects/{slug}": {
       "get": {
         "parameters": [
           {
@@ -3037,7 +3303,7 @@
         "summary": "Get Some Rest"
       }
     },
-    "/stargaze/stargaze-2/rest/{path}": {
+    "/stargaze/stargaze-1/rest/{path}": {
       "get": {
         "parameters": [
           {
@@ -3113,6 +3379,44 @@
         "summary": "Get Asset"
       }
     },
+    "/osmosis/osmo-test-4/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Asset Ibc"
+      }
+    },
     "/osmosis/osmo-test-5/assets/{asset_id}": {
       "get": {
         "parameters": [
@@ -3151,7 +3455,45 @@
         "summary": "Get Asset"
       }
     },
-    "/stargaze/stargaze-2/assets/{asset_id}": {
+    "/osmosis/osmo-test-5/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Asset Ibc"
+      }
+    },
+    "/stargaze/stargaze-1/assets/{asset_id}": {
       "get": {
         "parameters": [
           {
@@ -3187,6 +3529,44 @@
           "Stargaze.Stargaze-1"
         ],
         "summary": "Get Asset"
+      }
+    },
+    "/stargaze/stargaze-1/assets/ibc/{hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Stargaze.Stargaze-1"
+        ],
+        "summary": "Get Asset Ibc"
       }
     },
     "/sei/pacific-1/assets/type/{asset_type}": {
@@ -3994,6 +4374,44 @@
         "summary": "Account"
       }
     },
+    "/osmosis/osmosis-1/assets/gamm/pool/{pool_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pool_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Asset Gamm"
+      }
+    },
     "/osmosis/osmo-test-4/assets/type/{asset_type}": {
       "get": {
         "parameters": [
@@ -4148,7 +4566,7 @@
         "summary": "Get Asset By Slug"
       }
     },
-    "/stargaze/stargaze-2/assets/type/{asset_type}": {
+    "/stargaze/stargaze-1/assets/type/{asset_type}": {
       "get": {
         "parameters": [
           {
@@ -4187,7 +4605,7 @@
         "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
       }
     },
-    "/stargaze/stargaze-2/assets/slug/{asset_slug}": {
+    "/stargaze/stargaze-1/assets/slug/{asset_slug}": {
       "get": {
         "parameters": [
           {
@@ -4301,7 +4719,7 @@
         "summary": "Account"
       }
     },
-    "/stargaze/stargaze-2/account/{account_address}": {
+    "/stargaze/stargaze-1/account/{account_address}": {
       "get": {
         "parameters": [
           {
@@ -4337,6 +4755,220 @@
           "Stargaze.Stargaze-1"
         ],
         "summary": "Account"
+      }
+    },
+    "/osmosis/osmo-test-4/assets/gamm/pool/{pool_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pool_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Asset Gamm"
+      }
+    },
+    "/osmosis/osmo-test-5/assets/gamm/pool/{pool_id}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pool_id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Asset Gamm"
+      }
+    },
+    "/osmosis/osmosis-1/assets/factory/{creator}/{symbol}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creator",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "symbol",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmosis-1"
+        ],
+        "summary": "Get Asset Factory"
+      }
+    },
+    "/osmosis/osmo-test-4/assets/factory/{creator}/{symbol}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creator",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "symbol",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-4"
+        ],
+        "summary": "Get Asset Factory"
+      }
+    },
+    "/osmosis/osmo-test-5/assets/factory/{creator}/{symbol}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creator",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "symbol",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Osmosis.Osmo-Test-5"
+        ],
+        "summary": "Get Asset Factory"
       }
     }
   },
