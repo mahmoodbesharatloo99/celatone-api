@@ -1,11 +1,11 @@
-from abc import ABC, abstractmethod
-from typing import List, Dict, Any
+from abc import ABC
+import json
+from typing import List, Dict
 
 from utils.registry import load_and_check_registry_data, load_projects, get_project, load_codes
 from utils.price import get_prices
 from flask import abort, Response
 from utils.graphql import get_lcd_tx_responses, get_lcd_tx_results
-from utils.helper import get_upload_access
 import requests
 import logging
 import constants
@@ -197,4 +197,21 @@ class BaseService(ABC):
         return code
     
     def get_upload_access(self):
-        return get_upload_access(self.chain, self.network)
+        upload_access = {}
+        res = requests.get(f"{constants.LCD_DICT[self.chain][self.network]}/wasm/params")
+        if res.status_code == 200:
+            upload_access = res.json().get("params", {}).get("code_upload_access", {})
+        else:
+            res = requests.get(
+                f"{constants.LCD_DICT[self.chain][self.chain][self.network]}/cosmos/params/v1beta1/params?subspace=wasm&key=uploadAccess"
+            ).json()
+            res_value = json.loads(res["param"]["value"])
+            permission = res_value["permission"]
+            addresses = res_value.get("addresses", [])
+            address = addresses[0] if permission == "OnlyAddress" else ""
+            upload_access = {
+                "permission": permission,
+                "addresses": addresses,
+                "address": address,
+            }
+        return upload_access
