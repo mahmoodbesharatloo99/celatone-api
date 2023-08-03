@@ -2948,7 +2948,7 @@
     "slugs": [
       "ethereum"
     ],
-    "symbol": "USDCet",
+    "symbol": "USDTet",
     "type": "native"
   },
   {
@@ -3092,7 +3092,7 @@
     "slugs": [
       "binance"
     ],
-    "symbol": "USDCbs",
+    "symbol": "WETHbs",
     "type": "native"
   },
   {
