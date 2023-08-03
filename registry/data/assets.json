@@ -223,6 +223,9 @@
       },
       "neutron": {
         "neutron-1": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
+      },
+      "sei": {
+        "pacific-1": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg",
@@ -232,6 +235,24 @@
       "cosmos-hub"
     ],
     "symbol": "ATOM",
+    "type": "native"
+  },
+  {
+    "coingecko": "cosmos",
+    "coinmarketcap": "",
+    "description": "The native staking and governance token of the Cosmos Hub.",
+    "id": {
+      "sei": {
+        "pacific-1": "ibc/6CDD4663F2F09CD62285E2D45891FC149A3568E316CE3EBBE201A71A78A69388"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg",
+    "name": "Cosmos",
+    "precision": 6,
+    "slugs": [
+      "cosmos-hub"
+    ],
+    "symbol": "ATOM (Osmosis)",
     "type": "native"
   },
   {
@@ -2023,6 +2044,9 @@
       },
       "initia": {
         "stone-7": "ibc/0471F1C4E7AFD3F07702BEF6DC365268D64570F7C1FDC98EA6098DD6DE59817B"
+      },
+      "sei": {
+        "pacific-1": "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg",
@@ -2576,6 +2600,9 @@
         "osmosis-1": "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858",
         "osmo-test-4": "ibc/FF3065989E34457F342D4EFB8692406D49D4E2B5C70F725F127862E22CE6BDCD",
         "osmo-test-5": "ibc/6F34E1BD664C36CE49ACC28E60D62559A5F96C4F9A6CCE4FC5A67B2852E24CFE"
+      },
+      "sei": {
+        "pacific-1": "ibc/F082B65C88E4B6D5EF1DB243CDA1D331D002759E938A0F5CD3FFDC5D53B3E349"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/uausdc L@3x.png",
@@ -2608,7 +2635,7 @@
     "type": "native"
   },
   {
-    "coingecko": "",
+    "coingecko": "tether",
     "coinmarketcap": "",
     "description": "Tether USD stablecoin",
     "id": {
@@ -2868,6 +2895,222 @@
       "gravity"
     ],
     "symbol": "WETH.grv",
+    "type": "native"
+  },
+  {
+    "coingecko": "weth",
+    "coinmarketcap": "",
+    "description": "Wrapped Ether (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/4tLQqCLaoKKfNFuPjA9o39YbKUwhR1F8N29Tz3hEbfP2"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/weth.png",
+    "name": "Wrapped Ethereum",
+    "precision": 8,
+    "slugs": [
+      "ethereum"
+    ],
+    "symbol": "WETH",
+    "type": "native"
+  },
+  {
+    "coingecko": "usd-coin",
+    "coinmarketcap": "",
+    "description": "Wrapped USDC from Ethereum (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/Hq4tuDzhRBnxw3tFA5n6M52NVMVcC19XggbyDiJKCD6H"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
+    "name": "Wrapped USDC",
+    "precision": 6,
+    "slugs": [
+      "ethereum"
+    ],
+    "symbol": "USDCet",
+    "type": "native"
+  },
+  {
+    "coingecko": "tether",
+    "coinmarketcap": "",
+    "description": "Wrapped Tether USD from Ethereum (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/HktfLoADCk9mnjv7XJiN4YXK9ayE6xinLzt8wzcsR2rY"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdt.svg",
+    "name": "Wrapped USDT",
+    "precision": 6,
+    "slugs": [
+      "ethereum"
+    ],
+    "symbol": "USDCet",
+    "type": "native"
+  },
+  {
+    "coingecko": "bitcoin",
+    "coinmarketcap": "",
+    "description": "Wrapped Bitcoin from Ethereum (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/7omXa4gryZ5NiBmLep7JsTtTtANCVKXwT9vbN91aS1br"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/wbtc.svg",
+    "name": "Wrapped Bitcoin from Ethereum (Wormhole)",
+    "precision": 8,
+    "slugs": [
+      "ethereum"
+    ],
+    "symbol": "WBTC",
+    "type": "native"
+  },
+  {
+    "coingecko": "usd-coin",
+    "coinmarketcap": "",
+    "description": "Wrapped USDC from Arbitrum (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/7edDfnf4mku8So3t4Do215GNHwASEwCWrdhM5GqD51xZ"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
+    "name": "Wrapped USDC from Arbitrum (Wormhole)",
+    "precision": 6,
+    "slugs": [
+      "arbitrum"
+    ],
+    "symbol": "USDCar",
+    "type": "native"
+  },
+  {
+    "coingecko": "ethereum",
+    "coinmarketcap": "",
+    "description": "Wrapped Ether from Arbitrum (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/9hJDBDaxqQQhF5HhaPUykeLncBa38XQ5uoNxN3tPQu5r"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/weth.png",
+    "name": "Wrapped Ether from Arbitrum (Wormhole)",
+    "precision": 8,
+    "slugs": [
+      "arbitrum"
+    ],
+    "symbol": "WETHar",
+    "type": "native"
+  },
+  {
+    "coingecko": "usd-coin",
+    "coinmarketcap": "",
+    "description": "Wrapped USDC from Polygon (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/DUVFMY2neJdL8aE4d3stcpttDDm5aoyfGyVvm29iA9Yp"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
+    "name": "Wrapped USDC from Polygon (Wormhole)",
+    "precision": 6,
+    "slugs": [
+      "polygon"
+    ],
+    "symbol": "USDCpo",
+    "type": "native"
+  },
+  {
+    "coingecko": "usd-coin",
+    "coinmarketcap": "",
+    "description": "Wrapped USDC from Optimism (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/3VKKYtbQ9iq8f9CaZfgR6Cr3TUj6ypXPAn6kco6wjcAu"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
+    "name": "Wrapped USDC from Optimism (Wormhole)",
+    "precision": 6,
+    "slugs": [
+      "polygon"
+    ],
+    "symbol": "USDCop",
+    "type": "native"
+  },
+  {
+    "coingecko": "usd-coin",
+    "coinmarketcap": "",
+    "description": "Wrapped USDC from Solana (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/9fELvUhFo6yWL34ZaLgPbCPzdk9MD1tAzMycgH45qShH"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
+    "name": "Wrapped USDC from Solana (Wormhole)",
+    "precision": 6,
+    "slugs": [
+      "solana"
+    ],
+    "symbol": "USDCso",
+    "type": "native"
+  },
+  {
+    "coingecko": "usd-coin",
+    "coinmarketcap": "",
+    "description": "Wrapped USDC from BSC (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/3Ri4N719RQfQaudHiB9CMCYACtK3aieoz1q1Ph24VdAb"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/usdc.svg",
+    "name": "Wrapped USDC from BSC (Wormhole)",
+    "precision": 6,
+    "slugs": [
+      "binance"
+    ],
+    "symbol": "USDCbs",
+    "type": "native"
+  },
+  {
+    "coingecko": "ethereum",
+    "coinmarketcap": "",
+    "description": "Wrapped Ether from BSC (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/9tTHn18vLnfyBvrQaia6N15zwrfRCAebZDshoPZ39ahN"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/weth.png",
+    "name": "Wrapped Ether from BSC (Wormhole)",
+    "precision": 8,
+    "slugs": [
+      "binance"
+    ],
+    "symbol": "USDCbs",
+    "type": "native"
+  },
+  {
+    "coingecko": "tether",
+    "coinmarketcap": "",
+    "description": "Wrapped Tether USD from BSC (Wormhole)",
+    "id": {
+      "sei": {
+        "pacific-1": "factory/sei189adguawugk3e55zn63z8r9ll29xrjwca636ra7v7gxuzn98sxyqwzt47l/871jbn9unTavWsAe83f2Ma9GJWSv6BKsyWYLiQ6z3Pva"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/weth.png",
+    "name": "Wrapped USDT from BSC (Wormhole)",
+    "precision": 6,
+    "slugs": [
+      "binance"
+    ],
+    "symbol": "USDCbs",
     "type": "native"
   },
   {
