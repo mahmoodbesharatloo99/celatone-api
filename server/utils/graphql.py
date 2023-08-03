@@ -13,8 +13,6 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
     res.raise_for_status()
     graphql_response = res.json()["data"]
     for contract_address, data in graphql_response.items():
-        print(contract_address)
-        print(data)
         contract_data.append(
             {
                 "address": contract_address,
