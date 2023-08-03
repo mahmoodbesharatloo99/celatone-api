@@ -25,14 +25,23 @@ def get_contracts(chain, network):
         for data in instantiator_admin_data
     }
     for contract in contracts:
-        code = code_map[contract["code"]]
-        contract.update(
-            {
-                "description": code["description"],
-                "github": code["github"],
-                **instantiator_admin_map.get(contract["address"], {}),
-            }
-        )
+        if contract["code"] not in code_map:
+            contract.update(
+                {
+                    "description": "",
+                    "github": "",
+                    **instantiator_admin_map.get(contract["address"], {}),
+                }
+            )
+        else:
+            code = code_map[contract["code"]]
+            contract.update(
+                {
+                    "description": code["description"],
+                    "github": code["github"],
+                    **instantiator_admin_map.get(contract["address"], {}),
+                }
+            )
     return contracts
 
 
