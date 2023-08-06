@@ -6,5 +6,4 @@ class TerraBaseService(BaseService):
         balance = super().get_balances(account_address)
         + helper.get_hive_balance(self.chain, self.network, account_address)
 
-        print("TEST")
         return balance

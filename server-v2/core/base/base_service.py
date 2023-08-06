@@ -77,7 +77,10 @@ class BaseService(ABC):
                 account for account in accounts if account["address"] == account_address
             )
         except StopIteration:
-            raise ValueError(f"Account {account_address} not found")
+            # Remark: Legacy Error Handling
+            # raise ValueError(f"Account {account_address} not found")
+            
+            return Response((f"Account {account_address} not found"), status=404)
         return account
 
     def get_assets_with_prices(self) -> List[Dict]:

@@ -74,11 +74,11 @@ def test_get_asset_ibc_invalid_hash(chain, network):
     assert old_response.status_code == 500
     assert new_response.status_code == 404
 
-## TODO: Implement this one
+## TODO: Implement this one after get_asset_factory is used
 def test_get_asset_factory():
     pass
 
-## TODO: Re-enable this one after TODO in OsmosisBaseService is done
+## TODO: Re-enable this one after get_asset_gamm is used
 # @pytest.mark.parametrize(
 #         "network, pool_id", [
 #             ("osmosis-1", "1"),
