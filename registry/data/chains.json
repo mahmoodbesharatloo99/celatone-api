@@ -121,7 +121,7 @@
           },
           {
             "provider": "Polkachu",
-            "logo": "https://pbs.twimg.com/profile_images/1457063156790935554/blYozUQC_400x400.jpg",
+            "logo": "https://avatars.githubusercontent.com/u/85417391?s=200&v=4",
             "url": "https://osmosis-api.polkachu.com",
             "archive": false
           },
@@ -345,6 +345,46 @@
             "provider": "Lavender.Five",
             "archive": false,
             "logo": "https://i.ibb.co/k3yDs1Q/twitter-NYJe-Peb-Q-400x400.jpg"
+          }
+        ],
+        "faucets": []
+      }
+    ]
+  },
+  "sei": {
+    "name": "Sei",
+    "bech32Prefix": "sei",
+    "slip44": "118",
+    "website": "https://sei.io",
+    "iconUri": "https://github.com/cosmos/chain-registry/blob/master/testnets/seitestnet2/images/sei.png?raw=true",
+    "documentation": "https://docs.sei.io",
+    "github": "https://github.com/sei-protocol",
+    "networks": [
+      {
+        "type": "testnet",
+        "bech32Prefix": "neutron",
+        "celatone": "https://seiscan.app/atlantic-2",
+        "chainId": "atlantic-2",
+        "chainName": "Sei Testnet",
+        "publicLCD": "https://rest.atlantic-2.seinetwork.io",
+        "lcdSwagger": "",
+        "publicRPC": "https://rpc.atlantic-2.seinetwork.io/",
+        "rpcSwagger": "",
+        "publicGRPC": "",
+        "lcds": [
+          {
+            "url": "https://sei-testnet-api.polkachu.com",
+            "provider": "Polkachu",
+            "archive": false,
+            "logo": "https://avatars.githubusercontent.com/u/85417391"
+          }
+        ],
+        "rpcs": [
+          {
+            "url": "https://sei-testnet-rpc.polkachu.com/",
+            "provider": "Polkachu",
+            "archive": false,
+            "logo": "https://avatars.githubusercontent.com/u/85417391"
           }
         ],
         "faucets": []
