@@ -362,7 +362,7 @@
     "networks": [
       {
         "type": "testnet",
-        "bech32Prefix": "neutron",
+        "bech32Prefix": "sei",
         "celatone": "https://seiscan.app/atlantic-2",
         "chainId": "atlantic-2",
         "chainName": "Sei Testnet",
