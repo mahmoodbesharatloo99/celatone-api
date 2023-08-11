@@ -2639,6 +2639,9 @@
     "coinmarketcap": "",
     "description": "Tether USD stablecoin",
     "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/4ABBEF4C8926DDDB320AE5188CFD63267ABBCEFC0583E4AE05D6E5AA2401DDAB"
+      },
       "initia": {
         "stone-7": "move/d78efe514ee1201b0004fae683bb977ae172bf8cf9ff9e56048d708cb88e2eb7"
       }
