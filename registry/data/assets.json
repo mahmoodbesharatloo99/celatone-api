@@ -1652,6 +1652,11 @@
     "coinmarketcap": "",
     "description": "The native staking token of Terra 2.0",
     "id": {
+      "terra": {
+        "phoenix-1": "uluna",
+        "pisco-1": "uluna",
+        "localterra": "uluna"
+      },
       "osmosis": {
         "osmosis-1": "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9"
       }
