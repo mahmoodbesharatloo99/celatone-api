@@ -2289,7 +2289,7 @@
     "type": "native"
   },
   {
-    "coingecko": "",
+    "coingecko": "sei-network",
     "coinmarketcap": "",
     "description": "The native token of Sei",
     "id": {
