@@ -11,12 +11,6 @@ def get_lcd_transaction(chain, network, tx_hash):
 
 def get_tx(chain, network, tx_hash):
     try:
-        lcd = get_lcd_transaction(chain, network, tx_hash)
-        lcd.raise_for_status()
-        return lcd.json()
-    except Exception as e:
-        logging.error(f"Error getting lcd transaction: {e}")
-    try:
         graphql_res = get_lcd_tx_results(chain, network, tx_hash)
         graphql_res.raise_for_status()
         graphql_tx_res = graphql_res.json()["data"]["lcd_tx_results"]
@@ -32,4 +26,10 @@ def get_tx(chain, network, tx_hash):
             return graphql_tx_res[0]["result"]
     except Exception as e:
         logging.error(f"Error getting lcd_tx_responses: {e}")
+    try:
+        lcd = get_lcd_transaction(chain, network, tx_hash)
+        lcd.raise_for_status()
+        return lcd.json()
+    except Exception as e:
+        logging.error(f"Error getting lcd transaction: {e}")
     return abort(404)
