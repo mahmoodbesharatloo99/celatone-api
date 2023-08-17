@@ -2401,7 +2401,8 @@
     "description": "The native token of Stargaze",
     "id": {
       "stargaze": {
-        "stargaze-1": "ustars"
+        "stargaze-1": "ustars",
+        "elgafar-1": "ustars"
       },
       "osmosis": {
         "osmosis-1": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
