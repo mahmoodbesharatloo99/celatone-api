@@ -1,4 +1,5 @@
-from flask import send_file
+from flask import send_file, request, Response
+import requests
 import os
 
 from adapters.core import (
@@ -256,7 +257,7 @@ def get_balances(chain, network, account_address):
 
 @app.route("/rest/<chain>/<network>/<path:path>", methods=["GET"])
 def get_some_rest(chain, network, path):
-    return cosmos.get_rest(chain, network, path)
+    return cosmos.get_rest(chain, network, path, request.args)
 
 
 # Images
@@ -281,6 +282,14 @@ def get_asset_image(asset_symbol):
 @app.doc(tags=["Registry Data"])
 def get_tx(chain, network, tx_hash):
     return transactions.get_tx(chain, network, tx_hash)
+
+
+# GraphQL
+
+
+@app.route("/graphql/<chain>/<network>", methods=["POST"])
+def get_graphql(chain, network):
+    return cosmos.get_graphql(chain, network, request.get_json())
 
 
 # Pools
