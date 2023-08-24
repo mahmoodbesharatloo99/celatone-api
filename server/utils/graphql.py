@@ -71,3 +71,14 @@ def get_lcd_tx_responses(chain, network, tx_hash, limit):
         }}
     """
     return requests.post(GRAPHQL_TEST_DICT[chain][network], json={"query": query})
+
+
+def get_graphql_health(chain, network):
+    query = f"""
+        query {{
+            blocks(limit: 1, order_by: {{height: desc}}) {{
+                height
+            }}
+        }}
+    """
+    return requests.post(GRAPHQL_DICT[chain][network], json={"query": query})

@@ -9,6 +9,7 @@ from adapters.core import (
     chains,
     cosmos,
     transactions,
+    health
 )
 from adapters.cosmwasm import codes, contracts, helpers
 from adapters.registry import entities, projects
@@ -49,6 +50,14 @@ app.config["TAGS"] = [
 @app.doc(tags=["Default"])
 def hello_world():
     return {"gm": "gm"}
+
+
+# Health
+
+@app.route("/<chain>/<network>/health", methods=["GET"])
+@app.doc(tags=["Default"])
+def get_health(chain, network):
+    return health.health_check(chain, network)
 
 
 # CosmWasm
