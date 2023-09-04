@@ -26,6 +26,8 @@ def generate_hive_query(account_address, contract_addresses):
 def get_hive_balance(chain, network, account_address):
     output_balance = []
     supported_assets = assets.get_assets_by_type(chain, network, "cw20")
+    asset_ids = [asset["id"] for asset in supported_assets if asset["coingecko"] != ""]
+    asset_prices = prices.get_prices(chain, network, asset_ids)
     contract_addresses = [asset["id"] for asset in supported_assets]
     contract_address_chunks = split(contract_addresses, 50)
     for contract_address_chunk in contract_address_chunks:
@@ -41,7 +43,7 @@ def get_hive_balance(chain, network, account_address):
                 "amount": data.get("contractQuery", {}).get("balance", 0),
                 "precision": asset["precision"],
                 "type": "cw20",
-                "price": 1.00,
+                "price": asset_prices.get(asset["id"], 0) if asset and asset["id"] in asset_prices else 0,
             }
             for asset, data in zip(
                 supported_assets,
@@ -50,7 +52,7 @@ def get_hive_balance(chain, network, account_address):
                     for contract_address in contract_address_chunk
                 ],
             )
-            if data.get("contractQuery", {}).get("balance", 0) > 0
+            if int(data.get("contractQuery", {}).get("balance", 0)) > 0
         ]
     return output_balance
 
