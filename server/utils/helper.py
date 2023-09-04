@@ -27,7 +27,6 @@ def get_hive_balance(chain, network, account_address):
     output_balance = []
     supported_assets = assets.get_assets_by_type(chain, network, "cw20")
     asset_ids = [asset["id"] for asset in supported_assets if asset["coingecko"] != ""]
-    print(asset_ids)
     asset_prices = prices.get_prices(chain, network, asset_ids)
     contract_addresses = [asset["id"] for asset in supported_assets]
     contract_address_chunks = split(contract_addresses, 50)
