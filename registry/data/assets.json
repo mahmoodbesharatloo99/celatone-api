@@ -3301,6 +3301,9 @@
         "osmo-test-4": "ibc/ACA4C8A815A053CC027DB90D15915ADA31939FA331CE745862CDD00A2904FA17",
         "osmo-test-5": "ibc/2E7368A14AC9AB7870F32CFEA687551C5064FA861868EDF7437BC877358A81F9",
         "osmosis-1": "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580"
+      },
+      "terra": {
+        "phoenix-1": "ibc/2C50C2CC304FAE4C87868ED4B4279F8BF769F10CCFFD3154B6101C61E57AA498"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/mars/images/mars-token.svg",
@@ -3340,6 +3343,9 @@
       },
       "osmosis": {
         "osmosis-1": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
+      },
+      "terra": {
+        "phoenix-1": "ibc/FD9DBF0DB4D301313195159303811FD2FD72185C4B11A51659EFCD49D7FF1228"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/statom.svg",
@@ -3412,6 +3418,9 @@
     "id": {
       "osmosis": {
         "osmosis-1": "ibc/C491E7582E94AE921F6A029790083CDE1106C28F3F6C4AD7F1340544C13EC372"
+      },
+      "terra": {
+        "phoenix-1": "ibc/08095CEDEA29977C9DD0CE9A48329FDA622C183359D5F90CF04CC4FF80CBE431"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/stluna.svg",
@@ -3440,6 +3449,68 @@
       "ethereum"
     ],
     "symbol": "WETH",
+    "type": "native"
+  },
+  {
+    "coingecko": "white-whale",
+    "coinmarketcap": "",
+    "description": "White Whale",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/EDD6F0D66BCD49C1084FB2C35353B4ACD7B9191117CE63671B61320548F7C89D"
+      },
+      "sei": {
+        "pacific-1": "ibc/6ACE79F5ABD607D2075FAD4ABE284CBC5BB6A96C16555FFB901644E9D17411AC"
+      },
+      "terra": {
+        "phoenix-1": "ibc/36A02FFC4E74DF4F64305130C3DFA1B06BEAC775648927AA44467C76A77AB8DB"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/migaloo/images/white-whale.png",
+    "name": "White Whale",
+    "precision": 6,
+    "slugs": [
+      "white-whale"
+    ],
+    "symbol": "WHALE",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Bone White Whale",
+    "id": {
+      "terra": {
+        "phoenix-1": "ibc/517E13F14A1245D4DE8CF467ADD4DA0058974CDCC880FA6AE536DBCA1D16D84E"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/migaloo/images/bWHALE.png",
+    "name": "Bone White Whale",
+    "precision": 6,
+    "slugs": [
+      "white-whale",
+      "backbone-labs"
+    ],
+    "symbol": "bWHALE",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "Eris Amplified White Whale",
+    "id": {
+      "terra": {
+        "phoenix-1": "ibc/B3F639855EE7478750CC8F82072307ED6E131A8EFF20345E1D136B50C4E5EC36"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/migaloo/images/ampWhale.svg",
+    "name": "Eris Amplified White Whale",
+    "precision": 6,
+    "slugs": [
+      "white-whale",
+      "eris"
+    ],
+    "symbol": "ampWHALE",
     "type": "native"
   },
   {
@@ -3777,6 +3848,9 @@
     "id": {
       "osmosis": {
         "osmosis-1": "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
+      },
+      "terra": {
+        "phoenix-1": "ibc/0EFC7B44625187BFB60AF09FF28A25FA49B68B959A505CC5313DF0498D8CF528"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/strd.svg",
@@ -4328,6 +4402,9 @@
       },
       "osmosis": {
         "osmosis-1": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
+      },
+      "terra":  {
+        "phoenix-1": "ibc/3E35008738AC049C9C1A1E37F785E947A8DAA9811B3EA3B25580664294056151"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/axl.svg",
