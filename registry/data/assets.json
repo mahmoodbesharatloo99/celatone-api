@@ -36,7 +36,7 @@
     "type": "native"
   },
   {
-    "coingecko": "",
+    "coingecko": "geodb",
     "coinmarketcap": "",
     "description": "Geo token for ODIN Protocol",
     "id": {
@@ -224,7 +224,7 @@
     "type": "native"
   },
   {
-    "coingecko": "ethereum",
+    "coingecko": "weth",
     "coinmarketcap": "",
     "description": "Wrapped Ether from BSC (Wormhole)",
     "id": {
@@ -264,7 +264,7 @@
         "phoenix-1": "terra1rwg5kt6kcyxtz69acjgpeut7dgr4y3r7tvntdxqt03dvpqktrfxq4jrvpq"
       }
     },
-    "logo": "",
+    "logo": "https://assets.coingecko.com/coins/images/21150/small/UST_wh_small.png?1644223065",
     "name": "UST (Wormhole)",
     "precision": 6,
     "slugs": [
@@ -380,7 +380,7 @@
         "stone-7": "move/e44590a2aa2cd3cf07f4f10f0739a68e579b3218cf2772fc2c52e624c5060837"
       }
     },
-    "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::my_module::Nova.webpu",
+    "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::my_module::Nova.webp",
     "name": "Novel Optical Vision Algorithms",
     "precision": 6,
     "slugs": [
@@ -390,7 +390,7 @@
     "type": "native"
   },
   {
-    "coingecko": "",
+    "coingecko": "axlwbtc",
     "description": "",
     "id": {
       "terra": {
@@ -408,7 +408,7 @@
     "type": "native"
   },
   {
-    "coingecko": "bitsong",
+    "coingecko": "",
     "coinmarketcap": "",
     "description": "404Deep Records a BitSong Music FanToken",
     "id": {
@@ -426,7 +426,7 @@
     "type": "native"
   },
   {
-    "coingecko": "tether",
+    "coingecko": "tether-usd-wormhole-from-ethereum",
     "coinmarketcap": "",
     "description": "Wrapped Tether USD from Ethereum (Wormhole)",
     "id": {
@@ -492,7 +492,7 @@
     "type": "cw20"
   },
   {
-    "coingecko": "",
+    "coingecko": "axlweth",
     "description": "",
     "id": {
       "terra": {
@@ -599,7 +599,7 @@
     "type": "native"
   },
   {
-    "coingecko": "bitcoin",
+    "coingecko": "wrapped-btc-wormhole",
     "coinmarketcap": "",
     "description": "Wrapped Bitcoin from Ethereum (Wormhole)",
     "id": {
@@ -685,7 +685,6 @@
     "symbol": "FATMAN",
     "type": "cw20"
   },
-
   {
     "coingecko": "",
     "description": "",
@@ -1136,7 +1135,7 @@
         "phoenix-1": "ibc/64B3EFE08A6A3EF5D2A7F1D3AF033DDC951DA51F92E06CC31D3F9AF8E8368860"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/grav.svg",
+    "logo": "https://i.ibb.co/N78zvxM/grav.png",
     "name": "Graviton",
     "precision": 6,
     "slugs": [
@@ -1229,7 +1228,7 @@
     "type": "cw20"
   },
   {
-    "coingecko": "",
+    "coingecko": "onomy-protocol",
     "coinmarketcap": "",
     "description": "The native token of Onomy Protocol",
     "id": {
@@ -1270,7 +1269,7 @@
         "osmosis-1": "ibc/1E26DB0E5122AED464D98462BD384FCCB595732A66B3970AE6CE0B58BAE0FC49"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/wdev-wei.png",
+    "logo": "https://github.com/cosmos/chain-registry/blob/master/axelar/images/wdev-wei%20L@3x.png?raw=true",
     "name": "Wrapped GLMR",
     "precision": 18,
     "slugs": [
@@ -1307,7 +1306,7 @@
         "osmosis-1": "ibc/5DD1F95ED336014D00CE2520977EC71566D282F9749170ADC83A392E0EA7426A"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/ststars.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/images/ststars.png",
     "name": "Stride Staked Stars",
     "precision": 6,
     "slugs": [
@@ -1421,7 +1420,7 @@
     "type": "native"
   },
   {
-    "coingecko": "tether",
+    "coingecko": "axelar-usdt",
     "description": "",
     "id": {
       "terra": {
@@ -1548,7 +1547,7 @@
         "phoenix-1": "terra1uv8ltv32tuq4qf6xspytpv058p0pef64s5xdncfywjexv22lfjzs7mul8s"
       }
     },
-    "logo": "https://www.lunabird.network/logo.png",
+    "logo": "",
     "name": "Luna Bird",
     "precision": 6,
     "slugs": [
@@ -2147,7 +2146,7 @@
         "osmosis-1": "ibc/42D24879D4569CE6477B7E88206ADBFE47C222C6CAD51A54083E4A72594269FC"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qosmo.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qosmo.png",
     "name": "Quicksilver Liquid Staked OSMO",
     "precision": 6,
     "slugs": [
@@ -2290,7 +2289,7 @@
         "osmosis-1": "ibc/01E94A5FF29B8DDEFC86F412CC3927F7330E9B523CC63A6194B1108F5276025C"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/medasdigital/images/medas.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/medasdigital/images/medas.png",
     "name": "MedasDigital",
     "precision": 6,
     "slugs": [],
@@ -2376,7 +2375,7 @@
         "osmosis-1": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-white.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/oraichain/images/orai-white.png",
     "name": "Oraichain",
     "precision": 6,
     "slugs": [
@@ -2520,7 +2519,7 @@
         "osmosis-1": "ibc/5973C068568365FFF40DEDCF1A1CB7582B6116B731CD31A12231AE25E20B871F"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/images/eeur.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/images/eeur.png",
     "name": "e-Money EUR",
     "precision": 6,
     "slugs": [
@@ -2604,7 +2603,7 @@
         "phoenix-1": "terra1x62mjnme4y0rdnag3r8rfgjuutsqlkkyuh4ndgex0wl3wue25uksau39q8"
       }
     },
-    "logo": "https://app.astroport.fi/tokens/xAstro.png",
+    "logo": "",
     "name": "Staked Astroport",
     "precision": 6,
     "slugs": [
@@ -2690,7 +2689,7 @@
         "phoenix-1": "terra1ttspm8jgeylc6us3mlpwpmlwzr3rkesm70vn6zkfr07pz7e3rzkq73ah2j"
       }
     },
-    "logo": "https://firebasestorage.googleapis.com/v0/b/wicca-c3bbe.appspot.com/o/app%2Fmainnet%2Ftoken%2FMIRhzK1keYKtJsRYg_oL9.jpeg?alt=media&token=5de0205f-d0f6-4a76-b765-e6dd59d7d47a",
+    "logo": "",
     "name": "Gidorah Token",
     "precision": 6,
     "slugs": [],
@@ -2814,7 +2813,7 @@
         "osmosis-1": "ibc/52E12CF5CA2BB903D84F5298B4BFD725D66CAB95E09AA4FC75B2904CA5485FEB"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/dhk.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/dhk.png",
     "name": "DHK",
     "precision": 0,
     "slugs": [],
@@ -2863,7 +2862,7 @@
         "osmosis-1": "ibc/FA602364BEC305A696CBDF987058E99D8B479F0318E47314C49173E8838C5BAC"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qatom.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qatom.png",
     "name": "Quicksilver Liquid Staked ATOM",
     "precision": 6,
     "slugs": [
@@ -3188,7 +3187,7 @@
         "osmosis-1": "ibc/F49DE040EBA5AB2FAD5F660C2A1DDF98A68470FAE82229818BE775EBF3EE79F2"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/galaxy/images/galaxy.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/galaxy/images/glx.png",
     "name": "Galaxy",
     "precision": 6,
     "slugs": [],
@@ -3813,7 +3812,7 @@
         "osmosis-1": "ibc/79A676508A2ECA1021EDDC7BB9CF70CEEC9514C478DA526A5A8B3E78506C2206"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qregen.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quicksilver/images/qregen.png",
     "name": "Quicksilver Liquid Staked Regen",
     "precision": 6,
     "slugs": [
@@ -4179,7 +4178,7 @@
         "osmosis-1": "ibc/EB7FB9C8B425F289B63703413327C2051030E848CE4EAAEA2E51199D6D39D3EC"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/teritori/images/tori.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/teritori/images/utori.svg",
     "name": "teritori",
     "precision": 6,
     "slugs": [
@@ -4263,7 +4262,7 @@
         "osmosis-1": "ibc/C2A2E9CA95DDD4828B75124B5E27B8401C7D8493BC48353D418CBFC04565899B"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/hope.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/hope.png",
     "name": "Hope Galaxy",
     "precision": 6,
     "slugs": [],
@@ -4403,7 +4402,7 @@
       "osmosis": {
         "osmosis-1": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
       },
-      "terra":  {
+      "terra": {
         "phoenix-1": "ibc/3E35008738AC049C9C1A1E37F785E947A8DAA9811B3EA3B25580664294056151"
       }
     },
@@ -4576,7 +4575,7 @@
         "osmosis-1": "ibc/C360EF34A86D334F625E4CBB7DA3223AEA97174B61F35BB3758081A8160F7D9B"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/odin/images/odin.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/odin/images/odin.png",
     "name": "ODIN",
     "precision": 6,
     "slugs": [
@@ -4680,7 +4679,7 @@
         "osmosis-1": "ibc/CE5BFF1D9BADA03BB5CCA5F56939392A761B53A10FBD03B37506669C3218D3B2"
       }
     },
-    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/provenance/images/hash.svg",
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/provenance/images/prov.png",
     "name": "Provenance",
     "precision": 9,
     "slugs": [],
@@ -4890,7 +4889,7 @@
         "stone-7": "uinit"
       }
     },
-    "logo": "https://assets.initia.tech/INIT.svg",
+    "logo": "https://list.initia.tech/images/0x1%3A%3Anative_uinit%3A%3ACoin.webp",
     "name": "Initia",
     "precision": 6,
     "slugs": [
