@@ -1,5 +1,5 @@
 resource "google_cloud_run_v2_service" "celatone_api" {
-  name     = "celatone-api"
+  name     = "celatone-api-${var.environment}"
   location = "asia-southeast1"
   ingress  = "INGRESS_TRAFFIC_ALL"
 
@@ -10,6 +10,41 @@ resource "google_cloud_run_v2_service" "celatone_api" {
 
     containers {
       image = var.image_url
+
+      env {
+        name  = "LCD_DICT"
+        value = var.lcd_dict
+      }
+
+      env {
+        name  = "HIVE_DICT"
+        value = var.hive_dict
+      }
+
+      env {
+        name  = "GRAPHQL_DICT"
+        value = var.graphql_dict
+      }
+
+      env {
+        name  = "SCANWORKS_URL"
+        value = var.scanworks_url
+      }
+
+      env {
+        name  = "PRICE_CACHER_URL"
+        value = var.price_cacher_url
+      }
+
+      env {
+        name  = "GRAPHQL_TEST_DICT"
+        value = var.graphql_test_dict
+      }
+
+      env {
+        name  = "WLD_URL"
+        value = var.wld_url
+      }
     }
   }
 
