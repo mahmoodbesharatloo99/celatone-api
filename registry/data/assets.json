@@ -4584,7 +4584,7 @@
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/archway/images/archway.svg",
     "name": "Archway",
-    "precision": 6,
+    "precision": 18,
     "slugs": [],
     "symbol": "ARCH",
     "type": "native"
