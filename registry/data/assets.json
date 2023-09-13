@@ -461,7 +461,7 @@
     "type": "cw20"
   },
   {
-    "coingecko": "axlweth",
+    "coingecko": "ethereum",
     "description": "",
     "id": {
       "neutron": {
@@ -4617,7 +4617,7 @@
     },
     "logo": "https://i.ibb.co/grjYvHW/wstETH.png",
     "name": "Wrapped Staked Ether",
-    "precision": 6,
+    "precision": 18,
     "slugs": ["lido", "ethereum"],
     "symbol": "wstETH",
     "type": "native"
