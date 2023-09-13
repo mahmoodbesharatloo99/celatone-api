@@ -2477,13 +2477,16 @@
     "type": "native"
   },
   {
-    "coingecko": "",
+    "coingecko": "neutron-3",
     "coinmarketcap": "",
     "description": "The native token of Neutron",
     "id": {
       "neutron": {
         "neutron-1": "untrn",
         "pion-1": "untrn"
+      },
+      "osmosis": {
+        "osmosis-1": "ibc/126DA09104B71B164883842B769C0E9EC1486C0887D27A9999E395C2C8FB5682"
       }
     },
     "logo": "https://raw.githubusercontent.com/cosmostation/chainlist/main/chain/neutron-testnet/asset/ntrn.png",
