@@ -3719,6 +3719,41 @@
     "type": "native"
   },
   {
+    "coingecko": "solana",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/1E43D59E565D41FB4E54CA639B838FFD5BCFC20003D330A56CB1396231AA1CBA"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/solana/images/sol.svg",
+    "name": "Solana",
+    "precision": 6,
+    "slugs": [
+      "wormhole",
+      "solana"
+    ],
+    "symbol": "SOL",
+    "type": "native"
+  },
+  {
+    "coingecko": "arbitrum",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/10E5E5B06D78FFBB61FD9F89209DEE5FD4446ED0550CBB8E3747DA79E10D9DC6"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/arbitrum/images/arb.svg",
+    "name": "Arbitrum",
+    "precision": 6,
+    "slugs": [
+      "axelar"
+    ],
+    "symbol": "ARB",
+    "type": "native"
+  },
+  {
     "coingecko": "wrapped-solana",
     "description": "",
     "id": {
