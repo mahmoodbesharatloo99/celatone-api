@@ -37,6 +37,10 @@ reader = PeriodicExportingMetricReader(
 provider = MeterProvider(resource=resource, metric_readers=[reader])
 metrics.set_meter_provider(provider)
 
+meter = metrics.get_meter_provider().get_meter("celatone-app", "0.0.1")
+counter = meter.create_counter("counter")
+counter.add(1)
+
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
 
@@ -69,6 +73,7 @@ app.config["TAGS"] = [
 @app.route("/", methods=["GET"])
 @app.doc(tags=["Default"])
 def hello_world():
+    counter.add(1)
     return {"gm": "gm"}
 
 
