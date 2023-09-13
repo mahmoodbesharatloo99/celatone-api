@@ -3728,7 +3728,7 @@
     },
     "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/solana/images/sol.svg",
     "name": "Solana",
-    "precision": 6,
+    "precision": 8,
     "slugs": [
       "wormhole",
       "solana"
@@ -4507,6 +4507,102 @@
     "precision": 6,
     "slugs": ["initia"],
     "symbol": "INIT",
+    "type": "native"
+  },
+  {
+    "coingecko": "omniflix-network",
+    "coinmarketcap": "",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/CEE970BB3D26F4B907097B6B660489F13F3B0DA765B83CC7D9A0BC0CE220FA6F"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/omniflixhub/images/flix.svg",
+    "name": "Omniflix",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "FLIX",
+    "type": "native"
+  },
+  {
+    "coingecko": "picasso",
+    "coinmarketcap": "",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/fe5ccc84c73ff5a40dc64e09d1004c1509e7d61b/composable/images/pica.svg",
+    "name": "Picasso",
+    "precision": 12,
+    "slugs": [],
+    "symbol": "PICA",
+    "type": "native"
+  },
+  {
+    "coingecko": "toucan-protocol-nature-carbon-tonne",
+    "coinmarketcap": "",
+    "description": "Nature Carbon Ton (NCT) is a carbon token standard backed 1:1 by carbon credits issued by Verra, a global leader in the voluntary carbon market. NCT credits on Regen Network have been tokenized by Toucan.earth.",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/A76EB6ECF4E3E2D4A23C526FD1B48FDD42F171B206C9D2758EF778A7826ADD68"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/images/nct.svg",
+    "name": "Nature Carbon Ton",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "NCT",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The native staking and governance token of Empower.",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/DD3938D8131F41994C1F01F4EB5233DEE9A0A5B787545B9A07A321925655BF38"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/empowerchain/images/mpwr.svg",
+    "name": "MPWR",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "MPWR",
+    "type": "native"
+  },
+  {
+    "coingecko": "archway",
+    "coinmarketcap": "",
+    "description": "The native token of Archway network",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/23AB778D694C1ECFC59B91D8C399C115CC53B0BD1C61020D8E19519F002BDD85"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/archway/images/archway.svg",
+    "name": "Archway",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "ARCH",
+    "type": "native"
+  },
+  {
+    "coingecko": "quasar-2",
+    "coinmarketcap": "",
+    "description": "The native token of Quasar",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/1B708808D372E959CD4839C594960309283424C775F4A038AAEBE7F83A988477"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/quasar/images/quasar.png",
+    "name": "Quasar",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "QSR",
     "type": "native"
   },
   {
