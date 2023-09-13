@@ -82,7 +82,7 @@ def before_request():
     request_counter.add(1, {"path": request.path, "method": request.method})
 
 @app.after_request
-def after_request():
+def after_request(response: Response):
     diff = time.time() - g.start
     request_latency_histogram.record(diff, {"path": request.path, "method": request.method})
 
