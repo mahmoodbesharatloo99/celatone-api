@@ -1,6 +1,7 @@
-from flask import send_file, request, Response
+from flask import send_file, request, Response, g
 import requests
 import os
+import time
 
 from opentelemetry import metrics
 from opentelemetry.exporter.otlp.proto.http.metric_exporter import OTLPMetricExporter
@@ -38,7 +39,14 @@ provider = MeterProvider(resource=resource, metric_readers=[reader])
 metrics.set_meter_provider(provider)
 
 meter = metrics.get_meter_provider().get_meter("celatone-app", "0.0.1")
-counter = meter.create_counter("http_server_request_count", "number of http requests")
+request_counter = meter.create_counter("http_server_request_count", "number of http requests")
+
+# create request latency metric histogram meter
+request_latency_histogram = meter.create_histogram(
+    name="http_server_request_latency",
+    description="latency of http requests",
+    unit="s",
+)
 
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
@@ -69,9 +77,15 @@ app.config["TAGS"] = [
 # Root
 
 @app.before_request
-def count_request_paths():
-    request.path
-    counter.add(1, {"path": request.path, "method": request.method})
+def before_request():
+    g.start = time.time()
+    request_counter.add(1, {"path": request.path, "method": request.method})
+
+@app.after_request
+def after_request():
+    diff = time.time() - g.start
+    request_latency_histogram.record(diff, {"path": request.path, "method": request.method})
+
 
 @app.route("/", methods=["GET"])
 @app.doc(tags=["Default"])
