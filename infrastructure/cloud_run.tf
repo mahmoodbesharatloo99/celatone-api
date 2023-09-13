@@ -1,3 +1,12 @@
+locals {
+  grafana_instance_id = "491012"
+}
+
+data "google_secret_manager_secret_version" "opentelemetry_token" {
+  project = "alles-share"
+  secret  = "celatone-api-opentelemetry-token"
+}
+
 resource "google_cloud_run_v2_service" "celatone_api" {
   name     = "celatone-api-${var.environment}"
   location = "asia-southeast1"
@@ -44,6 +53,21 @@ resource "google_cloud_run_v2_service" "celatone_api" {
       env {
         name  = "WLD_URL"
         value = var.wld_url
+      }
+
+      env {
+        name  = "OTEL_EXPORTER_OTLP_PROTOCOL"
+        value = "http/protobuf"
+      }
+
+      env {
+        name  = "OTEL_EXPORTER_OTLP_ENDPOINT"
+        value = "https://otlp-gateway-prod-ap-southeast-0.grafana.net/otlp"
+      }
+
+      env {
+        name  = "OTEL_EXPORTER_OTLP_HEADERS"
+        value = "Authorization=Basic ${base64encode(local.grafana_instance_id + ":" + data.google_secret_manager_secret_version.opentelemetry_token.secret_data)}"
       }
     }
   }

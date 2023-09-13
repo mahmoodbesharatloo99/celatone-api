@@ -21,12 +21,19 @@ jobs:
           token_format: "access_token"
       - name: Authenticate to Docker Registry
         run: echo '${{ steps.auth.outputs.access_token }}' | docker login -u oauth2accesstoken --password-stdin https://asia-southeast1-docker.pkg.dev
-      - name: Build image
+      - name: Build Celatone API image
         run: |
           docker build -t celatone/api:${{ steps.vars.outputs.sha_short }} .
           docker tag celatone/api:${{ steps.vars.outputs.sha_short }} asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}
-      - name: Push image
+      - name: Push Celatone API image
         run: docker push asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}
+      # - name: Build Metrics-collector image
+      #   working-directory: ./metrics-collector
+      #   run: |
+      #     docker build -t metrics-collector:latest .
+      #     docker tag metrics-collector:latest asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/metrics-collector:latest
+      # - name: Push Metrics-collector image
+      #   run: docker push asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/metrics-collector:latest
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
       - name: Terraforming

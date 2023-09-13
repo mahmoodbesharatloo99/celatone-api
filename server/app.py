@@ -2,6 +2,13 @@ from flask import send_file, request, Response
 import requests
 import os
 
+from opentelemetry import metrics
+from opentelemetry.exporter.otlp.proto.http.metric_exporter import OTLPMetricExporter
+from opentelemetry.sdk.metrics import MeterProvider
+from opentelemetry.sdk.metrics.export import PeriodicExportingMetricReader
+from opentelemetry.sdk.resources import SERVICE_NAME, Resource
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
+
 from adapters.core import (
     accounts,
     assets,
@@ -19,8 +26,21 @@ from adapters.icns import resolver
 from apiflask import APIFlask
 from flask_cors import CORS
 
+resource = Resource(attributes={
+    SERVICE_NAME: "celatone-api"
+})
+
+reader = PeriodicExportingMetricReader(
+  OTLPMetricExporter()
+)
+
+provider = MeterProvider(resource=resource, metric_readers=[reader])
+metrics.set_meter_provider(provider)
+
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
+
+FlaskInstrumentor().instrument_app(app)
 
 app.config["SYNC_LOCAL_SPEC"] = True
 app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
