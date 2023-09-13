@@ -44,7 +44,7 @@ counter.add(1)
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
 
-FlaskInstrumentor().instrument_app(app)
+FlaskInstrumentor().instrument_app(app, meter_provider=metrics.get_meter_provider())
 
 app.config["SYNC_LOCAL_SPEC"] = True
 app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
