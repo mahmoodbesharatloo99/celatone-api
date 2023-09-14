@@ -21,10 +21,9 @@ platformdirs==2.6.2
 requests==2.31.0
 six==1.16.0
 tomli==2.0.1
-urllib3==1.25.11
+urllib3==2.0.4
 webargs==8.2.0
 Werkzeug==2.2.2
 opentelemetry-api==1.20.0
 opentelemetry-sdk==1.20.0
 opentelemetry-exporter-otlp-proto-http==1.20.0
-opentelemetry-instrumentation-flask==0.41b0

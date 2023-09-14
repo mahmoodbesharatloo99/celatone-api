@@ -1,5 +1,4 @@
-from flask import send_file, request, Response, g
-import requests
+from flask import send_file, request, g
 import os
 import time
 
@@ -8,7 +7,6 @@ from opentelemetry.exporter.otlp.proto.http.metric_exporter import OTLPMetricExp
 from opentelemetry.sdk.metrics import MeterProvider
 from opentelemetry.sdk.metrics.export import PeriodicExportingMetricReader
 from opentelemetry.sdk.resources import SERVICE_NAME, Resource
-from opentelemetry.instrumentation.flask import FlaskInstrumentor
 
 from adapters.core import (
     accounts,
@@ -52,8 +50,6 @@ request_latency_histogram = meter.create_histogram(
 
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
-
-FlaskInstrumentor().instrument_app(app, meter_provider=metrics.get_meter_provider())
 
 app.config["SYNC_LOCAL_SPEC"] = True
 app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
