@@ -69,6 +69,11 @@ resource "google_cloud_run_v2_service" "celatone_api" {
         name  = "OTEL_EXPORTER_OTLP_HEADERS"
         value = "Authorization=Basic%20${base64encode("${local.grafana_instance_id}:${data.google_secret_manager_secret_version.opentelemetry_token.secret_data}")}"
       }
+
+      env {
+        name  = "APP_ENV"
+        value = var.environment
+      }
     }
   }
 

@@ -27,8 +27,10 @@ from adapters.icns import resolver
 from apiflask import APIFlask
 from flask_cors import CORS
 
+env = os.environ.get("APP_ENV", "local")
+
 resource = Resource(attributes={
-    SERVICE_NAME: "celatone-api"
+    SERVICE_NAME: "celatone-api-" + env
 })
 
 reader = PeriodicExportingMetricReader(
