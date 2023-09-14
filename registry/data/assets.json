@@ -4637,5 +4637,21 @@
     "slugs": ["wormhole"],
     "symbol": "SUI",
     "type": "native"
+  },
+  {
+    "coingecko": "kusama",
+    "coinmarketcap": "",
+    "description": "The native staking and governance token of Kusama Relay Chain.",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/6727B2F071643B3841BD535ECDD4ED9CAE52ABDD0DCD07C3630811A7A37B215C"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/kusama/images/ksm.svg",
+    "name": "KSM",
+    "precision": 12,
+    "slugs": ["wormhole"],
+    "symbol": "KSM",
+    "type": "native"
   }
 ]
