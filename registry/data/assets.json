@@ -4621,5 +4621,21 @@
     "slugs": ["lido", "ethereum"],
     "symbol": "wstETH",
     "type": "native"
+  },
+  {
+    "coingecko": "sui",
+    "coinmarketcap": "",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/B1C287C2701774522570010EEBCD864BCB7AB714711B3AA218699FDD75E832F5"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/sui/images/sui.svg",
+    "name": "Sui (Wormhole)",
+    "precision": 8,
+    "slugs": ["wormhole"],
+    "symbol": "SUI",
+    "type": "native"
   }
 ]
