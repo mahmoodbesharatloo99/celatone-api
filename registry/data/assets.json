@@ -4653,5 +4653,21 @@
     "slugs": ["wormhole"],
     "symbol": "KSM",
     "type": "native"
+  },
+  {
+    "coingecko": "aptos",
+    "coinmarketcap": "",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/A4D176906C1646949574B48C1928D475F2DF56DE0AC04E1C99B08F90BC21ABDE"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/aptos/images/aptos.svg",
+    "name": "Aptos Coin (Wormhole)",
+    "precision": 8,
+    "slugs": ["wormhole"],
+    "symbol": "APT",
+    "type": "native"
   }
 ]
