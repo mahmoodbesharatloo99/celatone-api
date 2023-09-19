@@ -27,13 +27,6 @@ jobs:
           docker tag celatone/api:${{ steps.vars.outputs.sha_short }} asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}
       - name: Push Celatone API image
         run: docker push asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}
-      # - name: Build Metrics-collector image
-      #   working-directory: ./metrics-collector
-      #   run: |
-      #     docker build -t metrics-collector:latest .
-      #     docker tag metrics-collector:latest asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/metrics-collector:latest
-      # - name: Push Metrics-collector image
-      #   run: docker push asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/metrics-collector:latest
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
       - name: Terraforming
