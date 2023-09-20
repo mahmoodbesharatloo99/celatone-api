@@ -4621,5 +4621,133 @@
     "slugs": ["lido", "ethereum"],
     "symbol": "wstETH",
     "type": "native"
+  },
+  {
+    "coingecko": "sui",
+    "coinmarketcap": "",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/B1C287C2701774522570010EEBCD864BCB7AB714711B3AA218699FDD75E832F5"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/sui/images/sui.svg",
+    "name": "Sui (Wormhole)",
+    "precision": 8,
+    "slugs": ["wormhole"],
+    "symbol": "SUI",
+    "type": "native"
+  },
+  {
+    "coingecko": "kusama",
+    "coinmarketcap": "",
+    "description": "The native staking and governance token of Kusama Relay Chain.",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/6727B2F071643B3841BD535ECDD4ED9CAE52ABDD0DCD07C3630811A7A37B215C"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/kusama/images/ksm.svg",
+    "name": "KSM",
+    "precision": 12,
+    "slugs": ["wormhole"],
+    "symbol": "KSM",
+    "type": "native"
+  },
+  {
+    "coingecko": "aptos",
+    "coinmarketcap": "",
+    "description": "",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/A4D176906C1646949574B48C1928D475F2DF56DE0AC04E1C99B08F90BC21ABDE"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/aptos/images/aptos.svg",
+    "name": "Aptos Coin (Wormhole)",
+    "precision": 8,
+    "slugs": ["wormhole"],
+    "symbol": "APT",
+    "type": "native"
+  },
+  {
+    "coingecko": "nolus",
+    "coinmarketcap": "",
+    "description": "The native token of Nolus chain",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/D9AFCECDD361D38302AA66EB3BAC23B95234832C51D12489DC451FA2B7C72782"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/nolus/images/nolus.svg",
+    "name": "Nolus",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "NLS",
+    "type": "native"
+  },
+  {
+    "coingecko": "gitopia",
+    "coinmarketcap": "",
+    "description": "The native token of Gitopia",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/B1C1806A540B3E165A2D42222C59946FB85BA325596FC85662D7047649F419F3"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gitopia/images/lore.svg",
+    "name": "LORE",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "LORE",
+    "type": "native"
+  },
+  {
+    "coingecko": "kyve-network",
+    "coinmarketcap": "",
+    "description": "The native utility token of the KYVE network.",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/613BF0BF2F2146AE9941E923725745E931676B2C14E9768CD609FA0849B2AE13"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kyve/images/kyve-token.svg",
+    "name": "KYVE",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "KYVE",
+    "type": "native"
+  },
+  {
+    "coingecko": "passage",
+    "coinmarketcap": "",
+    "description": "The native staking and governance token of the Passage chain.",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/208B2F137CDE510B44C41947C045CFDC27F996A9D990EA64460BDD5B3DBEB2ED"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/passage/images/pasg.png",
+    "name": "Passage",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "PASG",
+    "type": "native"
+  },
+  {
+    "coingecko": "",
+    "coinmarketcap": "",
+    "description": "The native token of Bluzelle",
+    "id": {
+      "osmosis": {
+        "osmosis-1": "ibc/63CDD51098FD99E04E5F5610A3882CBE7614C441607BA6FCD7F3A3C1CD5325F8"
+      }
+    },
+    "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bluzelle/images/bluzelle.svg",
+    "name": "Bluzelle",
+    "precision": 6,
+    "slugs": [],
+    "symbol": "BLZ",
+    "type": "native"
   }
 ]
