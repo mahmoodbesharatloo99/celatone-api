@@ -1099,7 +1099,8 @@
     "description": "Wrapped Staked ETH",
     "id": {
       "initia": {
-        "stone-7": "move/529883138fad49ed83096066dd574ec75791cf31f202e06ec80ca12671331220"
+        "stone-7": "move/529883138fad49ed83096066dd574ec75791cf31f202e06ec80ca12671331220",
+        "stone-10": "move/529883138fad49ed83096066dd574ec75791cf31f202e06ec80ca12671331220"
       }
     },
     "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::coins::MaticX.webp",
@@ -1258,7 +1259,8 @@
     "description": "Circle's stablecoin",
     "id": {
       "initia": {
-        "stone-7": "move/4e0b08c632d4d732c3d1fe50bb43bbb8112225b60786f0561547127498679d31"
+        "stone-7": "move/4e0b08c632d4d732c3d1fe50bb43bbb8112225b60786f0561547127498679d31",
+        "stone-10": "move/4e0b08c632d4d732c3d1fe50bb43bbb8112225b60786f0561547127498679d31"
       }
     },
     "logo": "https://list.initia.tech/images/0xfa5f07319724580ef16dcef6ce4d3b0bd0348e48::coins::MaticX.webp",
@@ -3056,7 +3058,8 @@
     "description": "Staking derivative stATOM for staked ATOM by Stride",
     "id": {
       "initia": {
-        "stone-7": "move/c2470ee64bffb09a08726bd7139ce930df777668aafb0310c434b878fe7dad09"
+        "stone-7": "move/c2470ee64bffb09a08726bd7139ce930df777668aafb0310c434b878fe7dad09",
+        "stone-10": "move/c2470ee64bffb09a08726bd7139ce930df777668aafb0310c434b878fe7dad09"
       },
       "neutron": {
         "neutron-1": "ibc/B7864B03E1B9FD4F049243E92ABD691586F682137037A9F3FCA5222815620B3C"
@@ -4172,7 +4175,8 @@
     "description": "Circle's stablecoin",
     "id": {
       "initia": {
-        "stone-7": "uusdc"
+        "stone-7": "uusdc",
+        "stone-10": "uusdc"
       }
     },
     "logo": "https://list.initia.tech/images/0x1::native_uusdc::Coin.webp",
@@ -4499,7 +4503,8 @@
     "description": "The native token of Initia",
     "id": {
       "initia": {
-        "stone-7": "uinit"
+        "stone-7": "uinit",
+        "stone-10": "uinit"
       }
     },
     "logo": "https://list.initia.tech/images/0x1%3A%3Anative_uinit%3A%3ACoin.webp",
