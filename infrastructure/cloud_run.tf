@@ -92,20 +92,3 @@ resource "google_cloud_run_v2_service_iam_binding" "binding" {
     "allUsers",
   ]
 }
-
-# resource "google_cloud_run_domain_mapping" "celatone_api" {
-#   location = google_cloud_run_v2_service.celatone_api.location
-#   name     = "celatone-test.alleslabs.dev"
-
-#   metadata {
-#     namespace = "celatone-production"
-#   }
-
-#   spec {
-#     route_name = google_cloud_run_v2_service.celatone_api.name
-#   }
-# }
-
-# output "dns" {
-#   value = google_cloud_run_domain_mapping.celatone_api.status
-# }
