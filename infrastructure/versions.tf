@@ -32,5 +32,5 @@ provider "cloudflare" {
 
 data "google_secret_manager_secret_version" "cloudflare_api_token" {
   project = "alles-share"
-  secret  = "cloudflare-dns-admin-token"
+  secret  = "cloudflare-alleslabs-dev-admin-token"
 }
