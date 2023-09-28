@@ -10,7 +10,7 @@ resource "cloudflare_record" "celatone_api" {
 // disable browser integrity check, turns off Automatic HTTPS rewrites
 resource "cloudflare_page_rule" "acme" {
   zone_id  = local.cloudflare_zone_id
-  target   = "celatone-api-${var.environment}.celatone.com/.well-known/acme-challenge/*"
+  target   = "celatone-api-${var.environment}.alleslabs.dev/.well-known/acme-challenge/*"
   priority = 1
 
   actions {
@@ -21,7 +21,7 @@ resource "cloudflare_page_rule" "acme" {
 
 resource "cloudflare_page_rule" "full_ssl" {
   zone_id  = local.cloudflare_zone_id
-  target   = "celatone-api-${var.environment}.celatone.com/*"
+  target   = "celatone-api-${var.environment}.alleslabs.dev/*"
   priority = 2
 
   actions {
