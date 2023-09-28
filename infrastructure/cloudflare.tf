@@ -11,7 +11,7 @@ resource "cloudflare_record" "celatone_api" {
 resource "cloudflare_page_rule" "acme" {
   zone_id  = local.cloudflare_zone_id
   target   = "celatone-api-${var.environment}.alleslabs.dev/.well-known/acme-challenge/*"
-  priority = 1
+  priority = 2
 
   actions {
     automatic_https_rewrites = "off"
@@ -22,7 +22,7 @@ resource "cloudflare_page_rule" "acme" {
 resource "cloudflare_page_rule" "full_ssl" {
   zone_id  = local.cloudflare_zone_id
   target   = "celatone-api-${var.environment}.alleslabs.dev/*"
-  priority = 2
+  priority = 1
 
   actions {
     ssl = "full"
