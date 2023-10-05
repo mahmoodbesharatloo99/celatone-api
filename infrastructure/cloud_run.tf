@@ -82,6 +82,10 @@ resource "google_cloud_run_v2_service" "celatone_api" {
     type    = "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST"
     percent = 100
   }
+
+  labels = {
+    component = "celatone-api"
+  }
 }
 
 resource "google_cloud_run_v2_service_iam_binding" "binding" {
