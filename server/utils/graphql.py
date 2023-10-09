@@ -1,5 +1,6 @@
 import requests
-from constants import GRAPHQL_DICT, GRAPHQL_TEST_DICT
+
+from utils.constants import GRAPHQL_DICT, GRAPHQL_TEST_DICT
 
 
 def get_contract_instantiator_admin(chain, network, contract_addresses):
@@ -17,9 +18,7 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
             {
                 "address": contract_address,
                 "instantiator": data.get("accountByInitBy", {}).get("address", ""),
-                "admin": data.get("account", {}).get("address", "")
-                if data["account"] is not None
-                else "",
+                "admin": data.get("account", {}).get("address", "") if data["account"] is not None else "",
                 "label": data["label"],
             }
         )
@@ -32,9 +31,7 @@ def generate_code_query(code_id):
 
 def get_graphql_code_details(chain, network, code_ids):
     query = "\n".join(generate_code_query(code_id) for code_id in code_ids)
-    graphql_response = requests.post(
-        GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"}
-    )
+    graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"})
     graphql_data = graphql_response.json().get("data") or {}
     code_data = [
         {

@@ -1,23 +1,13 @@
-import json
-import os.path
-
+from utils.aldus import get_aldus_chain_data
 from utils.graphql import get_graphql_code_details
 
 
 def load_codes(chain, network):
-    codes = []
-    path = f"../registry/data/{chain}/{network}/codes.json"
-    if os.path.exists(path):
-        with open(path) as f:
-            codes = json.load(f)
-
-    code_ids = []
-    for code in codes:
-        code_ids.append(code["id"])
-
-    graphql_details = get_graphql_code_details(chain, network, code_ids)
+    codes = get_aldus_chain_data(chain, network, "codes")
+    code_ids = [code["id"] for code in codes]
 
     graphql_map = {}
+    graphql_details = get_graphql_code_details(chain, network, code_ids)
     for detail in graphql_details:
         graphql_map[detail["code_id"]] = detail
 

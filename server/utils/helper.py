@@ -1,8 +1,8 @@
 import requests
 
-import constants as constants
 import adapters.core.assets as assets
-import adapters.prices.prices as prices
+from utils.constants import HIVE_DICT
+import utils.prices as prices
 
 
 def split(ls, n):
@@ -33,9 +33,7 @@ def get_hive_balance(chain, network, account_address):
     contract_address_chunks = split(contract_addresses, 50)
     for idx, contract_address_chunk in enumerate(contract_address_chunks):
         query = generate_hive_query(account_address, contract_address_chunk)
-        hive_data = requests.post(
-            f"{constants.HIVE_DICT[network]}/graphql", json={"query": query}
-        ).json()["data"]
+        hive_data = requests.post(f"{HIVE_DICT[network]}/graphql", json={"query": query}).json()["data"]
         output_balance += [
             {
                 "name": asset["name"],
@@ -48,10 +46,7 @@ def get_hive_balance(chain, network, account_address):
             }
             for asset, data in zip(
                 supported_assets_chunks[idx],
-                [
-                    hive_data.get(contract_address, {})
-                    for contract_address in contract_address_chunk
-                ],
+                [hive_data.get(contract_address, {}) for contract_address in contract_address_chunk],
             )
             if int(data.get("contractQuery", {}).get("balance", 0)) > 0
         ]
@@ -60,9 +55,7 @@ def get_hive_balance(chain, network, account_address):
 
 def get_native_balances(endpoint, chain, network, account_address):
     balances = (
-        requests.get(
-            f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
-        )
+        requests.get(f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500")
         .json()
         .get("balances", [])
     )
@@ -77,18 +70,12 @@ def get_native_balances(endpoint, chain, network, account_address):
             "amount": balance["amount"],
             "precision": asset["precision"] if asset else 0,
             "type": "native",
-            "price": asset_prices.get(balance["denom"], 0)
-            if asset and balance["denom"] in asset_prices
-            else 0,
+            "price": asset_prices.get(balance["denom"], 0) if asset and balance["denom"] in asset_prices else 0,
         }
         for balance in balances
         for asset in [
             next(
-                (
-                    asset
-                    for asset in supported_assets
-                    if asset["id"] == balance["denom"]
-                ),
+                (asset for asset in supported_assets if asset["id"] == balance["denom"]),
                 None,
             )
         ]

@@ -1,5 +1,4 @@
-import json
-from adapters.registry.registry import load_and_check_registry_data
+from utils.aldus import get_aldus_chain_data
 from utils.graphql import get_contract_instantiator_admin
 
 
@@ -7,14 +6,12 @@ from utils.graphql import get_contract_instantiator_admin
 
 
 def get_contracts(chain, network):
-    contracts = load_and_check_registry_data(chain, network, "contracts")
-    codes = load_and_check_registry_data(chain, network, "codes")
+    contracts = get_aldus_chain_data(chain, network, "contracts")
+    codes = get_aldus_chain_data(chain, network, "codes")
     contract_addresses = []
     for contract in contracts:
         contract_addresses.append(contract["address"])
-    instantiator_admin_data = get_contract_instantiator_admin(
-        chain, network, contract_addresses
-    )
+    instantiator_admin_data = get_contract_instantiator_admin(chain, network, contract_addresses)
     code_map = {code["id"]: code for code in codes}
     instantiator_admin_map = {
         data["address"]: {
@@ -47,7 +44,5 @@ def get_contracts(chain, network):
 
 def get_contract(chain, network, contract_address):
     contracts = get_contracts(chain, network)
-    contract = [
-        contract for contract in contracts if contract["address"] == contract_address
-    ][0]
+    contract = [contract for contract in contracts if contract["address"] == contract_address][0]
     return contract

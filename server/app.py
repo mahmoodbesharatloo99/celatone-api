@@ -2,18 +2,10 @@ from flask import send_file, request, Response
 import requests
 import os
 
-from adapters.core import (
-    accounts,
-    assets,
-    balances,
-    chains,
-    cosmos,
-    transactions,
-    health
-)
+from adapters.core import accounts, assets, balances, chains, cosmos, transactions
+from adapters.monitoring import health
 from adapters.cosmwasm import codes, contracts, helpers
 from adapters.registry import entities, projects
-from adapters.osmosis import pools
 from adapters.icns import resolver
 
 from apiflask import APIFlask
@@ -53,6 +45,7 @@ def hello_world():
 
 
 # Health
+
 
 @app.route("/<chain>/<network>/health", methods=["GET"])
 @app.doc(tags=["Default"])
@@ -293,40 +286,6 @@ def get_tx(chain, network, tx_hash):
     return transactions.get_tx(chain, network, tx_hash)
 
 
-# GraphQL
-
-
-@app.route("/graphql/<chain>/<network>", methods=["POST"])
-def get_graphql(chain, network):
-    return cosmos.get_graphql(chain, network, request.get_json())
-
-
-# Pools
-
-
-@app.route("/pools/<chain>/<network>", methods=["GET"])
-@app.doc(tags=["Registry Data"])
-def get_pools(chain, network):
-    """Get All Pools
-
-    Returns a list of all the known Osmosis pools based on the input chain and network
-    """
-    return pools.get_pools(chain, network)
-
-
-@app.route("/pool/<chain>/<network>/<pool_id>", methods=["GET"])
-@app.doc(tags=["Registry Data"])
-def get_pool(chain, network, pool_id):
-    """Get Pool by ID
-
-    Returns a specific Osmosis pool based on the input chain, network, and code_id
-    """
-    return pools.get_pool(chain, network, pool_id)
-
-
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
-
 # ICNS
 
 
@@ -340,3 +299,15 @@ def get_icns_address(name, bech32_prefix):
 @app.doc(tags=["Registry Data"])
 def get_icns_names(address):
     return resolver.get_icns_names(address)
+
+
+# GraphQL
+
+
+@app.route("/graphql/<chain>/<network>", methods=["POST"])
+def get_graphql(chain, network):
+    return cosmos.get_graphql(chain, network, request.get_json())
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

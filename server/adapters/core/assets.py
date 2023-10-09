@@ -1,6 +1,7 @@
 import base64
-from adapters.registry.registry import load_and_check_registry_data
-from adapters.prices.prices import get_prices
+
+from utils.aldus import get_aldus_chain_data
+from utils.prices import get_prices
 
 
 def encode_base64(string):
@@ -8,7 +9,7 @@ def encode_base64(string):
 
 
 def get_assets(chain, network):
-    assets = load_and_check_registry_data(chain, network, "assets")
+    assets = get_aldus_chain_data(chain, network, "assets")
     return [dict(asset, **{"price": 0.00}) for asset in assets]
 
 

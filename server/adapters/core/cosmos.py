@@ -1,7 +1,7 @@
 from flask import abort, Response
-import logging
 import requests
-from constants import LCD_DICT, GRAPHQL_DICT
+
+from utils.constants import LCD_DICT, GRAPHQL_DICT
 
 
 def get_rest(chain, network, path, params):

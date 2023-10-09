@@ -1,7 +1,7 @@
 import json
 import requests
 
-from constants import LCD_DICT
+from utils.constants import LCD_DICT
 
 
 def get_upload_access(chain, network):

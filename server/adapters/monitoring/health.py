@@ -1,5 +1,6 @@
 import requests
-from constants import LCD_DICT
+
+from utils.constants import LCD_DICT
 from utils.graphql import get_graphql_health
 
 
