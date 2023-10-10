@@ -1,14 +1,12 @@
-from flask import send_file, request, Response
-import requests
 import os
 
-from adapters.core import accounts, assets, balances, chains, cosmos, transactions
-from adapters.monitoring import health
+from adapters.core import accounts, assets, balances, chains, cosmos, staking, transactions
 from adapters.cosmwasm import codes, contracts, helpers
-from adapters.registry import entities, projects
 from adapters.icns import resolver
-
+from adapters.monitoring import health
+from adapters.registry import entities, projects
 from apiflask import APIFlask
+from flask import request, send_file
 from flask_cors import CORS
 
 app = APIFlask(__name__, title="My API", version="1.0")
@@ -275,6 +273,29 @@ def get_entity_image(entity_slug):
 @app.doc(tags=["Registry Assets"])
 def get_asset_image(asset_symbol):
     return send_file(f"../registry/assets/assets/{asset_symbol}.png")
+
+
+# Staking
+
+
+@app.route("/<chain>/<network>/staking/params", methods=["GET"])
+def get_staking_params(chain, network):
+    return staking.get_params(chain, network)
+
+
+@app.route("/<chain>/<network>/staking/delegations/<address>", methods=["GET"])
+def get_delegations(chain, network, address):
+    return staking.get_delegations(chain, network, address, request.args)
+
+
+@app.route("/<chain>/<network>/staking/unbondings/<address>", methods=["GET"])
+def get_unbondings(chain, network, address):
+    return staking.get_unbondings(chain, network, address, request.args)
+
+
+@app.route("/<chain>/<network>/staking/redelegations/<address>", methods=["GET"])
+def get_redelegations(chain, network, address):
+    return staking.get_redelegations(chain, network, address, request.args)
 
 
 # Transactions
