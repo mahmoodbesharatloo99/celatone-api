@@ -8,6 +8,7 @@ from adapters.registry import entities, projects
 from apiflask import APIFlask
 from flask import request, send_file
 from flask_cors import CORS
+from utils.constants import ALDUS_URL
 
 app = APIFlask(__name__, title="My API", version="1.0")
 CORS(app)
@@ -266,13 +267,13 @@ def get_some_rest(chain, network, path):
 @app.route("/images/entities/<entity_slug>", methods=["GET"])
 @app.doc(tags=["Registry Assets"])
 def get_entity_image(entity_slug):
-    return send_file(f"../registry/assets/entities/{entity_slug}.png")
+    return send_file(f"{ALDUS_URL}/assets/entities/{entity_slug}.png")
 
 
 @app.route("/images/assets/<asset_symbol>", methods=["GET"])
 @app.doc(tags=["Registry Assets"])
 def get_asset_image(asset_symbol):
-    return send_file(f"../registry/assets/assets/{asset_symbol}.png")
+    return send_file(f"{ALDUS_URL}/assets/assets/{asset_symbol}.png")
 
 
 # Staking
