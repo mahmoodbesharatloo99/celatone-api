@@ -1,13 +1,11 @@
 import json
-import os
+import requests
+from utils.constants import ALDUS_URL
 
 
 def load_chain_data():
-    path = f"../registry/data/chains.json"
-    data = []
-    if os.path.exists(path):
-        data = json.load(open(path))
-    return data
+    chains = requests.get(f"{ALDUS_URL}/data/chains.json").json()
+    return chains
 
 
 def get_chains():
