@@ -2,6 +2,7 @@ from adapters.core import accounts, assets
 from adapters.cosmwasm import codes, contracts
 from utils.aldus import get_aldus_entities_data
 from utils.constants import ALDUS_URL
+from utils.images import get_image
 
 
 def load_project_data(chain, network):
@@ -25,7 +26,7 @@ def load_project(entity, accounts, assets, codes, contracts):
                 "description": entity["description"],
                 "website": entity["website"],
                 "github": entity["github"],
-                "logo": f"{ALDUS_URL}/assets/entities/{entity['slug']}",
+                "logo": get_image(f"{ALDUS_URL}/assets/entities/{entity['slug']}"),
                 "socials": entity["socials"],
             },
             "accounts": relevant_accounts,
