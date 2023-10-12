@@ -10,7 +10,7 @@ def encode_base64(string):
 
 def get_assets(chain, network):
     assets = get_aldus_chain_data(chain, network, "assets")
-    return [dict(asset, **{"price": 0.00}) for asset in assets]
+    return sorted([dict(asset, **{"price": 0.00}) for asset in assets], key=lambda d: d["symbol"])
 
 
 def get_assets_with_prices(chain, network):
