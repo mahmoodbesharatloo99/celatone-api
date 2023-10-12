@@ -301,7 +301,7 @@ def get_redelegations(chain, network, address):
 
 @app.route("/<chain>/<network>/staking/validators", methods=["GET"])
 def get_validators(chain, network):
-    return staking.get_validators(chain, network, request.args)
+    return staking.get_validators(chain, network)
 
 
 @app.route("/<chain>/<network>/staking/validators/<validator_address>", methods=["GET"])

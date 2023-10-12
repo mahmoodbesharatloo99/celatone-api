@@ -1,6 +1,9 @@
+import logging
+
 import requests
 from flask import Response, abort
 from utils.constants import LCD_DICT
+from utils.graphql import get_graphql_validators
 
 
 def _get_network_base_denom(chain, network):
@@ -143,25 +146,13 @@ def _format_validator(validator, base_denom):
     validator["delegator_shares"] = [{"denom": base_denom, "amount": validator["delegator_shares"]}]
 
 
-def get_validators(chain, network, params):
+def get_validators(chain, network):
     try:
-        if chain == "initia":
-            response = requests.get(f"{LCD_DICT[chain][network]}/initia/mstaking/v1/validators", params=params)
-            response.raise_for_status()
-            return response.json()
-        else:
-            base_denom = _get_network_base_denom(chain, network)
-
-            response = requests.get(f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/validators")
-            response.raise_for_status()
-            json_response = response.json()
-
-            for validator in json_response["validators"]:
-                _format_validator(validator, base_denom)
-
-            return json_response
-    except requests.HTTPError as _:
-        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+        graphql_res = get_graphql_validators(chain, network)
+        graphql_res.raise_for_status()
+        return graphql_res.json()["data"]
+    except Exception as e:
+        logging.error(f"Error getting validators: {e}")
 
 
 def get_validator(chain, network, validator_address):

@@ -1,5 +1,4 @@
 import requests
-
 from utils.constants import GRAPHQL_DICT, GRAPHQL_TEST_DICT
 
 
@@ -75,6 +74,26 @@ def get_graphql_health(chain, network):
         query {{
             blocks(limit: 1, order_by: {{height: desc}}) {{
                 height
+            }}
+        }}
+    """
+    return requests.post(GRAPHQL_DICT[chain][network], json={"query": query})
+
+
+def get_graphql_validators(chain, network):
+    query = f"""
+        query {{
+            validators {{
+            commission_max_change
+            commission_max_rate
+            commission_rate
+            consensus_address
+            details
+            identity
+            jailed
+            moniker
+            operator_address
+            website
             }}
         }}
     """
