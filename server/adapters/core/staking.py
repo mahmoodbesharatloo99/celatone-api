@@ -135,3 +135,52 @@ def get_redelegations(chain, network, address, params):
             return json_response
     except requests.HTTPError as _:
         abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+
+
+# in-place modification via reference
+def _format_validator(validator, base_denom):
+    validator["tokens"] = [{"denom": base_denom, "amount": validator["tokens"]}]
+    validator["delegator_shares"] = [{"denom": base_denom, "amount": validator["delegator_shares"]}]
+
+
+def get_validators(chain, network, params):
+    try:
+        if chain == "initia":
+            response = requests.get(f"{LCD_DICT[chain][network]}/initia/mstaking/v1/validators", params=params)
+            response.raise_for_status()
+            return response.json()
+        else:
+            base_denom = _get_network_base_denom(chain, network)
+
+            response = requests.get(f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/validators")
+            response.raise_for_status()
+            json_response = response.json()
+
+            for validator in json_response["validators"]:
+                _format_validator(validator, base_denom)
+
+            return json_response
+    except requests.HTTPError as _:
+        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+
+
+def get_validator(chain, network, validator_address):
+    try:
+        if chain == "initia":
+            response = requests.get(f"{LCD_DICT[chain][network]}/initia/mstaking/v1/validators/{validator_address}")
+            response.raise_for_status()
+            return response.json()
+        else:
+            base_denom = _get_network_base_denom(chain, network)
+
+            response = requests.get(
+                f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/validators/{validator_address}"
+            )
+            response.raise_for_status()
+            json_response = response.json()
+
+            _format_validator(json_response["validator"], base_denom)
+
+            return json_response
+    except requests.HTTPError as _:
+        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
