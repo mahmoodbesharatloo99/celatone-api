@@ -1,5 +1,5 @@
 import requests
-from utils.constants import GRAPHQL_DICT, GRAPHQL_TEST_DICT
+from utils.gcs import get_network_data
 
 
 def get_contract_instantiator_admin(chain, network, contract_addresses):
@@ -9,7 +9,7 @@ def get_contract_instantiator_admin(chain, network, contract_addresses):
         for address in contract_addresses
     ]
     query = "query {" + " ".join(queries) + "}"
-    res = requests.post(GRAPHQL_DICT[chain][network], json={"query": query})
+    res = requests.post(get_network_data(chain, network, "graphql"), json={"query": query})
     res.raise_for_status()
     graphql_response = res.json()["data"]
     for contract_address, data in graphql_response.items():
@@ -30,7 +30,9 @@ def generate_code_query(code_id):
 
 def get_graphql_code_details(chain, network, code_ids):
     query = "\n".join(generate_code_query(code_id) for code_id in code_ids)
-    graphql_response = requests.post(GRAPHQL_DICT[chain][network], json={"query": f"query {{\n{query}\n}}"})
+    graphql_response = requests.post(
+        get_network_data(chain, network, "graphql"), json={"query": f"query {{\n{query}\n}}"}
+    )
     graphql_data = graphql_response.json().get("data") or {}
     code_data = [
         {
@@ -55,7 +57,7 @@ def get_lcd_tx_results(chain, network, tx_hash):
             }}
         }}
     """
-    return requests.post(GRAPHQL_DICT[chain][network], json={"query": query})
+    return requests.post(get_network_data(chain, network, "graphql"), json={"query": query})
 
 
 def get_lcd_tx_responses(chain, network, tx_hash, limit):
@@ -66,7 +68,7 @@ def get_lcd_tx_responses(chain, network, tx_hash, limit):
             }}
         }}
     """
-    return requests.post(GRAPHQL_TEST_DICT[chain][network], json={"query": query})
+    return requests.post(get_network_data(chain, network, "graphql_test"), json={"query": query})
 
 
 def get_graphql_health(chain, network):
@@ -77,7 +79,7 @@ def get_graphql_health(chain, network):
             }}
         }}
     """
-    return requests.post(GRAPHQL_DICT[chain][network], json={"query": query})
+    return requests.post(get_network_data(chain, network, "graphql"), json={"query": query})
 
 
 def get_graphql_validators(chain, network):
@@ -97,4 +99,4 @@ def get_graphql_validators(chain, network):
             }}
         }}
     """
-    return requests.post(GRAPHQL_DICT[chain][network], json={"query": query})
+    return requests.post(get_network_data(chain, network, "graphql"), json={"query": query})

@@ -2,12 +2,13 @@ from flask import abort
 import logging
 import requests
 
-from utils.constants import LCD_DICT, WLD_URL
+from utils.constants import WLD_URL
+from utils.gcs import get_network_data
 from utils.graphql import get_lcd_tx_responses, get_lcd_tx_results
 
 
 def get_lcd_transaction(chain, network, tx_hash):
-    return requests.get(f"{LCD_DICT[chain][network]}/cosmos/tx/v1beta1/txs/{tx_hash}")
+    return requests.get(f"{get_network_data(chain,network,'lcd')}/cosmos/tx/v1beta1/txs/{tx_hash}")
 
 
 def get_wld_transaction(tx_hash):

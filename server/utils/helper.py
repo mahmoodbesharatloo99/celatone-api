@@ -1,7 +1,7 @@
 import requests
 
 import adapters.core.assets as assets
-from utils.constants import HIVE_DICT
+from utils.gcs import get_network_data
 import utils.prices as prices
 
 
@@ -33,7 +33,9 @@ def get_hive_balance(chain, network, account_address):
     contract_address_chunks = split(contract_addresses, 50)
     for idx, contract_address_chunk in enumerate(contract_address_chunks):
         query = generate_hive_query(account_address, contract_address_chunk)
-        hive_data = requests.post(f"{HIVE_DICT[network]}/graphql", json={"query": query}).json()["data"]
+        hive_data = requests.post(f"{get_network_data(chain,network,'hive')}/graphql", json={"query": query}).json()[
+            "data"
+        ]
         output_balance += [
             {
                 "name": asset["name"],

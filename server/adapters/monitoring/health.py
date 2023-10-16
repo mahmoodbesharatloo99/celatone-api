@@ -1,6 +1,6 @@
 import requests
 
-from utils.constants import LCD_DICT
+from utils.gcs import get_network_data
 from utils.graphql import get_graphql_health
 
 
@@ -30,7 +30,7 @@ def check_status(chain, network, check, checks, response, block_path):
 
 
 def lcd_check(chain, network, checks):
-    response = requests.get(f"{LCD_DICT[chain][network]}/blocks/latest")
+    response = requests.get(f"{get_network_data(chain,network,'lcd')}/blocks/latest")
     block_path = ["block", "header", "height"]
     return check_status(chain, network, "lcd", checks, response, block_path)
 

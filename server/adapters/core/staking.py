@@ -2,12 +2,12 @@ import logging
 
 import requests
 from flask import Response, abort
-from utils.constants import LCD_DICT
+from utils.gcs import get_network_data
 from utils.graphql import get_graphql_validators
 
 
 def _get_network_base_denom(chain, network):
-    response = requests.get(f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/params")
+    response = requests.get(f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/params")
     response.raise_for_status()
     return response.json()["params"]["bond_denom"]
 
@@ -15,11 +15,11 @@ def _get_network_base_denom(chain, network):
 def get_params(chain, network):
     try:
         if chain == "initia":
-            response = requests.get(f"{LCD_DICT[chain][network]}/initia/mstaking/v1/params")
+            response = requests.get(f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/params")
             response.raise_for_status()
             return response.json()
         else:
-            response = requests.get(f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/params")
+            response = requests.get(f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/params")
             response.raise_for_status()
             json_response = response.json()
 
@@ -35,12 +35,14 @@ def get_delegations(chain, network, address, params):
     try:
         if chain == "initia":
             response = requests.get(
-                f"{LCD_DICT[chain][network]}/initia/mstaking/v1/delegations/{address}", params=params
+                f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/delegations/{address}", params=params
             )
             response.raise_for_status()
             return response.json()
         else:
-            response = requests.get(f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/delegations/{address}")
+            response = requests.get(
+                f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/delegations/{address}"
+            )
             response.raise_for_status()
             json_response = response.json()
 
@@ -63,7 +65,7 @@ def get_unbondings(chain, network, address, params):
     try:
         if chain == "initia":
             response = requests.get(
-                f"{LCD_DICT[chain][network]}/initia/mstaking/v1/delegators/{address}/unbonding_delegations",
+                f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/delegators/{address}/unbonding_delegations",
                 params=params,
             )
             response.raise_for_status()
@@ -72,7 +74,7 @@ def get_unbondings(chain, network, address, params):
             base_denom = _get_network_base_denom(chain, network)
 
             response = requests.get(
-                f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/delegators/{address}/unbonding_delegations"
+                f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/delegators/{address}/unbonding_delegations"
             )
             response.raise_for_status()
             json_response = response.json()
@@ -101,7 +103,8 @@ def get_redelegations(chain, network, address, params):
     try:
         if chain == "initia":
             response = requests.get(
-                f"{LCD_DICT[chain][network]}/initia/mstaking/v1/delegators/{address}/redelegations", params=params
+                f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/delegators/{address}/redelegations",
+                params=params,
             )
             response.raise_for_status()
             return response.json()
@@ -109,7 +112,7 @@ def get_redelegations(chain, network, address, params):
             base_denom = _get_network_base_denom(chain, network)
 
             response = requests.get(
-                f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/delegators/{address}/redelegations"
+                f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/delegators/{address}/redelegations"
             )
             response.raise_for_status()
             json_response = response.json()
@@ -158,14 +161,16 @@ def get_validators(chain, network):
 def get_validator(chain, network, validator_address):
     try:
         if chain == "initia":
-            response = requests.get(f"{LCD_DICT[chain][network]}/initia/mstaking/v1/validators/{validator_address}")
+            response = requests.get(
+                f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/validators/{validator_address}"
+            )
             response.raise_for_status()
             return response.json()
         else:
             base_denom = _get_network_base_denom(chain, network)
 
             response = requests.get(
-                f"{LCD_DICT[chain][network]}/cosmos/staking/v1beta1/validators/{validator_address}"
+                f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/validators/{validator_address}"
             )
             response.raise_for_status()
             json_response = response.json()

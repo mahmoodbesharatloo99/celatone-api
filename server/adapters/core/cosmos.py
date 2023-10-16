@@ -1,12 +1,11 @@
 from flask import abort, Response
 import requests
-
-from utils.constants import LCD_DICT, GRAPHQL_DICT
+from utils.gcs import get_network_data
 
 
 def get_rest(chain, network, path, params):
     try:
-        response = requests.get(f"{LCD_DICT[chain][network]}/{path}", params=params)
+        response = requests.get(f"{get_network_data(chain,network,'lcd')}/{path}", params=params)
         response.raise_for_status()
         return response.json()
     except requests.HTTPError as _:
@@ -15,7 +14,7 @@ def get_rest(chain, network, path, params):
 
 def get_graphql(chain, network, data):
     try:
-        response = requests.post(GRAPHQL_DICT[chain][network], json=data)
+        response = requests.post(get_network_data(chain, network, "graphql"), json=data)
         response.raise_for_status()
         return response.json()
     except:
