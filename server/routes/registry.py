@@ -1,6 +1,6 @@
 from flask import Blueprint, send_file
-from adapters.registry import entities, projects
-from adapters.core import chains
+from adapters.aldus import entities, projects
+from adapters.aldus.chains import ChainManager
 from utils.constants import ALDUS_URL
 
 
@@ -29,12 +29,12 @@ def get_project(chain, network, project_id):
 
 @registry_bp.route("/chains", methods=["GET"])
 def get_chains():
-    return chains.get_chains()
+    return ChainManager.get_chains()
 
 
 @registry_bp.route("/chains/<chain>", methods=["GET"])
 def get_chain(chain):
-    return chains.get_chain(chain)
+    return ChainManager.get_chain(chain)
 
 
 @registry_bp.route("/images/entities/<entity_slug>", methods=["GET"])

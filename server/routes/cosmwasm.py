@@ -1,5 +1,7 @@
 from flask import Blueprint
-from adapters.cosmwasm import codes, contracts, helpers
+from adapters.aldus.codes import CodeManager
+from adapters.aldus.contracts import ContractManager
+from adapters.aldus import helpers
 
 cosmwasm_bp = Blueprint("cosmwasm", __name__)
 
@@ -10,7 +12,7 @@ def get_codes(chain, network):
 
     Returns a list of all the known codes based on the input chain and network
     """
-    return codes.get_codes(chain, network)
+    return CodeManager(chain, network).get_codes()
 
 
 @cosmwasm_bp.route("/codes/<chain>/<network>/<code_id>", methods=["GET"])
@@ -19,7 +21,7 @@ def get_code(chain, network, code_id):
 
     Returns a specific code based on the input chain, network, and code_id
     """
-    return codes.get_code(chain, network, code_id)
+    return CodeManager(chain, network).get_code(code_id)
 
 
 @cosmwasm_bp.route("/contracts/<chain>/<network>", methods=["GET"])
@@ -27,7 +29,7 @@ def get_contracts(chain, network):
     """Get All Contracts
 
     Returns a list of all the known contracts based on the input chain and network"""
-    return contracts.get_contracts(chain, network)
+    return ContractManager(chain, network).get_contracts()
 
 
 @cosmwasm_bp.route("/contracts/<chain>/<network>/<contract_address>", methods=["GET"])
@@ -36,7 +38,7 @@ def get_contract(chain, network, contract_address):
 
     Returns a specific contract based on the input chain, network, and contract_address
     """
-    return contracts.get_contract(chain, network, contract_address)
+    return ContractManager(chain, network).get_contract(contract_address)
 
 
 @cosmwasm_bp.route("/cosmwasm/<chain>/<network>/upload_access", methods=["GET"])

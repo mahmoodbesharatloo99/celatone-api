@@ -1,5 +1,5 @@
 from flask import Blueprint
-from adapters.core import accounts
+from adapters.aldus.accounts import AccountManager
 
 accounts_bp = Blueprint("accounts", __name__)
 
@@ -10,7 +10,7 @@ def get_accounts(chain, network):
 
     Returns a list of all the known accounts based on the input chain and network
     """
-    return accounts.get_accounts(chain, network)
+    return AccountManager(chain, network).get_accounts()
 
 
 @accounts_bp.route("/accounts/<chain>/<network>/<account_address>", methods=["GET"])
@@ -19,4 +19,4 @@ def get_account(chain, network, account_address):
 
     Returns a specific account based on the input chain, network, and account_address
     """
-    return accounts.get_account(chain, network, account_address)
+    return AccountManager(chain, network).get_account(account_address)

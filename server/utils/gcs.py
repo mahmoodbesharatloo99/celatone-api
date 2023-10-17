@@ -18,7 +18,10 @@ def get_network_data(chain: str, network: str, endpoint: str) -> Dict[str, Any]:
     """
     try:
         data = get_gcs_data("celatone-endpoints", f"{endpoint}.json")
-        return data[chain][network]
+        if endpoint != "hive":
+            return data[chain][network]
+        else:
+            return data[network]
     except Exception as e:
         logging.error(f"Failed to get network data: {e}")
         return {}

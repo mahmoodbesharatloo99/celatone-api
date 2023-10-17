@@ -17,22 +17,23 @@ def get_wld_transaction(tx_hash):
 
 def get_tx(chain, network, tx_hash):
     try:
+        print("lcd_tx_results")
         graphql_res = get_lcd_tx_results(chain, network, tx_hash)
-        graphql_res.raise_for_status()
-        graphql_tx_res = graphql_res.json()["data"]["lcd_tx_results"]
+        graphql_tx_res = graphql_res["lcd_tx_results"]
         if graphql_tx_res:
             return graphql_tx_res[0]["result"]
     except Exception as e:
         logging.error(f"Error getting lcd_tx_results: {e}")
     try:
+        print("lcd_tx_responses")
         graphql_res = get_lcd_tx_responses(chain, network, tx_hash, 1)
-        graphql_res.raise_for_status()
-        graphql_tx_res = graphql_res.json()["data"]["lcd_tx_responses"]
+        graphql_tx_res = graphql_res["lcd_tx_responses"]
         if graphql_tx_res:
             return graphql_tx_res[0]["result"]
     except Exception as e:
         logging.error(f"Error getting lcd_tx_responses: {e}")
     try:
+        print("lcd")
         lcd = get_lcd_transaction(chain, network, tx_hash)
         lcd.raise_for_status()
         return lcd.json()

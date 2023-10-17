@@ -1,5 +1,4 @@
-from adapters.core import accounts, assets
-from adapters.cosmwasm import codes, contracts
+from adapters.aldus import accounts, assets, codes, contracts
 from utils.aldus import get_aldus_entities_data
 from utils.constants import ALDUS_URL
 from utils.images import get_image

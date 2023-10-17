@@ -1,6 +1,6 @@
 import requests
 
-import adapters.core.assets as assets
+from adapters.aldus.assets import AssetManager
 from utils.gcs import get_network_data
 import utils.prices as prices
 
@@ -25,7 +25,7 @@ def generate_hive_query(account_address, contract_addresses):
 
 def get_hive_balance(chain, network, account_address):
     output_balance = []
-    supported_assets = assets.get_assets_by_type(chain, network, "cw20")
+    supported_assets = AssetManager(chain, network).get_assets_by_type("cw20")
     supported_assets_chunks = split(supported_assets, 50)
     asset_ids = [asset["id"] for asset in supported_assets if asset["coingecko"] != ""]
     asset_prices = prices.get_prices(chain, network, asset_ids)
@@ -33,6 +33,7 @@ def get_hive_balance(chain, network, account_address):
     contract_address_chunks = split(contract_addresses, 50)
     for idx, contract_address_chunk in enumerate(contract_address_chunks):
         query = generate_hive_query(account_address, contract_address_chunk)
+        print(get_network_data(chain, network, "hive"))
         hive_data = requests.post(f"{get_network_data(chain,network,'hive')}/graphql", json={"query": query}).json()[
             "data"
         ]
@@ -61,7 +62,7 @@ def get_native_balances(endpoint, chain, network, account_address):
         .json()
         .get("balances", [])
     )
-    supported_assets = assets.get_assets_by_type(chain, network, "native")
+    supported_assets = AssetManager(chain, network).get_assets_by_type("native")
     asset_ids = [asset["id"] for asset in supported_assets if asset["coingecko"] != ""]
     asset_prices = prices.get_prices(chain, network, asset_ids)
     output_balance = [
