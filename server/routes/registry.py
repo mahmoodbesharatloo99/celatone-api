@@ -29,12 +29,12 @@ def get_project(chain, network, project_id):
 
 @registry_bp.route("/chains", methods=["GET"])
 def get_chains():
-    return ChainManager.get_chains()
+    return ChainManager().get_chains()
 
 
 @registry_bp.route("/chains/<chain>", methods=["GET"])
 def get_chain(chain):
-    return ChainManager.get_chain(chain)
+    return ChainManager().get_chain(chain)
 
 
 @registry_bp.route("/images/entities/<entity_slug>", methods=["GET"])
