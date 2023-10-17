@@ -5,10 +5,10 @@ from utils.images import get_image
 
 
 def load_project_data(chain, network):
-    loaded_accounts = accounts.get_accounts(chain, network)
-    loaded_assets = assets.get_assets(chain, network)
-    loaded_codes = codes.get_codes(chain, network)
-    loaded_contracts = contracts.get_contracts(chain, network)
+    loaded_accounts = accounts.AccountManager(chain, network).get_accounts()
+    loaded_assets = assets.AssetManager(chain, network).get_assets()
+    loaded_codes = codes.CodeManager(chain, network).get_codes()
+    loaded_contracts = contracts.ContractManager(chain, network).get_contracts()
     return loaded_accounts, loaded_assets, loaded_codes, loaded_contracts
 
 
