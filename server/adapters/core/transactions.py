@@ -3,7 +3,7 @@ import logging
 import requests
 
 from utils.constants import WLD_URL
-from utils.gcs import get_network_data
+from utils.gcs import get_network_data, get_lcd_tx_response_from_gcs
 from utils.graphql import get_lcd_tx_responses, get_lcd_tx_results
 
 
@@ -17,7 +17,14 @@ def get_wld_transaction(tx_hash):
 
 def get_tx(chain, network, tx_hash):
     try:
-        print("lcd_tx_results")
+        if (network == "osmosis-1"):
+            gcp_res = get_lcd_tx_response_from_gcs(network, tx_hash)
+            if gcp_res != {}:
+                logging.info(f"Got lcd_tx_response from GCS: {tx_hash}")
+                return gcp_res
+    except Exception as e:
+        logging.error(f"Error getting lcd_tx_results: {e}")
+    try:
         graphql_res = get_lcd_tx_results(chain, network, tx_hash)
         graphql_tx_res = graphql_res["lcd_tx_results"]
         if graphql_tx_res:
@@ -25,7 +32,6 @@ def get_tx(chain, network, tx_hash):
     except Exception as e:
         logging.error(f"Error getting lcd_tx_results: {e}")
     try:
-        print("lcd_tx_responses")
         graphql_res = get_lcd_tx_responses(chain, network, tx_hash, 1)
         graphql_tx_res = graphql_res["lcd_tx_responses"]
         if graphql_tx_res:
@@ -33,7 +39,6 @@ def get_tx(chain, network, tx_hash):
     except Exception as e:
         logging.error(f"Error getting lcd_tx_responses: {e}")
     try:
-        print("lcd")
         lcd = get_lcd_transaction(chain, network, tx_hash)
         lcd.raise_for_status()
         return lcd.json()
