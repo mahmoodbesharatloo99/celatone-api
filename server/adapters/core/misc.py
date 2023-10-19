@@ -30,6 +30,27 @@ def get_rest(chain: str, network: str, path: str, params: Dict[str, Any]) -> Dic
         handle_error(response)
 
 
+def post_rest(chain: str, network: str, path: str, data: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Perform a POST request to the specified path and return the response.
+
+    Parameters:
+    chain (str): The blockchain chain.
+    network (str): The network.
+    path (str): The path to send the request to.
+    data (dict): The payload to be sent with the request
+
+    Returns:
+    dict: The response from the request.
+    """
+    try:
+        response = requests.post(f"{get_network_data(chain, network, 'lcd')}/{path}", data=data)
+        response.raise_for_status()
+        return response.json()
+    except requests.HTTPError:
+        handle_error(response)
+
+
 def get_graphql(chain: str, network: str, data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Send a POST request to the specified path and return the response.

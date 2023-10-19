@@ -14,6 +14,9 @@ def get_balances(chain, network, account_address):
 # Cosmos Rest
 
 
-@misc_bp.route("/rest/<chain>/<network>/<path:path>", methods=["GET"])
+@misc_bp.route("/rest/<chain>/<network>/<path:path>", methods=["GET", "POST"])
 def get_rest(chain, network, path):
-    return misc.get_rest(chain, network, path, request.args)
+    if request.method == "GET":
+        return misc.get_rest(chain, network, path, request.args)
+    if request.method == "POST":
+        return misc.post_rest(chain, network, path, request.data)
