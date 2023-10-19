@@ -1,7 +1,8 @@
-from flask import Blueprint, jsonify
+from flask import jsonify
+from apiflask import APIBlueprint
 from adapters.aldus.assets import AssetManager
 
-assets_bp = Blueprint("assets", __name__)
+assets_bp= APIBlueprint("assets", __name__)
 
 
 def get_assets_manager(chain, network):

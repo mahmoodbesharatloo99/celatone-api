@@ -1,7 +1,7 @@
-from flask import Blueprint
+from apiflask import APIBlueprint
 from adapters.monitoring import health
 
-monitoring_bp = Blueprint("monitoring", __name__)
+monitoring_bp= APIBlueprint("monitoring", __name__)
 
 
 @monitoring_bp.route("/<chain>/<network>/health", methods=["GET"])

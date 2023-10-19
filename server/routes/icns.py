@@ -1,7 +1,7 @@
-from flask import Blueprint
+from apiflask import APIBlueprint
 from adapters.icns import resolver
 
-icns_bp = Blueprint("icns", __name__)
+icns_bp= APIBlueprint("icns", __name__)
 
 
 @icns_bp.route("/icns/address/<name>/<bech32_prefix>", methods=["GET"])

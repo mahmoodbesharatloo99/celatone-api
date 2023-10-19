@@ -1,7 +1,8 @@
-from flask import Blueprint, request
+from flask import request
+from apiflask import APIBlueprint
 from adapters.core import misc, balances
 
-misc_bp = Blueprint("misc", __name__)
+misc_bp= APIBlueprint("misc", __name__)
 
 # Balances
 

@@ -1,9 +1,9 @@
-from flask import Blueprint
+from apiflask import APIBlueprint
 from adapters.aldus.codes import CodeManager
 from adapters.aldus.contracts import ContractManager
 from adapters.aldus import helpers
 
-cosmwasm_bp = Blueprint("cosmwasm", __name__)
+cosmwasm_bp= APIBlueprint("cosmwasm", __name__)
 
 
 @cosmwasm_bp.route("/codes/<chain>/<network>", methods=["GET"])

@@ -1,10 +1,11 @@
-from flask import Blueprint, send_file
+from flask import send_file
+from apiflask import APIBlueprint
 from adapters.aldus import entities, projects
 from adapters.aldus.chains import ChainManager
 from utils.constants import ALDUS_URL
 
 
-registry_bp = Blueprint("registry", __name__)
+registry_bp= APIBlueprint("registry", __name__)
 
 
 @registry_bp.route("/entities", methods=["GET"])

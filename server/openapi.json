@@ -1,24 +1,35 @@
 {
   "info": {
-    "title": "My API",
+    "title": "Celatone API",
     "version": "1.0"
   },
   "tags": [
     {
-      "name": "Default",
-      "description": "Default queries"
+      "name": "Accounts"
     },
     {
-      "name": "Registry Data",
-      "description": "Queries that uses data from the registry data JSONs"
+      "name": "Assets"
     },
     {
-      "name": "Registry Assets",
-      "description": "Queries that uses data from the registry data asset images"
+      "name": "Cosmwasm"
     },
     {
-      "name": "External",
-      "description": "Queries that uses also uses data from external sources"
+      "name": "Monitoring"
+    },
+    {
+      "name": "Icns"
+    },
+    {
+      "name": "Misc"
+    },
+    {
+      "name": "Registry"
+    },
+    {
+      "name": "Staking"
+    },
+    {
+      "name": "Transactions"
     }
   ],
   "paths": {
@@ -35,9 +46,6 @@
             "description": "Successful response"
           }
         },
-        "tags": [
-          "Default"
-        ],
         "summary": "Hello World"
       }
     },
@@ -55,7 +63,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Registry"
         ],
         "summary": "Get Chains"
       }
@@ -74,7 +82,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Registry"
         ],
         "summary": "Get Entities"
       }
@@ -112,9 +120,47 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Registry"
         ],
         "summary": "Get Chain"
+      }
+    },
+    "/icns/names/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Icns"
+        ],
+        "summary": "Get Icns Names"
       }
     },
     "/entities/{entity_slug}": {
@@ -150,7 +196,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Registry"
         ],
         "summary": "Get Entity"
       }
@@ -196,7 +242,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Cosmwasm"
         ],
         "summary": "Get All Codes",
         "description": "Returns a list of all the known codes based on the input chain and network"
@@ -243,10 +289,55 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Assets"
         ],
-        "summary": "Get All Assets",
-        "description": "Returns a list of all the known assets based on the input chain and network"
+        "summary": "Get Assets"
+      }
+    },
+    "/{chain}/{network}/health": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Monitoring"
+        ],
+        "summary": "Get Health"
       }
     },
     "/accounts/{chain}/{network}": {
@@ -290,7 +381,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Accounts"
         ],
         "summary": "Get All Accounts",
         "description": "Returns a list of all the known accounts based on the input chain and network"
@@ -337,7 +428,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Registry"
         ],
         "summary": "Get Projects"
       }
@@ -383,7 +474,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Cosmwasm"
         ],
         "summary": "Get All Contracts",
         "description": "Returns a list of all the known contracts based on the input chain and network"
@@ -422,7 +513,7 @@
           }
         },
         "tags": [
-          "Registry Assets"
+          "Registry"
         ],
         "summary": "Get Asset Image"
       }
@@ -460,7 +551,7 @@
           }
         },
         "tags": [
-          "Registry Assets"
+          "Registry"
         ],
         "summary": "Get Entity Image"
       }
@@ -506,11 +597,9 @@
           }
         },
         "tags": [
-          "Registry Data",
-          "External"
+          "Assets"
         ],
-        "summary": "Get All Assets with Prices",
-        "description": "Returns a list of all the known assets based on the input chain and network"
+        "summary": "Get Assets Prices"
       }
     },
     "/txs/{chain}/{network}/{tx_hash}": {
@@ -562,9 +651,55 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Transactions"
         ],
         "summary": "Get Tx"
+      }
+    },
+    "/{chain}/{network}/staking/params": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Staking"
+        ],
+        "summary": "Get Staking Params"
       }
     },
     "/codes/{chain}/{network}/{code_id}": {
@@ -616,10 +751,64 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Cosmwasm"
         ],
         "summary": "Get Code by ID",
         "description": "Returns a specific code based on the input chain, network, and code_id"
+      }
+    },
+    "/rest/{chain}/{network}/{path}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get Rest"
       }
     },
     "/assets/{chain}/{network}/{asset_id}": {
@@ -671,7 +860,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Assets"
         ],
         "summary": "Get Asset"
       }
@@ -725,9 +914,101 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Assets"
         ],
         "summary": "Get Asset Ibc"
+      }
+    },
+    "/icns/address/{name}/{bech32_prefix}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "bech32_prefix",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Icns"
+        ],
+        "summary": "Get Icns Address"
+      }
+    },
+    "/{chain}/{network}/staking/validators": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Staking"
+        ],
+        "summary": "Get Validators"
       }
     },
     "/projects/{chain}/{network}/{project_id}": {
@@ -779,9 +1060,56 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Registry"
         ],
         "summary": "Get Project"
+      }
+    },
+    "/cosmwasm/{chain}/{network}/upload_access": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Cosmwasm"
+        ],
+        "summary": "Get Upload Access",
+        "description": "Returns the upload access for the input chain and network"
       }
     },
     "/assets/{chain}/{network}/type/{asset_type}": {
@@ -833,10 +1161,9 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Assets"
         ],
-        "summary": "Get Assets by Type",
-        "description": "Returns a list of all the known assets based on the input chain, network, and asset_type"
+        "summary": "Get Assets By Type"
       }
     },
     "/assets/{chain}/{network}/slug/{asset_slug}": {
@@ -888,7 +1215,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Assets"
         ],
         "summary": "Get Asset By Slug"
       }
@@ -942,7 +1269,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Accounts"
         ],
         "summary": "Get Account by ID",
         "description": "Returns a specific account based on the input chain, network, and account_address"
@@ -997,7 +1324,7 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Assets"
         ],
         "summary": "Get Asset Gamm"
       }
@@ -1051,8 +1378,7 @@
           }
         },
         "tags": [
-          "Registry Data",
-          "External"
+          "Misc"
         ],
         "summary": "Get Balances"
       }
@@ -1106,10 +1432,172 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Cosmwasm"
         ],
         "summary": "Get Get Contract by ID",
         "description": "Returns a specific contract based on the input chain, network, and contract_address"
+      }
+    },
+    "/{chain}/{network}/staking/unbondings/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Staking"
+        ],
+        "summary": "Get Unbondings"
+      }
+    },
+    "/{chain}/{network}/staking/delegations/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Staking"
+        ],
+        "summary": "Get Delegations"
+      }
+    },
+    "/{chain}/{network}/staking/redelegations/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Staking"
+        ],
+        "summary": "Get Redelegations"
       }
     },
     "/assets/{chain}/{network}/factory/{creator}/{symbol}": {
@@ -1169,9 +1657,63 @@
           }
         },
         "tags": [
-          "Registry Data"
+          "Assets"
         ],
         "summary": "Get Asset Factory"
+      }
+    },
+    "/{chain}/{network}/staking/validators/{validator_address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "validator_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Staking"
+        ],
+        "summary": "Get Validator"
       }
     }
   },

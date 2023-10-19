@@ -1,7 +1,7 @@
-from flask import Blueprint
+from apiflask import APIBlueprint
 from adapters.aldus.accounts import AccountManager
 
-accounts_bp = Blueprint("accounts", __name__)
+accounts_bp= APIBlueprint("accounts", __name__)
 
 
 @accounts_bp.route("/accounts/<chain>/<network>", methods=["GET"])

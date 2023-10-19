@@ -1,7 +1,8 @@
-from flask import Blueprint, request
+from flask import request
+from apiflask import APIBlueprint
 from adapters.core import staking
 
-staking_bp = Blueprint("staking", __name__)
+staking_bp= APIBlueprint("staking", __name__)
 
 
 @staking_bp.route("/<chain>/<network>/staking/params", methods=["GET"])

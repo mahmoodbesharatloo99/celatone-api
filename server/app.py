@@ -3,9 +3,21 @@ import os
 from flask_cors import CORS
 from apiflask import APIFlask
 
-from routes import accounts, assets, cosmwasm, monitoring, icns, misc, registry, staking, transactions
+from routes import (
+    accounts,
+    assets,
+    cosmwasm,
+    monitoring,
+    icns,
+    misc,
+    registry,
+    staking,
+    transactions,
+)
 
-app = APIFlask(__name__, title="Celatone API", version="1.0")
+app = APIFlask(__name__, title="Celatone API", version="1.0", spec_path="/openapi.yml", docs_ui="swagger-ui")
+app.config["SYNC_LOCAL_SPEC"] = True
+app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
 
 app.register_blueprint(accounts.accounts_bp)
 app.register_blueprint(assets.assets_bp)
