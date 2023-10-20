@@ -1,4 +1,5 @@
 import os
+import logging
 
 from flask_cors import CORS
 from apiflask import APIFlask
@@ -14,6 +15,8 @@ from routes import (
     staking,
     transactions,
 )
+
+logging.getLogger().setLevel(logging.INFO)
 
 app = APIFlask(__name__, title="Celatone API", version="1.0", spec_path="/openapi.yml", docs_ui="swagger-ui")
 app.config["SYNC_LOCAL_SPEC"] = True
