@@ -18,6 +18,7 @@ def get_tx(chain, network, tx_hash):
     try:
         if (network == "osmosis-1"):
             gcp_res = get_lcd_tx_results_from_gcs(network, tx_hash)
+            logging.info(f"Got lcd_tx_results from GCS: {tx_hash} {gcp_res}")
             if gcp_res:
                 logging.info(f"Got lcd_tx_results from GCS: {tx_hash}")
                 return gcp_res
