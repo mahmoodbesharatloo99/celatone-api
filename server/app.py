@@ -1,6 +1,7 @@
 from flask import send_file, request, g
 import os
 import time
+import logging
 
 from opentelemetry import metrics
 from opentelemetry.exporter.otlp.proto.http.metric_exporter import OTLPMetricExporter
@@ -24,6 +25,8 @@ from adapters.icns import resolver
 
 from apiflask import APIFlask
 from flask_cors import CORS
+
+logging.getLogger().setLevel(logging.INFO)
 
 env = os.environ.get("APP_ENV", "local")
 
