@@ -6,10 +6,18 @@ from utils.gcs import get_network_data
 
 def handle_error(response: requests.Response) -> None:
     """Abort the request and return an error response."""
-    abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+    abort(
+        Response(
+            response=response.content,
+            status=response.status_code,
+            headers=response.headers.items(),
+        )
+    )
 
 
-def get_rest(chain: str, network: str, path: str, params: Dict[str, Any]) -> Dict[str, Any]:
+def get_rest(
+    chain: str, network: str, path: str, params: Dict[str, Any]
+) -> Dict[str, Any]:
     """
     Send a GET request to the specified path and return the response.
 
@@ -23,14 +31,18 @@ def get_rest(chain: str, network: str, path: str, params: Dict[str, Any]) -> Dic
     dict: The response from the request.
     """
     try:
-        response = requests.get(f"{get_network_data(chain,network,'lcd')}/{path}", params=params)
+        response = requests.get(
+            f"{get_network_data(chain,network,'lcd')}/{path}", params=params
+        )
         response.raise_for_status()
         return response.json()
     except requests.HTTPError:
         handle_error(response)
 
 
-def post_rest(chain: str, network: str, path: str, data: Dict[str, Any]) -> Dict[str, Any]:
+def post_rest(
+    chain: str, network: str, path: str, data: Dict[str, Any]
+) -> Dict[str, Any]:
     """
     Perform a POST request to the specified path and return the response.
 
@@ -44,7 +56,9 @@ def post_rest(chain: str, network: str, path: str, data: Dict[str, Any]) -> Dict
     dict: The response from the request.
     """
     try:
-        response = requests.post(f"{get_network_data(chain, network, 'lcd')}/{path}", data=data)
+        response = requests.post(
+            f"{get_network_data(chain, network, 'lcd')}/{path}", data=data
+        )
         response.raise_for_status()
         return response.json()
     except requests.HTTPError:

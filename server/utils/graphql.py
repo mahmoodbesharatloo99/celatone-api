@@ -3,7 +3,9 @@ from typing import List, Dict, Any
 from utils.gcs import get_network_data
 
 
-def execute_query(chain: str, network: str, query: str, endpoint: str = "graphql") -> Dict[str, Any]:
+def execute_query(
+    chain: str, network: str, query: str, endpoint: str = "graphql"
+) -> Dict[str, Any]:
     """Execute a GraphQL query.
 
     Args:
@@ -15,12 +17,16 @@ def execute_query(chain: str, network: str, query: str, endpoint: str = "graphql
     Returns:
         Dict[str, Any]: The response from the GraphQL server.
     """
-    response = requests.post(get_network_data(chain, network, endpoint), json={"query": query})
+    response = requests.post(
+        get_network_data(chain, network, endpoint), json={"query": query}
+    )
     response.raise_for_status()
     return response
 
 
-def get_contract_instantiator_admin(chain: str, network: str, contract_addresses: List[str]) -> List[Dict[str, Any]]:
+def get_contract_instantiator_admin(
+    chain: str, network: str, contract_addresses: List[str]
+) -> List[Dict[str, Any]]:
     """Get contract instantiator and admin details.
 
     Args:
@@ -41,7 +47,9 @@ def get_contract_instantiator_admin(chain: str, network: str, contract_addresses
         {
             "address": contract_address,
             "instantiator": data.get("accountByInitBy", {}).get("address", ""),
-            "admin": data.get("account", {}).get("address", "") if data["account"] is not None else "",
+            "admin": data.get("account", {}).get("address", "")
+            if data["account"] is not None
+            else "",
             "label": data["label"],
         }
         for contract_address, data in graphql_response.items()
@@ -61,7 +69,9 @@ def generate_code_query(code_id: str) -> str:
     return f"a{code_id}: codes_by_pk(id: {code_id}) {{\n  account {{\n    address\n  }}\n  cw2_contract\n  cw2_version\n  contract_instantiated\n  access_config_permission\n  access_config_addresses\n}}"
 
 
-def get_graphql_code_details(chain: str, network: str, code_ids: List[str]) -> List[Dict[str, Any]]:
+def get_graphql_code_details(
+    chain: str, network: str, code_ids: List[str]
+) -> List[Dict[str, Any]]:
     """Get details of multiple codes.
 
     Args:
@@ -73,7 +83,9 @@ def get_graphql_code_details(chain: str, network: str, code_ids: List[str]) -> L
         List[Dict[str, Any]]: List of code details.
     """
     query = "\n".join(generate_code_query(code_id) for code_id in code_ids)
-    graphql_response = execute_query(chain, network, f"query {{\n{query}\n}}").json().get("data", {})
+    graphql_response = (
+        execute_query(chain, network, f"query {{\n{query}\n}}").json().get("data", {})
+    )
     code_data = [
         {
             "code_id": int(code_id[1:]),
@@ -110,7 +122,9 @@ def get_lcd_tx_results(chain: str, network: str, tx_hash: str) -> Dict[str, Any]
     return execute_query(chain, network, query).json().get("data", {})
 
 
-def get_lcd_tx_responses(chain: str, network: str, tx_hash: str, limit: int) -> Dict[str, Any]:
+def get_lcd_tx_responses(
+    chain: str, network: str, tx_hash: str, limit: int
+) -> Dict[str, Any]:
     """Get LCD transaction responses.
 
     Args:

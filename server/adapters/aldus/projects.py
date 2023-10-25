@@ -13,10 +13,14 @@ def load_project_data(chain, network):
 
 
 def load_project(entity, accounts, assets, codes, contracts):
-    relevant_accounts = [account for account in accounts if account["slug"] == entity["slug"]]
+    relevant_accounts = [
+        account for account in accounts if account["slug"] == entity["slug"]
+    ]
     relevant_assets = [asset for asset in assets if entity["slug"] in asset["slugs"]]
     relevant_codes = [code for code in codes if code["slug"] == entity["slug"]]
-    relevant_contracts = [contract for contract in contracts if contract["slug"] == entity["slug"]]
+    relevant_contracts = [
+        contract for contract in contracts if contract["slug"] == entity["slug"]
+    ]
     if relevant_accounts or relevant_codes or relevant_contracts:
         return {
             "slug": entity["slug"],

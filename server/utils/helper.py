@@ -34,9 +34,9 @@ def get_hive_balance(chain, network, account_address):
     for idx, contract_address_chunk in enumerate(contract_address_chunks):
         query = generate_hive_query(account_address, contract_address_chunk)
         print(get_network_data(chain, network, "hive"))
-        hive_data = requests.post(f"{get_network_data(chain,network,'hive')}/graphql", json={"query": query}).json()[
-            "data"
-        ]
+        hive_data = requests.post(
+            f"{get_network_data(chain,network,'hive')}/graphql", json={"query": query}
+        ).json()["data"]
         output_balance += [
             {
                 "name": asset["name"],
@@ -45,11 +45,16 @@ def get_hive_balance(chain, network, account_address):
                 "amount": data.get("contractQuery", {}).get("balance", 0),
                 "precision": asset["precision"],
                 "type": "cw20",
-                "price": asset_prices.get(asset["id"], 0) if asset and asset["id"] in asset_prices else 0,
+                "price": asset_prices.get(asset["id"], 0)
+                if asset and asset["id"] in asset_prices
+                else 0,
             }
             for asset, data in zip(
                 supported_assets_chunks[idx],
-                [hive_data.get(contract_address, {}) for contract_address in contract_address_chunk],
+                [
+                    hive_data.get(contract_address, {})
+                    for contract_address in contract_address_chunk
+                ],
             )
             if int(data.get("contractQuery", {}).get("balance", 0)) > 0
         ]
@@ -58,7 +63,9 @@ def get_hive_balance(chain, network, account_address):
 
 def get_native_balances(endpoint, chain, network, account_address):
     balances = (
-        requests.get(f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500")
+        requests.get(
+            f"{endpoint}/cosmos/bank/v1beta1/balances/{account_address}?pagination.limit=500"
+        )
         .json()
         .get("balances", [])
     )
@@ -73,12 +80,18 @@ def get_native_balances(endpoint, chain, network, account_address):
             "amount": balance["amount"],
             "precision": asset["precision"] if asset else 0,
             "type": "native",
-            "price": asset_prices.get(balance["denom"], 0) if asset and balance["denom"] in asset_prices else 0,
+            "price": asset_prices.get(balance["denom"], 0)
+            if asset and balance["denom"] in asset_prices
+            else 0,
         }
         for balance in balances
         for asset in [
             next(
-                (asset for asset in supported_assets if asset["id"] == balance["denom"]),
+                (
+                    asset
+                    for asset in supported_assets
+                    if asset["id"] == balance["denom"]
+                ),
                 None,
             )
         ]

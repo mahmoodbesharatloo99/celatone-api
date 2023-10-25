@@ -35,6 +35,10 @@ class AccountManager:
         Dict[str, Any]: The account data.
         """
         try:
-            return next(account for account in self.accounts if account["address"] == account_address)
+            return next(
+                account
+                for account in self.accounts
+                if account["address"] == account_address
+            )
         except StopIteration:
             raise ValueError(f"Account {account_address} not found")

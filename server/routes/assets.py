@@ -2,7 +2,7 @@ from flask import jsonify
 from apiflask import APIBlueprint
 from adapters.aldus.assets import AssetManager
 
-assets_bp= APIBlueprint("assets", __name__)
+assets_bp = APIBlueprint("assets", __name__)
 
 
 def get_assets_manager(chain, network):
@@ -58,7 +58,9 @@ def get_asset_ibc(chain, network, hash):
         return jsonify(error=str(e)), 500
 
 
-@assets_bp.route("/assets/<chain>/<network>/factory/<creator>/<symbol>", methods=["GET"])
+@assets_bp.route(
+    "/assets/<chain>/<network>/factory/<creator>/<symbol>", methods=["GET"]
+)
 def get_asset_factory(chain, network, creator, symbol):
     try:
         return get_assets_manager(chain, network).get_asset_factory(creator, symbol)

@@ -5,7 +5,7 @@ from adapters.aldus.chains import ChainManager
 from utils.constants import ALDUS_URL
 
 
-registry_bp= APIBlueprint("registry", __name__)
+registry_bp = APIBlueprint("registry", __name__)
 
 
 @registry_bp.route("/entities", methods=["GET"])

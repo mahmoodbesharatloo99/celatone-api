@@ -26,7 +26,9 @@ class ContractManager:
         contracts = get_aldus_chain_data(chain, network, "contracts")
         codes = get_aldus_chain_data(chain, network, "codes")
         contract_addresses = [contract["address"] for contract in contracts]
-        instantiator_admin_data = get_contract_instantiator_admin(chain, network, contract_addresses)
+        instantiator_admin_data = get_contract_instantiator_admin(
+            chain, network, contract_addresses
+        )
         code_map = {code["id"]: code for code in codes}
         instantiator_admin_map = {
             data["address"]: {
@@ -76,6 +78,10 @@ class ContractManager:
         Dict[str, Any]: The contract data.
         """
         try:
-            return next(contract for contract in self.contracts if contract["address"] == contract_address)
+            return next(
+                contract
+                for contract in self.contracts
+                if contract["address"] == contract_address
+            )
         except StopIteration:
             raise ValueError(f"Contract {contract_address} not found")

@@ -8,7 +8,9 @@ from utils.graphql import get_lcd_tx_responses, get_lcd_tx_results
 
 
 def get_lcd_transaction(chain, network, tx_hash):
-    return requests.get(f"{get_network_data(chain,network,'lcd')}/cosmos/tx/v1beta1/txs/{tx_hash}")
+    return requests.get(
+        f"{get_network_data(chain,network,'lcd')}/cosmos/tx/v1beta1/txs/{tx_hash}"
+    )
 
 
 def get_wld_transaction(tx_hash):
@@ -17,7 +19,7 @@ def get_wld_transaction(tx_hash):
 
 def get_tx(chain, network, tx_hash):
     try:
-        if (network == "osmosis-1"):
+        if network == "osmosis-1":
             gcp_res = get_lcd_tx_response_from_gcs(network, tx_hash)
             if gcp_res != {}:
                 logging.info(f"Got lcd_tx_response from GCS: {tx_hash}")

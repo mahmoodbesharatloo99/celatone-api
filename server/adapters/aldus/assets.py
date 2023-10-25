@@ -27,7 +27,10 @@ class AssetManager:
         Returns:
         List[Dict[str, Any]]: A list of assets.
         """
-        return sorted([dict(asset, **{"price": 0.00}) for asset in self.assets], key=lambda d: d["symbol"])
+        return sorted(
+            [dict(asset, **{"price": 0.00}) for asset in self.assets],
+            key=lambda d: d["symbol"],
+        )
 
     def get_asset(self, asset_id: str) -> Dict[str, Any]:
         """

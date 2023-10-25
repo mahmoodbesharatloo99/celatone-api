@@ -5,6 +5,7 @@ from typing import Any, Dict
 
 storage_client = storage.Client()
 
+
 def get_network_data(chain: str, network: str, endpoint: str) -> Dict[str, Any]:
     """
     Retrieves network data from a specified endpoint.
@@ -48,6 +49,7 @@ def get_gcs_data(bucket_name: str, source_blob_name: str) -> Dict[str, Any]:
         logging.error(f"Failed to get data from GCS: {e}")
         return {}
 
+
 def get_lcd_tx_response_from_gcs(network: str, tx_hash: str) -> Dict[str, Any]:
     """
     Retrieves LCD TX response from Google Cloud Storage.
@@ -60,10 +62,12 @@ def get_lcd_tx_response_from_gcs(network: str, tx_hash: str) -> Dict[str, Any]:
         dict: The data from the blob.
     """
     bucket = storage_client.bucket(network + "-lcd-tx-responses")
-    blobs = bucket.list_blobs(prefix=tx_hash+"/", delimiter="/")
+    blobs = bucket.list_blobs(prefix=tx_hash + "/", delimiter="/")
     # sort blobs by name desc after turn to int
-    sorted_blobs = sorted(blobs, key=lambda blob: int(blob.name.split("/")[1]), reverse=True)
-    if (len(sorted_blobs) == 0):
+    sorted_blobs = sorted(
+        blobs, key=lambda blob: int(blob.name.split("/")[1]), reverse=True
+    )
+    if len(sorted_blobs) == 0:
         return {}
     res = sorted_blobs[0].download_as_string()
     return json.loads(res)

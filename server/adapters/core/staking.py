@@ -7,7 +7,9 @@ from utils.graphql import get_graphql_validators
 
 
 def _get_network_base_denom(chain, network):
-    response = requests.get(f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/params")
+    response = requests.get(
+        f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/params"
+    )
     response.raise_for_status()
     return response.json()["params"]["bond_denom"]
 
@@ -15,27 +17,40 @@ def _get_network_base_denom(chain, network):
 def get_params(chain, network):
     try:
         if chain == "initia":
-            response = requests.get(f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/params")
+            response = requests.get(
+                f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/params"
+            )
             response.raise_for_status()
             return response.json()
         else:
-            response = requests.get(f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/params")
+            response = requests.get(
+                f"{get_network_data(chain,network,'lcd')}/cosmos/staking/v1beta1/params"
+            )
             response.raise_for_status()
             json_response = response.json()
 
-            json_response["params"]["bond_denoms"] = [json_response["params"]["bond_denom"]]
+            json_response["params"]["bond_denoms"] = [
+                json_response["params"]["bond_denom"]
+            ]
             del json_response["params"]["bond_denom"]
 
             return json_response
     except requests.HTTPError as _:
-        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+        abort(
+            Response(
+                response=response.content,
+                status=response.status_code,
+                headers=response.headers.items(),
+            )
+        )
 
 
 def get_delegations(chain, network, address, params):
     try:
         if chain == "initia":
             response = requests.get(
-                f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/delegations/{address}", params=params
+                f"{get_network_data(chain,network,'lcd')}/initia/mstaking/v1/delegations/{address}",
+                params=params,
             )
             response.raise_for_status()
             return response.json()
@@ -58,7 +73,13 @@ def get_delegations(chain, network, address, params):
 
             return json_response
     except requests.HTTPError as _:
-        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+        abort(
+            Response(
+                response=response.content,
+                status=response.status_code,
+                headers=response.headers.items(),
+            )
+        )
 
 
 def get_unbondings(chain, network, address, params):
@@ -96,7 +117,13 @@ def get_unbondings(chain, network, address, params):
 
             return json_response
     except requests.HTTPError as _:
-        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+        abort(
+            Response(
+                response=response.content,
+                status=response.status_code,
+                headers=response.headers.items(),
+            )
+        )
 
 
 def get_redelegations(chain, network, address, params):
@@ -140,13 +167,21 @@ def get_redelegations(chain, network, address, params):
 
             return json_response
     except requests.HTTPError as _:
-        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+        abort(
+            Response(
+                response=response.content,
+                status=response.status_code,
+                headers=response.headers.items(),
+            )
+        )
 
 
 # in-place modification via reference
 def _format_validator(validator, base_denom):
     validator["tokens"] = [{"denom": base_denom, "amount": validator["tokens"]}]
-    validator["delegator_shares"] = [{"denom": base_denom, "amount": validator["delegator_shares"]}]
+    validator["delegator_shares"] = [
+        {"denom": base_denom, "amount": validator["delegator_shares"]}
+    ]
 
 
 def get_validators(chain, network):
@@ -179,4 +214,10 @@ def get_validator(chain, network, validator_address):
 
             return json_response
     except requests.HTTPError as _:
-        abort(Response(response=response.content, status=response.status_code, headers=response.headers.items()))
+        abort(
+            Response(
+                response=response.content,
+                status=response.status_code,
+                headers=response.headers.items(),
+            )
+        )

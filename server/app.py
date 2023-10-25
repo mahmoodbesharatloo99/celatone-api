@@ -18,7 +18,13 @@ from routes import (
 
 logging.getLogger().setLevel(logging.INFO)
 
-app = APIFlask(__name__, title="Celatone API", version="1.0", spec_path="/openapi.yml", docs_ui="swagger-ui")
+app = APIFlask(
+    __name__,
+    title="Celatone API",
+    version="1.0",
+    spec_path="/openapi.yml",
+    docs_ui="swagger-ui",
+)
 app.config["SYNC_LOCAL_SPEC"] = True
 app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
 
