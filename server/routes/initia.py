@@ -4,7 +4,7 @@ from adapters.aldus.modules import ModuleManager
 initia_bp = APIBlueprint("initia", __name__)
 
 
-@initia_bp.route("/initia/modules/<chain>/<network>", methods=["GET"])
+@initia_bp.route("/<chain>/<network>/modules", methods=["GET"])
 def get_modules(chain, network):
     """Get All Codes
 
@@ -13,7 +13,7 @@ def get_modules(chain, network):
     return ModuleManager(chain, network).get_modules()
 
 
-@initia_bp.route("/initia/modules/<chain>/<network>/<address>/<name>", methods=["GET"])
+@initia_bp.route("/<chain>/<network>/modules/<address>/<name>", methods=["GET"])
 def get_module(chain, network, address, name):
     """Get Code by ID
 
