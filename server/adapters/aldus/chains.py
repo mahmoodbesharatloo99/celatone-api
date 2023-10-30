@@ -1,4 +1,3 @@
-import json
 import requests
 from typing import Dict, Any
 from utils.constants import ALDUS_URL

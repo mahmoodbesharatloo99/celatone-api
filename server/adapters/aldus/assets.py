@@ -1,5 +1,3 @@
-import base64
-
 from utils.aldus import get_aldus_chain_data
 from utils.prices import get_prices
 
