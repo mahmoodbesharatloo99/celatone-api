@@ -156,12 +156,12 @@ def get_graphql_health(chain: str, network: str) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: The health of the GraphQL server.
     """
-    query = f"""
-        query {{
-            blocks(limit: 1, order_by: {{height: desc}}) {{
+    query = """
+        query {
+            blocks(limit: 1, order_by: {height: desc}) {
                 height
-            }}
-        }}
+            }
+        }
     """
     return execute_query(chain, network, query)
 
@@ -176,9 +176,9 @@ def get_graphql_validators(chain: str, network: str) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: The validators of the blockchain.
     """
-    query = f"""
-        query {{
-            validators {{
+    query = """
+        query {
+            validators {
             commission_max_change
             commission_max_rate
             commission_rate
@@ -189,7 +189,7 @@ def get_graphql_validators(chain: str, network: str) -> Dict[str, Any]:
             moniker
             operator_address
             website
-            }}
-        }}
+            }
+        }
     """
     return execute_query(chain, network, query).json().get("data", {})

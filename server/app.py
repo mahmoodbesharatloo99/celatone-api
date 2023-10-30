@@ -4,17 +4,7 @@ import logging
 from flask_cors import CORS
 from apiflask import APIFlask
 
-from routes import (
-    accounts,
-    assets,
-    cosmwasm,
-    monitoring,
-    icns,
-    misc,
-    registry,
-    staking,
-    transactions,
-)
+from routes import accounts, assets, cosmwasm, monitoring, icns, misc, registry, staking, transactions, initia
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -37,6 +27,7 @@ app.register_blueprint(misc.misc_bp)
 app.register_blueprint(registry.registry_bp)
 app.register_blueprint(staking.staking_bp)
 app.register_blueprint(transactions.transactions_bp)
+app.register_blueprint(initia.initia_bp)
 
 CORS(app)
 
