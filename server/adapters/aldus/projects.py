@@ -58,7 +58,7 @@ def get_projects(chain, network):
 
 
 def get_project(chain, network, slug):
-    accounts, assets, codes, contracts = load_project_data(chain, network)
+    accounts, assets, codes, contracts, modules = load_project_data(chain, network)
     entities = get_aldus_entities_data()
     entity = [entity for entity in entities if entity["slug"] == slug][0]
     project = load_project(entity, accounts, assets, codes, contracts, modules)
