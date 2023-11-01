@@ -21,7 +21,7 @@ def load_project(entity, accounts, assets, codes, contracts, modules):
     relevant_codes = [code for code in codes if code["slug"] == entity["slug"]]
     relevant_contracts = [contract for contract in contracts if contract["slug"] == entity["slug"]]
     relevant_modules = [module for module in modules if module["slug"] == entity["slug"]]
-    if relevant_accounts or relevant_codes or relevant_contracts:
+    if relevant_accounts or relevant_codes or relevant_contracts or relevant_modules:
         return {
             "slug": entity["slug"],
             "details": {
