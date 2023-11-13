@@ -4,7 +4,7 @@ import logging
 from flask_cors import CORS
 from apiflask import APIFlask
 
-from routes import accounts, assets, cosmwasm, monitoring, icns, misc, registry, staking, transactions, initia
+from routes import legacy, v1
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -18,16 +18,8 @@ app = APIFlask(
 app.config["SYNC_LOCAL_SPEC"] = True
 app.config["LOCAL_SPEC_PATH"] = os.path.join(app.root_path, "openapi.json")
 
-app.register_blueprint(accounts.accounts_bp)
-app.register_blueprint(assets.assets_bp)
-app.register_blueprint(cosmwasm.cosmwasm_bp)
-app.register_blueprint(monitoring.monitoring_bp)
-app.register_blueprint(icns.icns_bp)
-app.register_blueprint(misc.misc_bp)
-app.register_blueprint(registry.registry_bp)
-app.register_blueprint(staking.staking_bp)
-app.register_blueprint(transactions.transactions_bp)
-app.register_blueprint(initia.initia_bp)
+app.register_blueprint(legacy.legacy_bp)
+app.register_blueprint(v1.v1_bp, url_prefix="/v1")
 
 CORS(app)
 
