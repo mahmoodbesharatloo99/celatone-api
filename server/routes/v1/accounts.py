@@ -1,4 +1,3 @@
-
 from apiflask import APIBlueprint
 from adapters.aldus.accounts import AccountManager
 from adapters.aldus import projects
@@ -15,11 +14,14 @@ def get_account_info(chain, network, account_address):
 
     try:
         icns = get_icns_names(account_address)
+        icns_primary_name = icns.get("primary_name")
+        if len(icns_primary_name) == 0:
+            icns = None
     except Exception:
         icns = None
 
     try:
-        project_info = projects.get_project(chain, network, public_info.get("slug"))
+        project_info = projects.get_project(chain, network, public_info.get("slug")).get("details")
     except Exception:
         project_info = None
         
