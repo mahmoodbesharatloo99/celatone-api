@@ -1,5 +1,6 @@
+from typing import Any, Dict
+
 import requests
-from typing import Dict, Any
 from utils.gcs import get_network_data
 
 
