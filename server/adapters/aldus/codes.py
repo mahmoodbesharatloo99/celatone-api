@@ -1,6 +1,6 @@
 from typing import List, Dict, Any
 from utils.aldus import get_aldus_chain_data
-from utils.graphql import get_graphql_code_details
+from utils.graphql.codes import get_graphql_code_details
 
 
 class CodeManager:

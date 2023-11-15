@@ -1,7 +1,7 @@
 import requests
 
 from utils.gcs import get_network_data
-from utils.graphql import get_graphql_health
+from utils.graphql.common import get_graphql_health
 
 
 def generate_health(chain, network, check, checks):
