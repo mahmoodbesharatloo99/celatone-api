@@ -15,22 +15,15 @@ def get_blocks(chain, network):
         if offset is None:
             raise ValueError("offset is required")
 
-        graphql_res = get_graphql_blocks(chain, network, limit, offset)
-        return {
-            "items": [
-                {
-                    "hash": item["hash"],
-                    "height": item["height"],
-                    "timestamp": item["timestamp"],
-                    "transaction_count": item["transactions_aggregate"]["aggregate"][
-                        "count"
-                    ],
-                    "validator": item["validator"],
-                }
-                for item in graphql_res["blocks"]
-            ],
-            "total": graphql_res["latest"][0]["height"],
-        }, 200
+        data = get_graphql_blocks(chain, network, limit, offset)
+        for block in data.get("items", []):
+            block["transaction_count"] = block["transactions_aggregate"]["aggregate"][
+                "count"
+            ]
+            del block["transactions_aggregate"]
+        data["total"] = data["latest"][0]["height"]
+        del data["latest"]
+
+        return data, 200
     except Exception as e:
-        print("errorrrr", e)
         return jsonify(error=str(e)), 500

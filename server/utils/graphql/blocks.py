@@ -15,7 +15,7 @@ def get_graphql_blocks(chain: str, network: str, limit: int, offset: int):
     """
     query = f"""
         query {{
-            blocks(limit: {limit}, offset: {offset}, order_by: {{ height: desc }}) {{
+            items: blocks(limit: {limit}, offset: {offset}, order_by: {{ height: desc }}) {{
                 hash
                 height
                 timestamp
@@ -35,4 +35,7 @@ def get_graphql_blocks(chain: str, network: str, limit: int, offset: int):
             }}
         }}
     """
-    return execute_query(chain, network, query).json().get("data", {})
+    res = execute_query(chain, network, query).json()
+    if res.get("errors") is not None:
+        raise Exception(res.get("errors"))
+    return res.get("data", {})
