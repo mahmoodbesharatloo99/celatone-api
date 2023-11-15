@@ -1,6 +1,6 @@
 from typing import List, Dict, Any
+from queries.contracts import get_graphql_contract_instantiator_admin
 from utils.aldus import get_aldus_chain_data
-from utils.graphql import get_contract_instantiator_admin
 
 
 class ContractManager:
@@ -26,7 +26,7 @@ class ContractManager:
         contracts = get_aldus_chain_data(chain, network, "contracts")
         codes = get_aldus_chain_data(chain, network, "codes")
         contract_addresses = [contract["address"] for contract in contracts]
-        instantiator_admin_data = get_contract_instantiator_admin(
+        instantiator_admin_data = get_graphql_contract_instantiator_admin(
             chain, network, contract_addresses
         )
         code_map = {code["id"]: code for code in codes}

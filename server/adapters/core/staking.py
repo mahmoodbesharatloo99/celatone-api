@@ -2,8 +2,8 @@ import logging
 
 import requests
 from flask import Response, abort
+from queries.validators import get_graphql_validators
 from utils.gcs import get_network_data
-from utils.graphql import get_graphql_validators
 
 
 def _get_network_base_denom(chain, network):

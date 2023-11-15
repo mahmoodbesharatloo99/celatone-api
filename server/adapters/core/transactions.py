@@ -2,9 +2,9 @@ from flask import abort
 import logging
 import requests
 
+from queries.txs import get_graphql_lcd_tx_responses, get_graphql_lcd_tx_results
 from utils.constants import WLD_URL
 from utils.gcs import get_network_data, get_lcd_tx_response_from_gcs
-from utils.graphql import get_lcd_tx_responses, get_lcd_tx_results
 
 
 def get_lcd_transaction(chain, network, tx_hash):
@@ -27,14 +27,14 @@ def get_tx(chain, network, tx_hash):
     except Exception as e:
         logging.error(f"Error getting lcd_tx_results: {e}")
     try:
-        graphql_res = get_lcd_tx_results(chain, network, tx_hash)
+        graphql_res = get_graphql_lcd_tx_results(chain, network, tx_hash)
         graphql_tx_res = graphql_res["lcd_tx_results"]
         if graphql_tx_res:
             return graphql_tx_res[0]["result"]
     except Exception as e:
         logging.error(f"Error getting lcd_tx_results: {e}")
     try:
-        graphql_res = get_lcd_tx_responses(chain, network, tx_hash, 1)
+        graphql_res = get_graphql_lcd_tx_responses(chain, network, tx_hash, 1)
         graphql_tx_res = graphql_res["lcd_tx_responses"]
         if graphql_tx_res:
             return graphql_tx_res[0]["result"]
