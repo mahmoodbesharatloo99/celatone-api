@@ -11,7 +11,7 @@ def get_graphql_blocks(chain: str, network: str, limit: int, offset: int):
         offset (int): The starting slice to retain from responses.
 
     Returns:
-        List[Dict[str, Any]]: List of code details.
+        Dict[str, Any]: List of blocks and the current latest block height.
     """
     query = f"""
         query {{

@@ -29,7 +29,7 @@ def get_blocks(chain, network):
                 }
                 for item in graphql_res["blocks"]
             ],
-            "total": graphql_res["total"][0]["height"],
+            "total": graphql_res["latest"][0]["height"],
         }, 200
     except Exception as e:
         print("errorrrr", e)
