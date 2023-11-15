@@ -30,7 +30,7 @@ def get_graphql_blocks(chain: str, network: str, limit: int, offset: int):
                     identity
                 }}
             }}
-            total: blocks(limit: 1, order_by: {{ height: desc }}) {{
+            latest: blocks(limit: 1, order_by: {{ height: desc }}) {{
                 height
             }}
         }}
