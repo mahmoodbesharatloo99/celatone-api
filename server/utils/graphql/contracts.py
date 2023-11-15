@@ -1,5 +1,5 @@
 from typing import List, Dict, Any
-from utils.graphql import execute_query
+from .common import execute_query
 
 
 def get_graphql_contract_instantiator_admin(

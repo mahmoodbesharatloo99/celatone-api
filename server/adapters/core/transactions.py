@@ -2,9 +2,9 @@ from flask import abort
 import logging
 import requests
 
-from queries.txs import get_graphql_lcd_tx_responses, get_graphql_lcd_tx_results
 from utils.constants import WLD_URL
 from utils.gcs import get_network_data, get_lcd_tx_response_from_gcs
+from utils.graphql.txs import get_graphql_lcd_tx_responses, get_graphql_lcd_tx_results
 
 
 def get_lcd_transaction(chain, network, tx_hash):

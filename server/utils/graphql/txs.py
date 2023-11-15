@@ -1,5 +1,5 @@
 from typing import Dict, Any
-from utils.graphql import execute_query
+from .common import execute_query
 
 
 def get_graphql_lcd_tx_results(

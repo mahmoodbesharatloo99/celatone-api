@@ -1,6 +1,6 @@
 from typing import List, Dict, Any
-from queries.contracts import get_graphql_contract_instantiator_admin
 from utils.aldus import get_aldus_chain_data
+from utils.graphql.contracts import get_graphql_contract_instantiator_admin
 
 
 class ContractManager:
