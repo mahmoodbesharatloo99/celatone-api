@@ -9,11 +9,7 @@ transactions_bp = APIBlueprint("transactions", __name__)
 def get_transactions(chain, network):
     try:
         limit = request.args.get("limit", type=int)
-        if limit is None:
-            raise ValueError("limit is required")
         offset = request.args.get("offset", type=int)
-        if offset is None:
-            raise ValueError("offset is required")
         is_wasm = request.args.get("is_wasm", False, type=bool)
         is_move = request.args.get("is_move", False, type=bool)
 

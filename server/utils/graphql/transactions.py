@@ -15,50 +15,53 @@ def get_graphql_transactions(
     Returns:
         Dict[str, Any]: List of transactions and the latest transaction id.
     """
-    query = f"""
-        query {{
+    variables = {
+        "limit": limit,
+        "offset": offset,
+        "is_wasm": is_wasm,
+        "is_move": is_move,
+    }
+    query = """
+        query (
+            $limit: Int!
+            $offset: Int!
+            $is_wasm: Boolean!
+            $is_move: Boolean!
+        ){
             items: transactions(
-            offset: {offset}
-            limit: {limit}
-            order_by: {{ block_height: desc }}
-            ) {{
-                block {{
+            limit: $limit
+            offset: $offset
+            order_by: { block_height: desc }
+            ) {
+                block {
                     height
                     timestamp
-                }}
-                account {{
+                }
+                account {
                     address
-                }}
+                }
                 hash
                 success
                 messages
                 is_send
                 is_ibc
-                {
-                    '''
-                    is_clear_admin 
-                    is_execute
-                    is_instantiate 
-                    is_migrate
-                    is_store_code 
-                    is_update_admin
-                    ''' if is_wasm else ''
-                }
-                {
-                    '''
-                    is_move_publish 
-                    is_move_upgrade
-                    is_move_execute 
-                    is_move_script
-                    ''' if is_move else ''
-                }
-            }}
-            latest: transactions(limit: 1, order_by: {{ id: desc }}) {{
+                is_clear_admin @include(if: $is_wasm)
+                is_execute @include(if: $is_wasm)
+                is_instantiate @include(if: $is_wasm)
+                is_migrate @include(if: $is_wasm)
+                is_store_code @include(if: $is_wasm)
+                is_update_admin @include(if: $is_wasm)
+                is_move_publish @include(if: $is_move)
+                is_move_upgrade @include(if: $is_move)
+                is_move_execute @include(if: $is_move)
+                is_move_script @include(if: $is_move)
+            }
+            latest: transactions(limit: 1, order_by: { id: desc }) {
                 id
-            }}
-        }}
+            }
+        }
     """
-    res = execute_query(chain, network, query).json()
+    res = execute_query(chain, network, query, variables).json()
     if res.get("errors") is not None:
         raise Exception(res.get("errors"))
     return res.get("data", {})
