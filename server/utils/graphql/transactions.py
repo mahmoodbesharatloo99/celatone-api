@@ -2,7 +2,7 @@ from .common import execute_query
 
 
 def get_graphql_transactions(
-    chain: str, network: str, is_wasm: bool, is_move: bool, limit: int, offset: int
+    chain: str, network: str, limit: int, offset: int, is_wasm: bool, is_move: bool
 ):
     """Get transaction list.
     Args:
