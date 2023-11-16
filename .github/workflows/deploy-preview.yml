@@ -3,11 +3,13 @@ env:
   GIT_SHA: ${{ github.sha }}
 on:
   pull_request:
-    branches:
-      - "*"
+    branches-ignore:
+      - main
+      - staging
   push:
-    branches:
-      - "*"
+    branches-ignore:
+      - main
+      - staging
 jobs:
   setup:
     runs-on: ubuntu-latest
