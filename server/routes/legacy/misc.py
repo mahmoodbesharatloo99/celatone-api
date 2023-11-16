@@ -1,6 +1,6 @@
-from flask import request
+from adapters.core import balances, misc
 from apiflask import APIBlueprint
-from adapters.core import misc, balances
+from flask import request
 
 misc_bp = APIBlueprint("misc", __name__)
 
@@ -9,7 +9,7 @@ misc_bp = APIBlueprint("misc", __name__)
 
 @misc_bp.route("/balances/<chain>/<network>/<account_address>", methods=["GET"])
 def get_balances(chain, network, account_address):
-    return balances.get_balances(chain, network, account_address)
+    return balances.get_balances_legacy(chain, network, account_address)
 
 
 # Cosmos Rest
