@@ -5,31 +5,49 @@
   },
   "tags": [
     {
-      "name": "Accounts"
+      "name": "Legacy"
     },
     {
-      "name": "Assets"
+      "name": "Legacy.Accounts"
     },
     {
-      "name": "Cosmwasm"
+      "name": "Legacy.Assets"
     },
     {
-      "name": "Monitoring"
+      "name": "Legacy.Cosmwasm"
     },
     {
-      "name": "Icns"
+      "name": "Legacy.Monitoring"
     },
     {
-      "name": "Misc"
+      "name": "Legacy.Icns"
     },
     {
-      "name": "Registry"
+      "name": "Legacy.Misc"
     },
     {
-      "name": "Staking"
+      "name": "Legacy.Registry"
     },
     {
-      "name": "Transactions"
+      "name": "Legacy.Staking"
+    },
+    {
+      "name": "Legacy.Transactions"
+    },
+    {
+      "name": "Legacy.Initia"
+    },
+    {
+      "name": "V1"
+    },
+    {
+      "name": "V1.Accounts"
+    },
+    {
+      "name": "V1.Blocks"
+    },
+    {
+      "name": "V1.Transactions"
     }
   ],
   "paths": {
@@ -63,7 +81,7 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Chains"
       }
@@ -82,7 +100,7 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Entities"
       }
@@ -120,7 +138,7 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Chain"
       }
@@ -158,7 +176,7 @@
           }
         },
         "tags": [
-          "Icns"
+          "Legacy.Icns"
         ],
         "summary": "Get Icns Names"
       }
@@ -196,7 +214,7 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Entity"
       }
@@ -242,7 +260,7 @@
           }
         },
         "tags": [
-          "Cosmwasm"
+          "Legacy.Cosmwasm"
         ],
         "summary": "Get All Codes",
         "description": "Returns a list of all the known codes based on the input chain and network"
@@ -289,7 +307,7 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Assets"
       }
@@ -335,7 +353,7 @@
           }
         },
         "tags": [
-          "Monitoring"
+          "Legacy.Monitoring"
         ],
         "summary": "Get Health"
       }
@@ -381,7 +399,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "Legacy.Accounts"
         ],
         "summary": "Get All Accounts",
         "description": "Returns a list of all the known accounts based on the input chain and network"
@@ -428,7 +446,7 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Projects"
       }
@@ -474,10 +492,56 @@
           }
         },
         "tags": [
-          "Cosmwasm"
+          "Legacy.Cosmwasm"
         ],
         "summary": "Get All Contracts",
         "description": "Returns a list of all the known contracts based on the input chain and network"
+      }
+    },
+    "/v1/{chain}/{network}/blocks": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Blocks"
+        ],
+        "summary": "Get Blocks"
       }
     },
     "/images/assets/{asset_symbol}": {
@@ -513,7 +577,7 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Asset Image"
       }
@@ -551,9 +615,56 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Entity Image"
+      }
+    },
+    "/{chain}/{network}/move_modules": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Legacy.Initia"
+        ],
+        "summary": "Get All Codes",
+        "description": "Returns a list of all the known codes based on the input chain and network"
       }
     },
     "/assets/{chain}/{network}/prices": {
@@ -597,7 +708,7 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Assets Prices"
       }
@@ -651,7 +762,7 @@
           }
         },
         "tags": [
-          "Transactions"
+          "Legacy.Transactions"
         ],
         "summary": "Get Tx"
       }
@@ -697,7 +808,7 @@
           }
         },
         "tags": [
-          "Staking"
+          "Legacy.Staking"
         ],
         "summary": "Get Staking Params"
       }
@@ -751,10 +862,56 @@
           }
         },
         "tags": [
-          "Cosmwasm"
+          "Legacy.Cosmwasm"
         ],
         "summary": "Get Code by ID",
         "description": "Returns a specific code based on the input chain, network, and code_id"
+      }
+    },
+    "/v1/{chain}/{network}/transactions": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Transactions"
+        ],
+        "summary": "Get Transactions"
       }
     },
     "/rest/{chain}/{network}/{path}": {
@@ -806,7 +963,59 @@
           }
         },
         "tags": [
-          "Misc"
+          "Legacy.Misc"
+        ],
+        "summary": "Get Rest"
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Legacy.Misc"
         ],
         "summary": "Get Rest"
       }
@@ -860,7 +1069,7 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Asset"
       }
@@ -914,7 +1123,7 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Asset Ibc"
       }
@@ -960,7 +1169,7 @@
           }
         },
         "tags": [
-          "Icns"
+          "Legacy.Icns"
         ],
         "summary": "Get Icns Address"
       }
@@ -1006,7 +1215,7 @@
           }
         },
         "tags": [
-          "Staking"
+          "Legacy.Staking"
         ],
         "summary": "Get Validators"
       }
@@ -1060,7 +1269,7 @@
           }
         },
         "tags": [
-          "Registry"
+          "Legacy.Registry"
         ],
         "summary": "Get Project"
       }
@@ -1106,7 +1315,7 @@
           }
         },
         "tags": [
-          "Cosmwasm"
+          "Legacy.Cosmwasm"
         ],
         "summary": "Get Upload Access",
         "description": "Returns the upload access for the input chain and network"
@@ -1161,7 +1370,7 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Assets By Type"
       }
@@ -1215,7 +1424,7 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Asset By Slug"
       }
@@ -1269,7 +1478,7 @@
           }
         },
         "tags": [
-          "Accounts"
+          "Legacy.Accounts"
         ],
         "summary": "Get Account by ID",
         "description": "Returns a specific account based on the input chain, network, and account_address"
@@ -1324,7 +1533,7 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Asset Gamm"
       }
@@ -1378,7 +1587,7 @@
           }
         },
         "tags": [
-          "Misc"
+          "Legacy.Misc"
         ],
         "summary": "Get Balances"
       }
@@ -1432,7 +1641,7 @@
           }
         },
         "tags": [
-          "Cosmwasm"
+          "Legacy.Cosmwasm"
         ],
         "summary": "Get Get Contract by ID",
         "description": "Returns a specific contract based on the input chain, network, and contract_address"
@@ -1487,7 +1696,7 @@
           }
         },
         "tags": [
-          "Staking"
+          "Legacy.Staking"
         ],
         "summary": "Get Unbondings"
       }
@@ -1541,9 +1750,72 @@
           }
         },
         "tags": [
-          "Staking"
+          "Legacy.Staking"
         ],
         "summary": "Get Delegations"
+      }
+    },
+    "/{chain}/{network}/move_modules/{address}/{name}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "Legacy.Initia"
+        ],
+        "summary": "Get Code by ID",
+        "description": "Returns a specific code based on the input chain, network, and code_id"
       }
     },
     "/{chain}/{network}/staking/redelegations/{address}": {
@@ -1595,7 +1867,7 @@
           }
         },
         "tags": [
-          "Staking"
+          "Legacy.Staking"
         ],
         "summary": "Get Redelegations"
       }
@@ -1657,9 +1929,63 @@
           }
         },
         "tags": [
-          "Assets"
+          "Legacy.Assets"
         ],
         "summary": "Get Asset Factory"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/info": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Account Info"
       }
     },
     "/{chain}/{network}/staking/validators/{validator_address}": {
@@ -1711,7 +2037,7 @@
           }
         },
         "tags": [
-          "Staking"
+          "Legacy.Staking"
         ],
         "summary": "Get Validator"
       }
