@@ -1,4 +1,4 @@
-from .common import execute_query
+from common import execute_query
 
 
 def get_graphql_transactions(
