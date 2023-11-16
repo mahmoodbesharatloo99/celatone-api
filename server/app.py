@@ -1,10 +1,11 @@
-import os
 import logging
+import os
 
-from flask_cors import CORS
 from apiflask import APIFlask
-
+from flask import jsonify
+from flask_cors import CORS
 from routes import legacy, v1
+from werkzeug.exceptions import HTTPException
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -29,9 +30,19 @@ def hello_world():
     return {"gm": "gm"}
 
 
+@app.errorhandler(Exception)
+def handle_exception(e):
+    # pass through HTTP errors
+    if isinstance(e, HTTPException):
+        return e
+    # now you're handling non-HTTP exceptions only
+    return e, 500
+
+
+@app.errorhandler(400)
 @app.errorhandler(500)
-def handle_500_error(error):
-    return {"error": "Internal Server Error"}, 500
+def handle_error(e: HTTPException):
+    return {"error": e.description, "code": e.code}, e.code
 
 
 if __name__ == "__main__":
