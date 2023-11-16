@@ -1,0 +1,43 @@
+name: Closed PR
+env:
+  GIT_SHA: ${{ github.sha }}
+on:
+  pull_request:
+    types: [closed]
+    branches-ignore:
+      - main
+      - staging
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      branch_name: ${{ steps.extract_branch.outputs.branch }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Extract Branch Name
+        id: extract_branch
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-')"
+
+  Destroy-Preview:
+    needs: setup
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: "google-github-actions/auth@v1"
+        with:
+          credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
+          token_format: "access_token"
+      - name: Terraform Destroy
+        working-directory: ./infrastructure
+        run: |
+          terraform init
+          terraform workspace select celatone-api-${{ needs.setup.outputs.branch_name }}
+          terraform destroy -var-file=deploy-preview.tfvars -var="environment=${{needs.setup.outputs.branch_name}}" -auto-approve
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
