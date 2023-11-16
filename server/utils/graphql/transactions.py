@@ -27,7 +27,7 @@ def get_graphql_transactions(
             $offset: Int!
             $is_wasm: Boolean!
             $is_move: Boolean!
-        ){
+        ) {
             items: transactions(
             limit: $limit
             offset: $offset
