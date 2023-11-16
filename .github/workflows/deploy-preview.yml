@@ -12,16 +12,13 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
-      workspace_name: ${{ steps.set_workspace.outputs.workspace_name }}
+      branch_name: ${{ steps.extract_branch.outputs.branch }}
     steps:
       - uses: actions/checkout@v3
       - name: Extract Branch Name
         id: extract_branch
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-')"
-      - name: Set Workspace Name
-        id: set_workspace
-        run: echo "::set-output name=workspace_name::celatone-api-${{ steps.extract_branch.outputs.branch }}"
 
   Deploy-Preview:
     needs: setup
@@ -67,8 +64,8 @@ jobs:
         working-directory: ./infrastructure
         run: |
           terraform init
-          terraform workspace select ${{ needs.setup.outputs.workspace_name }} || terraform workspace new ${{ needs.setup.outputs.workspace_name }}
-          terraform apply -var-file=deploy-preview.tfvars -var="image_url=asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}" -auto-approve
+          terraform workspace select celatone-api-${{ needs.setup.outputs.branch_name }} || terraform workspace new celatone-api-${{ needs.setup.outputs.branch_name }}
+          terraform apply -var-file=deploy-preview.tfvars -var="environment=${{needs.setup.outputs.branch_name}},image_url=asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}" -auto-approve
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
@@ -90,7 +87,7 @@ jobs:
         working-directory: ./infrastructure
         run: |
           terraform init
-          terraform workspace select ${{ needs.setup.outputs.workspace_name }}
-          terraform destroy -var-file=deploy-preview.tfvars -auto-approve
+          terraform workspace select celatone-api-${{ needs.setup.outputs.branch_name }}
+          terraform destroy -var-file=deploy-preview.tfvars -var="environment=${{needs.setup.outputs.branch_name}}" -auto-approve
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
