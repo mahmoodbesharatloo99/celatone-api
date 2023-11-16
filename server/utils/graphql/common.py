@@ -1,10 +1,15 @@
+from typing import Any, Dict
+
 import requests
-from typing import Dict, Any
 from utils.gcs import get_network_data
 
 
 def execute_query(
-    chain: str, network: str, query: str, endpoint: str = "graphql"
+    chain: str,
+    network: str,
+    query: str,
+    variables: Dict[str, Any] = {},
+    endpoint: str = "graphql",
 ) -> Dict[str, Any]:
     """Execute a GraphQL query.
 
@@ -18,7 +23,8 @@ def execute_query(
         Dict[str, Any]: The response from the GraphQL server.
     """
     response = requests.post(
-        get_network_data(chain, network, endpoint), json={"query": query}
+        get_network_data(chain, network, endpoint),
+        json={"query": query, "variables": variables},
     )
     response.raise_for_status()
     return response
