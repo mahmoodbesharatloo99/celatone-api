@@ -8,10 +8,10 @@ def get_graphql_transactions(
     Args:
         chain (str): The blockchain chain.
         network (str): The blockchain network.
-        is_wasm (bool): The flag specifying if wasm-related columns are needed.
-        is_move (bool): The flag specifying if move-related columns are needed.
         limit (int): The maximum number of responses to return.
         offset (int): The starting slice to retain from responses.
+        is_wasm (bool): The flag specifying if wasm-related columns are needed.
+        is_move (bool): The flag specifying if move-related columns are needed.
     Returns:
         Dict[str, Any]: List of transactions and the latest transaction id.
     """
