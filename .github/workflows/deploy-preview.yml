@@ -68,7 +68,7 @@ jobs:
         run: |
           terraform init
           terraform workspace select ${{ needs.setup.outputs.workspace_name }} || terraform workspace new ${{ needs.setup.outputs.workspace_name }}
-          terraform apply -var-file=tmp-prod.tfvars -var="image_url=asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}" -auto-approve
+          terraform apply -var-file=deploy-preview.tfvars -var="image_url=asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}" -auto-approve
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
@@ -91,6 +91,6 @@ jobs:
         run: |
           terraform init
           terraform workspace select ${{ needs.setup.outputs.workspace_name }}
-          terraform destroy -var-file=tmp-prod.tfvars -auto-approve
+          terraform destroy -var-file=deploy-preview.tfvars -auto-approve
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
