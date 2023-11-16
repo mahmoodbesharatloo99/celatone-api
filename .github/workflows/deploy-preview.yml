@@ -15,12 +15,10 @@ jobs:
       workspace_name: ${{ steps.set_workspace.outputs.workspace_name }}
     steps:
       - uses: actions/checkout@v3
-
       - name: Extract Branch Name
         id: extract_branch
         shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-')"
       - name: Set Workspace Name
         id: set_workspace
         run: echo "::set-output name=workspace_name::celatone-api-${{ steps.extract_branch.outputs.branch }}"
