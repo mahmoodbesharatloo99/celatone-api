@@ -74,10 +74,9 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const prNumber = context.issue.number;
             const url = 'https://celatone-api-${{ needs.setup.outputs.branch_name }}-jiod42ec2q-as.a.run.app';
             github.issues.createComment({
-              issue_number: prNumber,
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `🚀 Deploy preview ready! [View it here](${url}).`
