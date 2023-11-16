@@ -1,5 +1,4 @@
 from apiflask import APIBlueprint
-from flask import jsonify, request
 from utils.graphql.transactions import get_graphql_transactions
 from utils.helper import get_query_param
 

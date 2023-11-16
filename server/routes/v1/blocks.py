@@ -1,5 +1,4 @@
 from apiflask import APIBlueprint
-from flask import abort, jsonify
 from utils.graphql.blocks import get_graphql_blocks
 from utils.helper import get_query_param
 

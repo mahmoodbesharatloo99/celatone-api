@@ -1,7 +1,7 @@
 import requests
-import utils.prices as prices
 from adapters.aldus.assets import AssetManager
-from flask import Response, abort, jsonify, request
+from flask import abort, request
+from utils import prices
 from utils.gcs import get_network_data
 
 
