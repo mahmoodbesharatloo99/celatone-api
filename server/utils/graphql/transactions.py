@@ -61,7 +61,4 @@ def get_graphql_transactions(
             }
         }
     """
-    res = execute_query(chain, network, query, variables).json()
-    if res.get("errors") is not None:
-        raise Exception(res.get("errors"))
-    return res.get("data", {})
+    return execute_query(chain, network, query, variables).json().get("data", {})

@@ -27,6 +27,8 @@ def execute_query(
         json={"query": query, "variables": variables},
     )
     response.raise_for_status()
+    if response.get("errors") is not None:
+        raise Exception(response.get("errors"))
     return response
 
 
