@@ -1,4 +1,5 @@
 from apiflask import APIBlueprint
+from flask import abort
 from utils.graphql.transactions import get_graphql_transactions
 from utils.helper import get_query_param
 
@@ -11,6 +12,8 @@ def get_transactions(chain, network):
     offset = get_query_param("offset", type=int, required=True)
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     is_move = get_query_param("is_move", type=bool, default=False)
+    if limit < 0 or offset < 0:
+        abort(400, "Limit and offset must be non-negative")
 
     data = get_graphql_transactions(chain, network, limit, offset, is_wasm, is_move)
     for tx in data.get("items", []):
