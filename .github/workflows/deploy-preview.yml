@@ -65,7 +65,6 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
   comment:
-    if: github.event_name == 'pull_request'
     needs: ["setup", "deploy-preview"]
     runs-on: ubuntu-latest
     steps:
