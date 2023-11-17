@@ -44,6 +44,9 @@
       "name": "V1.Accounts"
     },
     {
+      "name": "V1.Balances"
+    },
+    {
       "name": "V1.Blocks"
     },
     {
@@ -1272,6 +1275,60 @@
           "Legacy.Registry"
         ],
         "summary": "Get Project"
+      }
+    },
+    "/v1/{chain}/{network}/balances/{address}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Balances"
+        ],
+        "summary": "Get Balances"
       }
     },
     "/cosmwasm/{chain}/{network}/upload_access": {
