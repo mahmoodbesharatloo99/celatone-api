@@ -4,6 +4,9 @@ env:
 on:
   pull_request:
     types: [closed]
+    branches:
+      - feat/*
+
 jobs:
   setup:
     runs-on: ubuntu-latest
