@@ -1,12 +1,12 @@
 from app import app
 
-chain = "osmosis"
-network = "osmosis-1"
-limit = 10
-offset = 0
-
 
 def test_blocks():
+    chain = "osmosis"
+    network = "osmosis-1"
+    limit = 10
+    offset = 0
+
     response = app.test_client().get(
         f"/v1/{chain}/{network}/blocks?limit={limit}&offset={offset}"
     )
