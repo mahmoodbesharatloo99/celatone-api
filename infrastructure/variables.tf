@@ -17,3 +17,8 @@ variable "price_cacher_url" {
 variable "wld_url" {
   type = string
 }
+
+variable "cloudflare_domain_binding" {
+  type    = bool
+  default = false
+}
