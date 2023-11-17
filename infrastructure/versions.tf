@@ -23,9 +23,14 @@ terraform {
 }
 
 provider "cloudflare" {
-  api_token = var.cloudflare_api_token
+  api_token = data.google_secret_manager_secret_version.cloudflare_api_token.secret_data
 }
 
 provider "google" {
   project = "celatone-production"
+}
+
+data "google_secret_manager_secret_version" "cloudflare_api_token" {
+  project = "alles-share"
+  secret  = "cloudflare-alleslabs-dev-admin-token"
 }
