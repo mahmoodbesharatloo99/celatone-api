@@ -2,7 +2,6 @@ import logging
 import os
 
 from apiflask import APIFlask
-from flask import jsonify
 from flask_cors import CORS
 from routes import legacy, v1
 from werkzeug.exceptions import HTTPException
