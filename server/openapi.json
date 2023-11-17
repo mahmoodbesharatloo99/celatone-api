@@ -44,6 +44,9 @@
       "name": "V1.Accounts"
     },
     {
+      "name": "V1.Blocks"
+    },
+    {
       "name": "V1.Transactions"
     }
   ],
@@ -493,6 +496,52 @@
         ],
         "summary": "Get All Contracts",
         "description": "Returns a list of all the known contracts based on the input chain and network"
+      }
+    },
+    "/v1/{chain}/{network}/blocks": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Blocks"
+        ],
+        "summary": "Get Blocks"
       }
     },
     "/images/assets/{asset_symbol}": {

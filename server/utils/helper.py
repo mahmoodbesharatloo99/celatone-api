@@ -1,12 +1,24 @@
 import requests
-
 from adapters.aldus.assets import AssetManager
+from flask import abort, request
+from utils import prices
 from utils.gcs import get_network_data
-import utils.prices as prices
 
 
 def split(ls, n):
     return [ls[i : i + n] for i in range(0, len(ls), n)]
+
+
+def get_query_param(
+    name: str,
+    type: type = str,
+    default: any = None,
+    required: bool = False,
+):
+    param = request.args.get(name, default, type=type)
+    if required and param is None:
+        abort(400, f"{name} {type} is required")
+    return param
 
 
 def generate_hive_query(account_address, contract_addresses):
