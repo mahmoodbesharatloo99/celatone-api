@@ -111,9 +111,8 @@ def get_hive_balance(chain, network, address):
 
         output_balance += [
             {
-                "id": asset["id"],
+                "denom": asset["id"],
                 "amount": data.get("contractQuery", {}).get("balance", 0),
-                "type": "cw20",
             }
             for asset, data in zip(
                 contract_address_chunk,
@@ -139,9 +138,8 @@ def get_native_balances(chain, network, address):
 
     output_balance = [
         {
-            "id": balance["denom"],
+            "denom": balance["denom"],
             "amount": balance["amount"],
-            "type": "native",
         }
         for balance in balances
     ]
