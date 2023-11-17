@@ -30,5 +30,5 @@ def get_balances(chain, network, address):
     native_balances = balances.get_native_balances(chain, network, address)
     if chain == "terra":
         hive_balance = balances.get_hive_balance(chain, network, address)
-        native_balances.append(hive_balance)
+        native_balances.extend(hive_balance)
     return native_balances

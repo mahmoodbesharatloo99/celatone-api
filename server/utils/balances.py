@@ -98,16 +98,18 @@ def get_native_balances_legacy(endpoint, chain, network, account_address):
 
 def get_hive_balance(chain, network, address):
     supported_assets = AssetManager(chain, network).get_assets_by_type("cw20")
+    supported_assets_chunks = split(supported_assets, 50)
     contract_addresses = [asset["id"] for asset in supported_assets]
     contract_address_chunks = split(contract_addresses, 50)
 
     output_balance = []
-    for contract_address_chunk in enumerate(contract_address_chunks):
+    for idx, contract_address_chunk in enumerate(contract_address_chunks):
         query = generate_hive_query(address, contract_address_chunk)
         print(get_network_data(chain, network, "hive"))
-        hive_data = requests.post(
+        res = requests.post(
             f"{get_network_data(chain,network,'hive')}/graphql", json={"query": query}
-        ).json()["data"]
+        ).json()
+        hive_data = res["data"]
 
         output_balance += [
             {
@@ -115,7 +117,7 @@ def get_hive_balance(chain, network, address):
                 "amount": data.get("contractQuery", {}).get("balance", 0),
             }
             for asset, data in zip(
-                contract_address_chunk,
+                supported_assets_chunks[idx],
                 [
                     hive_data.get(contract_address, {})
                     for contract_address in contract_address_chunk
