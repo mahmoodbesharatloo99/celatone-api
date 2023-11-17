@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 
@@ -29,19 +30,29 @@ def hello_world():
     return {"gm": "gm"}
 
 
+@app.errorhandler(HTTPException)
 @app.errorhandler(Exception)
-def handle_exception(e):
+def handle_exception(e: Exception):
     # pass through HTTP errors
     if isinstance(e, HTTPException):
-        return e
+        # start with the correct headers and status code from the error
+        response = e.get_response()
+        # replace the body with JSON
+        response.data = json.dumps(
+            {
+                "code": e.code,
+                "name": e.name,
+                "description": e.description,
+            }
+        )
+        response.content_type = "application/json"
+        return response
+
     # now you're handling non-HTTP exceptions only
-    return e, 500
-
-
-@app.errorhandler(400)
-@app.errorhandler(500)
-def handle_error(e: HTTPException):
-    return {"error": e.description, "code": e.code}, e.code
+    return {
+        "code": 500,
+        "description": str(e),
+    }, 500
 
 
 if __name__ == "__main__":
