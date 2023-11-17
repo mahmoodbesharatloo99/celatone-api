@@ -42,9 +42,9 @@ jobs:
         run: |
           pytest
         env:
-          PRICE_CACHER_URL: ${{env.PRICE_CACHER_URL}}
-          WLD_URL: ${{env.WLD_URL}}
-          ALDUS_URL: ${{env.ALDUS_URL}}
+          PRICE_CACHER_URL: ${{vars.PRICE_CACHER_URL}}
+          WLD_URL: ${{vars.WLD_URL}}
+          ALDUS_URL: ${{vars.ALDUS_URL}}
       - name: Authenticate to Docker Registry
         run: echo '${{ steps.auth.outputs.access_token }}' | docker login -u oauth2accesstoken --password-stdin https://asia-southeast1-docker.pkg.dev
       - name: Build Celatone API image
