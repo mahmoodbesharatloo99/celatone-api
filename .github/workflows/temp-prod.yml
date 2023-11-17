@@ -1,4 +1,4 @@
-name: Test and Deploy preview
+name: Temp Prod Deployment
 env:
   GIT_SHA: ${{ github.sha }}
 on:
