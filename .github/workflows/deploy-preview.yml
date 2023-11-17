@@ -3,13 +3,7 @@ env:
   GIT_SHA: ${{ github.sha }}
 on:
   pull_request:
-    branches-ignore:
-      - main
-      - staging
-  push:
-    branches-ignore:
-      - main
-      - staging
+    types: [opened, synchronize]
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -20,11 +14,10 @@ jobs:
       - name: Extract Branch Name
         id: extract_branch
         shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-')"
+        run: echo "##[set-output name=branch;]$(echo ${{ github.head_ref }} | tr '/' '-')"
 
   deploy-preview:
     needs: setup
-    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -72,20 +65,18 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
 
   comment:
-    name: Comment PR with Preview URL
+    if: github.event_name == 'pull_request'
     needs: ["setup", "deploy-preview"]
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
-      - name: Comment on PR
-        uses: actions/github-script@v4
+      - name: Comment Preview URL on PR
+        uses: actions/github-script@v7
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const url = 'https://celatone-api-${{ needs.setup.outputs.branch_name }}-jiod42ec2q-as.a.run.app';
-            github.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `🚀 Deploy preview ready! [View it here](${url}).`
-            });
+            })

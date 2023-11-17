@@ -14,7 +14,7 @@ jobs:
       - name: Extract Branch Name
         id: extract_branch
         shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-')"
+        run: echo "##[set-output name=branch;]$(echo ${{ github.head_ref }} | tr '/' '-')"
 
   destroy-preview:
     needs: setup
