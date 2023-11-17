@@ -22,7 +22,7 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-')"
 
-  Deploy-Preview:
+  deploy-preview:
     needs: setup
     if: github.event_name != 'pull_request' || github.event.action != 'closed'
     runs-on: ubuntu-latest
@@ -70,8 +70,14 @@ jobs:
           terraform apply -var-file=deploy-preview.tfvars -var="environment=${{needs.setup.outputs.branch_name}}" -var="image_url=asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}" -auto-approve
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-      - name: Comment PR with Preview URL
-        if: github.event_name == 'pull_request'
+
+  comment:
+    name: Comment PR with Preview URL
+    needs: ["setup", "deploy-preview"]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Comment on PR
         uses: actions/github-script@v4
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}

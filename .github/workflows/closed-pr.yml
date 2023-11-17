@@ -16,7 +16,7 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/} | tr '/' '-')"
 
-  Destroy-Preview:
+  destroy-preview:
     needs: setup
     runs-on: ubuntu-latest
     steps:
