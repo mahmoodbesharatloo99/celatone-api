@@ -109,14 +109,16 @@ def get_cw20_balance(chain, network, account_address):
     res = requests.get(
         f"{get_network_data(chain, network, 'lcd')}/cosmwasm/wasm/v1/contract/{contract_address}/smart/{encoded_query}"
     ).json()
-    return [
-        {
-            "amount": res["data"]["balance"],
-            "id": "sei1eavtmc4y00a0ed8l9c7l0m7leesv3yetcptklv2kalz4tsgz02mqlvyea6",
-            "name": "Poker Kings Token",
-            "precision": 6,
-            "price": 0,
-            "symbol": "PKS",
-            "type": "cw20",
-        }
-    ]
+    balance = []
+    if res["data"]["balance"] > 0:
+        balance = [
+            {
+                "amount": res["data"]["balance"],
+                "id": "sei1eavtmc4y00a0ed8l9c7l0m7leesv3yetcptklv2kalz4tsgz02mqlvyea6",
+                "name": "Poker Kings Token",
+                "precision": 6,
+                "price": 0,
+                "symbol": "PKS",
+                "type": "cw20",
+            }
+        ]
