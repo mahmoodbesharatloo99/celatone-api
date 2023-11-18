@@ -1,4 +1,4 @@
-from flask import send_file
+from flask import redirect
 from apiflask import APIBlueprint
 from adapters.aldus import entities, projects
 from adapters.aldus.chains import ChainManager
@@ -40,9 +40,9 @@ def get_chain(chain):
 
 @registry_bp.route("/images/entities/<entity_slug>", methods=["GET"])
 def get_entity_image(entity_slug):
-    return send_file(f"{ALDUS_URL}/assets/entities/{entity_slug}.png")
+    return redirect(f"{ALDUS_URL}/assets/entities/{entity_slug}.png")
 
 
 @registry_bp.route("/images/assets/<asset_symbol>", methods=["GET"])
 def get_asset_image(asset_symbol):
-    return send_file(f"{ALDUS_URL}/assets/assets/{asset_symbol}.png")
+    return redirect(f"{ALDUS_URL}/assets/assets/{asset_symbol}.png")
