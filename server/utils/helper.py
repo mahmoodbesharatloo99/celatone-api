@@ -110,7 +110,7 @@ def get_cw20_balance(chain, network, account_address):
         f"{get_network_data(chain, network, 'lcd')}/cosmwasm/wasm/v1/contract/{contract_address}/smart/{encoded_query}"
     ).json()
     balance = []
-    if res["data"]["balance"] > 0:
+    if int(res["data"]["balance"]) > 0:
         balance = [
             {
                 "amount": res["data"]["balance"],
@@ -122,3 +122,4 @@ def get_cw20_balance(chain, network, account_address):
                 "type": "cw20",
             }
         ]
+    return balance
