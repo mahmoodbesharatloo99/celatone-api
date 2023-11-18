@@ -3,6 +3,7 @@ import requests
 from adapters.aldus.assets import AssetManager
 from utils.gcs import get_network_data
 import utils.prices as prices
+import base64
 
 
 def split(ls, n):
@@ -97,3 +98,25 @@ def get_native_balances(endpoint, chain, network, account_address):
         ]
     ]
     return output_balance
+
+
+def get_cw20_balance(chain, network, account_address):
+    # TODO: generalize to support multiple cw20 tokens using multicall
+    contract_address = "sei1eavtmc4y00a0ed8l9c7l0m7leesv3yetcptklv2kalz4tsgz02mqlvyea6"
+    query = f'{{"balance": {{"address": "{account_address}"}}}}'
+    encoded_query = base64.b64encode(query.encode()).decode()
+    print(encoded_query)
+    res = requests.get(
+        f"{get_network_data(chain, network, 'lcd')}/cosmwasm/wasm/v1/contract/{contract_address}/smart/{encoded_query}"
+    ).json()
+    return [
+        {
+            "amount": res["data"]["balance"],
+            "id": "sei1eavtmc4y00a0ed8l9c7l0m7leesv3yetcptklv2kalz4tsgz02mqlvyea6",
+            "name": "Poker Kings Token",
+            "precision": 6,
+            "price": 0,
+            "symbol": "PKS",
+            "type": "cw20",
+        }
+    ]
