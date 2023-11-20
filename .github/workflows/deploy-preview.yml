@@ -4,6 +4,8 @@ env:
 on:
   pull_request:
     types: [opened, synchronize]
+    branches: ["feat/**", "fix/**"]
+
 jobs:
   setup:
     runs-on: ubuntu-latest
