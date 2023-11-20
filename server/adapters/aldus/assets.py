@@ -1,7 +1,7 @@
+from typing import Any, Dict, List, Optional
+
 from utils.aldus import get_aldus_chain_data
 from utils.prices import get_prices
-
-from typing import List, Dict, Any, Optional
 
 
 class AssetManager:

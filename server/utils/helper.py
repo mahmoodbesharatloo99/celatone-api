@@ -7,7 +7,7 @@ def split(ls, n):
 
 def get_query_param(
     name: str,
-    type: type = str,
+    type: type,
     default: any = None,
     required: bool = False,
 ):
