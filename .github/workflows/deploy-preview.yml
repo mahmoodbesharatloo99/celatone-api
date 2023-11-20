@@ -10,20 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       branch_name: ${{ steps.extract_branch.outputs.branch }}
+      step: ${{ steps.validate_branch.outputs.skip }}
     steps:
       - uses: actions/checkout@v3
       - name: Extract Branch Name
         id: extract_branch
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${{ github.head_ref }} | tr '/' '-')"
-      - name: Check if branch name contains 'feat'
-        if: ${{ !startsWith(steps.extract_branch.outputs.branch, 'feat/') && !startsWith(steps.extract_branch.outputs.branch, 'fix/') }}
+      - name: Check if branch name starts with 'feat/' or 'fix/'
+        id: validate_branch
         run: |
-          echo "Branch name does not start with 'feat/' or 'fix/'. Exiting workflow."
-          exit 78
+          if [[ ${{ steps.extract_branch.outputs.branch }} != feat/* && ${{ steps.extract_branch.outputs.branch }} != fix/* ]]; 
+          then
+            echo "Branch name must start with 'feat/' or 'fix/'"
+            echo "::set-output name=skip::true"
+          else
+            echo "::set-output name=skip::false"
+          fi
 
   deploy-preview:
     needs: setup
+    if: ${{ needs.setup.outputs.step }} == 'false'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
