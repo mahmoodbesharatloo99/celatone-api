@@ -4,7 +4,6 @@ env:
 on:
   pull_request:
     types: [opened, synchronize]
-    branches: ["feat/**", "fix/**"]
 
 jobs:
   setup:
@@ -17,6 +16,11 @@ jobs:
         id: extract_branch
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${{ github.head_ref }} | tr '/' '-')"
+      - name: Check if branch name contains 'feat'
+        if: ${{ !startsWith(steps.extract_branch.outputs.branch, 'feat/') && !startsWith(steps.extract_branch.outputs.branch, 'fix/') }}
+        run: |
+          echo "Branch name does not start with 'feat/' or 'fix/'. Exiting workflow."
+          exit 78
 
   deploy-preview:
     needs: setup
