@@ -62,3 +62,34 @@ def get_graphql_transactions(
         }
     """
     return execute_query(chain, network, query, variables).json().get("data", {})
+
+
+def get_graphql_account_transactions_count(
+    chain: str, network: str, account_id: int
+) -> int:
+    """Get the number of transactions of an account.
+
+    Args:
+        chain (str): The blockchain chain.
+        network (str): The blockchain network.
+        account_id (int): The account ID.
+
+    Returns:
+        int: The number of transactions of the account.
+    """
+    variables = {"account_id": account_id}
+    query = """
+        query ($account_id: Int!) {
+            account_transactions_aggregate(where: {account_id: {_eq: $account_id}}) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+    res = execute_query(chain, network, query, variables).json().get("data", {})
+    return (
+        res.get("account_transactions_aggregate", {})
+        .get("aggregate", {})
+        .get("count", 0)
+    )
