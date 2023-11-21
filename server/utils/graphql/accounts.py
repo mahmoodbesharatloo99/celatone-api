@@ -2,7 +2,9 @@ from flask import abort
 from .common import execute_query
 
 
-def get_graphql_account_id_by_address(chain: str, network: str, address: str) -> int:
+def get_graphql_account_id_by_address(
+    chain: str, network: str, address: str
+) -> int | None:
     """Get the account ID of an address.
 
     Args:
@@ -23,8 +25,6 @@ def get_graphql_account_id_by_address(chain: str, network: str, address: str) ->
             }
         }
     """
-    res = execute_query(chain, network, query, variables).json().get("data", {})
-    account_id = res.get("accounts_by_pk", {}).get("id")
-    if account_id is None:
-        abort("Account ID not found")
-    return account_id
+    res = execute_query(chain, network, query, variables).json()
+    account_data = res.get("data", {}).get("accounts_by_pk")
+    return account_data.get("id") if account_data else None

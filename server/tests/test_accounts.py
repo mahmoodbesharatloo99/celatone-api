@@ -62,3 +62,14 @@ def test_get_account_table_count_wasm():
     assert type(response_json["code"]) == int
     assert type(response_json["instantiated"]) == int
     assert type(response_json["contract_by_admin"]) == int
+
+
+def test_get_account_table_count_new_address():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    account_address = "osmo14wk9zecqam9jsac7xwtf8e349ckquzzlx9k8c3"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{account_address}/table-count?is_wasm=true"
+    )
+    assert response.status_code == 200

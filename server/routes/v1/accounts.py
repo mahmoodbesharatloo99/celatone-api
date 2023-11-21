@@ -42,7 +42,11 @@ def get_account_info(chain, network, account_address):
 def get_account_table_count(chain, network, account_address):
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     account_id = get_graphql_account_id_by_address(chain, network, account_address)
-    txs_count = get_graphql_account_transactions_count(chain, network, account_id)
+    txs_count = (
+        get_graphql_account_transactions_count(chain, network, account_id)
+        if account_id
+        else 0
+    )
 
     proposals_count = get_graphql_proposals_count_by_address(
         chain, network, account_address
