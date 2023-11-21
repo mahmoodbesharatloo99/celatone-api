@@ -98,3 +98,5 @@ def test_get_proposals_by_address():
         assert type(item["title"]) == str
         assert type(item["type"]) == str
         assert type(item["voting_end_time"]) == str
+
+    assert type(response_json["total"]) == int

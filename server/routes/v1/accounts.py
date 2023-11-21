@@ -24,22 +24,18 @@ accounts_bp = APIBlueprint("accounts", __name__)
     "/<chain>/<network>/accounts/<account_address>/info", methods=["GET"]
 )
 def get_account_info(chain, network, account_address):
-    try:
-        public_info = AccountManager(chain, network).get_account(account_address)
+    public_info = AccountManager(chain, network).get_account(account_address)
 
-        project_info = projects.get_project(
-            chain, network, public_info.get("slug")
-        ).get("details")
+    project_info = projects.get_project(chain, network, public_info.get("slug")).get(
+        "details"
+    )
 
-        icns = get_icns_names(account_address)
-        icns_primary_name = icns.get("primary_name")
-        if len(icns_primary_name) == 0:
-            icns = None
+    icns = get_icns_names(account_address)
+    icns_primary_name = icns.get("primary_name")
+    if len(icns_primary_name) == 0:
+        icns = None
 
-    except Exception as e:
-        return jsonify(error=str(e)), 500
-
-    return {"project_info": project_info, "public_info": public_info, "icns": icns}, 200
+    return {"project_info": project_info, "public_info": public_info, "icns": icns}
 
 
 @accounts_bp.route("/<chain>/<network>/accounts/<address>/table-count", methods=["GET"])
@@ -90,4 +86,7 @@ def get_proposals(chain, network, account_address):
     )
     for proposal in data.get("items", []):
         proposal["proposer"] = account_address
+    data["total"] = data["proposals_aggregate"]["aggregate"]["count"]
+    del data["proposals_aggregate"]
+
     return data

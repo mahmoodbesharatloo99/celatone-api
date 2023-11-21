@@ -70,6 +70,13 @@ def get_graphql_proposals_by_address(
                 is_expedited
                 resolved_height
             }
+            proposals_aggregate(
+                where: { account: { address: { _eq: $address } } }
+            ) {
+                aggregate {
+                    count
+                }
+            }
         }
     """
     return execute_query(chain, network, query, variables).json().get("data", {})
