@@ -105,7 +105,6 @@ def get_hive_balance(chain, network, address):
     output_balance = []
     for idx, contract_address_chunk in enumerate(contract_address_chunks):
         query = generate_hive_query(address, contract_address_chunk)
-        print(get_network_data(chain, network, "hive"))
         res = requests.post(
             f"{get_network_data(chain,network,'hive')}/graphql", json={"query": query}
         ).json()
