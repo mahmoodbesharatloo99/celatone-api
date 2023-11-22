@@ -5,7 +5,7 @@ from utils.gcs import get_network_data
 
 POOLS_INFO_FN = {
     "stone-11": {
-        "address": "0xa36bd0a54fad4bd931c4c00e3e74815f99a6c6b4",
+        "address": "0x38d2a65b2be5d2c1b9f329f5b45f708c7b7d9cf5",
         "moduleName": "PoolInfo",
         "functionName": "get_all_pair_infos",
     }
