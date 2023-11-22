@@ -33,3 +33,39 @@ def get_graphql_contract_instantiator_admin(
         for contract_address, data in graphql_response.items()
     ]
     return contract_data
+
+
+def get_graphql_instantiated_count_by_address(
+    chain: str, network: str, address: str
+) -> int:
+    variables = {
+        "address": address,
+    }
+    query = """
+        query ($address: String!) {
+            contracts_aggregate(where: { accountByInitBy: { address: { _eq: $address } } }) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+    res = execute_query(chain, network, query, variables).json().get("data", {})
+    return res.get("contracts_aggregate", {}).get("aggregate", {}).get("count", 0)
+
+
+def get_graphql_contract_count_by_admin(chain: str, network: str, address: str) -> int:
+    variables = {
+        "address": address,
+    }
+    query = """
+        query ($address: String!) {
+            contracts_aggregate(where: { account: { address: { _eq: $address } } }) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+    res = execute_query(chain, network, query, variables).json().get("data", {})
+    return res.get("contracts_aggregate", {}).get("aggregate", {}).get("count", 0)

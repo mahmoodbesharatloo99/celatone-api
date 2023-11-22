@@ -44,3 +44,31 @@ def get_graphql_code_details(
         for code_id, data in graphql_response.items()
     ]
     return code_data
+
+
+def get_graphql_codes_count_by_address(chain: str, network: str, address: str) -> int:
+    """Get the number of codes deployed by an address.
+
+    Args:
+        chain (str): The blockchain chain.
+        network (str): The blockchain network.
+        address (str): The address of the account.
+
+    Returns:
+        int: The number of codes deployed by the address.
+    """
+    variables = {
+        "address": address,
+    }
+    query = """
+        query ($address: String!) {
+            codes_aggregate(where: {account: {address: {_eq: $address}}}) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+
+    res = execute_query(chain, network, query, variables).json().get("data", {})
+    return res.get("codes_aggregate", {}).get("aggregate", {}).get("count", 0)
