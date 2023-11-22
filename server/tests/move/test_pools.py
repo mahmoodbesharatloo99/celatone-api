@@ -1,7 +1,7 @@
 from app import app
 
 
-def test_get_account_info_failed():
+def test_move_pools():
     chain = "initia"
     network = "stone-11"
 
