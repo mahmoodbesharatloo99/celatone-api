@@ -25,6 +25,8 @@ def test_assets_with_prices():
     chain = "osmosis"
     network = "osmosis-1"
 
+    non_zero_price = False
+
     response = app.test_client().get(f"/v1/{chain}/{network}/assets?with_prices=true")
     assert response.status_code == 200
 
@@ -39,6 +41,8 @@ def test_assets_with_prices():
         assert type(asset["slugs"]) == list
         assert type(asset["symbol"]) == str
         assert type(asset["type"]) == str
+        non_zero_price = non_zero_price or asset["price"] > 0
+    assert non_zero_price == True
 
 
 def test_assets_type():
