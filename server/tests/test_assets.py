@@ -1,7 +1,7 @@
 from app import app
 
 
-def test_assets_without_prices():
+def test_assets():
     chain = "osmosis"
     network = "osmosis-1"
 
@@ -21,7 +21,27 @@ def test_assets_without_prices():
         assert type(asset["type"]) == str
 
 
-def test_assets_with_prices():
+def test_assets_with_prices_false():
+    chain = "osmosis"
+    network = "osmosis-1"
+
+    response = app.test_client().get(f"/v1/{chain}/{network}/assets?with_prices=false")
+    assert response.status_code == 200
+
+    for asset in response.json:
+        assert type(asset["coingecko"]) == str
+        assert type(asset["description"]) == str
+        assert type(asset["id"]) == str
+        assert type(asset["logo"]) == str
+        assert type(asset["name"]) == str
+        assert type(asset["precision"]) == int
+        assert type(asset["price"]) == float
+        assert type(asset["slugs"]) == list
+        assert type(asset["symbol"]) == str
+        assert type(asset["type"]) == str
+
+
+def test_assets_with_prices_true():
     chain = "osmosis"
     network = "osmosis-1"
 
