@@ -100,3 +100,45 @@ def test_get_proposals_by_address():
         assert type(item["voting_end_time"]) == str
 
     assert type(response_json["total"]) == int
+
+
+def test_get_admin_contracts():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = 10
+    offset = 0
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/wasm/admin-contracts?limit={limit}&offset={offset}"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["contract_address"]) == str
+        assert type(item["label"]) == str
+        assert type(item["admin"]) == str
+        assert type(item["instantiator"]) == str
+        assert type(item["latest_updated"]) == str
+        assert type(item["latest_updater"]) == str
+        remark = item["remark"]
+        assert type(remark["operation"]) == str
+        assert type(remark["type"]) == str
+        assert type(remark["value"]) == str
+
+    assert type(response_json["total"]) == int
+
+
+def test_get_admin_contracts_negative_limit_offset():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = -10
+    offset = -10
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/wasm/admin-contracts?limit={limit}&offset={offset}"
+    )
+    assert response.status_code == 400
