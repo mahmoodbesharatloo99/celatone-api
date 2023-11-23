@@ -111,3 +111,38 @@ def get_admin_contracts(chain, network, account_address):
     del data["contracts_aggregate"]
 
     return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/wasm/instantiated-contracts",
+    methods=["GET"],
+)
+def get_instantiated_contracts(chain, network, account_address):
+    limit = get_query_param("limit", type=int, required=True)
+    offset = get_query_param("offset", type=int, required=True)
+    validate_pagination_params(limit, offset)
+
+    data = contracts.get_graphql_instantiated_by_address(
+        chain,
+        network,
+        limit,
+        offset,
+        account_address,
+    )
+    for contract in data.get("items", []):
+        contract["admin"] = contract["admin"]["address"] if contract["admin"] else None
+        contract["instantiator"] = contract["account_by_init_by"]["address"]
+        contract["latest_updater"] = contract["contract_histories"][0]["account"][
+            "address"
+        ]
+        contract["latest_updated"] = contract["contract_histories"][0]["block"][
+            "timestamp"
+        ]
+        contract["remark"] = contract["contract_histories"][0]["remark"]
+        del contract["account_by_init_by"]
+        del contract["contract_histories"]
+
+    data["total"] = data["contracts_aggregate"]["aggregate"]["count"]
+    del data["contracts_aggregate"]
+
+    return data

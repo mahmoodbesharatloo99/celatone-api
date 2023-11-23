@@ -83,6 +83,56 @@ def get_graphql_admin_contracts_by_address(
     return execute_query(chain, network, query, variables).json().get("data", {})
 
 
+def get_graphql_instantiated_by_address(
+    chain: str, network: str, limit: int, offset: int, address: str
+):
+    variables = {
+        "address": address,
+        "limit": limit,
+        "offset": offset,
+    }
+    query = """
+        query (
+            $address: String!
+            $limit: Int!
+            $offset: Int!
+        ) {
+            items: contracts(
+                where: { accountByInitBy: { address: { _eq: $address } } }
+                limit: $limit
+                offset: $offset
+                order_by: {
+                    contract_histories_aggregate: { max: { block_height: desc } }
+                }
+            ) {
+                contract_address: address
+                label
+                admin: account {
+                    address
+                }
+                account_by_init_by: accountByInitBy {
+                    address
+                }
+                contract_histories(order_by: { block: { timestamp: desc } }, limit: 1) {
+                    block {
+                        timestamp
+                    }
+                    account {
+                        address
+                    }
+                    remark
+                }
+            }
+            contracts_aggregate(where: { accountByInitBy: { address: { _eq: $address } } }) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+    return execute_query(chain, network, query, variables).json().get("data", {})
+
+
 def get_graphql_instantiated_count_by_address(
     chain: str, network: str, address: str
 ) -> int:
