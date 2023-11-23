@@ -146,3 +146,36 @@ def get_instantiated_contracts(chain, network, account_address):
     del data["contracts_aggregate"]
 
     return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/wasm/codes",
+    methods=["GET"],
+)
+def get_codes(chain, network, account_address):
+    limit = get_query_param("limit", type=int, required=True)
+    offset = get_query_param("offset", type=int, required=True)
+    validate_pagination_params(limit, offset)
+
+    data = codes.get_graphql_codes_by_address(
+        chain,
+        network,
+        limit,
+        offset,
+        account_address,
+    )
+    for code in data.get("items", []):
+        code["uploader"] = code["account"]["uploader"]
+        code["contract_count"] = code["contracts_aggregate"]["aggregate"]["count"]
+        code["permission_addresses"] = code["access_config_addresses"]
+        code["instantiate_permission"] = code["access_config_permission"]
+
+        del code["account"]
+        del code["access_config_addresses"]
+        del code["access_config_permission"]
+        del code["contracts_aggregate"]
+
+    data["total"] = data["codes_aggregate"]["aggregate"]["count"]
+    del data["codes_aggregate"]
+
+    return data
