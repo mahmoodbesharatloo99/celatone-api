@@ -20,3 +20,8 @@ def get_query_param(
     if type == bool:
         return param.lower() == "true"
     return type(param)
+
+
+def validate_pagination_params(limit: int, offset: int):
+    if limit < 0 or offset < 0:
+        abort(400, "Limit and offset must be non-negative")

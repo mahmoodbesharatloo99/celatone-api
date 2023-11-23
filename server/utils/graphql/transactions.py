@@ -65,7 +65,7 @@ def get_graphql_transactions(
 
 
 def get_graphql_account_transactions_count(
-    chain: str, network: str, account_id: int
+    chain: str, network: str, account_id: int | None
 ) -> int:
     """Get the number of transactions of an account.
 
@@ -77,6 +77,9 @@ def get_graphql_account_transactions_count(
     Returns:
         int: The number of transactions of the account.
     """
+    if account_id is None:
+        return 0
+
     variables = {"account_id": account_id}
     query = """
         query ($account_id: Int!) {

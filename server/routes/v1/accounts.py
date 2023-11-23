@@ -3,7 +3,7 @@ from flask import abort
 from adapters.aldus.accounts import AccountManager
 from adapters.aldus import projects
 from adapters.icns.resolver import get_icns_names
-from utils.helper import get_query_param
+from utils.helper import get_query_param, validate_pagination_params
 from utils.graphql import accounts, codes, contracts, proposals, transactions
 
 accounts_bp = APIBlueprint("accounts", __name__)
@@ -33,10 +33,8 @@ def get_account_table_count(chain, network, account_address):
     account_id = accounts.get_graphql_account_id_by_address(
         chain, network, account_address
     )
-    txs_count = (
-        transactions.get_graphql_account_transactions_count(chain, network, account_id)
-        if account_id
-        else 0
+    txs_count = transactions.get_graphql_account_transactions_count(
+        chain, network, account_id
     )
 
     proposals_count = proposals.get_graphql_proposals_count_by_address(
@@ -71,8 +69,7 @@ def get_account_table_count(chain, network, account_address):
 def get_proposals(chain, network, account_address):
     limit = get_query_param("limit", type=int, required=True)
     offset = get_query_param("offset", type=int, required=True)
-    if limit < 0 or offset < 0:
-        abort(400, "Limit and offset must be non-negative")
+    validate_pagination_params(limit, offset)
 
     data = proposals.get_graphql_proposals_by_address(
         chain, network, limit, offset, account_address
@@ -92,15 +89,10 @@ def get_proposals(chain, network, account_address):
 def get_admin_contracts(chain, network, account_address):
     limit = get_query_param("limit", type=int, required=True)
     offset = get_query_param("offset", type=int, required=True)
-    if limit < 0 or offset < 0:
-        abort(400, "Limit and offset must be non-negative")
+    validate_pagination_params(limit, offset)
 
     data = contracts.get_graphql_admin_contracts_by_address(
-        chain=chain,
-        network=network,
-        limit=limit,
-        offset=offset,
-        address=account_address,
+        chain, network, limit, offset, account_address
     )
     for contract in data.get("items", []):
         contract["admin"] = contract["admin"]["address"]
