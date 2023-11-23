@@ -46,6 +46,51 @@ def get_graphql_code_details(
     return code_data
 
 
+def get_graphql_codes_by_address(
+    chain: str, network: str, limit: int, offset: int, address: str
+):
+    variables = {
+        "address": address,
+        "limit": limit,
+        "offset": offset,
+    }
+    query = """
+        query (
+            $address: String!
+            $offset: Int!
+            $limit: Int!
+        ) {
+            items: codes(
+                where: { account: { address: { _eq: $address } } }
+                limit: $limit
+                offset: $offset
+                order_by: { id: desc }
+            ) {
+                id
+                contracts_aggregate {
+                    aggregate {
+                        count
+                    }
+                }
+                account {
+                    uploader: address
+                }
+                access_config_permission
+                access_config_addresses
+                cw2_contract
+                cw2_version
+            }
+            codes_aggregate(where: {account: {address: {_eq: $address}}}) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+
+    return execute_query(chain, network, query, variables).json().get("data", {})
+
+
 def get_graphql_codes_count_by_address(chain: str, network: str, address: str) -> int:
     """Get the number of codes deployed by an address.
 

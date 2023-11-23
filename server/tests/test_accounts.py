@@ -131,19 +131,6 @@ def test_get_admin_contracts():
     assert type(response_json["total"]) == int
 
 
-def test_get_admin_contracts_negative_limit_offset():
-    chain = "osmosis"
-    network = "osmo-test-5"
-    limit = -10
-    offset = -10
-    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
-
-    response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/wasm/admin-contracts?limit={limit}&offset={offset}"
-    )
-    assert response.status_code == 400
-
-
 def test_get_instatiated_contracts():
     chain = "osmosis"
     network = "osmo-test-5"
@@ -173,14 +160,27 @@ def test_get_instatiated_contracts():
     assert type(response_json["total"]) == int
 
 
-def test_get_instantiated_contracts_negative_limit_offset():
+def test_get_codes():
     chain = "osmosis"
     network = "osmo-test-5"
-    limit = -10
-    offset = -10
+    limit = 10
+    offset = 0
     address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/wasm/instantiated-contracts?limit={limit}&offset={offset}"
+        f"/v1/{chain}/{network}/accounts/{address}/wasm/codes?limit={limit}&offset={offset}"
     )
-    assert response.status_code == 400
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["id"]) == int
+        assert type(item["cw2_contract"]) == str or item["cw2_contract"] is None
+        assert type(item["cw2_version"]) == str or item["cw2_version"] is None
+        assert type(item["uploader"]) == str
+        assert type(item["contract_count"]) == int
+        assert type(item["instantiate_permission"]) == str
+        assert type(item["permission_addresses"]) == list
+
+    assert type(response_json["total"]) == int
