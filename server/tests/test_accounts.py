@@ -184,3 +184,29 @@ def test_get_codes():
         assert type(item["permission_addresses"]) == list
 
     assert type(response_json["total"]) == int
+
+
+def test_get_move_resources():
+    chain = "initia"
+    network = "stone-11"
+    address = "init1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqr5e3d"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/move/resources"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["resources"]:
+        assert type(item["address"]) == str
+        assert type(item["move_resource"]) == str
+        assert type(item["raw_bytes"]) == str
+        assert type(item["struct_tag"]) == str
+
+    assert type(response_json["pagination"]) == dict
+    assert (
+        type(response_json["pagination"]["next_key"]) == str
+        or response_json["pagination"]["next_key"] is None
+    )
+    assert type(response_json["pagination"]["total"]) == str
