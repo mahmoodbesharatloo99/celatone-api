@@ -187,6 +187,4 @@ def get_codes(chain, network, account_address):
     methods=["GET"],
 )
 def get_move_resources(chain, network, account_address):
-    pagination_key = get_query_param("pagination.key", type=str, required=False)
-    data = resources.get_move_resources(chain, network, account_address, pagination_key)
-    return data
+    return resources.get_move_resources(chain, network, account_address)

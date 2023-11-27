@@ -198,15 +198,10 @@ def test_get_move_resources():
 
     response_json = response.json
 
-    for item in response_json["resources"]:
+    for item in response_json["items"]:
         assert type(item["address"]) == str
         assert type(item["move_resource"]) == str
         assert type(item["raw_bytes"]) == str
         assert type(item["struct_tag"]) == str
 
-    assert type(response_json["pagination"]) == dict
-    assert (
-        type(response_json["pagination"]["next_key"]) == str
-        or response_json["pagination"]["next_key"] is None
-    )
-    assert type(response_json["pagination"]["total"]) == str
+    assert type(response_json["total"]) == int
