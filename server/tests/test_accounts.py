@@ -216,3 +216,36 @@ def test_get_move_resources_invalid_chain():
         f"/v1/{chain}/{network}/accounts/{address}/move/resources"
     )
     assert response.status_code == 404
+
+
+def test_get_move_modules():
+    chain = "initia"
+    network = "stone-11"
+    address = "init1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqr5e3d"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/move/modules"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["abi"]) == str
+        assert type(item["address"]) == str
+        assert type(item["module_name"]) == str
+        assert type(item["raw_bytes"]) == str
+        assert type(item["upgrade_policy"]) == str
+
+    assert type(response_json["total"]) == int
+
+
+def test_get_move_modules_invalid_chain():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/move/modules"
+    )
+    assert response.status_code == 404
