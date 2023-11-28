@@ -209,7 +209,7 @@ def get_transactions(chain, network, account_address):
     # common
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     is_move = get_query_param("is_move", type=bool, default=False)
-    is_signer = get_query_param("is_signer", type=bool, default=False)
+    is_signer = get_query_param("is_signer", type=bool)
     is_send = get_query_param("is_send", type=bool, default=False)
     is_ibc = get_query_param("is_ibc", type=bool, default=False)
 
