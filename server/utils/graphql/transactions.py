@@ -29,9 +29,9 @@ def get_graphql_transactions(
             $is_move: Boolean!
         ) {
             items: transactions(
-            limit: $limit
-            offset: $offset
-            order_by: { block_height: desc }
+                limit: $limit
+                offset: $offset
+                order_by: { block_height: desc }
             ) {
                 block {
                     height
@@ -58,6 +58,85 @@ def get_graphql_transactions(
             }
             latest: transactions(limit: 1, order_by: { id: desc }) {
                 id
+            }
+        }
+    """
+    return execute_query(chain, network, query, variables).json().get("data", {})
+
+
+def get_graphql_account_transactions(
+    chain: str,
+    network: str,
+    account_id: int,
+    limit: int,
+    offset: int,
+    is_signer: bool | None,
+    is_wasm: bool,
+    is_move: bool,
+    filters: dict,
+):
+    account_exp = {"account_id": {"_eq": account_id}}
+    is_signer_exp = {"is_signer": {"_eq": is_signer}} if is_signer is not None else {}
+    filter_exp = {k: {"_eq": v} for k, v in filters.items() if v}
+    transaction_exp = {"transaction": {**filter_exp}}
+
+    expression = {
+        **account_exp,
+        **is_signer_exp,
+        **transaction_exp,
+    }
+
+    variables = {
+        "limit": limit,
+        "offset": offset,
+        "is_wasm": is_wasm,
+        "is_move": is_move,
+        "expression": expression,
+    }
+    query = """
+        query (
+            $offset: Int!
+            $limit: Int!
+            $expression: account_transactions_bool_exp
+            $is_wasm: Boolean!
+            $is_move: Boolean!
+        ) {
+            items: account_transactions(
+                where: $expression
+                order_by: { block_height: desc }
+                offset: $offset
+                limit: $limit
+            ) {
+                block {
+                    height
+                    timestamp
+                }
+                transaction {
+                    account {
+                        address
+                    }
+                    hash
+                    success
+                    messages
+                    is_send
+                    is_ibc
+                    is_clear_admin @include(if: $is_wasm)
+                    is_execute @include(if: $is_wasm)
+                    is_instantiate @include(if: $is_wasm)
+                    is_migrate @include(if: $is_wasm)
+                    is_store_code @include(if: $is_wasm)
+                    is_update_admin @include(if: $is_wasm)
+                    is_move_publish @include(if: $is_move)
+                    is_move_upgrade @include(if: $is_move)
+                    is_move_execute @include(if: $is_move)
+                    is_move_script @include(if: $is_move)
+                }
+                is_signer
+            }
+            account_transactions_aggregate(where: $expression) {
+                aggregate {
+                    count
+                }
             }
         }
     """
