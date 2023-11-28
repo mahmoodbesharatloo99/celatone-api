@@ -3,6 +3,7 @@ from flask import abort
 from adapters.aldus.accounts import AccountManager
 from adapters.aldus import projects
 from adapters.icns.resolver import get_icns_names
+from adapters.move import resources
 from utils.helper import get_query_param, validate_pagination_params
 from utils.graphql import accounts, codes, contracts, proposals, transactions
 
@@ -179,3 +180,11 @@ def get_codes(chain, network, account_address):
     del data["codes_aggregate"]
 
     return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/move/resources",
+    methods=["GET"],
+)
+def get_move_resources(chain, network, account_address):
+    return resources.get_move_resources(chain, network, account_address)
