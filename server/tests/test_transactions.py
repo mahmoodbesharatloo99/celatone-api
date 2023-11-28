@@ -69,3 +69,16 @@ def test_transactions_move():
         assert type(item["is_move_upgrade"]) == bool
         assert type(item["is_move_execute"]) == bool
         assert type(item["is_move_script"]) == bool
+
+
+def test_transaction():
+    chain = "osmosis"
+    network = "osmosis-1"
+    tx_hash = "1871395F6BAF39725360BC11D984887A1918BBE140E5C760780B2309A58A57FC"
+
+    response = app.test_client().get(f"/v1/{chain}/{network}/txs/{tx_hash}")
+    assert response.status_code == 200
+
+    response_json = response.json
+    assert response_json["tx"] is not None
+    assert response_json["tx_response"] is not None
