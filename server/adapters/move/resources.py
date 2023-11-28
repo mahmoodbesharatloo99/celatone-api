@@ -5,7 +5,7 @@ from utils.gcs import get_network_data
 
 def get_move_resources(chain: str, network: str, address: str):
     if chain != "initia":
-        return abort(404, f"invalid chain ({chain}).")
+        abort(404, f"invalid chain ({chain}).")
 
     result = []
     pagination_key = None

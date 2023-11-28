@@ -205,3 +205,14 @@ def test_get_move_resources():
         assert type(item["struct_tag"]) == str
 
     assert type(response_json["total"]) == int
+
+
+def test_get_move_resources_invalid_chain():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/move/resources"
+    )
+    assert response.status_code == 404
