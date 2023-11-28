@@ -80,18 +80,16 @@ def get_graphql_account_transactions(
     filter_exp = {k: {"_eq": v} for k, v in filters.items() if v}
     transaction_exp = {"transaction": {**filter_exp}}
 
-    expression = {
-        **account_exp,
-        **is_signer_exp,
-        **transaction_exp,
-    }
-
     variables = {
         "limit": limit,
         "offset": offset,
         "is_wasm": is_wasm,
         "is_move": is_move,
-        "expression": expression,
+        "expression": {
+            **account_exp,
+            **is_signer_exp,
+            **transaction_exp,
+        },
     }
     query = """
         query (
