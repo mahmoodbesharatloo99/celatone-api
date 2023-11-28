@@ -8,7 +8,7 @@ def test_transactions_wasm():
     offset = 0
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/transactions?limit={limit}&offset={offset}&is_wasm=true"
+        f"/v1/{chain}/{network}/txs?limit={limit}&offset={offset}&is_wasm=true"
     )
     assert response.status_code == 200
 
@@ -36,14 +36,14 @@ def test_transactions_wasm():
         assert item.get("is_move_script") is None
 
 
-def test_transactions_wasm():
+def test_transactions_move():
     chain = "initia"
     network = "stone-11"
     limit = 10
     offset = 0
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/transactions?limit={limit}&offset={offset}&is_move=true"
+        f"/v1/{chain}/{network}/txs?limit={limit}&offset={offset}&is_move=true"
     )
     assert response.status_code == 200
 
