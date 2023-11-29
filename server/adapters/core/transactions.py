@@ -1,9 +1,9 @@
-from flask import abort
 import logging
-import requests
 
+import requests
+from flask import abort
 from utils.constants import WLD_URL
-from utils.gcs import get_network_data, get_lcd_tx_response_from_gcs
+from utils.gcs import get_lcd_tx_response_from_gcs, get_network_data
 from utils.graphql.txs import get_graphql_lcd_tx_responses, get_graphql_lcd_tx_results
 
 
@@ -19,7 +19,7 @@ def get_wld_transaction(tx_hash):
 
 def get_tx(chain, network, tx_hash):
     try:
-        if network == "osmosis-1":
+        if network == "osmosis-1" or chain == "sei":
             gcp_res = get_lcd_tx_response_from_gcs(network, tx_hash)
             if gcp_res != {}:
                 logging.info(f"Got lcd_tx_response from GCS: {tx_hash}")
