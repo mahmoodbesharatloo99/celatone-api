@@ -259,7 +259,7 @@ def test_get_transactions():
     address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}"
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}"
     )
     assert response.status_code == 200
 
@@ -286,7 +286,7 @@ def test_get_transactions_wasm():
     address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_wasm=true"
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_wasm=true"
     )
     assert response.status_code == 200
 
@@ -319,7 +319,7 @@ def test_get_transactions_move():
     address = "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_move=true"
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_move=true"
     )
     assert response.status_code == 200
 
@@ -351,7 +351,7 @@ def test_get_transactions_only_signer():
     is_signer = True
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_signer={is_signer}"
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_signer={is_signer}"
     )
     assert response.status_code == 200
 
@@ -370,7 +370,7 @@ def test_get_transactions_only_related():
     is_signer = False
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_signer={is_signer}"
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_signer={is_signer}"
     )
     assert response.status_code == 200
 
@@ -389,7 +389,7 @@ def test_get_transactions_filters():
     is_send = True
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_send={is_send}"
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_send={is_send}"
     )
     for item in response.json["items"]:
         assert item["is_send"] == is_send
@@ -398,7 +398,7 @@ def test_get_transactions_filters():
     is_store_code = True
     is_execute = True
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_wasm={is_wasm}&is_store_code={is_store_code}&is_execute={is_execute}"
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_wasm={is_wasm}&is_store_code={is_store_code}&is_execute={is_execute}"
     )
     for item in response.json["items"]:
         assert item["is_store_code"] == is_store_code

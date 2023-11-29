@@ -1,13 +1,13 @@
+from adapters.core import transactions
 from apiflask import APIBlueprint
-from flask import abort
 from utils.graphql.transactions import get_graphql_transactions
 from utils.helper import get_query_param, validate_pagination_params
 
 transactions_bp = APIBlueprint("transactions", __name__)
 
 
-@transactions_bp.route("/<chain>/<network>/transactions", methods=["GET"])
-def get_transactions(chain, network):
+@transactions_bp.route("/<chain>/<network>/txs", methods=["GET"])
+def get_txs(chain, network):
     limit = get_query_param("limit", type=int, required=True)
     offset = get_query_param("offset", type=int, required=True)
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
@@ -22,3 +22,8 @@ def get_transactions(chain, network):
     del data["latest"]
 
     return data
+
+
+@transactions_bp.route("/<chain>/<network>/txs/<tx_hash>", methods=["GET"])
+def get_tx(chain, network, tx_hash):
+    return transactions.get_tx(chain, network, tx_hash)
