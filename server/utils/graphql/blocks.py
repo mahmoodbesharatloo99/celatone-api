@@ -43,3 +43,56 @@ def get_graphql_blocks(chain: str, network: str, limit: int, offset: int):
         }
     """
     return execute_query(chain, network, query, variables).json().get("data", {})
+
+
+def get_graphql_latest_block(chain: str, network: str):
+    """Get the latest block.
+    Args:
+        chain (str): The blockchain chain.
+        network (str): The blockchain network.
+    Returns:
+        int: The latest block.
+    """
+    query = """
+        query {
+            latest: blocks(limit: 1, order_by: { height: desc }) {
+                height
+                timestamp
+            }
+        }
+    """
+    return execute_query(chain, network, query).json().get("data", {})
+
+
+def get_graphql_block_times(chain: str, network: str):
+    """Get the list of block times
+    Args:
+        chain (str): The blockchain chain.
+        network (str): The blockchain network.
+    Returns:
+        int[]: The list of block times
+    """
+    # TODO: change to latest informative block
+    query = """
+        query {
+            latest: blocks(limit: 1, order_by: { height: desc }) {
+                height
+                timestamp
+            }
+        }
+    """
+    data = execute_query(chain, network, query).json().get("data", {})
+
+    variables = {
+        "informative_height": data["latest"][0]["height"],
+    }
+    query = """
+        query (
+            $informative_height: Int!
+        ) {
+            blocks(where: { height: { _lte: $informative_height } }, limit: 101, order_by: { height: desc }) {
+                timestamp
+            }
+        }
+    """
+    return execute_query(chain, network, query, variables).json().get("data", {})
