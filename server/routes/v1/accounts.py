@@ -1,5 +1,4 @@
 from apiflask import APIBlueprint
-from flask import abort
 from adapters.aldus.accounts import AccountManager
 from adapters.aldus import projects
 from adapters.icns.resolver import get_icns_names
@@ -196,3 +195,93 @@ def get_move_resources(chain, network, account_address):
 )
 def get_move_modules(chain, network, account_address):
     return modules.get_move_modules(chain, network, account_address)
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/transactions",
+    methods=["GET"],
+)
+def get_transactions(chain, network, account_address):
+    limit = get_query_param("limit", type=int, required=True)
+    offset = get_query_param("offset", type=int, required=True)
+    validate_pagination_params(limit, offset)
+
+    # common
+    is_wasm = get_query_param("is_wasm", type=bool, default=False)
+    is_move = get_query_param("is_move", type=bool, default=False)
+    is_signer = get_query_param("is_signer", type=bool)
+    is_send = get_query_param("is_send", type=bool, default=False)
+    is_ibc = get_query_param("is_ibc", type=bool, default=False)
+
+    # wasm
+    is_execute = get_query_param("is_execute", type=bool, default=False)
+    is_instantiate = get_query_param("is_instantiate", type=bool, default=False)
+    is_store_code = get_query_param("is_store_code", type=bool, default=False)
+    is_migrate = get_query_param("is_migrate", type=bool, default=False)
+    is_update_admin = get_query_param("is_update_admin", type=bool, default=False)
+    is_clear_admin = get_query_param("is_clear_admin", type=bool, default=False)
+
+    # move
+    is_move_publish = get_query_param("is_move_publish", type=bool, default=False)
+    is_move_upgrade = get_query_param("is_move_upgrade", type=bool, default=False)
+    is_move_excute = get_query_param("is_move_excute", type=bool, default=False)
+    is_move_script = get_query_param("is_move_script", type=bool, default=False)
+
+    account_id = accounts.get_graphql_account_id_by_address(
+        chain, network, account_address
+    )
+
+    data = transactions.get_graphql_account_transactions(
+        chain=chain,
+        network=network,
+        account_id=account_id,
+        limit=limit,
+        offset=offset,
+        is_signer=is_signer,
+        is_wasm=is_wasm,
+        is_move=is_move,
+        filters={
+            "is_send": is_send,
+            "is_ibc": is_ibc,
+            "is_execute": is_execute,
+            "is_instantiate": is_instantiate,
+            "is_store_code": is_store_code,
+            "is_migrate": is_migrate,
+            "is_update_admin": is_update_admin,
+            "is_clear_admin": is_clear_admin,
+            "is_move_publish": is_move_publish,
+            "is_move_upgrade": is_move_upgrade,
+            "is_move_excute": is_move_excute,
+            "is_move_script": is_move_script,
+        },
+    )
+    for tx in data.get("items", []):
+        tx["height"] = tx["block"]["height"]
+        tx["created"] = tx["block"]["timestamp"]
+        tx["hash"] = tx["transaction"]["hash"]
+        tx["messages"] = tx["transaction"]["messages"]
+        tx["sender"] = tx["transaction"]["account"]["address"]
+        tx["success"] = tx["transaction"]["success"]
+        tx["is_send"] = tx["transaction"]["is_send"]
+        tx["is_ibc"] = tx["transaction"]["is_ibc"]
+
+        if is_wasm:
+            tx["is_clear_admin"] = tx["transaction"]["is_clear_admin"]
+            tx["is_execute"] = tx["transaction"]["is_execute"]
+            tx["is_instantiate"] = tx["transaction"]["is_instantiate"]
+            tx["is_migrate"] = tx["transaction"]["is_migrate"]
+            tx["is_store_code"] = tx["transaction"]["is_store_code"]
+            tx["is_update_admin"] = tx["transaction"]["is_update_admin"]
+
+        if is_move:
+            tx["is_move_publish"] = tx["transaction"]["is_move_publish"]
+            tx["is_move_upgrade"] = tx["transaction"]["is_move_upgrade"]
+            tx["is_move_execute"] = tx["transaction"]["is_move_execute"]
+            tx["is_move_script"] = tx["transaction"]["is_move_script"]
+
+        del tx["block"]
+        del tx["transaction"]
+    data["total"] = data["account_transactions_aggregate"]["aggregate"]["count"]
+    del data["account_transactions_aggregate"]
+
+    return data

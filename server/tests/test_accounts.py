@@ -249,3 +249,157 @@ def test_get_move_modules_invalid_chain():
         f"/v1/{chain}/{network}/accounts/{address}/move/modules"
     )
     assert response.status_code == 404
+
+
+def test_get_transactions():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = 10
+    offset = 0
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["height"]) == int
+        assert type(item["created"]) == str
+        assert type(item["sender"]) == str
+        assert type(item["hash"]) == str
+        assert type(item["success"]) == bool
+        assert type(item["messages"]) == list
+        assert type(item["is_send"]) == bool
+        assert type(item["is_ibc"]) == bool
+
+    assert type(response_json["total"]) == int
+
+
+def test_get_transactions_wasm():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = 10
+    offset = 0
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_wasm=true"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["height"]) == int
+        assert type(item["created"]) == str
+        assert type(item["sender"]) == str
+        assert type(item["hash"]) == str
+        assert type(item["success"]) == bool
+        assert type(item["messages"]) == list
+        assert type(item["is_send"]) == bool
+        assert type(item["is_ibc"]) == bool
+        assert type(item["is_clear_admin"]) == bool
+        assert type(item["is_execute"]) == bool
+        assert type(item["is_instantiate"]) == bool
+        assert type(item["is_migrate"]) == bool
+        assert type(item["is_store_code"]) == bool
+        assert type(item["is_update_admin"]) == bool
+
+    assert type(response_json["total"]) == int
+
+
+def test_get_transactions_move():
+    chain = "initia"
+    network = "stone-11"
+    limit = 10
+    offset = 0
+    address = "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_move=true"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["height"]) == int
+        assert type(item["created"]) == str
+        assert type(item["sender"]) == str
+        assert type(item["hash"]) == str
+        assert type(item["success"]) == bool
+        assert type(item["messages"]) == list
+        assert type(item["is_send"]) == bool
+        assert type(item["is_ibc"]) == bool
+        assert type(item["is_move_publish"]) == bool
+        assert type(item["is_move_upgrade"]) == bool
+        assert type(item["is_move_execute"]) == bool
+        assert type(item["is_move_script"]) == bool
+
+    assert type(response_json["total"]) == int
+
+
+def test_get_transactions_only_signer():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = 10
+    offset = 0
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+    is_signer = True
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_signer={is_signer}"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert item["is_signer"] == is_signer
+
+
+def test_get_transactions_only_related():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = 10
+    offset = 0
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+    is_signer = False
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_signer={is_signer}"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert item["is_signer"] == is_signer
+
+
+def test_get_transactions_filters():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = 10
+    offset = 0
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+    is_send = True
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_send={is_send}"
+    )
+    for item in response.json["items"]:
+        assert item["is_send"] == is_send
+
+    is_wasm = True
+    is_store_code = True
+    is_execute = True
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/transactions?limit={limit}&offset={offset}&is_wasm={is_wasm}&is_store_code={is_store_code}&is_execute={is_execute}"
+    )
+    for item in response.json["items"]:
+        assert item["is_store_code"] == is_store_code
+        assert item["is_execute"] == is_execute
