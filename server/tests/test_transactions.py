@@ -82,3 +82,12 @@ def test_transaction():
     response_json = response.json
     assert response_json["tx"] is not None
     assert response_json["tx_response"] is not None
+
+
+def test_transaction_invalid():
+    chain = "osmosis"
+    network = "osmosis-1"
+    tx_hash = "4672E1FBAED630BC3C0A5CD4703BB6FCD9F9CC9FD618DDAFBCB650610761B6B8"
+
+    response = app.test_client().get(f"/v1/{chain}/{network}/txs/{tx_hash}")
+    assert response.status_code == 404
