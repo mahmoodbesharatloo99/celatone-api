@@ -64,6 +64,24 @@ def get_graphql_transactions(
     return execute_query(chain, network, query, variables).json().get("data", {})
 
 
+def get_graphql_latest_transaction_id(chain: str, network: str):
+    """Get the latest transaction id.
+    Args:
+        chain (str): The blockchain chain.
+        network (str): The blockchain network.
+    Returns:
+        int: The latest transaction id.
+    """
+    query = """
+        query {
+            latest: transactions(limit: 1, order_by: { id: desc }) {
+                id
+            }
+        }
+    """
+    return execute_query(chain, network, query).json().get("data", {})
+
+
 def get_graphql_account_transactions(
     chain: str,
     network: str,
