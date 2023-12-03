@@ -1,4 +1,5 @@
 from app import app
+import pytest
 
 
 def test_get_account_info():
@@ -403,3 +404,145 @@ def test_get_transactions_filters():
     for item in response.json["items"]:
         assert item["is_store_code"] == is_store_code
         assert item["is_execute"] == is_execute
+
+
+@pytest.mark.parametrize(
+    "chain, network, address",
+    [
+        ("osmosis", "osmosis-1", "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"),
+        ("osmosis", "osmosis-1", "osmo1j0vaeh27t4rll7zhmarwcuq8xtrmvqhuqv0av9"),
+        # TODO: update to stone-12 later
+        ("initia", "stone-11", "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"),
+        ("initia", "stone-11", "init1k9dcrj33flyru4jz4pq6tydadegpdj3whu3wax"),
+    ],
+)
+def test_get_delegations(chain, network, address):
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/delegations"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    # is_validator
+    assert type(response_json["is_validator"]) == bool
+
+    # staking params
+    staking_params = response_json["staking_params"]
+    assert type(staking_params["bond_denoms"]) == list
+    for denom in staking_params["bond_denoms"]:
+        assert type(denom) == str
+    assert type(staking_params["historical_entries"]) == int
+    assert type(staking_params["max_entries"]) == int
+    assert type(staking_params["max_validators"]) == int
+    assert type(staking_params["min_commission_rate"]) == str
+    assert type(staking_params["unbonding_time"]) == str
+
+    # delegations
+    for item in response_json["delegations"]:
+        assert type(item["balance"]) == list
+        for balance in item["balance"]:
+            assert type(balance["amount"]) == str
+            assert type(balance["denom"]) == str
+        assert type(item["validator"]) == dict
+        assert type(item["validator"]["validator_address"]) == str
+        assert (
+            type(item["validator"]["moniker"]) == str
+            or item["validator"]["moniker"] is None
+        )
+        assert (
+            type(item["validator"]["identity"]) == str
+            or item["validator"]["identity"] is None
+        )
+
+    # unbondings
+    for item in response_json["unbondings"]:
+        assert type(item["entries"]) == list
+        for entry in item["entries"]:
+            assert type(entry["balance"]) == list
+            for balance in entry["balance"]:
+                assert type(balance["amount"]) == str
+                assert type(balance["denom"]) == str
+            assert type(entry["completion_time"]) == str
+            assert type(entry["creation_height"]) == str
+            assert type(entry["initial_balance"]) == list
+            for balance in entry["initial_balance"]:
+                assert type(balance["amount"]) == str
+                assert type(balance["denom"]) == str
+        assert type(item["validator"]) == dict
+        assert type(item["validator"]["validator_address"]) == str
+        assert (
+            type(item["validator"]["moniker"]) == str
+            or item["validator"]["moniker"] is None
+        )
+        assert (
+            type(item["validator"]["identity"]) == str
+            or item["validator"]["identity"] is None
+        )
+
+    # redelegations
+    for item in response_json["redelegations"]:
+        assert type(item["entries"]) == list
+        for entry in item["entries"]:
+            assert type(entry["balance"]) == list
+            for balance in entry["balance"]:
+                assert type(balance["amount"]) == str
+                assert type(balance["denom"]) == str
+            assert type(entry["redelegation_entry"]) == dict
+            assert type(entry["redelegation_entry"]["completion_time"]) == str
+            assert type(entry["redelegation_entry"]["creation_height"]) == int
+            assert type(entry["redelegation_entry"]["initial_balance"]) == list
+            for balance in entry["redelegation_entry"]["initial_balance"]:
+                assert type(balance["amount"]) == str
+                assert type(balance["denom"]) == str
+            assert type(entry["redelegation_entry"]["shares_dst"]) == list
+            for balance in entry["redelegation_entry"]["shares_dst"]:
+                assert type(balance["amount"]) == str
+                assert type(balance["denom"]) == str
+        assert type(item["validator_dst"]) == dict
+        assert type(item["validator_dst"]["validator_address"]) == str
+        assert (
+            type(item["validator_dst"]["moniker"]) == str
+            or item["validator_dst"]["moniker"] is None
+        )
+        assert (
+            type(item["validator_dst"]["identity"]) == str
+            or item["validator_dst"]["identity"] is None
+        )
+        assert type(item["validator_src"]) == dict
+        assert type(item["validator_src"]["validator_address"]) == str
+        assert (
+            type(item["validator_src"]["moniker"]) == str
+            or item["validator_src"]["moniker"] is None
+        )
+        assert (
+            type(item["validator_src"]["identity"]) == str
+            or item["validator_src"]["identity"] is None
+        )
+
+    # rewards
+    delegations_rewards = response_json["delegations_rewards"]
+    assert type(delegations_rewards["total"]) == list
+    for balance in delegations_rewards["total"]:
+        assert type(balance["amount"]) == str
+        assert type(balance["denom"]) == str
+    for item in delegations_rewards["rewards"]:
+        assert type(item["reward"]) == list
+        for balance in item["reward"]:
+            assert type(balance["amount"]) == str
+            assert type(balance["denom"]) == str
+        assert type(item["validator"]) == dict
+        assert type(item["validator"]["validator_address"]) == str
+        assert (
+            type(item["validator"]["moniker"]) == str
+            or item["validator"]["moniker"] is None
+        )
+        assert (
+            type(item["validator"]["identity"]) == str
+            or item["validator"]["identity"] is None
+        )
+
+    # commission
+    for balance in response_json["commissions"]:
+        assert type(balance["amount"]) == str
+        assert type(balance["denom"]) == str
