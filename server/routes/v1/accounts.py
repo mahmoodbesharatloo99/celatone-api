@@ -28,7 +28,9 @@ def get_account_info(chain, network, account_address):
     return {"project_info": project_info, "public_info": public_info, "icns": icns}
 
 
-@accounts_bp.route("/<chain>/<network>/accounts/<address>/table-count", methods=["GET"])
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/table-count", methods=["GET"]
+)
 def get_account_table_count(chain, network, account_address):
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     account_id = accounts.get_graphql_account_id_by_address(
