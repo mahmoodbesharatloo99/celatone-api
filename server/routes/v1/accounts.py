@@ -2,6 +2,7 @@ from adapters.aldus import projects
 from adapters.aldus.accounts import AccountManager
 from adapters.icns.resolver import get_icns_names
 from adapters.move import modules, resources
+from adapters.core import staking
 from apiflask import APIBlueprint
 from utils.graphql import accounts, codes, contracts, proposals, transactions
 from utils.helper import get_query_param, validate_pagination_params
@@ -27,7 +28,9 @@ def get_account_info(chain, network, account_address):
     return {"project_info": project_info, "public_info": public_info, "icns": icns}
 
 
-@accounts_bp.route("/<chain>/<network>/accounts/<address>/table-count", methods=["GET"])
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/table-count", methods=["GET"]
+)
 def get_account_table_count(chain, network, account_address):
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     account_id = accounts.get_graphql_account_id_by_address(
@@ -285,3 +288,11 @@ def get_transactions(chain, network, account_address):
     del data["account_transactions_aggregate"]
 
     return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/delegations",
+    methods=["GET"],
+)
+def get_delegations(chain, network, account_address):
+    return staking.get_delegations_by_address(chain, network, account_address)

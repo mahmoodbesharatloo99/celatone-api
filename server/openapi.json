@@ -44,10 +44,22 @@
       "name": "V1.Accounts"
     },
     {
+      "name": "V1.Assets"
+    },
+    {
       "name": "V1.Balances"
     },
     {
       "name": "V1.Blocks"
+    },
+    {
+      "name": "V1.Move"
+    },
+    {
+      "name": "V1.Move.Pools"
+    },
+    {
+      "name": "V1.Overviews"
     },
     {
       "name": "V1.Transactions"
@@ -361,6 +373,52 @@
         "summary": "Get Health"
       }
     },
+    "/v1/{chain}/{network}/txs": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Transactions"
+        ],
+        "summary": "Get Txs"
+      }
+    },
     "/accounts/{chain}/{network}": {
       "get": {
         "parameters": [
@@ -499,6 +557,52 @@
         ],
         "summary": "Get All Contracts",
         "description": "Returns a list of all the known contracts based on the input chain and network"
+      }
+    },
+    "/v1/{chain}/{network}/assets": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Assets"
+        ],
+        "summary": "Get Assets"
       }
     },
     "/v1/{chain}/{network}/blocks": {
@@ -770,6 +874,52 @@
         "summary": "Get Tx"
       }
     },
+    "/v1/{chain}/{network}/move/pools": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Move.Pools"
+        ],
+        "summary": "Get Move Pools"
+      }
+    },
     "/{chain}/{network}/staking/params": {
       "get": {
         "parameters": [
@@ -869,52 +1019,6 @@
         ],
         "summary": "Get Code by ID",
         "description": "Returns a specific code based on the input chain, network, and code_id"
-      }
-    },
-    "/v1/{chain}/{network}/transactions": {
-      "get": {
-        "parameters": [
-          {
-            "in": "path",
-            "name": "chain",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "network",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            },
-            "description": "Successful response"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPError"
-                }
-              }
-            },
-            "description": "Not found"
-          }
-        },
-        "tags": [
-          "V1.Transactions"
-        ],
-        "summary": "Get Transactions"
       }
     },
     "/rest/{chain}/{network}/{path}": {
@@ -1021,6 +1125,60 @@
           "Legacy.Misc"
         ],
         "summary": "Get Rest"
+      }
+    },
+    "/v1/{chain}/{network}/txs/{tx_hash}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "tx_hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Transactions"
+        ],
+        "summary": "Get Tx"
       }
     },
     "/assets/{chain}/{network}/{asset_id}": {
@@ -1221,6 +1379,52 @@
           "Legacy.Staking"
         ],
         "summary": "Get Validators"
+      }
+    },
+    "/v1/{chain}/{network}/overviews/stats": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Overviews"
+        ],
+        "summary": "Get Overviews Stats"
       }
     },
     "/projects/{chain}/{network}/{project_id}": {
@@ -1649,6 +1853,60 @@
         "summary": "Get Balances"
       }
     },
+    "/v1/{chain}/{network}/assets/type/{asset_type}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "asset_type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Assets"
+        ],
+        "summary": "Get Assets By Type"
+      }
+    },
     "/contracts/{chain}/{network}/{contract_address}": {
       "get": {
         "parameters": [
@@ -1991,6 +2249,60 @@
         "summary": "Get Asset Factory"
       }
     },
+    "/v1/{chain}/{network}/accounts/{account_address}/txs": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Transactions"
+      }
+    },
     "/v1/{chain}/{network}/accounts/{account_address}/info": {
       "get": {
         "parameters": [
@@ -2097,6 +2409,438 @@
           "Legacy.Staking"
         ],
         "summary": "Get Validator"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/proposals": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Proposals"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/wasm/codes": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Codes"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/table-count": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Account Table Count"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/delegations": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Delegations"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/move/modules": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Move Modules"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/move/resources": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Move Resources"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/wasm/admin-contracts": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Admin Contracts"
+      }
+    },
+    "/v1/{chain}/{network}/accounts/{account_address}/wasm/instantiated-contracts": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "network",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "account_address",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            },
+            "description": "Not found"
+          }
+        },
+        "tags": [
+          "V1.Accounts"
+        ],
+        "summary": "Get Instantiated Contracts"
       }
     }
   },

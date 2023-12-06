@@ -15,16 +15,16 @@ def get_graphql_validators(chain: str, network: str) -> Dict[str, Any]:
     query = """
         query {
             validators {
-            commission_max_change
-            commission_max_rate
-            commission_rate
-            consensus_address
-            details
-            identity
-            jailed
-            moniker
-            operator_address
-            website
+                commission_max_change
+                commission_max_rate
+                commission_rate
+                consensus_address
+                details
+                identity
+                jailed
+                moniker
+                operator_address
+                website
             }
         }
     """
