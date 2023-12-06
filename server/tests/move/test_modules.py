@@ -3,7 +3,7 @@ from app import app
 
 def test_move_modules():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12"
     limit = 10
     offset = 0
 
@@ -21,4 +21,5 @@ def test_move_modules():
         assert type(item["address"]) == str
         assert type(item["block"]["height"]) == int
         assert type(item["block"]["timestamp"]) == str
-        assert type(item["is_republished"]) == bool
+        assert type(item["is_republish"]) == bool
+        assert type(item["is_verify"]) == bool

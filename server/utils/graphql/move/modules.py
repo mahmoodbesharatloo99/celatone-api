@@ -42,6 +42,7 @@ def get_graphql_modules(chain: str, network: str, limit: int, offset: int):
                         count
                     }
                 }
+                is_verify
             }
             latest: modules(limit: 1, order_by: { id: desc }) {
                 id
