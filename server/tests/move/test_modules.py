@@ -3,7 +3,7 @@ from app import app
 
 def test_move_modules():
     chain = "initia"
-    network = "stone-12"
+    network = "stone-12-1"
     limit = 10
     offset = 0
 

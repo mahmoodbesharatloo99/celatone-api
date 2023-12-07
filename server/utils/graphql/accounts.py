@@ -1,4 +1,3 @@
-from flask import abort
 from .common import execute_query
 
 
