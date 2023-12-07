@@ -1,7 +1,10 @@
 import json
 import logging
-from google.cloud import storage
 from typing import Any, Dict
+
+from google.cloud import storage
+
+from .constants import ENDPOINT_BUCKET_NAME
 
 storage_client = storage.Client()
 
@@ -19,7 +22,7 @@ def get_network_data(chain: str, network: str, endpoint: str) -> Dict[str, Any]:
         dict: The network data.
     """
     try:
-        data = get_gcs_data("celatone-endpoints", f"{endpoint}.json")
+        data = get_gcs_data(ENDPOINT_BUCKET_NAME, f"{endpoint}.json")
         if endpoint != "hive":
             return data[chain][network]
         else:
