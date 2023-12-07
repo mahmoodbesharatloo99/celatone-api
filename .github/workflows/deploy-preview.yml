@@ -18,7 +18,7 @@ jobs:
         shell: bash
         run: |
           BRANCH_NAME=$(echo "${{ github.head_ref }}" | tr '[:upper:]' '[:lower:]' | tr '/' '-')
-          echo "##[set-output name=branch;]${BRANCH_NAME:0:30}"
+          echo "##[set-output name=branch;]${BRANCH_NAME:0:35}"
       - name: Check if branch name starts with 'feat/' or 'fix/'
         id: validate_branch
         run: |
