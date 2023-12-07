@@ -5,7 +5,7 @@ import pytest
 def test_get_account_info():
     chain = "osmosis"
     network = "osmosis-1"
-    account_address = "osmo18kmnpjw6mj7juw6wmnzdyaa8e2tg9h3mqry0ym"
+    account_address = "osmo1yhqft6d2msmzpugdjtawsgdlwvgq3samajy9jq"
 
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{account_address}/info"
@@ -13,12 +13,27 @@ def test_get_account_info():
     assert response.status_code == 200
 
     response_json = response.get_json()
-    assert "icns" in response_json
-    assert "project_info" in response_json
-    assert "public_info" in response_json
+    assert type(response_json["icns"]["names"]) == list
+    for name in response_json["icns"]["names"]:
+        assert type(name) == str
+    assert type(response_json["icns"]["primary_name"]) == str
+    assert type(response_json["project_info"]["description"]) == str
+    assert type(response_json["project_info"]["github"]) == str
+    assert type(response_json["project_info"]["logo"]) == str
+    assert type(response_json["project_info"]["name"]) == str
+    assert type(response_json["project_info"]["socials"]) == list
+    for social in response_json["project_info"]["socials"]:
+        assert type(social["name"]) == str
+        assert type(social["url"]) == str
+    assert type(response_json["project_info"]["website"]) == str
+    assert type(response_json["public_info"]["address"]) == str
+    assert type(response_json["public_info"]["description"]) == str
+    assert type(response_json["public_info"]["name"]) == str
+    assert type(response_json["public_info"]["slug"]) == str
+    assert type(response_json["public_info"]["type"]) == str
 
 
-def test_get_account_info_failed():
+def test_get_account_info_invalid_address():
     chain = "osmosis"
     network = "osmosis-1"
     account_address = "invalid_address"
@@ -26,7 +41,12 @@ def test_get_account_info_failed():
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{account_address}/info"
     )
-    assert response.status_code == 500
+    assert response.status_code == 200
+
+    response_json = response.get_json()
+    assert response_json["icns"] is None
+    assert response_json["project_info"] is None
+    assert response_json["public_info"] is None
 
 
 def test_get_account_table_count():
