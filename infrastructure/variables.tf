@@ -26,3 +26,8 @@ variable "cloudflare_domain_binding" {
   type    = bool
   default = false
 }
+
+variable "project_id" {
+  type    = string
+  default = "alles-playground"
+}
