@@ -102,7 +102,7 @@ def get_graphql_block_times(chain: str, network: str):
         query (
             $max_height: Int!
         ) {
-            blocks(where: { height: { _lte: $max_height } }, limit: 101, order_by: { height: desc }) {
+            blocks(where: { height: { _lte: $max_height } }, limit: 100, order_by: { height: desc }) {
                 timestamp
             }
         }
