@@ -27,7 +27,7 @@ provider "cloudflare" {
 }
 
 provider "google" {
-  project = "celatone-production"
+  project = var.project_id
 }
 
 data "google_secret_manager_secret_version" "cloudflare_api_token" {

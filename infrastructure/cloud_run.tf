@@ -22,8 +22,13 @@ resource "google_cloud_run_v2_service" "celatone_api" {
       }
 
       env {
-        name = "ALDUS_URL"
+        name  = "ALDUS_URL"
         value = var.aldus_url
+      }
+
+      env {
+        name  = "ENDPOINT_BUCKET_NAME"
+        value = var.endpoint_bucket_name
       }
     }
   }

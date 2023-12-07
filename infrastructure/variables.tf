@@ -18,7 +18,16 @@ variable "wld_url" {
   type = string
 }
 
+variable "endpoint_bucket_name" {
+  type = string
+}
+
 variable "cloudflare_domain_binding" {
   type    = bool
   default = false
+}
+
+variable "project_id" {
+  type    = string
+  default = "alles-playground"
 }
