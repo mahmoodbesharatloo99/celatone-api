@@ -10,7 +10,7 @@ POOLS_INFO_FN = {
         "module_name": "PoolInfo",
         "function_name": "get_all_pair_infos",
     },
-    "stone-12": {
+    "stone-12-1": {
         "address": "0x38d2a65b2be5d2c1b9f329f5b45f708c7b7d9cf5",
         "module_name": "PoolInfo",
         "function_name": "get_all_pair_infos",
