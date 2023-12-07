@@ -16,14 +16,14 @@ accounts_bp = APIBlueprint("accounts", __name__)
 def get_account_info(chain, network, account_address):
     try:
         public_info = AccountManager(chain, network).get_account(account_address)
-    except Exception:
+    except:
         public_info = None
 
     try:
         project_info = projects.get_project(
             chain, network, public_info.get("slug")
         ).get("details")
-    except Exception:
+    except:
         project_info = None
 
     try:
@@ -31,7 +31,7 @@ def get_account_info(chain, network, account_address):
         icns_primary_name = icns.get("primary_name")
         if len(icns_primary_name) == 0:
             icns = None
-    except Exception:
+    except:
         icns = None
 
     return {"project_info": project_info, "public_info": public_info, "icns": icns}
