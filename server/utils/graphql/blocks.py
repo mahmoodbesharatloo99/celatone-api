@@ -88,7 +88,7 @@ def get_graphql_block_times(chain: str, network: str):
         chain (str): The blockchain chain.
         network (str): The blockchain network.
     Returns:
-        int[]: The list of block times
+        str[]: The list of block timestamps
     """
     if chain == "sei":
         data = get_graphql_latest_informative_block(chain, network)
