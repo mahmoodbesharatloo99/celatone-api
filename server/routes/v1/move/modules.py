@@ -43,10 +43,7 @@ def get_move_module_txs(chain, network, vm_address, name):
 
     module_id = get_graphql_module_id(chain, network, vm_address, name)
     if module_id is None:
-        return {
-            "items": [],
-            "total": 0,
-        }
+        return {"items": [], "total": 0}
 
     data = get_graphql_module_txs(chain, network, module_id, limit, offset, is_initia)
     for tx in data.get("items", []):

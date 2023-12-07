@@ -77,3 +77,35 @@ def test_move_modules_transactions_initia():
         assert type(item["is_opinit"]) == bool
 
     assert type(response_json["total"]) == int
+
+
+def test_move_modules_transactions_invalid_vm_address():
+    chain = "initia"
+    network = "stone-12-1"
+    limit = 10
+    offset = 0
+    vm_address = "0x2"
+    name = "coin"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/move/modules/{vm_address}/{name}/txs?limit={limit}&offset={offset}&is_initia=true"
+    )
+    assert response.status_code == 200
+    assert response.json["total"] == 0
+    assert response.json["items"] == []
+
+
+def test_move_modules_transactions_invalid_name():
+    chain = "initia"
+    network = "stone-12-1"
+    limit = 10
+    offset = 0
+    vm_address = "0x1"
+    name = "beeb"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/move/modules/{vm_address}/{name}/txs?limit={limit}&offset={offset}&is_initia=true"
+    )
+    assert response.status_code == 200
+    assert response.json["total"] == 0
+    assert response.json["items"] == []
