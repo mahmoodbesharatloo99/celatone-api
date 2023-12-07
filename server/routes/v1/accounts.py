@@ -1,8 +1,8 @@
 from adapters.aldus import projects
 from adapters.aldus.accounts import AccountManager
+from adapters.core import staking
 from adapters.icns.resolver import get_icns_names
 from adapters.move import modules, resources
-from adapters.core import staking
 from apiflask import APIBlueprint
 from utils.graphql import accounts, codes, contracts, proposals, transactions
 from utils.helper import get_query_param, validate_pagination_params
@@ -212,9 +212,11 @@ def get_transactions(chain, network, account_address):
     # common
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     is_move = get_query_param("is_move", type=bool, default=False)
+    is_initia = get_query_param("is_initia", type=bool, default=False)
     is_signer = get_query_param("is_signer", type=bool)
     is_send = get_query_param("is_send", type=bool, default=False)
     is_ibc = get_query_param("is_ibc", type=bool, default=False)
+    is_opinit = get_query_param("is_opinit", type=bool, default=False)
 
     # wasm
     is_execute = get_query_param("is_execute", type=bool, default=False)
@@ -243,6 +245,7 @@ def get_transactions(chain, network, account_address):
         is_signer=is_signer,
         is_wasm=is_wasm,
         is_move=is_move,
+        is_initia=is_initia,
         filters={
             "is_send": is_send,
             "is_ibc": is_ibc,
@@ -256,6 +259,7 @@ def get_transactions(chain, network, account_address):
             "is_move_upgrade": is_move_upgrade,
             "is_move_excute": is_move_excute,
             "is_move_script": is_move_script,
+            "is_opinit": is_opinit,
         },
     )
     for tx in data.get("items", []):
@@ -281,6 +285,9 @@ def get_transactions(chain, network, account_address):
             tx["is_move_upgrade"] = tx["transaction"]["is_move_upgrade"]
             tx["is_move_execute"] = tx["transaction"]["is_move_execute"]
             tx["is_move_script"] = tx["transaction"]["is_move_script"]
+
+        if is_initia:
+            tx["is_opinit"] = tx["transaction"]["is_opinit"]
 
         del tx["block"]
         del tx["transaction"]

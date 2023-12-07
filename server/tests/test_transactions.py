@@ -71,6 +71,32 @@ def test_transactions_move():
         assert type(item["is_move_script"]) == bool
 
 
+def test_transactions_initia():
+    chain = "initia"
+    network = "stone-12-1"
+    limit = 10
+    offset = 0
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/txs?limit={limit}&offset={offset}&is_initia=true"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+    assert len(response_json["items"]) == limit
+    assert type(response_json["total"]) == int
+
+    for item in response_json["items"]:
+        assert type(item["block"]["height"]) == int
+        assert type(item["block"]["timestamp"]) == str
+        assert type(item["hash"]) == str
+        assert type(item["success"]) == bool
+        assert type(item["messages"]) == list
+        assert type(item["is_send"]) == bool
+        assert type(item["is_ibc"]) == bool
+        assert type(item["is_opinit"]) == bool
+
+
 def test_transaction():
     chain = "osmosis"
     network = "osmosis-1"

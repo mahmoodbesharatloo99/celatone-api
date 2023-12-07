@@ -1,5 +1,5 @@
-from app import app
 import pytest
+from app import app
 
 
 def test_get_account_info():
@@ -339,6 +339,34 @@ def test_get_transactions_move():
         assert type(item["is_move_upgrade"]) == bool
         assert type(item["is_move_execute"]) == bool
         assert type(item["is_move_script"]) == bool
+
+    assert type(response_json["total"]) == int
+
+
+def test_get_transactions_initia():
+    chain = "initia"
+    network = "stone-11"
+    limit = 10
+    offset = 0
+    address = "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_initia=true"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["height"]) == int
+        assert type(item["created"]) == str
+        assert type(item["sender"]) == str
+        assert type(item["hash"]) == str
+        assert type(item["success"]) == bool
+        assert type(item["messages"]) == list
+        assert type(item["is_send"]) == bool
+        assert type(item["is_ibc"]) == bool
+        assert type(item["is_opinit"]) == bool
 
     assert type(response_json["total"]) == int
 
