@@ -234,7 +234,7 @@ def get_transactions(chain, network, account_address):
         chain, network, account_address
     )
 
-    if not account_id:
+    if account_id is None:
         return {"items": [], "total": 0}
 
     data = transactions.get_graphql_account_transactions(
