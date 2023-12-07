@@ -17,7 +17,7 @@ def get_overviews_stats(chain, network):
 
     try:
         data = blocks.get_graphql_latest_block(chain, network)
-        latest_block = data["latest"][0]
+        latest_block = data["latest"][0]["height"]
     except:
         latest_block = None
 
