@@ -16,8 +16,11 @@ def get_txs(chain, network):
 
     data = get_graphql_transactions(chain, network, limit, offset, is_wasm, is_move)
     for tx in data.get("items", []):
-        tx["signer"] = tx["account"]["address"]
+        tx["height"] = tx["block"]["height"]
+        tx["created"] = tx["block"]["timestamp"]
+        tx["sender"] = tx["account"]["address"]
         del tx["account"]
+        del tx["block"]
     data["total"] = data["latest"][0]["id"]
     del data["latest"]
 

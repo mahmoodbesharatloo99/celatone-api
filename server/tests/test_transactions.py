@@ -17,9 +17,10 @@ def test_transactions_wasm():
     assert type(response_json["total"]) == int
 
     for item in response_json["items"]:
-        assert type(item["block"]["height"]) == int
-        assert type(item["block"]["timestamp"]) == str
+        assert type(item["height"]) == int
+        assert type(item["created"]) == str
         assert type(item["hash"]) == str
+        assert type(item["sender"]) == str
         assert type(item["success"]) == bool
         assert type(item["messages"]) == list
         assert type(item["is_send"]) == bool
@@ -52,9 +53,10 @@ def test_transactions_move():
     assert type(response_json["total"]) == int
 
     for item in response_json["items"]:
-        assert type(item["block"]["height"]) == int
-        assert type(item["block"]["timestamp"]) == str
+        assert type(item["height"]) == int
+        assert type(item["created"]) == str
         assert type(item["hash"]) == str
+        assert type(item["sender"]) == str
         assert type(item["success"]) == bool
         assert type(item["messages"]) == list
         assert type(item["is_send"]) == bool
