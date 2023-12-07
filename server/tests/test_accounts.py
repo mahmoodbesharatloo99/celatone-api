@@ -279,6 +279,21 @@ def test_get_transactions():
     assert type(response_json["total"]) == int
 
 
+def test_get_transactions_invalid_address():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    limit = 10
+    offset = 0
+    address = "invalid_address"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}"
+    )
+    assert response.status_code == 200
+    assert response.json["total"] == 0
+    assert response.json["items"] == []
+
+
 def test_get_transactions_wasm():
     chain = "osmosis"
     network = "osmo-test-5"
