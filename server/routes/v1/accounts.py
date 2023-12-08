@@ -5,7 +5,11 @@ from adapters.move import modules, resources
 from adapters.core import staking
 from apiflask import APIBlueprint
 from utils.graphql import accounts, codes, contracts, proposals, transactions
-from utils.helper import get_query_param, validate_pagination_params
+from utils.helper import (
+    get_query_param,
+    is_graphql_timeout_error,
+    validate_pagination_params,
+)
 
 accounts_bp = APIBlueprint("accounts", __name__)
 
@@ -59,21 +63,16 @@ def get_account_table_count(chain, network, account_address):
             chain, network, account_id
         )
     except Exception as e:
-        message = str(e)
-
-        # Check if query timeout
-        if "57014" in message:
-            print("timeout")
-        else:
-            print("Exception caught, but message is different:", message)
+        if not is_graphql_timeout_error(e):
             del data["tx"]
 
     try:
         data["proposal"] = proposals.get_graphql_proposals_count_by_address(
             chain, network, account_address
         )
-    except:
-        pass
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["proposal"]
 
     if not is_wasm:
         del data["code"]
@@ -86,22 +85,25 @@ def get_account_table_count(chain, network, account_address):
         data["code"] = codes.get_graphql_codes_count_by_address(
             chain, network, account_address
         )
-    except:
-        pass
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["code"]
 
     try:
         data["instantiated"] = contracts.get_graphql_instantiated_count_by_address(
             chain, network, account_address
         )
-    except:
-        pass
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["instantiated"]
 
     try:
         data["contract_by_admin"] = contracts.get_graphql_contract_count_by_admin(
             chain, network, account_address
         )
-    except:
-        pass
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["contract_by_admin"]
 
     return data
 
