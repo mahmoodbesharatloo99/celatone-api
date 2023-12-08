@@ -28,4 +28,4 @@ def validate_pagination_params(limit: int, offset: int):
 
 
 def is_graphql_timeout_error(e: Exception):
-    return "57014" in str(e)
+    return "canceling statement due to statement timeout" in str(e)
