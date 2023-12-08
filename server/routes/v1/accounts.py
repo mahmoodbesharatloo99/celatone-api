@@ -386,7 +386,6 @@ def get_transactions_count(chain, network, account_address):
     except Exception as e:
         if not is_graphql_timeout_error(e):
             del data["count"]
-            return data
 
     return data
 
