@@ -42,9 +42,9 @@ def get_account_info(chain, network, account_address):
 
 
 @accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/table-count", methods=["GET"]
+    "/<chain>/<network>/accounts/<account_address>/table-counts", methods=["GET"]
 )
-def get_account_table_count(chain, network, account_address):
+def get_account_table_counts(chain, network, account_address):
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
 
     data = {

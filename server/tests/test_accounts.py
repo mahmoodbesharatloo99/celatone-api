@@ -55,7 +55,7 @@ def test_get_account_table_count():
     account_address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{account_address}/table-count"
+        f"/v1/{chain}/{network}/accounts/{account_address}/table-counts"
     )
     assert response.status_code == 200
 
@@ -73,7 +73,7 @@ def test_get_account_table_count_wasm():
     account_address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{account_address}/table-count?is_wasm=true"
+        f"/v1/{chain}/{network}/accounts/{account_address}/table-counts?is_wasm=true"
     )
     assert response.status_code == 200
 
@@ -91,7 +91,7 @@ def test_get_account_table_count_new_address():
     account_address = "osmo14wk9zecqam9jsac7xwtf8e349ckquzzlx9k8c3"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{account_address}/table-count?is_wasm=true"
+        f"/v1/{chain}/{network}/accounts/{account_address}/table-counts?is_wasm=true"
     )
     assert response.status_code == 200
 
