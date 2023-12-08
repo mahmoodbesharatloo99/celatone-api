@@ -60,7 +60,7 @@ def get_account_table_count(chain, network, account_address):
             chain, network, account_address
         )
         data["tx"] = transactions.get_graphql_account_transactions_count(
-            chain, network, account_id
+            chain, network, account_id, is_signer=None, filters=None
         )
     except Exception as e:
         if not is_graphql_timeout_error(e):
@@ -338,18 +338,55 @@ def get_transactions(chain, network, account_address):
     methods=["GET"],
 )
 def get_transactions_count(chain, network, account_address):
+    # common
+    is_signer = get_query_param("is_signer", type=bool)
+    is_send = get_query_param("is_send", type=bool, default=False)
+    is_ibc = get_query_param("is_ibc", type=bool, default=False)
+
+    # wasm
+    is_execute = get_query_param("is_execute", type=bool, default=False)
+    is_instantiate = get_query_param("is_instantiate", type=bool, default=False)
+    is_store_code = get_query_param("is_store_code", type=bool, default=False)
+    is_migrate = get_query_param("is_migrate", type=bool, default=False)
+    is_update_admin = get_query_param("is_update_admin", type=bool, default=False)
+    is_clear_admin = get_query_param("is_clear_admin", type=bool, default=False)
+
+    # move
+    is_move_publish = get_query_param("is_move_publish", type=bool, default=False)
+    is_move_upgrade = get_query_param("is_move_upgrade", type=bool, default=False)
+    is_move_excute = get_query_param("is_move_excute", type=bool, default=False)
+    is_move_script = get_query_param("is_move_script", type=bool, default=False)
+
     data = {"count": None}
 
     try:
         account_id = accounts.get_graphql_account_id_by_address(
             chain, network, account_address
         )
-        print(account_id)
         data["count"] = transactions.get_graphql_account_transactions_count(
-            chain, network, account_id
+            chain=chain,
+            network=network,
+            account_id=account_id,
+            is_signer=is_signer,
+            filters={
+                "is_send": is_send,
+                "is_ibc": is_ibc,
+                "is_execute": is_execute,
+                "is_instantiate": is_instantiate,
+                "is_store_code": is_store_code,
+                "is_migrate": is_migrate,
+                "is_update_admin": is_update_admin,
+                "is_clear_admin": is_clear_admin,
+                "is_move_publish": is_move_publish,
+                "is_move_upgrade": is_move_upgrade,
+                "is_move_excute": is_move_excute,
+                "is_move_script": is_move_script,
+            },
         )
-    except:
-        pass
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["count"]
+            return data
 
     return data
 

@@ -52,7 +52,7 @@ def test_get_account_info_invalid_address():
 def test_get_account_table_count():
     chain = "osmosis"
     network = "osmo-test-5"
-    account_address = "osmo1pcma8fhzddx6j0uylpcll4ut673t3qqulpu56l"
+    account_address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{account_address}/table-count"
@@ -437,10 +437,10 @@ def test_get_transactions_filters():
 def test_get_transactions_count():
     chain = "osmosis"
     network = "osmo-test-5"
-    address = "osmo1pcma8fhzddx6j0uylpcll4ut673t3qqulpu56l"
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{address}/txs-count"
+        f"/v1/{chain}/{network}/accounts/{address}/txs-count?is_send=true&is_signer=true"
     )
     assert response.status_code == 200
 
