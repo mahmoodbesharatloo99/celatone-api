@@ -149,11 +149,6 @@ def get_graphql_account_transactions(
                 }
                 is_signer
             }
-            account_transactions_aggregate(where: $expression) {
-                aggregate {
-                    count
-                }
-            }
         }
     """
     return execute_query(chain, network, query, variables).json().get("data", {})

@@ -42,37 +42,61 @@ def get_account_info(chain, network, account_address):
 )
 def get_account_table_count(chain, network, account_address):
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
-    account_id = accounts.get_graphql_account_id_by_address(
-        chain, network, account_address
-    )
-    txs_count = transactions.get_graphql_account_transactions_count(
-        chain, network, account_id
-    )
 
-    proposals_count = proposals.get_graphql_proposals_count_by_address(
-        chain, network, account_address
-    )
+    data = {
+        "tx": None,
+        "proposal": None,
+        "code": None,
+        "instantiated": None,
+        "contract_by_admin": None,
+    }
+
+    try:
+        account_id = accounts.get_graphql_account_id_by_address(
+            chain, network, account_address
+        )
+        data["tx"] = transactions.get_graphql_account_transactions_count(
+            chain, network, account_id
+        )
+    except Exception as e:
+        print(e)
+
+    try:
+        data["proposal"] = proposals.get_graphql_proposals_count_by_address(
+            chain, network, account_address
+        )
+    except Exception as e:
+        print(e)
 
     if not is_wasm:
-        return {"tx": txs_count, "proposal": proposals_count}
+        del data["code"]
+        del data["instantiated"]
+        del data["contract_by_admin"]
 
-    codes_count = codes.get_graphql_codes_count_by_address(
-        chain, network, account_address
-    )
-    instantiated_count = contracts.get_graphql_instantiated_count_by_address(
-        chain, network, account_address
-    )
-    contract_by_admin_count = contracts.get_graphql_contract_count_by_admin(
-        chain, network, account_address
-    )
+        return data
 
-    return {
-        "tx": txs_count,
-        "proposal": proposals_count,
-        "code": codes_count,
-        "instantiated": instantiated_count,
-        "contract_by_admin": contract_by_admin_count,
-    }
+    try:
+        data["code"] = codes.get_graphql_codes_count_by_address(
+            chain, network, account_address
+        )
+    except Exception as e:
+        print(e)
+
+    try:
+        data["instantiated"] = contracts.get_graphql_instantiated_count_by_address(
+            chain, network, account_address
+        )
+    except Exception as e:
+        print(e)
+
+    try:
+        data["contract_by_admin"] = contracts.get_graphql_contract_count_by_admin(
+            chain, network, account_address
+        )
+    except Exception as e:
+        print(e)
+
+    return data
 
 
 @accounts_bp.route(
@@ -244,7 +268,7 @@ def get_transactions(chain, network, account_address):
     )
 
     if account_id is None:
-        return {"items": [], "total": 0}
+        return {"items": []}
 
     data = transactions.get_graphql_account_transactions(
         chain=chain,
@@ -296,8 +320,27 @@ def get_transactions(chain, network, account_address):
 
         del tx["block"]
         del tx["transaction"]
-    data["total"] = data["account_transactions_aggregate"]["aggregate"]["count"]
-    del data["account_transactions_aggregate"]
+
+    return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/txs-count",
+    methods=["GET"],
+)
+def get_transactions_count(chain, network, account_address):
+    data = {"count": None}
+
+    try:
+        account_id = accounts.get_graphql_account_id_by_address(
+            chain, network, account_address
+        )
+        print(account_id)
+        data["count"] = transactions.get_graphql_account_transactions_count(
+            chain, network, account_id
+        )
+    except Exception as e:
+        print(e)
 
     return data
 

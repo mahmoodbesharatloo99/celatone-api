@@ -52,7 +52,7 @@ def test_get_account_info_invalid_address():
 def test_get_account_table_count():
     chain = "osmosis"
     network = "osmo-test-5"
-    account_address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+    account_address = "osmo1pcma8fhzddx6j0uylpcll4ut673t3qqulpu56l"
 
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{account_address}/table-count"
@@ -296,8 +296,6 @@ def test_get_transactions():
         assert type(item["is_send"]) == bool
         assert type(item["is_ibc"]) == bool
 
-    assert type(response_json["total"]) == int
-
 
 def test_get_transactions_invalid_address():
     chain = "osmosis"
@@ -310,7 +308,6 @@ def test_get_transactions_invalid_address():
         f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}"
     )
     assert response.status_code == 200
-    assert response.json["total"] == 0
     assert response.json["items"] == []
 
 
@@ -344,8 +341,6 @@ def test_get_transactions_wasm():
         assert type(item["is_store_code"]) == bool
         assert type(item["is_update_admin"]) == bool
 
-    assert type(response_json["total"]) == int
-
 
 def test_get_transactions_move():
     chain = "initia"
@@ -374,8 +369,6 @@ def test_get_transactions_move():
         assert type(item["is_move_upgrade"]) == bool
         assert type(item["is_move_execute"]) == bool
         assert type(item["is_move_script"]) == bool
-
-    assert type(response_json["total"]) == int
 
 
 def test_get_transactions_only_signer():
@@ -439,6 +432,20 @@ def test_get_transactions_filters():
     for item in response.json["items"]:
         assert item["is_store_code"] == is_store_code
         assert item["is_execute"] == is_execute
+
+
+def test_get_transactions_count():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    address = "osmo1pcma8fhzddx6j0uylpcll4ut673t3qqulpu56l"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs-count"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+    assert type(response_json["count"]) == int
 
 
 @pytest.mark.parametrize(
