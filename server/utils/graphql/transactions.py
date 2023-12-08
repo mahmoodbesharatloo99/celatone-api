@@ -96,7 +96,7 @@ def get_graphql_account_transactions(
     account_exp = {"account_id": {"_eq": account_id}}
     is_signer_exp = {"is_signer": {"_eq": is_signer}} if is_signer is not None else {}
     filter_exp = {k: {"_eq": v} for k, v in filters.items() if v}
-    transaction_exp = {"transaction": {**filter_exp}}
+    transaction_exp = {"transaction": {**filter_exp}} if filter_exp else {}
 
     variables = {
         "limit": limit,
@@ -177,7 +177,7 @@ def get_graphql_account_transactions_count(
     account_exp = {"account_id": {"_eq": account_id}}
     is_signer_exp = {"is_signer": {"_eq": is_signer}} if is_signer is not None else {}
     filter_exp = {k: {"_eq": v} for k, v in filters.items() if v} if filters else {}
-    transaction_exp = {"transaction": {**filter_exp}}
+    transaction_exp = {"transaction": {**filter_exp}} if filter_exp else {}
 
     variables = {
         "expression": {
