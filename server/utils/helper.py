@@ -25,3 +25,7 @@ def get_query_param(
 def validate_pagination_params(limit: int, offset: int):
     if limit < 0 or offset < 0:
         abort(400, "Limit and offset must be non-negative")
+
+
+def is_graphql_timeout_error(e: Exception):
+    return "canceling statement due to statement timeout" in str(e)
