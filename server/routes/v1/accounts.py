@@ -59,14 +59,21 @@ def get_account_table_count(chain, network, account_address):
             chain, network, account_id
         )
     except Exception as e:
-        print(e)
+        message = str(e)
+
+        # Check if query timeout
+        if "57014" in message:
+            print("timeout")
+        else:
+            print("Exception caught, but message is different:", message)
+            del data["tx"]
 
     try:
         data["proposal"] = proposals.get_graphql_proposals_count_by_address(
             chain, network, account_address
         )
-    except Exception as e:
-        print(e)
+    except:
+        pass
 
     if not is_wasm:
         del data["code"]
@@ -79,22 +86,22 @@ def get_account_table_count(chain, network, account_address):
         data["code"] = codes.get_graphql_codes_count_by_address(
             chain, network, account_address
         )
-    except Exception as e:
-        print(e)
+    except:
+        pass
 
     try:
         data["instantiated"] = contracts.get_graphql_instantiated_count_by_address(
             chain, network, account_address
         )
-    except Exception as e:
-        print(e)
+    except:
+        pass
 
     try:
         data["contract_by_admin"] = contracts.get_graphql_contract_count_by_admin(
             chain, network, account_address
         )
-    except Exception as e:
-        print(e)
+    except:
+        pass
 
     return data
 
@@ -339,8 +346,8 @@ def get_transactions_count(chain, network, account_address):
         data["count"] = transactions.get_graphql_account_transactions_count(
             chain, network, account_id
         )
-    except Exception as e:
-        print(e)
+    except:
+        pass
 
     return data
 
