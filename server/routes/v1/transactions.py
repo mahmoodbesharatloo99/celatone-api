@@ -12,9 +12,12 @@ def get_txs(chain, network):
     offset = get_query_param("offset", type=int, required=True)
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     is_move = get_query_param("is_move", type=bool, default=False)
+    is_initia = get_query_param("is_initia", type=bool, default=False)
     validate_pagination_params(limit, offset)
 
-    data = get_graphql_transactions(chain, network, limit, offset, is_wasm, is_move)
+    data = get_graphql_transactions(
+        chain, network, limit, offset, is_wasm, is_move, is_initia
+    )
     for tx in data.get("items", []):
         tx["height"] = tx["block"]["height"]
         tx["created"] = tx["block"]["timestamp"]

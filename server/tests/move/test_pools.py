@@ -3,7 +3,7 @@ from app import app
 
 def test_move_pools():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
 
     response = app.test_client().get(f"/v1/{chain}/{network}/move/pools")
     assert response.status_code == 200

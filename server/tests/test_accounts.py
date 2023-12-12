@@ -1,5 +1,5 @@
-from app import app
 import pytest
+from app import app
 
 
 def test_get_account_info():
@@ -209,7 +209,7 @@ def test_get_codes():
 
 def test_get_move_resources():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     address = "init1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqr5e3d"
 
     response = app.test_client().get(
@@ -241,7 +241,7 @@ def test_get_move_resources_invalid_chain():
 
 def test_get_move_modules():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     address = "init1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqr5e3d"
 
     response = app.test_client().get(
@@ -344,7 +344,7 @@ def test_get_transactions_wasm():
 
 def test_get_transactions_move():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     limit = 10
     offset = 0
     address = "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"
@@ -369,6 +369,32 @@ def test_get_transactions_move():
         assert type(item["is_move_upgrade"]) == bool
         assert type(item["is_move_execute"]) == bool
         assert type(item["is_move_script"]) == bool
+
+
+def test_get_transactions_initia():
+    chain = "initia"
+    network = "stone-12-1"
+    limit = 10
+    offset = 0
+    address = "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_initia=true"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+
+    for item in response_json["items"]:
+        assert type(item["height"]) == int
+        assert type(item["created"]) == str
+        assert type(item["sender"]) == str
+        assert type(item["hash"]) == str
+        assert type(item["success"]) == bool
+        assert type(item["messages"]) == list
+        assert type(item["is_send"]) == bool
+        assert type(item["is_ibc"]) == bool
+        assert type(item["is_opinit"]) == bool
 
 
 def test_get_transactions_only_signer():
@@ -453,9 +479,8 @@ def test_get_transactions_count():
     [
         ("osmosis", "osmosis-1", "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"),
         ("osmosis", "osmosis-1", "osmo1j0vaeh27t4rll7zhmarwcuq8xtrmvqhuqv0av9"),
-        # TODO: update to stone-12 later
-        ("initia", "stone-11", "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"),
-        ("initia", "stone-11", "init1k9dcrj33flyru4jz4pq6tydadegpdj3whu3wax"),
+        ("initia", "stone-12-1", "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"),
+        ("initia", "stone-12-1", "init1k9dcrj33flyru4jz4pq6tydadegpdj3whu3wax"),
     ],
 )
 def test_get_delegations(chain, network, address):

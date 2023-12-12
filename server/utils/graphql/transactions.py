@@ -2,7 +2,13 @@ from .common import execute_query
 
 
 def get_graphql_transactions(
-    chain: str, network: str, limit: int, offset: int, is_wasm: bool, is_move: bool
+    chain: str,
+    network: str,
+    limit: int,
+    offset: int,
+    is_wasm: bool,
+    is_move: bool,
+    is_initia: bool,
 ):
     """Get transaction list.
     Args:
@@ -12,6 +18,7 @@ def get_graphql_transactions(
         offset (int): The starting slice to retain from responses.
         is_wasm (bool): The flag specifying if wasm-related columns are needed.
         is_move (bool): The flag specifying if move-related columns are needed.
+        is_initia (bool): The flag specifying if opinit column is needed
     Returns:
         Dict[str, Any]: List of transactions and the latest transaction id.
     """
@@ -20,6 +27,7 @@ def get_graphql_transactions(
         "offset": offset,
         "is_wasm": is_wasm,
         "is_move": is_move,
+        "is_initia": is_initia,
     }
     query = """
         query (
@@ -27,6 +35,7 @@ def get_graphql_transactions(
             $offset: Int!
             $is_wasm: Boolean!
             $is_move: Boolean!
+            $is_initia: Boolean!
         ) {
             items: transactions(
                 limit: $limit
@@ -55,6 +64,7 @@ def get_graphql_transactions(
                 is_move_upgrade @include(if: $is_move)
                 is_move_execute @include(if: $is_move)
                 is_move_script @include(if: $is_move)
+                is_opinit @include(if: $is_initia)
             }
             latest: transactions(limit: 1, order_by: { id: desc }) {
                 id
@@ -91,6 +101,7 @@ def get_graphql_account_transactions(
     is_signer: bool | None,
     is_wasm: bool,
     is_move: bool,
+    is_initia: bool,
     filters: dict,
 ):
     account_exp = {"account_id": {"_eq": account_id}}
@@ -103,6 +114,7 @@ def get_graphql_account_transactions(
         "offset": offset,
         "is_wasm": is_wasm,
         "is_move": is_move,
+        "is_initia": is_initia,
         "expression": {
             **account_exp,
             **is_signer_exp,
@@ -116,6 +128,7 @@ def get_graphql_account_transactions(
             $expression: account_transactions_bool_exp
             $is_wasm: Boolean!
             $is_move: Boolean!
+            $is_initia: Boolean!
         ) {
             items: account_transactions(
                 where: $expression
@@ -146,6 +159,7 @@ def get_graphql_account_transactions(
                     is_move_upgrade @include(if: $is_move)
                     is_move_execute @include(if: $is_move)
                     is_move_script @include(if: $is_move)
+                    is_opinit @include(if: $is_initia)
                 }
                 is_signer
             }
