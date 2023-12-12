@@ -21,8 +21,8 @@ def test_move_modules():
         assert type(item["address"]) == str
         assert type(item["height"]) == int
         assert type(item["latest_updated"]) == str
-        assert type(item["is_republish"]) == bool
-        assert type(item["is_verify"]) == bool
+        assert type(item["is_republished"]) == bool
+        assert type(item["is_verified"]) == bool
 
 
 def test_move_modules_transactions():

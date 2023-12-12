@@ -24,7 +24,7 @@ def get_move_modules(chain, network):
         module["latest_updated"] = module["module_histories"][0]["block"]["timestamp"]
         del module["module_histories"]
 
-        module["is_republish"] = (
+        module["is_republished"] = (
             module["module_histories_aggregate"]["aggregate"]["count"] > 1
         )
         del module["module_histories_aggregate"]
