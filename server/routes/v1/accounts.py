@@ -216,6 +216,8 @@ def get_transactions(chain, network, account_address):
     is_signer = get_query_param("is_signer", type=bool)
     is_send = get_query_param("is_send", type=bool, default=False)
     is_ibc = get_query_param("is_ibc", type=bool, default=False)
+
+    # initia
     is_opinit = get_query_param("is_opinit", type=bool, default=False)
 
     # wasm

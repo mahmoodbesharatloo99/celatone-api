@@ -189,7 +189,7 @@ def test_get_codes():
 
 def test_get_move_resources():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     address = "init1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqr5e3d"
 
     response = app.test_client().get(
@@ -221,7 +221,7 @@ def test_get_move_resources_invalid_chain():
 
 def test_get_move_modules():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     address = "init1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqr5e3d"
 
     response = app.test_client().get(
@@ -329,7 +329,7 @@ def test_get_transactions_wasm():
 
 def test_get_transactions_move():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     limit = 10
     offset = 0
     address = "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"
@@ -360,7 +360,7 @@ def test_get_transactions_move():
 
 def test_get_transactions_initia():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     limit = 10
     offset = 0
     address = "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"
@@ -455,8 +455,8 @@ def test_get_transactions_filters():
         ("osmosis", "osmosis-1", "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"),
         ("osmosis", "osmosis-1", "osmo1j0vaeh27t4rll7zhmarwcuq8xtrmvqhuqv0av9"),
         # TODO: update to stone-12 later
-        ("initia", "stone-11", "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"),
-        ("initia", "stone-11", "init1k9dcrj33flyru4jz4pq6tydadegpdj3whu3wax"),
+        ("initia", "stone-12-1", "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"),
+        ("initia", "stone-12-1", "init1k9dcrj33flyru4jz4pq6tydadegpdj3whu3wax"),
     ],
 )
 def test_get_delegations(chain, network, address):

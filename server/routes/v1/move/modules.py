@@ -20,8 +20,10 @@ def get_move_modules(chain, network):
         module["address"] = module["vm_address"]["accounts"][0]["address"]
         del module["vm_address"]
 
-        module["block"] = module["module_histories"][0]["block"]
+        module["height"] = module["module_histories"][0]["block"]["height"]
+        module["latest_updated"] = module["module_histories"][0]["block"]["timestamp"]
         del module["module_histories"]
+
         module["is_republish"] = (
             module["module_histories_aggregate"]["aggregate"]["count"] > 1
         )

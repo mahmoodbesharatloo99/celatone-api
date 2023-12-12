@@ -39,7 +39,7 @@ def test_transactions_wasm():
 
 def test_transactions_move():
     chain = "initia"
-    network = "stone-11"
+    network = "stone-12-1"
     limit = 10
     offset = 0
 

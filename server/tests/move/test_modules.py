@@ -19,8 +19,8 @@ def test_move_modules():
     for item in response_json["items"]:
         assert type(item["name"]) == str
         assert type(item["address"]) == str
-        assert type(item["block"]["height"]) == int
-        assert type(item["block"]["timestamp"]) == str
+        assert type(item["height"]) == int
+        assert type(item["latest_updated"]) == str
         assert type(item["is_republish"]) == bool
         assert type(item["is_verify"]) == bool
 
