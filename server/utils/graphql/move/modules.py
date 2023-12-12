@@ -97,7 +97,6 @@ def get_graphql_module_txs(
     offset: int,
     is_initia: bool,
 ):
-    print(module_id, limit, offset, is_initia)
     variables = {
         "module_id": module_id,
         "limit": limit,
