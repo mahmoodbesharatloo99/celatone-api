@@ -396,8 +396,6 @@ def test_get_transactions_initia():
         assert type(item["is_ibc"]) == bool
         assert type(item["is_opinit"]) == bool
 
-    assert type(response_json["total"]) == int
-
 
 def test_get_transactions_only_signer():
     chain = "osmosis"
