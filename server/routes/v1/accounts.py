@@ -5,7 +5,11 @@ from adapters.icns.resolver import get_icns_names
 from adapters.move import modules, resources
 from apiflask import APIBlueprint
 from utils.graphql import accounts, codes, contracts, proposals, transactions
-from utils.helper import get_query_param, validate_pagination_params
+from utils.helper import (
+    get_query_param,
+    is_graphql_timeout_error,
+    validate_pagination_params,
+)
 
 accounts_bp = APIBlueprint("accounts", __name__)
 
@@ -14,56 +18,94 @@ accounts_bp = APIBlueprint("accounts", __name__)
     "/<chain>/<network>/accounts/<account_address>/info", methods=["GET"]
 )
 def get_account_info(chain, network, account_address):
-    public_info = AccountManager(chain, network).get_account(account_address)
+    try:
+        public_info = AccountManager(chain, network).get_account(account_address)
+    except:
+        public_info = None
 
-    project_info = projects.get_project(chain, network, public_info.get("slug")).get(
-        "details"
-    )
+    try:
+        project_info = projects.get_project(
+            chain, network, public_info.get("slug")
+        ).get("details")
+    except:
+        project_info = None
 
-    icns = get_icns_names(account_address)
-    icns_primary_name = icns.get("primary_name")
-    if len(icns_primary_name) == 0:
+    try:
+        icns = get_icns_names(account_address)
+        icns_primary_name = icns.get("primary_name")
+        if len(icns_primary_name) == 0:
+            icns = None
+    except:
         icns = None
 
     return {"project_info": project_info, "public_info": public_info, "icns": icns}
 
 
 @accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/table-count", methods=["GET"]
+    "/<chain>/<network>/accounts/<account_address>/table-counts", methods=["GET"]
 )
-def get_account_table_count(chain, network, account_address):
+def get_account_table_counts(chain, network, account_address):
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
-    account_id = accounts.get_graphql_account_id_by_address(
-        chain, network, account_address
-    )
-    txs_count = transactions.get_graphql_account_transactions_count(
-        chain, network, account_id
-    )
 
-    proposals_count = proposals.get_graphql_proposals_count_by_address(
-        chain, network, account_address
-    )
+    data = {
+        "tx": None,
+        "proposal": None,
+        "code": None,
+        "instantiated": None,
+        "contract_by_admin": None,
+    }
+
+    try:
+        account_id = accounts.get_graphql_account_id_by_address(
+            chain, network, account_address
+        )
+        data["tx"] = transactions.get_graphql_account_transactions_count(
+            chain, network, account_id, is_signer=None, filters=None
+        )
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["tx"]
+
+    try:
+        data["proposal"] = proposals.get_graphql_proposals_count_by_address(
+            chain, network, account_address
+        )
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["proposal"]
 
     if not is_wasm:
-        return {"tx": txs_count, "proposal": proposals_count}
+        del data["code"]
+        del data["instantiated"]
+        del data["contract_by_admin"]
 
-    codes_count = codes.get_graphql_codes_count_by_address(
-        chain, network, account_address
-    )
-    instantiated_count = contracts.get_graphql_instantiated_count_by_address(
-        chain, network, account_address
-    )
-    contract_by_admin_count = contracts.get_graphql_contract_count_by_admin(
-        chain, network, account_address
-    )
+        return data
 
-    return {
-        "tx": txs_count,
-        "proposal": proposals_count,
-        "code": codes_count,
-        "instantiated": instantiated_count,
-        "contract_by_admin": contract_by_admin_count,
-    }
+    try:
+        data["code"] = codes.get_graphql_codes_count_by_address(
+            chain, network, account_address
+        )
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["code"]
+
+    try:
+        data["instantiated"] = contracts.get_graphql_instantiated_count_by_address(
+            chain, network, account_address
+        )
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["instantiated"]
+
+    try:
+        data["contract_by_admin"] = contracts.get_graphql_contract_count_by_admin(
+            chain, network, account_address
+        )
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["contract_by_admin"]
+
+    return data
 
 
 @accounts_bp.route(
@@ -239,7 +281,7 @@ def get_transactions(chain, network, account_address):
     )
 
     if account_id is None:
-        return {"items": [], "total": 0}
+        return {"items": []}
 
     data = transactions.get_graphql_account_transactions(
         chain=chain,
@@ -296,8 +338,63 @@ def get_transactions(chain, network, account_address):
 
         del tx["block"]
         del tx["transaction"]
-    data["total"] = data["account_transactions_aggregate"]["aggregate"]["count"]
-    del data["account_transactions_aggregate"]
+
+    return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/txs-count",
+    methods=["GET"],
+)
+def get_transactions_count(chain, network, account_address):
+    # common
+    is_signer = get_query_param("is_signer", type=bool)
+    is_send = get_query_param("is_send", type=bool, default=False)
+    is_ibc = get_query_param("is_ibc", type=bool, default=False)
+
+    # wasm
+    is_execute = get_query_param("is_execute", type=bool, default=False)
+    is_instantiate = get_query_param("is_instantiate", type=bool, default=False)
+    is_store_code = get_query_param("is_store_code", type=bool, default=False)
+    is_migrate = get_query_param("is_migrate", type=bool, default=False)
+    is_update_admin = get_query_param("is_update_admin", type=bool, default=False)
+    is_clear_admin = get_query_param("is_clear_admin", type=bool, default=False)
+
+    # move
+    is_move_publish = get_query_param("is_move_publish", type=bool, default=False)
+    is_move_upgrade = get_query_param("is_move_upgrade", type=bool, default=False)
+    is_move_excute = get_query_param("is_move_excute", type=bool, default=False)
+    is_move_script = get_query_param("is_move_script", type=bool, default=False)
+
+    data = {"count": None}
+
+    try:
+        account_id = accounts.get_graphql_account_id_by_address(
+            chain, network, account_address
+        )
+        data["count"] = transactions.get_graphql_account_transactions_count(
+            chain=chain,
+            network=network,
+            account_id=account_id,
+            is_signer=is_signer,
+            filters={
+                "is_send": is_send,
+                "is_ibc": is_ibc,
+                "is_execute": is_execute,
+                "is_instantiate": is_instantiate,
+                "is_store_code": is_store_code,
+                "is_migrate": is_migrate,
+                "is_update_admin": is_update_admin,
+                "is_clear_admin": is_clear_admin,
+                "is_move_publish": is_move_publish,
+                "is_move_upgrade": is_move_upgrade,
+                "is_move_excute": is_move_excute,
+                "is_move_script": is_move_script,
+            },
+        )
+    except Exception as e:
+        if not is_graphql_timeout_error(e):
+            del data["count"]
 
     return data
 

@@ -17,7 +17,7 @@ def get_overviews_stats(chain, network):
 
     try:
         data = blocks.get_graphql_latest_block(chain, network)
-        latest_block = data["latest"][0]
+        latest_block = data["latest"][0]["height"]
     except:
         latest_block = None
 
@@ -28,7 +28,7 @@ def get_overviews_stats(chain, network):
                 (
                     parser.parse(b1["timestamp"]) - parser.parse(b2["timestamp"])
                 ).total_seconds()
-                for (b1, b2) in zip(data["blocks"][:100], data["blocks"][1:])
+                for (b1, b2) in zip(data["blocks"][:99], data["blocks"][1:])
             ]
         )
     except:

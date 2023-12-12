@@ -5,7 +5,7 @@ from app import app
 def test_get_account_info():
     chain = "osmosis"
     network = "osmosis-1"
-    account_address = "osmo18kmnpjw6mj7juw6wmnzdyaa8e2tg9h3mqry0ym"
+    account_address = "osmo1yhqft6d2msmzpugdjtawsgdlwvgq3samajy9jq"
 
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{account_address}/info"
@@ -13,12 +13,27 @@ def test_get_account_info():
     assert response.status_code == 200
 
     response_json = response.get_json()
-    assert "icns" in response_json
-    assert "project_info" in response_json
-    assert "public_info" in response_json
+    assert type(response_json["icns"]["names"]) == list
+    for name in response_json["icns"]["names"]:
+        assert type(name) == str
+    assert type(response_json["icns"]["primary_name"]) == str
+    assert type(response_json["project_info"]["description"]) == str
+    assert type(response_json["project_info"]["github"]) == str
+    assert type(response_json["project_info"]["logo"]) == str
+    assert type(response_json["project_info"]["name"]) == str
+    assert type(response_json["project_info"]["socials"]) == list
+    for social in response_json["project_info"]["socials"]:
+        assert type(social["name"]) == str
+        assert type(social["url"]) == str
+    assert type(response_json["project_info"]["website"]) == str
+    assert type(response_json["public_info"]["address"]) == str
+    assert type(response_json["public_info"]["description"]) == str
+    assert type(response_json["public_info"]["name"]) == str
+    assert type(response_json["public_info"]["slug"]) == str
+    assert type(response_json["public_info"]["type"]) == str
 
 
-def test_get_account_info_failed():
+def test_get_account_info_invalid_address():
     chain = "osmosis"
     network = "osmosis-1"
     account_address = "invalid_address"
@@ -26,7 +41,12 @@ def test_get_account_info_failed():
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{account_address}/info"
     )
-    assert response.status_code == 500
+    assert response.status_code == 200
+
+    response_json = response.get_json()
+    assert response_json["icns"] is None
+    assert response_json["project_info"] is None
+    assert response_json["public_info"] is None
 
 
 def test_get_account_table_count():
@@ -35,7 +55,7 @@ def test_get_account_table_count():
     account_address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{account_address}/table-count"
+        f"/v1/{chain}/{network}/accounts/{account_address}/table-counts"
     )
     assert response.status_code == 200
 
@@ -53,7 +73,7 @@ def test_get_account_table_count_wasm():
     account_address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{account_address}/table-count?is_wasm=true"
+        f"/v1/{chain}/{network}/accounts/{account_address}/table-counts?is_wasm=true"
     )
     assert response.status_code == 200
 
@@ -71,7 +91,7 @@ def test_get_account_table_count_new_address():
     account_address = "osmo14wk9zecqam9jsac7xwtf8e349ckquzzlx9k8c3"
 
     response = app.test_client().get(
-        f"/v1/{chain}/{network}/accounts/{account_address}/table-count?is_wasm=true"
+        f"/v1/{chain}/{network}/accounts/{account_address}/table-counts?is_wasm=true"
     )
     assert response.status_code == 200
 
@@ -276,8 +296,6 @@ def test_get_transactions():
         assert type(item["is_send"]) == bool
         assert type(item["is_ibc"]) == bool
 
-    assert type(response_json["total"]) == int
-
 
 def test_get_transactions_invalid_address():
     chain = "osmosis"
@@ -290,7 +308,6 @@ def test_get_transactions_invalid_address():
         f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}"
     )
     assert response.status_code == 200
-    assert response.json["total"] == 0
     assert response.json["items"] == []
 
 
@@ -324,8 +341,6 @@ def test_get_transactions_wasm():
         assert type(item["is_store_code"]) == bool
         assert type(item["is_update_admin"]) == bool
 
-    assert type(response_json["total"]) == int
-
 
 def test_get_transactions_move():
     chain = "initia"
@@ -354,8 +369,6 @@ def test_get_transactions_move():
         assert type(item["is_move_upgrade"]) == bool
         assert type(item["is_move_execute"]) == bool
         assert type(item["is_move_script"]) == bool
-
-    assert type(response_json["total"]) == int
 
 
 def test_get_transactions_initia():
@@ -447,6 +460,20 @@ def test_get_transactions_filters():
     for item in response.json["items"]:
         assert item["is_store_code"] == is_store_code
         assert item["is_execute"] == is_execute
+
+
+def test_get_transactions_count():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs-count?is_send=true&is_signer=true"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+    assert type(response_json["count"]) == int
 
 
 @pytest.mark.parametrize(

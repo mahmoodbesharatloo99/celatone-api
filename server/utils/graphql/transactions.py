@@ -107,7 +107,7 @@ def get_graphql_account_transactions(
     account_exp = {"account_id": {"_eq": account_id}}
     is_signer_exp = {"is_signer": {"_eq": is_signer}} if is_signer is not None else {}
     filter_exp = {k: {"_eq": v} for k, v in filters.items() if v}
-    transaction_exp = {"transaction": {**filter_exp}}
+    transaction_exp = {"transaction": {**filter_exp}} if filter_exp else {}
 
     variables = {
         "limit": limit,
@@ -163,18 +163,17 @@ def get_graphql_account_transactions(
                 }
                 is_signer
             }
-            account_transactions_aggregate(where: $expression) {
-                aggregate {
-                    count
-                }
-            }
         }
     """
     return execute_query(chain, network, query, variables).json().get("data", {})
 
 
 def get_graphql_account_transactions_count(
-    chain: str, network: str, account_id: int | None
+    chain: str,
+    network: str,
+    account_id: int | None,
+    is_signer: bool | None,
+    filters: dict | None,
 ) -> int:
     """Get the number of transactions of an account.
 
@@ -189,10 +188,21 @@ def get_graphql_account_transactions_count(
     if account_id is None:
         return 0
 
-    variables = {"account_id": account_id}
+    account_exp = {"account_id": {"_eq": account_id}}
+    is_signer_exp = {"is_signer": {"_eq": is_signer}} if is_signer is not None else {}
+    filter_exp = {k: {"_eq": v} for k, v in filters.items() if v} if filters else {}
+    transaction_exp = {"transaction": {**filter_exp}} if filter_exp else {}
+
+    variables = {
+        "expression": {
+            **account_exp,
+            **is_signer_exp,
+            **transaction_exp,
+        },
+    }
     query = """
-        query ($account_id: Int!) {
-            account_transactions_aggregate(where: {account_id: {_eq: $account_id}}) {
+        query ($expression: account_transactions_bool_exp) {
+            account_transactions_aggregate(where: $expression) {
                 aggregate {
                     count
                 }
