@@ -454,7 +454,6 @@ def test_get_transactions_filters():
     [
         ("osmosis", "osmosis-1", "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"),
         ("osmosis", "osmosis-1", "osmo1j0vaeh27t4rll7zhmarwcuq8xtrmvqhuqv0av9"),
-        # TODO: update to stone-12 later
         ("initia", "stone-12-1", "init1acqpnvg2t4wmqfdv8hq47d3petfksjs59gckf3"),
         ("initia", "stone-12-1", "init1k9dcrj33flyru4jz4pq6tydadegpdj3whu3wax"),
     ],
