@@ -45,7 +45,7 @@ def get_move_module_txs(chain, network, vm_address, name):
 
     module_id = get_graphql_module_id(chain, network, vm_address, name)
     if module_id is None:
-        return {"items": [], "total": 0}
+        return {"items": []}
 
     data = get_graphql_module_txs(chain, network, module_id, limit, offset, is_initia)
     for tx in data.get("items", []):
@@ -67,7 +67,5 @@ def get_move_module_txs(chain, network, vm_address, name):
 
         del tx["block"]
         del tx["transaction"]
-    data["total"] = data["module_transactions_aggregate"]["aggregate"]["count"]
-    del data["module_transactions_aggregate"]
 
     return data

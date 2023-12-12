@@ -55,8 +55,6 @@ def test_move_modules_transactions():
         assert type(item["is_move_script"]) == bool
         assert item.get("is_opinit") == None
 
-    assert type(response_json["total"]) == int
-
 
 def test_move_modules_transactions_initia():
     chain = "initia"
@@ -76,8 +74,6 @@ def test_move_modules_transactions_initia():
     for item in response_json["items"]:
         assert type(item["is_opinit"]) == bool
 
-    assert type(response_json["total"]) == int
-
 
 def test_move_modules_transactions_invalid_vm_address():
     chain = "initia"
@@ -91,7 +87,6 @@ def test_move_modules_transactions_invalid_vm_address():
         f"/v1/{chain}/{network}/move/modules/{vm_address}/{name}/txs?limit={limit}&offset={offset}&is_initia=true"
     )
     assert response.status_code == 200
-    assert response.json["total"] == 0
     assert response.json["items"] == []
 
 
@@ -107,5 +102,4 @@ def test_move_modules_transactions_invalid_name():
         f"/v1/{chain}/{network}/move/modules/{vm_address}/{name}/txs?limit={limit}&offset={offset}&is_initia=true"
     )
     assert response.status_code == 200
-    assert response.json["total"] == 0
     assert response.json["items"] == []

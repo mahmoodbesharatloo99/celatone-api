@@ -138,11 +138,6 @@ def get_graphql_module_txs(
                     is_opinit @include(if: $is_initia)
                 }
             }
-            module_transactions_aggregate(where: { module_id: { _eq: $module_id } }) {
-                aggregate {
-                    count
-                }
-            }
         }
     """
     return execute_query(chain, network, query, variables).json().get("data", {})
