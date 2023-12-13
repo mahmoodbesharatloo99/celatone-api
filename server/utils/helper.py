@@ -29,3 +29,7 @@ def validate_pagination_params(limit: int, offset: int):
 
 def is_graphql_timeout_error(e: Exception):
     return "canceling statement due to statement timeout" in str(e)
+
+
+def is_txhash(txhash: str):
+    return len(txhash) == 64 and all(c in "0123456789abcdef" for c in txhash.lower())

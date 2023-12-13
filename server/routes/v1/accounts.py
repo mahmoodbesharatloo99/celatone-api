@@ -251,6 +251,8 @@ def get_transactions(chain, network, account_address):
     offset = get_query_param("offset", type=int, required=True)
     validate_pagination_params(limit, offset)
 
+    search = get_query_param("search", type=str, default=None)
+
     # common
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
     is_move = get_query_param("is_move", type=bool, default=False)
@@ -287,6 +289,7 @@ def get_transactions(chain, network, account_address):
         chain=chain,
         network=network,
         account_id=account_id,
+        search=search,
         limit=limit,
         offset=offset,
         is_signer=is_signer,
