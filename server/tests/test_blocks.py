@@ -99,6 +99,7 @@ def test_block_transactions_wasm():
         assert item.get("is_move_upgrade") is None
         assert item.get("is_move_execute") is None
         assert item.get("is_move_script") is None
+        assert item.get("is_opinit") is None
 
 
 def test_block_transactions_move():
@@ -136,6 +137,7 @@ def test_block_transactions_move():
         assert type(item["is_move_upgrade"]) == bool
         assert type(item["is_move_execute"]) == bool
         assert type(item["is_move_script"]) == bool
+        assert item.get("is_opinit") is None
 
 
 def test_block_transactions_initia():
@@ -162,4 +164,14 @@ def test_block_transactions_initia():
         assert type(item["messages"]) == list
         assert type(item["is_send"]) == bool
         assert type(item["is_ibc"]) == bool
+        assert item.get("is_clear_admin") is None
+        assert item.get("is_execute") is None
+        assert item.get("is_instantiate") is None
+        assert item.get("is_migrate") is None
+        assert item.get("is_store_code") is None
+        assert item.get("is_update_admin") is None
+        assert item.get("is_move_publish") is None
+        assert item.get("is_move_upgrade") is None
+        assert item.get("is_move_execute") is None
+        assert item.get("is_move_script") is None
         assert type(item["is_opinit"]) == bool
