@@ -108,3 +108,49 @@ def get_graphql_block_times(chain: str, network: str):
         }
     """
     return execute_query(chain, network, query, variables).json().get("data", {})
+
+
+def get_graphql_block_details(chain: str, network: str, height: int):
+    """Get block details.
+
+    Args:
+        chain (str): The blockchain chain.
+        network (str): The blockchain network.
+        height (int): Height of the queried block
+
+    Returns:
+        Dict[str, Any]: List of blocks and the current latest block height.
+    """
+    variables = {
+        "height": height,
+    }
+    query = """
+        query (
+            $height: Int!
+        ) {
+            blocks_by_pk(height: $height) {
+                hash
+                height
+                timestamp
+                transactions_aggregate {
+                    aggregate {
+                        sum {
+                            gas_used
+                            gas_limit
+                        }
+                    }
+                }
+                validator {
+                    moniker
+                    operator_address
+                    identity
+                }
+            }
+        }
+    """
+    return (
+        execute_query(chain, network, query, variables)
+        .json()
+        .get("data", {})
+        .get("blocks_by_pk", {})
+    )
