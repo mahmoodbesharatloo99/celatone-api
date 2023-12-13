@@ -397,6 +397,30 @@ def test_get_transactions_initia():
         assert type(item["is_opinit"]) == bool
 
 
+def test_get_transactions_by_search():
+    chain = "osmosis"
+    network = "osmosis-1"
+    limit = 10
+    offset = 0
+    address = "osmo18h47lm65q0r02gcuxe6vslk8u5ftgrl9wrtea6"
+    contract_address = "osmo1wl59k23zngj34l7d42y9yltask7rjlnxgccawc7ltrknp6n52fps94qsjd"
+    txhash = "8D31D3B06BAFFF7343830175FF2907876A09FF91A02827C11CDB563FD293B84A"
+
+    response_by_contract_address = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_wasm=true&search={contract_address}"
+    )
+    assert response_by_contract_address.status_code == 200
+
+    assert len(response_by_contract_address.json["items"]) > 0
+
+    response_by_txhash = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs?limit={limit}&offset={offset}&is_wasm=true&search={txhash}"
+    )
+    assert response_by_txhash.status_code == 200
+
+    assert len(response_by_txhash.json["items"]) > 0
+
+
 def test_get_transactions_only_signer():
     chain = "osmosis"
     network = "osmo-test-5"
