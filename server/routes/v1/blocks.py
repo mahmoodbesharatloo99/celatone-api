@@ -38,7 +38,7 @@ def get_block_details(chain, network, height):
 
 
 @blocks_bp.route("/<chain>/<network>/blocks/<height>/txs", methods=["GET"])
-def get_txs(chain, network, height):
+def get_block_txs(chain, network, height):
     limit = get_query_param("limit", type=int, required=True)
     offset = get_query_param("offset", type=int, required=True)
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
