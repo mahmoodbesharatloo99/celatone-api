@@ -161,8 +161,10 @@ def get_graphql_block_transactions(
                 is_move_script @include(if: $is_move)
                 is_opinit @include(if: $is_initia)
             }
-            latest: transactions(limit: 1, order_by: { id: desc }) {
-                id
+            latest: transactions_aggregate(where: { block_height: { _eq: $height } }) {
+                aggregate {
+                    count
+                }
             }
         }
     """

@@ -55,7 +55,7 @@ def get_txs(chain, network, height):
         tx["sender"] = tx["account"]["address"]
         del tx["account"]
         del tx["block"]
-    data["total"] = data["latest"][0]["id"]
+    data["total"] = data["latest"].get("aggregate", {}).get("count")
     del data["latest"]
 
     return data
