@@ -92,6 +92,83 @@ def get_graphql_latest_transaction_id(chain: str, network: str):
     return execute_query(chain, network, query).json().get("data", {})
 
 
+def get_graphql_block_transactions(
+    chain: str,
+    network: str,
+    height: int,
+    limit: int,
+    offset: int,
+    is_wasm: bool,
+    is_move: bool,
+    is_initia: bool,
+):
+    """Get block transaction list.
+    Args:
+        chain (str): The blockchain chain.
+        network (str): The blockchain network.
+        limit (int): The maximum number of responses to return.
+        offset (int): The starting slice to retain from responses.
+        is_wasm (bool): The flag specifying if wasm-related columns are needed.
+        is_move (bool): The flag specifying if move-related columns are needed.
+        is_initia (bool): The flag specifying if opinit column is needed
+    Returns:
+        Dict[str, Any]: List of transactions and the latest transaction id.
+    """
+    variables = {
+        "height": height,
+        "limit": limit,
+        "offset": offset,
+        "is_wasm": is_wasm,
+        "is_move": is_move,
+        "is_initia": is_initia,
+    }
+    query = """
+        query (
+            $height: Int!
+            $limit: Int!
+            $offset: Int!
+            $is_wasm: Boolean!
+            $is_move: Boolean!
+            $is_initia: Boolean!
+        ) {
+            items: transactions(
+                limit: $limit
+                offset: $offset
+                where: { block_height: { _eq: $height } }
+                order_by: { id: asc }
+            ) {
+                block {
+                    height
+                    timestamp
+                }
+                account {
+                    address
+                }
+                hash
+                success
+                messages
+                is_send
+                is_ibc
+                is_clear_admin @include(if: $is_wasm)
+                is_execute @include(if: $is_wasm)
+                is_instantiate @include(if: $is_wasm)
+                is_migrate @include(if: $is_wasm)
+                is_store_code @include(if: $is_wasm)
+                is_update_admin @include(if: $is_wasm)
+                is_move_publish @include(if: $is_move)
+                is_move_upgrade @include(if: $is_move)
+                is_move_execute @include(if: $is_move)
+                is_move_script @include(if: $is_move)
+                is_opinit @include(if: $is_initia)
+            }
+            latest: transactions(limit: 1, order_by: { id: desc }) {
+                id
+            }
+        }
+    """
+    return execute_query(chain, network, query, variables).json().get("data", {})
+
+
 def get_graphql_account_transactions(
     chain: str,
     network: str,
