@@ -1,3 +1,4 @@
+import string
 from flask import abort, request
 
 
@@ -32,4 +33,4 @@ def is_graphql_timeout_error(e: Exception):
 
 
 def is_txhash(txhash: str):
-    return len(txhash) == 64 and all(c in "0123456789abcdef" for c in txhash.lower())
+    return len(txhash) == 64 and all(c in string.hexdigits for c in txhash)
