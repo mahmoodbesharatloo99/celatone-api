@@ -251,7 +251,7 @@ def get_transactions(chain, network, account_address):
     offset = get_query_param("offset", type=int, required=True)
     validate_pagination_params(limit, offset)
 
-    search = get_query_param("search", type=str, default=None)
+    search = get_query_param("search", type=str)
 
     # common
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
@@ -351,9 +351,12 @@ def get_transactions(chain, network, account_address):
 )
 def get_transactions_count(chain, network, account_address):
     # common
+    is_wasm = get_query_param("is_wasm", type=bool, default=False)
     is_signer = get_query_param("is_signer", type=bool)
     is_send = get_query_param("is_send", type=bool, default=False)
     is_ibc = get_query_param("is_ibc", type=bool, default=False)
+
+    search = get_query_param("search", type=str)
 
     # wasm
     is_execute = get_query_param("is_execute", type=bool, default=False)
@@ -379,7 +382,9 @@ def get_transactions_count(chain, network, account_address):
             chain=chain,
             network=network,
             account_id=account_id,
+            search=search,
             is_signer=is_signer,
+            is_wasm=is_wasm,
             filters={
                 "is_send": is_send,
                 "is_ibc": is_ibc,
