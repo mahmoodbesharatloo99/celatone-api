@@ -60,7 +60,13 @@ def get_account_table_counts(chain, network, account_address):
             chain, network, account_address
         )
         data["tx"] = transactions.get_graphql_account_transactions_count(
-            chain, network, account_id, is_signer=None, filters=None
+            chain,
+            network,
+            account_id,
+            is_wasm=False,
+            search=None,
+            is_signer=None,
+            filters=None,
         )
     except Exception as e:
         if not is_graphql_timeout_error(e):
@@ -251,7 +257,7 @@ def get_transactions(chain, network, account_address):
     offset = get_query_param("offset", type=int, required=True)
     validate_pagination_params(limit, offset)
 
-    search = get_query_param("search", type=str, default=None)
+    search = get_query_param("search", type=str)
 
     # common
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
@@ -289,13 +295,13 @@ def get_transactions(chain, network, account_address):
         chain=chain,
         network=network,
         account_id=account_id,
-        search=search,
         limit=limit,
         offset=offset,
-        is_signer=is_signer,
         is_wasm=is_wasm,
         is_move=is_move,
         is_initia=is_initia,
+        search=search,
+        is_signer=is_signer,
         filters={
             "is_send": is_send,
             "is_ibc": is_ibc,
@@ -351,9 +357,12 @@ def get_transactions(chain, network, account_address):
 )
 def get_transactions_count(chain, network, account_address):
     # common
+    is_wasm = get_query_param("is_wasm", type=bool, default=False)
     is_signer = get_query_param("is_signer", type=bool)
     is_send = get_query_param("is_send", type=bool, default=False)
     is_ibc = get_query_param("is_ibc", type=bool, default=False)
+
+    search = get_query_param("search", type=str)
 
     # wasm
     is_execute = get_query_param("is_execute", type=bool, default=False)
@@ -379,6 +388,8 @@ def get_transactions_count(chain, network, account_address):
             chain=chain,
             network=network,
             account_id=account_id,
+            is_wasm=is_wasm,
+            search=search,
             is_signer=is_signer,
             filters={
                 "is_send": is_send,

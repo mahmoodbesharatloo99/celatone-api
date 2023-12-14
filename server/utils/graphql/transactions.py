@@ -1,5 +1,6 @@
-from .common import execute_query
 from utils.helper import is_txhash
+
+from .common import execute_query
 
 
 def get_graphql_transactions(
@@ -176,13 +177,13 @@ def get_graphql_account_transactions(
     chain: str,
     network: str,
     account_id: int,
-    search: str | None,
     limit: int,
     offset: int,
-    is_signer: bool | None,
     is_wasm: bool,
     is_move: bool,
     is_initia: bool,
+    search: str | None,
+    is_signer: bool | None,
     filters: dict,
 ):
     account_exp = {"account_id": {"_eq": account_id}}
@@ -269,6 +270,8 @@ def get_graphql_account_transactions_count(
     chain: str,
     network: str,
     account_id: int | None,
+    is_wasm: bool,
+    search: str | None,
     is_signer: bool | None,
     filters: dict | None,
 ) -> int:
@@ -288,7 +291,23 @@ def get_graphql_account_transactions_count(
     account_exp = {"account_id": {"_eq": account_id}}
     is_signer_exp = {"is_signer": {"_eq": is_signer}} if is_signer is not None else {}
     filter_exp = {k: {"_eq": v} for k, v in filters.items() if v} if filters else {}
-    transaction_exp = {"transaction": {**filter_exp}} if filter_exp else {}
+
+    search_exp = []
+    if search:
+        search_exp.append(
+            {"hash": {"_eq": f"\\x{search}" if is_txhash(search) else ""}}
+        )
+        if is_wasm:
+            search_exp.append(
+                {"contract_transactions": {"contract": {"address": {"_eq": search}}}}
+            )
+
+    transaction_exp = {
+        "transaction": {
+            **({**filter_exp} if filter_exp else {}),
+            **({"_or": search_exp} if search else {}),
+        }
+    }
 
     variables = {
         "expression": {
