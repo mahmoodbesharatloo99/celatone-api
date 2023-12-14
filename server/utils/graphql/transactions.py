@@ -177,13 +177,13 @@ def get_graphql_account_transactions(
     chain: str,
     network: str,
     account_id: int,
-    search: str | None,
     limit: int,
     offset: int,
-    is_signer: bool | None,
     is_wasm: bool,
     is_move: bool,
     is_initia: bool,
+    search: str | None,
+    is_signer: bool | None,
     filters: dict,
 ):
     account_exp = {"account_id": {"_eq": account_id}}
@@ -270,9 +270,9 @@ def get_graphql_account_transactions_count(
     chain: str,
     network: str,
     account_id: int | None,
+    is_wasm: bool,
     search: str | None,
     is_signer: bool | None,
-    is_wasm: bool,
     filters: dict | None,
 ) -> int:
     """Get the number of transactions of an account.

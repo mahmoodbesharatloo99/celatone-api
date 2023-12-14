@@ -60,7 +60,13 @@ def get_account_table_counts(chain, network, account_address):
             chain, network, account_address
         )
         data["tx"] = transactions.get_graphql_account_transactions_count(
-            chain, network, account_id, is_signer=None, filters=None
+            chain,
+            network,
+            account_id,
+            is_wasm=False,
+            search=None,
+            is_signer=None,
+            filters=None,
         )
     except Exception as e:
         if not is_graphql_timeout_error(e):
@@ -289,13 +295,13 @@ def get_transactions(chain, network, account_address):
         chain=chain,
         network=network,
         account_id=account_id,
-        search=search,
         limit=limit,
         offset=offset,
-        is_signer=is_signer,
         is_wasm=is_wasm,
         is_move=is_move,
         is_initia=is_initia,
+        search=search,
+        is_signer=is_signer,
         filters={
             "is_send": is_send,
             "is_ibc": is_ibc,
@@ -382,9 +388,9 @@ def get_transactions_count(chain, network, account_address):
             chain=chain,
             network=network,
             account_id=account_id,
+            is_wasm=is_wasm,
             search=search,
             is_signer=is_signer,
-            is_wasm=is_wasm,
             filters={
                 "is_send": is_send,
                 "is_ibc": is_ibc,

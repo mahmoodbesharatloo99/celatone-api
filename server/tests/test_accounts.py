@@ -498,6 +498,36 @@ def test_get_transactions_count():
     assert type(response_json["count"]) == int
 
 
+def test_get_transactions_count_search_tx():
+    chain = "osmosis"
+    network = "osmosis-1"
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+    tx_hash = "7BDE1B1E26B626680E17DCF1D99C626078F9159537915D153F342FF78B98EF2C"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs-count?search={tx_hash}"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+    assert response_json["count"] == 1
+
+
+def test_get_transactions_count_search_contract():
+    chain = "osmosis"
+    network = "osmo-test-5"
+    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
+    contract = "osmo1qy6e6zj7dxqsgekalrxn8gdw4g560k47j789m2a7s2qeg6m5zxsq79rys2"
+
+    response = app.test_client().get(
+        f"/v1/{chain}/{network}/accounts/{address}/txs-count?search={contract}&is_wasm=true"
+    )
+    assert response.status_code == 200
+
+    response_json = response.json
+    assert response_json["count"] == 2
+
+
 @pytest.mark.parametrize(
     "chain, network, address",
     [
