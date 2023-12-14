@@ -58,11 +58,18 @@ def test_get_account_info_invalid_address():
 ###########################################################
 
 
-def test_get_balances():
-    chain = "terra"
-    network = "phoenix-1"
-    address = "terra1m9zy077gv3h6076nkardvfmuvyf2pez6ny0wr0"
-
+@pytest.mark.parametrize(
+    "chain, network, address",
+    [
+        ("terra", "phoenix-1", "terra1m9zy077gv3h6076nkardvfmuvyf2pez6ny0wr0"),
+        (
+            "osmosis",
+            "osmosis-1",
+            "osmo122ryl7pez7yjprtvjckltu2uvjxrq3kqt4nvclax2la7maj6757qg054ga",
+        ),
+    ],
+)
+def test_get_balances(chain, network, address):
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{address}/balances"
     )
