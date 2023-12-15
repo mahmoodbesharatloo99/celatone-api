@@ -4,14 +4,8 @@ import requests
 from flask import abort
 from utils.gcs import get_network_data
 
-# TODO: check by chain instead?
 POOLS_INFO_FN = {
-    "stone-12-1": {
-        "address": "0x38d2a65b2be5d2c1b9f329f5b45f708c7b7d9cf5",
-        "module_name": "PoolInfo",
-        "function_name": "get_all_pair_infos",
-    },
-    "mahalo-1": {
+    "initia": {
         "address": "0x38d2a65b2be5d2c1b9f329f5b45f708c7b7d9cf5",
         "module_name": "pool_infos",
         "function_name": "get_all_pair_infos",
@@ -20,11 +14,11 @@ POOLS_INFO_FN = {
 
 
 def get_move_pools(chain, network):
-    if network not in POOLS_INFO_FN:
-        abort(404, f"invalid network ({network}).")
+    if chain not in POOLS_INFO_FN:
+        abort(404, f"invalid chain ({chain}).")
 
     endpoint = get_network_data(chain, network, "lcd")
-    fn = POOLS_INFO_FN[network]
+    fn = POOLS_INFO_FN[chain]
     pools = (
         requests.post(
             f"{endpoint}/initia/move/v1/accounts/{fn['address']}/modules/{fn['module_name']}/view_functions/{fn['function_name']}",
