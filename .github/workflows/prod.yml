@@ -1,0 +1,39 @@
+name: Production Deployment
+env:
+  GIT_SHA: ${{ github.sha }}
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set outputs
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: "google-github-actions/auth@v1"
+        with:
+          credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
+          token_format: "access_token"
+      - name: Authenticate to Docker Registry
+        run: echo '${{ steps.auth.outputs.access_token }}' | docker login -u oauth2accesstoken --password-stdin https://asia-southeast1-docker.pkg.dev
+      - name: Build Celatone API image
+        run: |
+          docker build -t celatone/api:${{ steps.vars.outputs.sha_short }} .
+          docker tag celatone/api:${{ steps.vars.outputs.sha_short }} asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}
+      - name: Push Celatone API image
+        run: docker push asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Terraforming
+        working-directory: ./infrastructure
+        run: |
+          terraform init
+          terraform workspace select prod || terraform workspace new prod
+          terraform apply -var-file=prod.tfvars -var="image_url=asia-southeast1-docker.pkg.dev/alles-share/shared-docker-images/celatone/api:${{ steps.vars.outputs.sha_short }}" -auto-approve
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
