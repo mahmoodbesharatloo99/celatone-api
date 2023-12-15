@@ -1,6 +1,6 @@
 from adapters.aldus import projects
 from adapters.aldus.accounts import AccountManager
-from adapters.core import staking
+from adapters.core import balances, staking
 from adapters.icns.resolver import get_icns_names
 from adapters.move import modules, resources
 from apiflask import APIBlueprint
@@ -39,6 +39,21 @@ def get_account_info(chain, network, account_address):
         icns = None
 
     return {"project_info": project_info, "public_info": public_info, "icns": icns}
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/balances", methods=["GET"]
+)
+def get_balances(chain, network, account_address):
+    return balances.get_balances(chain, network, account_address)
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/delegations",
+    methods=["GET"],
+)
+def get_delegations(chain, network, account_address):
+    return staking.get_delegations_by_address(chain, network, account_address)
 
 
 @accounts_bp.route(
@@ -131,121 +146,6 @@ def get_proposals(chain, network, account_address):
     del data["proposals_aggregate"]
 
     return data
-
-
-@accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/wasm/admin-contracts",
-    methods=["GET"],
-)
-def get_admin_contracts(chain, network, account_address):
-    limit = get_query_param("limit", type=int, required=True)
-    offset = get_query_param("offset", type=int, required=True)
-    validate_pagination_params(limit, offset)
-
-    data = contracts.get_graphql_admin_contracts_by_address(
-        chain, network, limit, offset, account_address
-    )
-    for contract in data.get("items", []):
-        contract["admin"] = contract["admin"]["address"]
-        contract["instantiator"] = contract["account_by_init_by"]["address"]
-        contract["latest_updater"] = contract["contract_histories"][0]["account"][
-            "address"
-        ]
-        contract["latest_updated"] = contract["contract_histories"][0]["block"][
-            "timestamp"
-        ]
-        contract["remark"] = contract["contract_histories"][0]["remark"]
-        del contract["account_by_init_by"]
-        del contract["contract_histories"]
-
-    data["total"] = data["contracts_aggregate"]["aggregate"]["count"]
-    del data["contracts_aggregate"]
-
-    return data
-
-
-@accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/wasm/instantiated-contracts",
-    methods=["GET"],
-)
-def get_instantiated_contracts(chain, network, account_address):
-    limit = get_query_param("limit", type=int, required=True)
-    offset = get_query_param("offset", type=int, required=True)
-    validate_pagination_params(limit, offset)
-
-    data = contracts.get_graphql_instantiated_by_address(
-        chain,
-        network,
-        limit,
-        offset,
-        account_address,
-    )
-    for contract in data.get("items", []):
-        contract["admin"] = contract["admin"]["address"] if contract["admin"] else None
-        contract["instantiator"] = contract["account_by_init_by"]["address"]
-        contract["latest_updater"] = contract["contract_histories"][0]["account"][
-            "address"
-        ]
-        contract["latest_updated"] = contract["contract_histories"][0]["block"][
-            "timestamp"
-        ]
-        contract["remark"] = contract["contract_histories"][0]["remark"]
-        del contract["account_by_init_by"]
-        del contract["contract_histories"]
-
-    data["total"] = data["contracts_aggregate"]["aggregate"]["count"]
-    del data["contracts_aggregate"]
-
-    return data
-
-
-@accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/wasm/codes",
-    methods=["GET"],
-)
-def get_codes(chain, network, account_address):
-    limit = get_query_param("limit", type=int, required=True)
-    offset = get_query_param("offset", type=int, required=True)
-    validate_pagination_params(limit, offset)
-
-    data = codes.get_graphql_codes_by_address(
-        chain,
-        network,
-        limit,
-        offset,
-        account_address,
-    )
-    for code in data.get("items", []):
-        code["uploader"] = code["account"]["uploader"]
-        code["contract_count"] = code["contracts_aggregate"]["aggregate"]["count"]
-        code["permission_addresses"] = code["access_config_addresses"]
-        code["instantiate_permission"] = code["access_config_permission"]
-
-        del code["account"]
-        del code["access_config_addresses"]
-        del code["access_config_permission"]
-        del code["contracts_aggregate"]
-
-    data["total"] = data["codes_aggregate"]["aggregate"]["count"]
-    del data["codes_aggregate"]
-
-    return data
-
-
-@accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/move/resources",
-    methods=["GET"],
-)
-def get_move_resources(chain, network, account_address):
-    return resources.get_move_resources(chain, network, account_address)
-
-
-@accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/move/modules",
-    methods=["GET"],
-)
-def get_move_modules(chain, network, account_address):
-    return modules.get_move_modules(chain, network, account_address)
 
 
 @accounts_bp.route(
@@ -416,9 +316,126 @@ def get_transactions_count(chain, network, account_address):
     return data
 
 
+###########################################################
+# Wasm
+###########################################################
+
+
 @accounts_bp.route(
-    "/<chain>/<network>/accounts/<account_address>/delegations",
+    "/<chain>/<network>/accounts/<account_address>/wasm/codes",
     methods=["GET"],
 )
-def get_delegations(chain, network, account_address):
-    return staking.get_delegations_by_address(chain, network, account_address)
+def get_codes(chain, network, account_address):
+    limit = get_query_param("limit", type=int, required=True)
+    offset = get_query_param("offset", type=int, required=True)
+    validate_pagination_params(limit, offset)
+
+    data = codes.get_graphql_codes_by_address(
+        chain,
+        network,
+        limit,
+        offset,
+        account_address,
+    )
+    for code in data.get("items", []):
+        code["uploader"] = code["account"]["uploader"]
+        code["contract_count"] = code["contracts_aggregate"]["aggregate"]["count"]
+        code["permission_addresses"] = code["access_config_addresses"]
+        code["instantiate_permission"] = code["access_config_permission"]
+
+        del code["account"]
+        del code["access_config_addresses"]
+        del code["access_config_permission"]
+        del code["contracts_aggregate"]
+
+    data["total"] = data["codes_aggregate"]["aggregate"]["count"]
+    del data["codes_aggregate"]
+
+    return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/wasm/instantiated-contracts",
+    methods=["GET"],
+)
+def get_instantiated_contracts(chain, network, account_address):
+    limit = get_query_param("limit", type=int, required=True)
+    offset = get_query_param("offset", type=int, required=True)
+    validate_pagination_params(limit, offset)
+
+    data = contracts.get_graphql_instantiated_by_address(
+        chain,
+        network,
+        limit,
+        offset,
+        account_address,
+    )
+    for contract in data.get("items", []):
+        contract["admin"] = contract["admin"]["address"] if contract["admin"] else None
+        contract["instantiator"] = contract["account_by_init_by"]["address"]
+        contract["latest_updater"] = contract["contract_histories"][0]["account"][
+            "address"
+        ]
+        contract["latest_updated"] = contract["contract_histories"][0]["block"][
+            "timestamp"
+        ]
+        contract["remark"] = contract["contract_histories"][0]["remark"]
+        del contract["account_by_init_by"]
+        del contract["contract_histories"]
+
+    data["total"] = data["contracts_aggregate"]["aggregate"]["count"]
+    del data["contracts_aggregate"]
+
+    return data
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/wasm/admin-contracts",
+    methods=["GET"],
+)
+def get_admin_contracts(chain, network, account_address):
+    limit = get_query_param("limit", type=int, required=True)
+    offset = get_query_param("offset", type=int, required=True)
+    validate_pagination_params(limit, offset)
+
+    data = contracts.get_graphql_admin_contracts_by_address(
+        chain, network, limit, offset, account_address
+    )
+    for contract in data.get("items", []):
+        contract["admin"] = contract["admin"]["address"]
+        contract["instantiator"] = contract["account_by_init_by"]["address"]
+        contract["latest_updater"] = contract["contract_histories"][0]["account"][
+            "address"
+        ]
+        contract["latest_updated"] = contract["contract_histories"][0]["block"][
+            "timestamp"
+        ]
+        contract["remark"] = contract["contract_histories"][0]["remark"]
+        del contract["account_by_init_by"]
+        del contract["contract_histories"]
+
+    data["total"] = data["contracts_aggregate"]["aggregate"]["count"]
+    del data["contracts_aggregate"]
+
+    return data
+
+
+###########################################################
+# Move
+###########################################################
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/move/resources",
+    methods=["GET"],
+)
+def get_move_resources(chain, network, account_address):
+    return resources.get_move_resources(chain, network, account_address)
+
+
+@accounts_bp.route(
+    "/<chain>/<network>/accounts/<account_address>/move/modules",
+    methods=["GET"],
+)
+def get_move_modules(chain, network, account_address):
+    return modules.get_move_modules(chain, network, account_address)
