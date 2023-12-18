@@ -562,10 +562,10 @@ def test_get_transactions_count_search_tx():
 
 
 def test_get_transactions_count_search_contract():
-    chain = "osmosis"
-    network = "osmo-test-5"
-    address = "osmo1acqpnvg2t4wmqfdv8hq47d3petfksjs5r9t45p"
-    contract = "osmo1qy6e6zj7dxqsgekalrxn8gdw4g560k47j789m2a7s2qeg6m5zxsq79rys2"
+    chain = "terra"
+    network = "pisco-1"
+    address = "terra1cvhde2nst3qewz8x58m6tuupfk08zspeev4ud3"
+    contract = "terra1rtscastl77sesc3fdmjv62e34ym9nnvgtmmrfk03msr74ez9nt4qty7shj"
 
     response = app.test_client().get(
         f"/v1/{chain}/{network}/accounts/{address}/txs-count?search={contract}&is_wasm=true"
@@ -573,7 +573,7 @@ def test_get_transactions_count_search_contract():
     assert response.status_code == 200
 
     response_json = response.json
-    assert response_json["count"] == 2
+    assert response_json["count"] == 1
 
 
 ###########################################################
