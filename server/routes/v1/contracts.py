@@ -9,7 +9,6 @@ contracts_bp = APIBlueprint("contracts", __name__)
     "/<chain>/<network>/contracts/<contract_address>/table-counts", methods=["GET"]
 )
 def get_contract_table_counts(chain, network, contract_address):
-    print("table counts")
     data = {
         "tx": None,
         "migration": None,
@@ -40,7 +39,6 @@ def get_contract_table_counts(chain, network, contract_address):
             chain, network, contract_address
         )
     except Exception as e:
-        print(e)
         if not is_graphql_timeout_error(e):
             del data["migration"]
 
