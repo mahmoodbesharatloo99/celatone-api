@@ -1,4 +1,5 @@
-from typing import List, Dict, Any
+from typing import Any, Dict, List
+
 from .common import execute_query
 
 
@@ -167,3 +168,26 @@ def get_graphql_contract_count_by_admin(chain: str, network: str, address: str) 
     """
     res = execute_query(chain, network, query, variables).json().get("data", {})
     return res.get("contracts_aggregate", {}).get("aggregate", {}).get("count", 0)
+
+
+def get_graphql_migration_histories_by_contract_address(
+    chain: str, network: str, contract_address: str
+) -> int:
+    variables = {
+        "contract_address": contract_address,
+    }
+    query = """
+        query ($contract_address: String!) {
+            contract_histories_aggregate(
+                where: { contract: { address: { _eq: $contract_address } } }
+            ) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+    res = execute_query(chain, network, query, variables).json().get("data", {})
+    return (
+        res.get("contract_histories_aggregate", {}).get("aggregate", {}).get("count", 0)
+    )
