@@ -37,7 +37,7 @@ def get_graphql_contract_instantiator_admin(
 
 
 def get_graphql_admin_contracts_by_address(
-    chain: str, network: str, limit: int, offset: int, address: str
+    chain: str, network: str, address: str, limit: int, offset: int
 ):
     variables = {
         "address": address,
@@ -84,8 +84,25 @@ def get_graphql_admin_contracts_by_address(
     return execute_query(chain, network, query, variables).json().get("data", {})
 
 
+def get_graphql_contract_count_by_admin(chain: str, network: str, address: str) -> int:
+    variables = {
+        "address": address,
+    }
+    query = """
+        query ($address: String!) {
+            contracts_aggregate(where: { account: { address: { _eq: $address } } }) {
+                aggregate {
+                    count
+                }
+            }
+        }
+    """
+    res = execute_query(chain, network, query, variables).json().get("data", {})
+    return res.get("contracts_aggregate", {}).get("aggregate", {}).get("count", 0)
+
+
 def get_graphql_instantiated_by_address(
-    chain: str, network: str, limit: int, offset: int, address: str
+    chain: str, network: str, address: str, limit: int, offset: int
 ):
     variables = {
         "address": address,
@@ -153,24 +170,53 @@ def get_graphql_instantiated_count_by_address(
     return res.get("contracts_aggregate", {}).get("aggregate", {}).get("count", 0)
 
 
-def get_graphql_contract_count_by_admin(chain: str, network: str, address: str) -> int:
+def get_graphql_migration_histories_by_contract_address(
+    chain: str,
+    network: str,
+    contract_address: str,
+    limit: int,
+    offset: int,
+) -> int:
     variables = {
-        "address": address,
+        "contract_address": contract_address,
+        "limit": limit,
+        "offset": offset,
     }
     query = """
-        query ($address: String!) {
-            contracts_aggregate(where: { account: { address: { _eq: $address } } }) {
-                aggregate {
-                    count
+        query (
+            $contract_address: String!
+            $limit: Int!
+            $offset: Int!
+        ) {
+            items: contract_histories(
+                where: { contract: { address: { _eq: $contract_address } } }
+                limit: $limit
+                offset: $offset
+                order_by: { block: { timestamp: desc } }
+            ) {
+                code_id
+                account {
+                    address
+                }
+                block {
+                    height
+                    timestamp
+                }
+                remark
+                code {
+                    account {
+                        address
+                    }
+                    cw2_contract
+                    cw2_version
                 }
             }
         }
     """
-    res = execute_query(chain, network, query, variables).json().get("data", {})
-    return res.get("contracts_aggregate", {}).get("aggregate", {}).get("count", 0)
+    return execute_query(chain, network, query, variables).json().get("data", {})
 
 
-def get_graphql_migration_histories_by_contract_address(
+def get_graphql_migration_histories_count_by_contract_address(
     chain: str, network: str, contract_address: str
 ) -> int:
     variables = {

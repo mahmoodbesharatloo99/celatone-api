@@ -60,14 +60,11 @@ def get_delegations(chain, network, account_address):
     "/<chain>/<network>/accounts/<account_address>/table-counts", methods=["GET"]
 )
 def get_account_table_counts(chain, network, account_address):
+    is_gov = get_query_param("is_gov", type=bool, default=False)
     is_wasm = get_query_param("is_wasm", type=bool, default=False)
 
     data = {
         "tx": None,
-        "proposal": None,
-        "code": None,
-        "instantiated": None,
-        "contract_by_admin": None,
     }
 
     try:
@@ -87,44 +84,43 @@ def get_account_table_counts(chain, network, account_address):
         if not is_graphql_timeout_error(e):
             del data["tx"]
 
-    try:
-        data["proposal"] = proposals.get_graphql_proposals_count_by_address(
-            chain, network, account_address
-        )
-    except Exception as e:
-        if not is_graphql_timeout_error(e):
-            del data["proposal"]
+    if is_gov:
+        data["proposal"] = None
+        try:
+            data["proposal"] = proposals.get_graphql_proposals_count_by_address(
+                chain, network, account_address
+            )
+        except Exception as e:
+            if not is_graphql_timeout_error(e):
+                del data["proposal"]
 
-    if not is_wasm:
-        del data["code"]
-        del data["instantiated"]
-        del data["contract_by_admin"]
+    if is_wasm:
+        data["code"] = None
+        data["instantiated"] = None
+        data["contract_by_admin"] = None
+        try:
+            data["code"] = codes.get_graphql_codes_count_by_address(
+                chain, network, account_address
+            )
+        except Exception as e:
+            if not is_graphql_timeout_error(e):
+                del data["code"]
 
-        return data
+        try:
+            data["instantiated"] = contracts.get_graphql_instantiated_count_by_address(
+                chain, network, account_address
+            )
+        except Exception as e:
+            if not is_graphql_timeout_error(e):
+                del data["instantiated"]
 
-    try:
-        data["code"] = codes.get_graphql_codes_count_by_address(
-            chain, network, account_address
-        )
-    except Exception as e:
-        if not is_graphql_timeout_error(e):
-            del data["code"]
-
-    try:
-        data["instantiated"] = contracts.get_graphql_instantiated_count_by_address(
-            chain, network, account_address
-        )
-    except Exception as e:
-        if not is_graphql_timeout_error(e):
-            del data["instantiated"]
-
-    try:
-        data["contract_by_admin"] = contracts.get_graphql_contract_count_by_admin(
-            chain, network, account_address
-        )
-    except Exception as e:
-        if not is_graphql_timeout_error(e):
-            del data["contract_by_admin"]
+        try:
+            data["contract_by_admin"] = contracts.get_graphql_contract_count_by_admin(
+                chain, network, account_address
+            )
+        except Exception as e:
+            if not is_graphql_timeout_error(e):
+                del data["contract_by_admin"]
 
     return data
 
@@ -138,7 +134,7 @@ def get_proposals(chain, network, account_address):
     validate_pagination_params(limit, offset)
 
     data = proposals.get_graphql_proposals_by_address(
-        chain, network, limit, offset, account_address
+        chain, network, account_address, limit, offset
     )
     for proposal in data.get("items", []):
         proposal["proposer"] = account_address
@@ -317,7 +313,7 @@ def get_transactions_count(chain, network, account_address):
 
 
 ###########################################################
-# Wasm
+#                   WASM
 ###########################################################
 
 
@@ -333,9 +329,9 @@ def get_codes(chain, network, account_address):
     data = codes.get_graphql_codes_by_address(
         chain,
         network,
+        account_address,
         limit,
         offset,
-        account_address,
     )
     for code in data.get("items", []):
         code["uploader"] = code["account"]["uploader"]
@@ -366,9 +362,9 @@ def get_instantiated_contracts(chain, network, account_address):
     data = contracts.get_graphql_instantiated_by_address(
         chain,
         network,
+        account_address,
         limit,
         offset,
-        account_address,
     )
     for contract in data.get("items", []):
         contract["admin"] = contract["admin"]["address"] if contract["admin"] else None
@@ -399,7 +395,7 @@ def get_admin_contracts(chain, network, account_address):
     validate_pagination_params(limit, offset)
 
     data = contracts.get_graphql_admin_contracts_by_address(
-        chain, network, limit, offset, account_address
+        chain, network, account_address, limit, offset
     )
     for contract in data.get("items", []):
         contract["admin"] = contract["admin"]["address"]
@@ -421,7 +417,7 @@ def get_admin_contracts(chain, network, account_address):
 
 
 ###########################################################
-# Move
+#                   MOVE
 ###########################################################
 
 

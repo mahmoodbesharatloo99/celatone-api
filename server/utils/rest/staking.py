@@ -1,9 +1,7 @@
-import logging
-
 import requests
 from flask import Response, abort
-from utils.gcs import get_network_data
 from utils.data_fetcher import fetch_paginated_data
+from utils.gcs import get_network_data
 
 
 def _get_network_base_denom(chain, network):

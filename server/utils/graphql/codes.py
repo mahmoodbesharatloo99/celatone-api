@@ -1,4 +1,5 @@
-from typing import List, Dict, Any
+from typing import Any, Dict, List
+
 from .common import execute_query
 
 
@@ -47,7 +48,7 @@ def get_graphql_code_details(
 
 
 def get_graphql_codes_by_address(
-    chain: str, network: str, limit: int, offset: int, address: str
+    chain: str, network: str, address: str, limit: int, offset: int
 ):
     variables = {
         "address": address,
@@ -57,8 +58,8 @@ def get_graphql_codes_by_address(
     query = """
         query (
             $address: String!
-            $offset: Int!
             $limit: Int!
+            $offset: Int!
         ) {
             items: codes(
                 where: { account: { address: { _eq: $address } } }
